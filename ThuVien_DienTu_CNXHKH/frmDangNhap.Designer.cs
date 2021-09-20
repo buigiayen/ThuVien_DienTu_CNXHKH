@@ -31,25 +31,25 @@ namespace ThuVien_DienTu_CNXHKH
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtUsername = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.txtUsername = new DevExpress.XtraEditors.TextEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,43 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(12, 12);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(191, 146);
+            this.pictureEdit1.StyleController = this.layoutControl1;
+            this.pictureEdit1.TabIndex = 7;
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
+            this.btnDangNhap.Location = new System.Drawing.Point(207, 83);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(289, 22);
+            this.btnDangNhap.StyleController = this.layoutControl1;
+            this.btnDangNhap.TabIndex = 6;
+            this.btnDangNhap.Text = "ĐĂNG NHẬP";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(260, 59);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(236, 20);
+            this.txtPassword.StyleController = this.layoutControl1;
+            this.txtPassword.TabIndex = 5;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(260, 35);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(236, 20);
+            this.txtUsername.StyleController = this.layoutControl1;
+            this.txtUsername.TabIndex = 4;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -83,14 +120,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.Root.Size = new System.Drawing.Size(508, 170);
             this.Root.TextVisible = false;
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(260, 35);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(236, 20);
-            this.txtUsername.StyleController = this.layoutControl1;
-            this.txtUsername.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtUsername;
@@ -99,15 +128,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControlItem1.Size = new System.Drawing.Size(293, 24);
             this.layoutControlItem1.Text = "Tài khoản:";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(50, 13);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(260, 59);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Properties.UseSystemPasswordChar = true;
-            this.txtPassword.Size = new System.Drawing.Size(236, 20);
-            this.txtPassword.StyleController = this.layoutControl1;
-            this.txtPassword.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -118,17 +138,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControlItem2.Text = "Mật khẩu:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(50, 13);
             // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnDangNhap.Location = new System.Drawing.Point(207, 83);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(289, 22);
-            this.btnDangNhap.StyleController = this.layoutControl1;
-            this.btnDangNhap.TabIndex = 6;
-            this.btnDangNhap.Text = "ĐĂNG NHẬP";
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnDangNhap;
@@ -137,15 +146,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControlItem3.Size = new System.Drawing.Size(293, 79);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Location = new System.Drawing.Point(12, 12);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(191, 146);
-            this.pictureEdit1.StyleController = this.layoutControl1;
-            this.pictureEdit1.TabIndex = 7;
             // 
             // layoutControlItem4
             // 
@@ -184,15 +184,16 @@ namespace ThuVien_DienTu_CNXHKH
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDangNhap_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             this.ResumeLayout(false);

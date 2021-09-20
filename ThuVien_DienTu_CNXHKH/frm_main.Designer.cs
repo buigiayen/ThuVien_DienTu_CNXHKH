@@ -33,7 +33,7 @@ namespace ThuVien_DienTu_CNXHKH
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnLyThuyet = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTuSach = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhMucLyThuyet = new DevExpress.XtraBars.BarButtonItem();
@@ -43,6 +43,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnLienKetTrangWeb = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -54,13 +55,14 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.btnLyThuyet,
-            this.barButtonItem2,
+            this.btnTuSach,
             this.barButtonItem3,
             this.barButtonItem1,
             this.btnDanhMucLyThuyet,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.btnLienKetTrangWeb});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -78,15 +80,16 @@ namespace ThuVien_DienTu_CNXHKH
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnLyThuyet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLyThuyet_ItemClick);
             // 
-            // barButtonItem2
+            // btnTuSach
             // 
-            this.barButtonItem2.Caption = "Nghiên cứu tài liệu";
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnTuSach.Caption = "Tủ sách";
+            this.btnTuSach.Id = 2;
+            this.btnTuSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTuSach.ImageOptions.Image")));
+            this.btnTuSach.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTuSach.ImageOptions.LargeImage")));
+            this.btnTuSach.Name = "btnTuSach";
+            this.btnTuSach.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTuSach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTuSach_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -105,6 +108,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btnDanhMucLyThuyet
             // 
@@ -126,14 +130,15 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Tài liệu";
+            this.ribbonPage1.Text = "Trang chủ";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLyThuyet);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnTuSach);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnLienKetTrangWeb);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPage2
@@ -155,6 +160,15 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // btnLienKetTrangWeb
+            // 
+            this.btnLienKetTrangWeb.Caption = "Liên kết trang web";
+            this.btnLienKetTrangWeb.Id = 7;
+            this.btnLienKetTrangWeb.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnLienKetTrangWeb.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnLienKetTrangWeb.Name = "btnLienKetTrangWeb";
+            this.btnLienKetTrangWeb.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLienKetTrangWeb_ItemClick);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +181,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thư viện điện tử";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_main_FormClosed);
             this.Load += new System.EventHandler(this.frm_main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -183,12 +198,13 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.BarButtonItem btnLyThuyet;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnTuSach;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnDanhMucLyThuyet;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnLienKetTrangWeb;
     }
 }
 

@@ -51,9 +51,10 @@ namespace ThuVien_DienTu_CNXHKH.commom
         /// Save File Dialog
         /// </summary>
         /// <returns></returns>
-        public async Task<string> save_dialogFile()
+        public async Task<string> save_dialogFile(string fileName = "")
         {
             SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = fileName;
             if (savefile.ShowDialog() == DialogResult.OK)
                 return savefile.FileName;
             else

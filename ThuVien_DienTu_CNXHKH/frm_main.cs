@@ -59,6 +59,29 @@ namespace ThuVien_DienTu_CNXHKH
             {
                 ribbonPage2.Visible = false;
             }
+            
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.Frm_DanhMucSinhVien>(0);
+        }
+
+        private void frm_main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnTuSach_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.frm_TuSach>(0);
+            
+        }
+
+        private void btnLienKetTrangWeb_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.frm_LienKetTrangWeb>(0);
+
         }
     }
 }

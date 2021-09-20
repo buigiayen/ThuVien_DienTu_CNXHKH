@@ -43,5 +43,10 @@ namespace ThuVien_DienTu_CNXHKH
                 XtraMessageBox.Show("Tài khoản hoặc mật khẩu không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

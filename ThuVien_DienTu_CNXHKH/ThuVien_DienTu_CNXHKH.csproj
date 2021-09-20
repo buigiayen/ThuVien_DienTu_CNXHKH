@@ -69,9 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="commom\Commom.cs" />
+    <Compile Include="database\LienKet.cs" />
     <Compile Include="database\NhomSach.cs" />
     <Compile Include="database\sysdiagram.cs" />
     <Compile Include="database\tbl_BaiViet.cs" />
+    <Compile Include="database\tuSach.cs" />
     <Compile Include="database\TV.cs" />
     <Compile Include="database\UserLogin.cs" />
     <Compile Include="form\Form_Panel.cs">
@@ -86,17 +88,41 @@
     <Compile Include="form\frm_DanhMuc.Designer.cs">
       <DependentUpon>frm_DanhMuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_main.cs">
+    <Compile Include="form\Frm_DanhMucSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_main.Designer.cs">
-      <DependentUpon>frm_main.cs</DependentUpon>
+    <Compile Include="form\Frm_DanhMucSinhVien.Designer.cs">
+      <DependentUpon>Frm_DanhMucSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_GopY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_GopY.Designer.cs">
+      <DependentUpon>frm_GopY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_LienKetTrangWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_LienKetTrangWeb.Designer.cs">
+      <DependentUpon>frm_LienKetTrangWeb.cs</DependentUpon>
     </Compile>
     <Compile Include="form\frm_LyThuyet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frm_LyThuyet.Designer.cs">
       <DependentUpon>frm_LyThuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_TuSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_TuSach.Designer.cs">
+      <DependentUpon>frm_TuSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_main.Designer.cs">
+      <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,11 +138,23 @@
     <EmbeddedResource Include="form\frm_DanhMuc.resx">
       <DependentUpon>frm_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_main.resx">
-      <DependentUpon>frm_main.cs</DependentUpon>
+    <EmbeddedResource Include="form\Frm_DanhMucSinhVien.resx">
+      <DependentUpon>Frm_DanhMucSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_GopY.resx">
+      <DependentUpon>frm_GopY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_LienKetTrangWeb.resx">
+      <DependentUpon>frm_LienKetTrangWeb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_LyThuyet.resx">
       <DependentUpon>frm_LyThuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_TuSach.resx">
+      <DependentUpon>frm_TuSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_main.resx">
+      <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
