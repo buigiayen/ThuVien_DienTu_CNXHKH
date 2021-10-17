@@ -33,14 +33,16 @@ namespace ThuVien_DienTu_CNXHKH.from
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcNhomLyThuyet;
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridView = grvNhomLyThuyet;
             List<properties.columns> columnsproperties = new List<properties.columns>();
-            columnsproperties.Add(new properties.columns { Caption_Columns = "mã nhóm", FieldName_Columns = "IDNhomSach" , Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã nhóm", FieldName_Columns = "IDNhomSach" , Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên nhóm", FieldName_Columns = "TenNhomSach" });
-
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã bài", FieldName_Columns = "id", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Tên bài", FieldName_Columns = "TenBaiViet" });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-            button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenNhomSach", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShow", toolTip = "Xem lý thuyết", Action = new Action(() => { ShowLyThuyet("IDNhomSach"); }) });
+            button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShow", toolTip = "Xem lý thuyết", Action = new Action(() => { ShowLyThuyet("IDNhomSach"); }) });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
-
+            grvDanhSachLyThuyet.GroupCount = 1;
+            
         }
         private async void view_GridControl_LyThuyet()
         {
@@ -65,14 +67,13 @@ namespace ThuVien_DienTu_CNXHKH.from
                 button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "Link_voice", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShowVoice", toolTip = "Xem bài", Action = new Action(() => Show_task("Link_voice")) });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
-            
-
         }
 
         private async void ShowNhomLyThuyet()
         {
 
-            grcNhomLyThuyet.DataSource = tV.NhomSaches.Where(p => p.status == true).ToList();
+            grcNhomLyThuyet.DataSource = (from ns in tV.NhomSaches.Where(p => p.status == true)
+                                          join s in tV.tbl_BaiViet on ns.IDNhomSach equals s.ID_NhomSach select new { ns.IDNhomSach , ns.TenNhomSach , s.id ,s.TenBaiViet  }).ToList();
         }
 
         private async void Show_task(string fieldName)

@@ -61,7 +61,6 @@ namespace ThuVien_DienTu_CNXHKH
             }
             
         }
-
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Moform<form.Frm_DanhMucSinhVien>(0);
@@ -80,8 +79,33 @@ namespace ThuVien_DienTu_CNXHKH
 
         private void btnLienKetTrangWeb_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Moform<form.frm_LienKetTrangWeb>(0);
 
+            Moform<form.frm_LienKetTrangWeb>(0);
+        }
+
+  
+
+        private void btnEmailPhanHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            form.frm_Feedback frm = new form.frm_Feedback();
+            frm.ShowDialog();
+        }
+
+        private void btnTuSachKinhDien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.frm_TuSachKinhDien>(0);
+            
+        }
+
+        private void btnNhomSachKinhDien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.Frm_NhomSachKinhDien>(0);
+        }
+
+        private void btnSachKinhDien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            Moform<form.frm_SachKinhDien>(0);
         }
     }
 }

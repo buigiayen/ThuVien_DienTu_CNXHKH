@@ -15,6 +15,7 @@ namespace ThuVien_DienTu_CNXHKH.database
         public string Mota { get; set; }
 
         public string link { get; set; }
+
         public bool status { get; set; }
     }
 }

@@ -94,7 +94,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private void themMoi_BaiViet(Form_Panel.FormName forms)
         {
-            form.Form_Panel form = new Form_Panel(forms);
+            form.Form_Panel form = new Form_Panel(forms, "Thêm mới bài viết");
             form.ShowDialog();
 
         }

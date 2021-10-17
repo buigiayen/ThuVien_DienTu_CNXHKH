@@ -45,7 +45,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private void btnThemMoiSinhVien_Click(object sender, EventArgs e)
         {
-            Form_Panel frm = new Form_Panel(Form_Panel.FormName.ThemMoiSinhVien);
+            Form_Panel frm = new Form_Panel(Form_Panel.FormName.ThemMoiSinhVien, "Thêm mới user");
             frm.ShowDialog();
         }
     }

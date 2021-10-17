@@ -92,11 +92,11 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (grvTuSach.FocusedRowHandle >= 0)
             {
+                string fileSource = grvTuSach.GetFocusedRowCellValue(nameField)?.ToString();
                 string filePatd = await commom.Commom.ThuchiencongViec.save_dialogFile();
-                if (!string.IsNullOrEmpty(filePatd))
-                {
-                    string fileDesc = grvTuSach.GetFocusedRowCellValue(nameField)?.ToString();
-                    File.Copy(fileDesc, filePatd);
+                if (!string.IsNullOrEmpty(fileSource) && !string.IsNullOrEmpty(filePatd))
+                {       
+                    File.Copy(fileSource, filePatd);
                 }
 
             }
@@ -104,7 +104,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private void btnAddSach_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form_Panel frm = new Form_Panel(Form_Panel.FormName.ThemMoiSach);
+            Form_Panel frm = new Form_Panel(Form_Panel.FormName.ThemMoiSach, "Thêm mới sách");
             frm.ShowDialog();
         }
 

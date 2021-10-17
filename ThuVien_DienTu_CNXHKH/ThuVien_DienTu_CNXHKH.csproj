@@ -12,6 +12,21 @@
     <AssemblyName>ThuVien_DienTu_CNXHKH</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,29 +48,46 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Cresoft_controlCustomer">
       <HintPath>..\..\Cresoft\library\Cresoft_controlCustomer\bin\Debug\Cresoft_controlCustomer.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v20.1" />
     <Reference Include="DevExpress.Data.Desktop.v20.1" />
     <Reference Include="DevExpress.Data.v20.1" />
+    <Reference Include="DevExpress.Dialogs.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.1" />
     <Reference Include="DevExpress.XtraBars.v20.1" />
     <Reference Include="DevExpress.Sparkline.v20.1.Core" />
+    <Reference Include="DevExpress.XtraDialogs.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -69,11 +101,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="commom\Commom.cs" />
+    <Compile Include="database\CauHoi.cs" />
+    <Compile Include="database\CauTraLoi.cs" />
+    <Compile Include="database\HomThu.cs" />
     <Compile Include="database\LienKet.cs" />
     <Compile Include="database\NhomSach.cs" />
+    <Compile Include="database\SachKinhDien.cs" />
     <Compile Include="database\sysdiagram.cs" />
     <Compile Include="database\tbl_BaiViet.cs" />
     <Compile Include="database\tuSach.cs" />
+    <Compile Include="database\TuSachKinhDien.cs" />
     <Compile Include="database\TV.cs" />
     <Compile Include="database\UserLogin.cs" />
     <Compile Include="form\Form_Panel.cs">
@@ -94,12 +131,6 @@
     <Compile Include="form\Frm_DanhMucSinhVien.Designer.cs">
       <DependentUpon>Frm_DanhMucSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\frm_GopY.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\frm_GopY.Designer.cs">
-      <DependentUpon>frm_GopY.cs</DependentUpon>
-    </Compile>
     <Compile Include="form\frm_LienKetTrangWeb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +143,29 @@
     <Compile Include="form\frm_LyThuyet.Designer.cs">
       <DependentUpon>frm_LyThuyet.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Frm_NhomSachKinhDien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Frm_NhomSachKinhDien.Designer.cs">
+      <DependentUpon>Frm_NhomSachKinhDien.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frm_TuSach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frm_TuSach.Designer.cs">
       <DependentUpon>frm_TuSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_Feedback.Designer.cs">
+      <DependentUpon>frm_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_TuSachKinhDien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_TuSachKinhDien.Designer.cs">
+      <DependentUpon>frm_TuSachKinhDien.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_main.cs">
       <SubType>Form</SubType>
@@ -141,17 +190,23 @@
     <EmbeddedResource Include="form\Frm_DanhMucSinhVien.resx">
       <DependentUpon>Frm_DanhMucSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\frm_GopY.resx">
-      <DependentUpon>frm_GopY.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="form\frm_LienKetTrangWeb.resx">
       <DependentUpon>frm_LienKetTrangWeb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_LyThuyet.resx">
       <DependentUpon>frm_LyThuyet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\Frm_NhomSachKinhDien.resx">
+      <DependentUpon>Frm_NhomSachKinhDien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frm_TuSach.resx">
       <DependentUpon>frm_TuSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_Feedback.resx">
+      <DependentUpon>frm_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_TuSachKinhDien.resx">
+      <DependentUpon>frm_TuSachKinhDien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
@@ -181,7 +236,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

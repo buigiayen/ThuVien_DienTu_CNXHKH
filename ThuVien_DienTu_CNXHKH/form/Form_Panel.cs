@@ -15,11 +15,13 @@ namespace ThuVien_DienTu_CNXHKH.form
     public partial class Form_Panel : DevExpress.XtraEditors.XtraForm
     {
         private FormName _form;
-        public Form_Panel(FormName formName)
+
+        public Form_Panel(FormName formName, string _NameForm)
         {
             InitializeComponent();
             _form = formName;
             grvList.CellValueChanging += GrvList_CellValueChanging;
+            this.Text = _NameForm;
         }
 
         public enum FormName
@@ -28,11 +30,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             ThemMoiNhom = 0X0001,
             ThemMoiSinhVien = 0X0002,
             ThemMoiSach = 0X0003,
+            ThemMoiNhomSachKinhDien = 0X0004,
+            ThemMoiSachKinhDien = 0X0005,
         }
         private List<database.NhomSach> NhomSaches = new List<database.NhomSach>();
         private List<database.UserLogin> userLogins = new List<database.UserLogin>();
         private List<database.tbl_BaiViet> baiViets = new List<database.tbl_BaiViet>();
         private List<database.tuSach> Sachs = new List<database.tuSach>();
+        private List<database.TuSachKinhDien> tuSachKinhDiens = new List<database.TuSachKinhDien>();
+        private List<database.SachKinhDien> SachKinhDiens = new List<database.SachKinhDien>();
         private void Form_Panel_Load(object sender, EventArgs e)
         {
             switch (_form)
@@ -49,11 +55,17 @@ namespace ThuVien_DienTu_CNXHKH.form
                 case FormName.ThemMoiSach:
                     Load_GridControl_Sach();
                     break;
+                case FormName.ThemMoiNhomSachKinhDien:
+                    LoadGridControl_TuSachKinhDien_Nhom();
+                    break;
+                case FormName.ThemMoiSachKinhDien:
+                    LoadGridControl_TuSachKinhDien_Sach();
+                    break;
 
             }
 
         }
-        database.TV tV = new database.TV();
+        private database.TV tV = new database.TV();
         private async void Load_GridControl_ThemMoiBaiViet()
         {
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcList;
@@ -130,7 +142,38 @@ namespace ThuVien_DienTu_CNXHKH.form
             grcList.DataSource = new BindingList<database.tuSach>(Sachs.ToList());
         }
 
+        private async void LoadGridControl_TuSachKinhDien_Nhom()
+        {
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcList;
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridView = grvList;
+            List<properties.columns> columnsproperties = new List<properties.columns>();
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "ID", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Tủ sách ", FieldName_Columns = "TenTuSach" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái ", FieldName_Columns = "status" });
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
+            ForList();
+            grcList.DataSource = new BindingList<database.TuSachKinhDien>(tuSachKinhDiens.ToList());
+        }
 
+        private async void LoadGridControl_TuSachKinhDien_Sach()
+        {
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcList;
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridView = grvList;
+            List<properties.columns> columnsproperties = new List<properties.columns>();
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "ID", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Bài", FieldName_Columns = "TenBai" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Tủ sách", FieldName_Columns = "IDNhomSachKinhDien" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Link PPT", FieldName_Columns = "linkPPT" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status" });
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
+            {
+                List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
+                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "linkPPT", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, NameButton = "btnUploadFile", toolTip = "upload File", Action = new Action(() => OpenSaveFile(1, "linkPPT")) });
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+            }
+            ForList();
+            grcList.DataSource = new BindingList<database.SachKinhDien>(SachKinhDiens.ToList());
+        }
 
         private async void ForList()
         {
@@ -149,6 +192,12 @@ namespace ThuVien_DienTu_CNXHKH.form
                         break;
                     case FormName.ThemMoiSach:
                         Sachs.Add(new database.tuSach { ID = i, LinkSach = "", status = false, TenSach = "" });
+                        break;
+                    case FormName.ThemMoiNhomSachKinhDien:
+                        tuSachKinhDiens.Add(new database.TuSachKinhDien { ID = i, TenTuSach = "", status = false });
+                        break;
+                    case FormName.ThemMoiSachKinhDien:
+                        SachKinhDiens.Add(new database.SachKinhDien { ID = i, IDNhomSachKinhDien = null, status = false });
                         break;
 
                 }
@@ -196,6 +245,10 @@ namespace ThuVien_DienTu_CNXHKH.form
                 {
                     grvList.SetFocusedRowCellValue("LinkSach", e.Value);
                 }
+                if (e.Column.FieldName == "linkPPT")
+                {
+                    grvList.SetFocusedRowCellValue("linkPPT", e.Value);
+                }
             }
         }
 
@@ -235,9 +288,20 @@ namespace ThuVien_DienTu_CNXHKH.form
                         {
                             tV.tuSaches.Add(new database.tuSach { TenSach = item.TenSach, LinkSach = item.TenSach, status = item.status });
                         }
-
                         break;
+                    case FormName.ThemMoiNhomSachKinhDien:
+                        foreach (var item in tuSachKinhDiens.Where(p => p.ID == items && p.TenTuSach != null && p.TenTuSach != "" && p.status != null))
+                        {
 
+                            tV.TuSachKinhDiens.Add(new database.TuSachKinhDien { TenTuSach = item.TenTuSach, status = item.status });
+                        }
+                        break;
+                    case FormName.ThemMoiSachKinhDien:
+                        foreach (var item in SachKinhDiens.Where(p => p.ID == items && p.TenBai != null && p.TenBai != "" && p.status != null && p.IDNhomSachKinhDien != null))
+                        {
+                            tV.SachKinhDiens.Add(new database.SachKinhDien { TenBai = item.TenBai, status = item.status, IDNhomSachKinhDien = item.IDNhomSachKinhDien, linkPPT = item.linkPPT });
+                        }
+                        break;
                 }
                 if (tV.SaveChanges() > 0)
                 {
@@ -279,7 +343,19 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                             tV.tuSaches.Add(new database.tuSach { TenSach = item.TenSach, LinkSach = item.LinkSach, status = item.status });
                         }
+                        break;
+                    case FormName.ThemMoiNhomSachKinhDien:
+                        foreach (var item in tuSachKinhDiens.Where(p => p.TenTuSach != null && p.TenTuSach != "" && p.status != null))
+                        {
 
+                            tV.TuSachKinhDiens.Add(new database.TuSachKinhDien { TenTuSach = item.TenTuSach, status = item.status });
+                        }
+                        break;
+                    case FormName.ThemMoiSachKinhDien:
+                        foreach (var item in SachKinhDiens.Where(p => p.TenBai != null && p.TenBai != "" && p.status != null && p.IDNhomSachKinhDien != null))
+                        {
+                            tV.SachKinhDiens.Add(new database.SachKinhDien { TenBai = item.TenBai, status = item.status, IDNhomSachKinhDien = item.IDNhomSachKinhDien, linkPPT = item.linkPPT });
+                        }
                         break;
                 }
                 if (tV.SaveChanges() > 0)
@@ -327,7 +403,12 @@ namespace ThuVien_DienTu_CNXHKH.form
                 case FormName.ThemMoiSach:
                     kq = true;
                     break;
-
+                case FormName.ThemMoiSachKinhDien:
+                    kq = true;
+                    break;
+                case FormName.ThemMoiNhomSachKinhDien:
+                    kq = true;
+                    break;
             }
             return kq;
 

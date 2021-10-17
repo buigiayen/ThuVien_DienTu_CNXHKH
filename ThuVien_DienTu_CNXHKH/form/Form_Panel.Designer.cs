@@ -42,18 +42,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.btnLuuSelect = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.grcList = new DevExpress.XtraGrid.GridControl();
-            this.grvList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.grvList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grcList = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grcList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcList)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -164,24 +164,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLuuSelect);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // grcList
-            // 
-            this.grcList.Location = new System.Drawing.Point(2, 2);
-            this.grcList.MainView = this.grvList;
-            this.grcList.MenuManager = this.ribbonControl1;
-            this.grcList.Name = "grcList";
-            this.grcList.Size = new System.Drawing.Size(1173, 411);
-            this.grcList.TabIndex = 3;
-            this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grvList});
-            // 
-            // grvList
-            // 
-            this.grvList.GridControl = this.grcList;
-            this.grvList.Name = "grvList";
-            this.grvList.OptionsSelection.MultiSelect = true;
-            this.grvList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
-            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.grcList);
@@ -213,6 +195,24 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // grvList
+            // 
+            this.grvList.GridControl = this.grcList;
+            this.grvList.Name = "grvList";
+            this.grvList.OptionsSelection.MultiSelect = true;
+            this.grvList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            // 
+            // grcList
+            // 
+            this.grcList.Location = new System.Drawing.Point(2, 2);
+            this.grcList.MainView = this.grvList;
+            this.grcList.MenuManager = this.ribbonControl1;
+            this.grcList.Name = "grcList";
+            this.grcList.Size = new System.Drawing.Size(1173, 411);
+            this.grcList.TabIndex = 3;
+            this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvList});
+            // 
             // Form_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,12 +224,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form_Panel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grcList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,11 +248,11 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraBars.BarButtonItem btnReload;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraGrid.GridControl grcList;
-        private DevExpress.XtraGrid.Views.Grid.GridView grvList;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarButtonItem btnLuuSelect;
+        private DevExpress.XtraGrid.GridControl grcList;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvList;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
