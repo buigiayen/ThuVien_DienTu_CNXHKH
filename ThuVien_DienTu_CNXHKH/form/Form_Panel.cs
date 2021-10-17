@@ -168,8 +168,14 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "linkPPT", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, NameButton = "btnUploadFile", toolTip = "upload File", Action = new Action(() => OpenSaveFile(1, "linkPPT")) });
+                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "linkPPT", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnUploadFile", toolTip = "upload File", Action = new Action(() => OpenSaveFile(1, "linkPPT")) });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+            }
+            {
+                Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "ID");
+                columns_GridLookUpedit.Add("Nhóm", "TenTuSach");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(tV.TuSachKinhDiens.ToList(), new string[] { "IDNhomSachKinhDien" }, columns_GridLookUpedit, "ID", "TenTuSach");
             }
             ForList();
             grcList.DataSource = new BindingList<database.SachKinhDien>(SachKinhDiens.ToList());
@@ -206,7 +212,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private void OpenSaveFile(int value, string nameFiled)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            XtraOpenFileDialog openFileDialog = new XtraOpenFileDialog();
             if (value == 2)
             {
                 openFileDialog.Filter = "mp3 files (*.mp3)|*.mp3";

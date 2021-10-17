@@ -105,7 +105,7 @@ namespace ThuVien_DienTu_CNXHKH
         private void btnSachKinhDien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            Moform<form.frm_SachKinhDien>(0);
+         
         }
     }
 }
