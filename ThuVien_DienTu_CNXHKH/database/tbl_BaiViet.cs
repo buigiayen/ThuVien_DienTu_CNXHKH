@@ -24,6 +24,8 @@ namespace ThuVien_DienTu_CNXHKH.database
 
         public bool status { get; set; }
 
+        public string LinkWord { get; set; }
+
         public virtual NhomSach NhomSach { get; set; }
     }
 }

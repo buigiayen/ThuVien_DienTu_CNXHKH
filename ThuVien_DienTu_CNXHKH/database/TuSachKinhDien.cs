@@ -20,7 +20,7 @@ namespace ThuVien_DienTu_CNXHKH.database
         [StringLength(500)]
         public string TenTuSach { get; set; }
 
-        public bool status { get; set; }
+        public bool? status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SachKinhDien> SachKinhDiens { get; set; }

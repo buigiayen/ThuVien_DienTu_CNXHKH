@@ -6,21 +6,18 @@ namespace ThuVien_DienTu_CNXHKH.database
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("SachKinhDien")]
-    public partial class SachKinhDien
+    [Table("File")]
+    public partial class File
     {
         public int ID { get; set; }
+        public string FileName { get; set; }
+        public string FilePath { get; set; }
 
-        public int? IDNhomSachKinhDien { get; set; }
+        [StringLength(50)]
+        public string Ex { get; set; }
 
-        [StringLength(1000)]
-        public string TenBai { get; set; }
-
-        [StringLength(1000)]
-        public string linkPPT { get; set; }
+        public double? size { get; set; }
 
         public bool? status { get; set; }
-
-        public virtual TuSachKinhDien TuSachKinhDien { get; set; }
     }
 }

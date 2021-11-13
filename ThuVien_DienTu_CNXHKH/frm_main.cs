@@ -107,5 +107,10 @@ namespace ThuVien_DienTu_CNXHKH
 
          
         }
+
+        private void btnFile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.frm_File>(0); 
+        }
     }
 }
