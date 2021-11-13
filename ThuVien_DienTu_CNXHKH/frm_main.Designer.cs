@@ -55,6 +55,8 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnPhanHoi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnFile = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,8 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Danh mục";
             // 
@@ -251,14 +254,16 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnEmailPhanHoi,
             this.btnTuSachKinhDien,
             this.btnNhomSachKinhDien,
-            this.btnSachKinhDien});
+            this.btnSachKinhDien,
+            this.btnFile});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.MaxItemId = 17;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbonControl1.Size = new System.Drawing.Size(1020, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1190, 193);
             // 
             // btnPhanHoi
             // 
@@ -277,13 +282,28 @@ namespace ThuVien_DienTu_CNXHKH
             this.barButtonItem6.Id = 10;
             this.barButtonItem6.Name = "barButtonItem6";
             // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnFile);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // btnFile
+            // 
+            this.btnFile.Caption = "File";
+            this.btnFile.Id = 16;
+            this.btnFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.Image")));
+            this.btnFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.LargeImage")));
+            this.btnFile.Name = "btnFile";
+            this.btnFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFile_ItemClick);
+            // 
             // frm_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 625);
+            this.ClientSize = new System.Drawing.Size(1190, 769);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_main";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -323,6 +343,8 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.BarButtonItem btnNhomSachKinhDien;
         private DevExpress.XtraBars.BarButtonItem btnSachKinhDien;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.BarButtonItem btnFile;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }
 

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ThuVien_DienTu_CNXHKH</RootNamespace>
     <AssemblyName>ThuVien_DienTu_CNXHKH</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -27,6 +27,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -103,6 +104,7 @@
     <Compile Include="commom\Commom.cs" />
     <Compile Include="database\CauHoi.cs" />
     <Compile Include="database\CauTraLoi.cs" />
+    <Compile Include="database\File.cs" />
     <Compile Include="database\HomThu.cs" />
     <Compile Include="database\LienKet.cs" />
     <Compile Include="database\NhomSach.cs" />
@@ -130,6 +132,12 @@
     </Compile>
     <Compile Include="form\Frm_DanhMucSinhVien.Designer.cs">
       <DependentUpon>Frm_DanhMucSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_File.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_File.Designer.cs">
+      <DependentUpon>frm_File.cs</DependentUpon>
     </Compile>
     <Compile Include="form\frm_LienKetTrangWeb.cs">
       <SubType>Form</SubType>
@@ -190,6 +198,9 @@
     <EmbeddedResource Include="form\Frm_DanhMucSinhVien.resx">
       <DependentUpon>Frm_DanhMucSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_File.resx">
+      <DependentUpon>frm_File.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frm_LienKetTrangWeb.resx">
       <DependentUpon>frm_LienKetTrangWeb.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +231,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>

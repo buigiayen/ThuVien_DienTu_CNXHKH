@@ -3,6 +3,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Security.Cryptography;
@@ -101,7 +102,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             return text;
         }
 
-      
+
         public async Task<List<Model.SendEmailStatus>> SendEmail(string emailto, string title, string body, string filePath)
         {
             List<Model.SendEmailStatus> listSend = new List<Model.SendEmailStatus>();
@@ -122,7 +123,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 client.EnableSsl = true; //vì ta cần thiết lập kết nối SSL với SMTP server nên cần gán nó bằng true
                 client.Send(mail);
                 listSend.Add(new Model.SendEmailStatus { messeger = "Thành công!", sendStatus = true });
-               
+
             }
             catch (Exception ex)
             {
@@ -151,6 +152,29 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
             return text.ToString().Contains(textContains);
         }
+        public async Task<Model.FileInfos> FileSave()
+        {
+            Model.FileInfos FileInfos = new Model.FileInfos();
+
+            XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
+            xtraOpenFileDialog.ShowDialog();
+            if (!string.IsNullOrEmpty(xtraOpenFileDialog.FileName))
+            {
+                if (!Directory.Exists(Application.StartupPath + "/File/"))
+                    Directory.CreateDirectory(Application.StartupPath + "/File");
+
+                FileInfo fileInfos = new FileInfo(xtraOpenFileDialog.FileName);
+                string destFileName = Application.StartupPath + "/File/" + fileInfos.Name;
+
+                File.Copy(xtraOpenFileDialog.FileName, destFileName, true);
+                FileInfo fileInfo = new FileInfo(destFileName);
+                FileInfos.nameFile = fileInfo.Name;
+                FileInfos.Path = fileInfo.FullName;
+                FileInfos.size = fileInfo.Length;
+                FileInfos.ex = fileInfo.Extension;
+            }
+            return FileInfos;
+        }
     }
 
     public class Model
@@ -172,6 +196,14 @@ namespace ThuVien_DienTu_CNXHKH.commom
             public string Key { get; set; }
             public string Vitri { get; set; }
             public bool Valid { get; set; }
+        }
+
+        public class FileInfos
+        {
+            public string nameFile { get; set; }
+            public string Path { get; set; }
+            public double size { get; set; }
+            public string ex { get; set; }
         }
     }
 }

@@ -14,6 +14,7 @@ namespace ThuVien_DienTu_CNXHKH.database
 
         public virtual DbSet<CauHoi> CauHois { get; set; }
         public virtual DbSet<CauTraLoi> CauTraLois { get; set; }
+        public virtual DbSet<File> Files { get; set; }
         public virtual DbSet<HomThu> HomThus { get; set; }
         public virtual DbSet<LienKet> LienKets { get; set; }
         public virtual DbSet<NhomSach> NhomSaches { get; set; }
