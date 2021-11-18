@@ -69,7 +69,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                              TenTuSach = ns.TenTuSach,
                              IDBai = ss.IDNhomSachKinhDien,
                              TenSach = ss.TenBai,
-                             LinkPDF = ss.linkPPT
+                             LinkPDF = ss.link_File
                          }).ToList();
             grcNhomSach.DataSource = datas;
             grvNhomSach.ExpandAllGroups();

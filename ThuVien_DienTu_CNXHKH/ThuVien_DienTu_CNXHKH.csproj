@@ -102,24 +102,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="commom\Commom.cs" />
-    <Compile Include="database\CauHoi.cs" />
-    <Compile Include="database\CauTraLoi.cs" />
-    <Compile Include="database\File.cs" />
-    <Compile Include="database\HomThu.cs" />
-    <Compile Include="database\LienKet.cs" />
-    <Compile Include="database\NhomSach.cs" />
-    <Compile Include="database\SachKinhDien.cs" />
-    <Compile Include="database\sysdiagram.cs" />
-    <Compile Include="database\tbl_BaiViet.cs" />
-    <Compile Include="database\tuSach.cs" />
-    <Compile Include="database\TuSachKinhDien.cs" />
-    <Compile Include="database\TV.cs" />
-    <Compile Include="database\UserLogin.cs" />
+    <Compile Include="commom\Function.cs" />
     <Compile Include="form\Form_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\Form_Panel.Designer.cs">
       <DependentUpon>Form_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_CauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_CauHoi.Designer.cs">
+      <DependentUpon>frm_CauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_CauTraLoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_CauTraLoi.Designer.cs">
+      <DependentUpon>frm_CauTraLoi.cs</DependentUpon>
     </Compile>
     <Compile Include="form\frm_DanhMuc.cs">
       <SubType>Form</SubType>
@@ -139,6 +139,12 @@
     <Compile Include="form\frm_File.Designer.cs">
       <DependentUpon>frm_File.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frm_KetQuaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_KetQuaThi.Designer.cs">
+      <DependentUpon>frm_KetQuaThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frm_LienKetTrangWeb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,12 @@
     </Compile>
     <Compile Include="form\Frm_NhomSachKinhDien.Designer.cs">
       <DependentUpon>Frm_NhomSachKinhDien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_Thi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_Thi.Designer.cs">
+      <DependentUpon>frm_Thi.cs</DependentUpon>
     </Compile>
     <Compile Include="form\frm_TuSach.cs">
       <SubType>Form</SubType>
@@ -192,6 +204,12 @@
     <EmbeddedResource Include="form\Form_Panel.resx">
       <DependentUpon>Form_Panel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_CauHoi.resx">
+      <DependentUpon>frm_CauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_CauTraLoi.resx">
+      <DependentUpon>frm_CauTraLoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frm_DanhMuc.resx">
       <DependentUpon>frm_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +219,9 @@
     <EmbeddedResource Include="form\frm_File.resx">
       <DependentUpon>frm_File.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_KetQuaThi.resx">
+      <DependentUpon>frm_KetQuaThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frm_LienKetTrangWeb.resx">
       <DependentUpon>frm_LienKetTrangWeb.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Frm_NhomSachKinhDien.resx">
       <DependentUpon>Frm_NhomSachKinhDien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_Thi.resx">
+      <DependentUpon>frm_Thi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_TuSach.resx">
       <DependentUpon>frm_TuSach.cs</DependentUpon>
@@ -259,6 +283,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\database\database.csproj">
+      <Project>{0945aad4-1410-4a24-8613-165d792a33a4}</Project>
+      <Name>database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

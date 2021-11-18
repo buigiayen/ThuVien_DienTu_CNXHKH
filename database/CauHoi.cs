@@ -1,4 +1,4 @@
-namespace ThuVien_DienTu_CNXHKH.database
+namespace database
 {
     using System;
     using System.Collections.Generic;
@@ -15,17 +15,22 @@ namespace ThuVien_DienTu_CNXHKH.database
             CauTraLois = new HashSet<CauTraLoi>();
         }
 
-        [Key]
-        public int IDCauHoi { get; set; }
+        public int Id { get; set; }
 
-        [Column("Cauhoi")]
-        public string Cauhoi1 { get; set; }
+        public int BaiVietId { get; set; }
 
-        public string DapAn { get; set; }
+        [Required]
+        public string NoiDung { get; set; }
 
-        public int? DapAnDung { get; set; }
+        public int? IdCauTraLoiDung { get; set; }
 
-        public bool? status { get; set; }
+        public int? Stt { get; set; }
+
+        public bool? Status { get; set; }
+
+        public virtual CauTraLoi CauTraLoi { get; set; }
+
+        public virtual tbl_BaiViet tbl_BaiViet { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CauTraLoi> CauTraLois { get; set; }

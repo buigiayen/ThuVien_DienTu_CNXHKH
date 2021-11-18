@@ -17,7 +17,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         public Frm_NhomSachKinhDien()
         {
             InitializeComponent();
-            grvSachKinhDien.CellValueChanging += GrvSachKinhDien_CellValueChanging; ;
+            
         }
 
       
@@ -88,7 +88,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                     DevExpress.XtraGrid.Columns.GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
                     gridColumn.FieldName = nameFiled;
-                    GrvSachKinhDien_CellValueChanging(null, new DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs(grvSachKinhDien.FocusedRowHandle, gridColumn, openFileDialog.FileName));
+                    
                 }
 
             }
@@ -107,28 +107,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             }
             data.SaveChanges();
         }
-        private void GrvSachKinhDien_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
-            database.SachKinhDien sachKinhDien = data.SachKinhDiens.SingleOrDefault(p => p.ID == _ID);
-            if (e.Column.FieldName == "TenTuSach")
-            {
-                sachKinhDien.TenBai = e.Value.ToString();
-            }
-            if (e.Column.FieldName == "IDNhomSachKinhDien")
-            {
-                sachKinhDien.IDNhomSachKinhDien = (int)e.Value;
-            }
-            if (e.Column.FieldName == "linkPPT")
-            {
-                sachKinhDien.linkPPT = e.Value.ToString();
-            }
-            if (e.Column.FieldName == "status")
-            {
-                sachKinhDien.status = (bool)e.Value;
-            }
-            data.SaveChanges();
-        }
+      
        
         private void simpleButton2_Click(object sender, EventArgs e)
         {

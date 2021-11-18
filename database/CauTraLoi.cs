@@ -1,4 +1,4 @@
-namespace ThuVien_DienTu_CNXHKH.database
+namespace database
 {
     using System;
     using System.Collections.Generic;
@@ -6,23 +6,25 @@ namespace ThuVien_DienTu_CNXHKH.database
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("TuSachKinhDien")]
-    public partial class TuSachKinhDien
+    [Table("CauTraLoi")]
+    public partial class CauTraLoi
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TuSachKinhDien()
+        public CauTraLoi()
         {
-            SachKinhDiens = new HashSet<SachKinhDien>();
+            CauHois = new HashSet<CauHoi>();
         }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
 
-        [StringLength(500)]
-        public string TenTuSach { get; set; }
+        public int CauHoiId { get; set; }
 
-        public bool? status { get; set; }
+        [Required]
+        public string NoiDung { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SachKinhDien> SachKinhDiens { get; set; }
+        public virtual ICollection<CauHoi> CauHois { get; set; }
+
+        public virtual CauHoi CauHoi { get; set; }
     }
 }
