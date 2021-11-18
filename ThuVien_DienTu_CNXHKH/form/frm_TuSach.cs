@@ -120,7 +120,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 }
                 if (e.Column.FieldName == "LinkSach")
                 {
-                    ts.LinkSach = e.Value.ToString();
+                    ts.ID_File = (int)e.Value;
                 }
                 if (e.Column.FieldName == "TenSach")
                 {

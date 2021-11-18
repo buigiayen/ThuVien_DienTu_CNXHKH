@@ -1,4 +1,4 @@
-namespace ThuVien_DienTu_CNXHKH.database
+namespace database
 {
     using System;
     using System.Collections.Generic;

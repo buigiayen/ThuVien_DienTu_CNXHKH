@@ -16,6 +16,11 @@ namespace ThuVien_DienTu_CNXHKH.commom
     public class Commom_static
     {
         public static bool isAdmin { get; set; }
+
+        public static string File_DOCX = "DOCX";
+        public static string File_PDF = "PDF";
+        public static string File_Voice = "Mp3";
+        public static string File_PPT = "PPTX";
     }
     public class Commom
     {

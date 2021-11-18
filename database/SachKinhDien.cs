@@ -1,4 +1,4 @@
-namespace ThuVien_DienTu_CNXHKH.database
+namespace database
 {
     using System;
     using System.Collections.Generic;
@@ -16,10 +16,11 @@ namespace ThuVien_DienTu_CNXHKH.database
         [StringLength(1000)]
         public string TenBai { get; set; }
 
-        [StringLength(1000)]
-        public string linkPPT { get; set; }
+        public int? link_File { get; set; }
 
         public bool? status { get; set; }
+
+        public virtual File File { get; set; }
 
         public virtual TuSachKinhDien TuSachKinhDien { get; set; }
     }

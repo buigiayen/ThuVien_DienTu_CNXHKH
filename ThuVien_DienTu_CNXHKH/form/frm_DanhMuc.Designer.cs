@@ -92,7 +92,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.grvBaiViet.GridControl = this.grcBaiViet;
             this.grvBaiViet.Name = "grvBaiViet";
-            this.grvBaiViet.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grvBaiViet_CellValueChanging);
+        
+        
             // 
             // btnThemMoiBaiViet
             // 

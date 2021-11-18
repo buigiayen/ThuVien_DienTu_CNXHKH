@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThuVien_DienTu_CNXHKH.commom;
 using static Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol;
 
 namespace ThuVien_DienTu_CNXHKH.form
@@ -20,7 +21,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             InitializeComponent();
             _form = formName;
-            grvList.CellValueChanging += GrvList_CellValueChanging;
+
             this.Text = _NameForm;
         }
 
@@ -72,25 +73,48 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridView = grvList;
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên bài", FieldName_Columns = "TenBaiViet" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Link tệp đính kèm", FieldName_Columns = "Link_ppt" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Link âm thanh", FieldName_Columns = "Link_voice" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "File powerpoint", FieldName_Columns = "ID_File_PPT" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "File Word", FieldName_Columns = "ID_FileWord" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "File âm thanh", FieldName_Columns = "ID_File_Voice" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Nhóm bài viết", FieldName_Columns = "ID_NhomSach" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status" });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, true);
-            Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
-            columns_GridLookUpedit.Add("Mã", "IDNhomSach");
-            columns_GridLookUpedit.Add("Nhóm", "TenNhomSach");
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(tV.NhomSaches.ToList(), new string[] { "ID_NhomSach" }, columns_GridLookUpedit, "IDNhomSach", "TenNhomSach");
+            // nhóm 
             {
-                List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "Link_ppt", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Left, NameButton = "btnFile", toolTip = "Chọn file!", Action = new Action(() => OpenSaveFile(1, "Link_ppt")) });
-                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+                Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "IDNhomSach");
+                columns_GridLookUpedit.Add("Nhóm", "TenNhomSach");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(tV.NhomSaches.ToList(), new string[] { "ID_NhomSach" }, columns_GridLookUpedit, "IDNhomSach", "TenNhomSach");
             }
+
+            // File
             {
-                List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "Link_voice", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Left, NameButton = "btnFileVoice", toolTip = "Chọn file âm thanh!", Action = new Action(() => OpenSaveFile(2, "Link_voice")) });
-                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+                //word
+                Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "ID");
+                columns_GridLookUpedit.Add("Tên file", "FileName");
+                columns_GridLookUpedit.Add("Đường dẫn", "FilePath");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_DOCX), new string[] { "ID_FileWord" }, columns_GridLookUpedit,valueMember : "ID", DisplayFormat : "FileName");
             }
+            // File
+            {
+                //PDF
+                Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "ID");
+                columns_GridLookUpedit.Add("Tên file", "FileName");
+                columns_GridLookUpedit.Add("Đường dẫn", "FilePath");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_PPT), new string[] { "ID_File_PPT" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
+            }
+            // File
+            {
+                //PDF
+                Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "ID");
+                columns_GridLookUpedit.Add("Tên file", "FileName");
+                columns_GridLookUpedit.Add("Đường dẫn", "FilePath");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_Voice), new string[] { "ID_File_Voice" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
+            }
+
             ForList();
             grcList.DataSource = new BindingList<database.tbl_BaiViet>(baiViets.ToList());
 
@@ -188,19 +212,19 @@ namespace ThuVien_DienTu_CNXHKH.form
                 switch (_form)
                 {
                     case FormName.ThemMoiBaiViet:
-                        baiViets.Add(new database.tbl_BaiViet { id = i, TenBaiViet = "", status = false, Link_ppt = "", Link_voice = "" });
+                        baiViets.Add(new database.tbl_BaiViet { id = i, status = false });
                         break;
                     case FormName.ThemMoiNhom:
-                        NhomSaches.Add(new database.NhomSach { IDNhomSach = i, TenNhomSach = "", status = false });
+                        NhomSaches.Add(new database.NhomSach { IDNhomSach = i, status = false });
                         break;
                     case FormName.ThemMoiSinhVien:
-                        userLogins.Add(new database.UserLogin { id = i, Username = "", Password = "", isAdmin = false, TenSinhVien = "", status = false });
+                        userLogins.Add(new database.UserLogin { id = i, isAdmin = false, status = false });
                         break;
                     case FormName.ThemMoiSach:
-                        Sachs.Add(new database.tuSach { ID = i, LinkSach = "", status = false, TenSach = "" });
+                        Sachs.Add(new database.tuSach { ID = i, status = false });
                         break;
                     case FormName.ThemMoiNhomSachKinhDien:
-                        tuSachKinhDiens.Add(new database.TuSachKinhDien { ID = i, TenTuSach = "", status = false });
+                        tuSachKinhDiens.Add(new database.TuSachKinhDien { ID = i, status = false });
                         break;
                     case FormName.ThemMoiSachKinhDien:
                         SachKinhDiens.Add(new database.SachKinhDien { ID = i, IDNhomSachKinhDien = null, status = false });
@@ -229,34 +253,12 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                     DevExpress.XtraGrid.Columns.GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
                     gridColumn.FieldName = nameFiled;
-                    GrvList_CellValueChanging(null, new DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs(grvList.FocusedRowHandle, gridColumn, openFileDialog.FileName));
+
                 }
 
             }
         }
 
-        private void GrvList_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            if (e.RowHandle >= 0)
-            {
-                if (e.Column.FieldName == "Link_ppt")
-                {
-                    grvList.SetFocusedRowCellValue("Link_ppt", e.Value);
-                }
-                if (e.Column.FieldName == "Link_voice")
-                {
-                    grvList.SetFocusedRowCellValue("Link_voice", e.Value);
-                }
-                if (e.Column.FieldName == "LinkSach")
-                {
-                    grvList.SetFocusedRowCellValue("LinkSach", e.Value);
-                }
-                if (e.Column.FieldName == "linkPPT")
-                {
-                    grvList.SetFocusedRowCellValue("linkPPT", e.Value);
-                }
-            }
-        }
 
         private async void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -273,7 +275,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     case FormName.ThemMoiBaiViet:
                         foreach (var item in baiViets.Where(p => p.TenBaiViet != null && p.id == items && p.ID_NhomSach != null))
                         {
-                            tV.tbl_BaiViet.Add(new database.tbl_BaiViet { TenBaiViet = item.TenBaiViet, Link_voice = item.Link_voice, Link_ppt = item.Link_ppt, ID_NhomSach = item.ID_NhomSach, status = item.status });
+                            tV.tbl_BaiViet.Add(new database.tbl_BaiViet { TenBaiViet = item.TenBaiViet, ID_File_Voice = item.ID_File_Voice, ID_File_PPT = item.ID_File_PPT, ID_FileWord = item.ID_FileWord ,ID_NhomSach = item.ID_NhomSach, status = item.status });
                         }
 
                         break;
@@ -292,7 +294,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     case FormName.ThemMoiSach:
                         foreach (var item in Sachs.Where(p => p.ID == items && p.TenSach != null && p.TenSach != "" && p.status != null))
                         {
-                            tV.tuSaches.Add(new database.tuSach { TenSach = item.TenSach, LinkSach = item.TenSach, status = item.status });
+                            tV.tuSaches.Add(new database.tuSach { TenSach = item.TenSach, ID_File = item.ID_File, status = item.status });
                         }
                         break;
                     case FormName.ThemMoiNhomSachKinhDien:
@@ -305,7 +307,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     case FormName.ThemMoiSachKinhDien:
                         foreach (var item in SachKinhDiens.Where(p => p.ID == items && p.TenBai != null && p.TenBai != "" && p.status != null && p.IDNhomSachKinhDien != null))
                         {
-                            tV.SachKinhDiens.Add(new database.SachKinhDien { TenBai = item.TenBai, status = item.status, IDNhomSachKinhDien = item.IDNhomSachKinhDien, linkPPT = item.linkPPT });
+                            tV.SachKinhDiens.Add(new database.SachKinhDien { TenBai = item.TenBai, status = item.status, IDNhomSachKinhDien = item.IDNhomSachKinhDien, link_File = item.link_File });
                         }
                         break;
                 }
@@ -324,7 +326,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     case FormName.ThemMoiBaiViet:
                         foreach (var item in baiViets.Where(p => p.TenBaiViet != null && p.TenBaiViet != "" && p.ID_NhomSach != null))
                         {
-                            tV.tbl_BaiViet.Add(new database.tbl_BaiViet { TenBaiViet = item.TenBaiViet, Link_voice = item.Link_voice, Link_ppt = item.Link_ppt, ID_NhomSach = item.ID_NhomSach, status = item.status });
+                            tV.tbl_BaiViet.Add(new database.tbl_BaiViet { TenBaiViet = item.TenBaiViet, ID_File_Voice = item.ID_File_Voice, ID_File_PPT = item.ID_File_PPT, ID_FileWord = item.ID_FileWord , ID_NhomSach = item.ID_NhomSach, status = item.status });
                         }
 
                         break;
@@ -347,7 +349,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                         foreach (var item in Sachs.Where(p => p.TenSach != null && p.TenSach != "" && p.status != null))
                         {
 
-                            tV.tuSaches.Add(new database.tuSach { TenSach = item.TenSach, LinkSach = item.LinkSach, status = item.status });
+                            tV.tuSaches.Add(new database.tuSach { TenSach = item.TenSach, ID_File = item.ID_File, status = item.status });
                         }
                         break;
                     case FormName.ThemMoiNhomSachKinhDien:
@@ -360,7 +362,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     case FormName.ThemMoiSachKinhDien:
                         foreach (var item in SachKinhDiens.Where(p => p.TenBai != null && p.TenBai != "" && p.status != null && p.IDNhomSachKinhDien != null))
                         {
-                            tV.SachKinhDiens.Add(new database.SachKinhDien { TenBai = item.TenBai, status = item.status, IDNhomSachKinhDien = item.IDNhomSachKinhDien, linkPPT = item.linkPPT });
+                            tV.SachKinhDiens.Add(new database.SachKinhDien { TenBai = item.TenBai, status = item.status, IDNhomSachKinhDien = item.IDNhomSachKinhDien, link_File = item.link_File });
                         }
                         break;
                 }
