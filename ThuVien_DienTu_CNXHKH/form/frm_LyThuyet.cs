@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ThuVien_DienTu_CNXHKH.commom;
+using ThuVien_DienTu_CNXHKH.form;
 using static Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol;
 
 
@@ -41,6 +42,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             columnsproperties.Add(new properties.columns { Caption_Columns = "Power Point", FieldName_Columns = "ID_File_PPT", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Âm thanh", FieldName_Columns = "ID_FileWord", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "FileWord", FieldName_Columns = "Link_voice", Visible = false });
+         
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
@@ -99,6 +101,18 @@ namespace ThuVien_DienTu_CNXHKH.from
             {
                 commom.Commom.ThuchiencongViec.process_Application(await Function.Instance.getFilePatd(IDFile));
             }
+        }
+
+        private void btnTracNghiem_Click(object sender, EventArgs e)
+        {
+            if (grvNhomLyThuyet.FocusedRowHandle >= 0)
+            {
+                int IDBaiViet = (int)grvNhomLyThuyet.GetFocusedRowCellValue("id");
+                frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
+                frm.ShowDialog();
+            }
+                    
+           
         }
     }
 }

@@ -198,6 +198,8 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             TV dataContext = new TV();
             var listCauTraLois = dataContext.CauTraLois.Where(o => o.CauHoiId == idCauHoi).ToList();
+            cboCauTraLoiDung.Properties.ValueMember = "Id";
+            cboCauTraLoiDung.Properties.DisplayMember = "NoiDung";
             cboCauTraLoiDung.Properties.DataSource = listCauTraLois;
         }
 

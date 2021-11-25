@@ -41,6 +41,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridView = grvBaiViet;
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã bài viết", FieldName_Columns = "id", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Bài viết", FieldName_Columns = "TenBaiViet" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File powerpoint", FieldName_Columns = "ID_File_PPT" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File Word", FieldName_Columns = "ID_FileWord" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File âm thanh", FieldName_Columns = "ID_File_Voice" });
@@ -82,31 +83,23 @@ namespace ThuVien_DienTu_CNXHKH.form
                 columns_GridLookUpedit.Add("Đường dẫn", "FilePath");
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_Voice), new string[] { "ID_File_Voice" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
             }
+            // Danh sách câu hỏi
+            {
+                List<properties.Button_edit> btnDanhSachBaiThi = new List<properties.Button_edit>();
+                btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", NameButton = "btnDanhMucBaiThi", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, toolTip = "Danh sách bài thi", Action = new Action(() => showListbaiThi("id")) });
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(btnDanhSachBaiThi);
+            }
+
         }
-        private void OpenSaveFile(int value, string nameFiled)
+        private void showListbaiThi(string colname)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (value == 2)
+            if (grvBaiViet.FocusedRowHandle >= 0)
             {
-                openFileDialog.Filter = "mp3 files (*.mp3)|*.mp3";
-            }
-            else
-            {
-                openFileDialog.Filter = "All files (*.*)|*.*";
+                int iDBaiViet = (int)grvBaiViet.GetFocusedRowCellValue(colname);
+                frm_CauHoi frm = new frm_CauHoi(iDBaiViet);
+                frm.ShowDialog();
             }
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (!string.IsNullOrEmpty(openFileDialog.FileName))
-                {
-
-                    DevExpress.XtraGrid.Columns.GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-                    gridColumn.FieldName = nameFiled;
-                    Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(new
-                   Action(() => { LoadDS(2); }));
-                }
-
-            }
         }
 
         private void themMoi_BaiViet(Form_Panel.FormName forms)
@@ -151,7 +144,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     nhom.TenNhomSach = e.Value.ToString();
                 }
                 tV.SaveChanges();
-              
+
             }
         }
 
@@ -167,6 +160,6 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         }
 
-       
+
     }
 }

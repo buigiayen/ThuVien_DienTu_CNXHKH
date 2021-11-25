@@ -239,6 +239,9 @@
             this.cboCauTraLoiDung.Name = "cboCauTraLoiDung";
             this.cboCauTraLoiDung.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboCauTraLoiDung.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NoiDung", "Nội dung")});
             this.cboCauTraLoiDung.Properties.NullText = "";
             this.cboCauTraLoiDung.Size = new System.Drawing.Size(550, 20);
             this.cboCauTraLoiDung.StyleController = this.layoutControl2;

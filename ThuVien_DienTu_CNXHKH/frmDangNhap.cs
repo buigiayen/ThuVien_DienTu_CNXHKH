@@ -27,6 +27,7 @@ namespace ThuVien_DienTu_CNXHKH
                 var login = data.UserLogins.Where(p => p.Username == username && p.Password == passWord && p.status == true).ToList();
                 if (login.Count() >0 && login != null)
                 {
+                    commom.Commom_static.IDUser = login.FirstOrDefault().id;
                     commom.Commom_static.isAdmin = login.FirstOrDefault().isAdmin;
                     frm_main frm = new frm_main();
                     this.Hide();
