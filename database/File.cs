@@ -13,6 +13,7 @@ namespace database
         public File()
         {
             SachKinhDiens = new HashSet<SachKinhDien>();
+            TaiLieuThamKhaos = new HashSet<TaiLieuThamKhao>();
             tbl_BaiViet = new HashSet<tbl_BaiViet>();
             tbl_BaiViet1 = new HashSet<tbl_BaiViet>();
             tbl_BaiViet2 = new HashSet<tbl_BaiViet>();
@@ -34,6 +35,9 @@ namespace database
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SachKinhDien> SachKinhDiens { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TaiLieuThamKhao> TaiLieuThamKhaos { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_BaiViet> tbl_BaiViet { get; set; }

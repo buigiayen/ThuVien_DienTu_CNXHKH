@@ -41,6 +41,8 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnNhomSachKinhDien = new DevExpress.XtraBars.BarButtonItem();
             this.btnSachKinhDien = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnFile = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnLyThuyet = new DevExpress.XtraBars.BarButtonItem();
@@ -55,8 +57,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnPhanHoi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnFile = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKetQuaThi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +82,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonPageGroup2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup2.ImageOptions.Image")));
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDanhMucLyThuyet);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnKetQuaThi);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // barButtonItem1
@@ -140,6 +142,20 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnSachKinhDien.Name = "btnSachKinhDien";
             this.btnSachKinhDien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSachKinhDien_ItemClick);
             // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnFile);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // btnFile
+            // 
+            this.btnFile.Caption = "File";
+            this.btnFile.Id = 16;
+            this.btnFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.Image")));
+            this.btnFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.LargeImage")));
+            this.btnFile.Name = "btnFile";
+            this.btnFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFile_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -189,6 +205,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // btnTuSachKinhDien
             // 
@@ -255,15 +272,15 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnTuSachKinhDien,
             this.btnNhomSachKinhDien,
             this.btnSachKinhDien,
-            this.btnFile});
+            this.btnFile,
+            this.btnKetQuaThi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbonControl1.Size = new System.Drawing.Size(1190, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1020, 158);
             // 
             // btnPhanHoi
             // 
@@ -282,28 +299,22 @@ namespace ThuVien_DienTu_CNXHKH
             this.barButtonItem6.Id = 10;
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // ribbonPageGroup6
+            // btnKetQuaThi
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnFile);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            // 
-            // btnFile
-            // 
-            this.btnFile.Caption = "File";
-            this.btnFile.Id = 16;
-            this.btnFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.Image")));
-            this.btnFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.LargeImage")));
-            this.btnFile.Name = "btnFile";
-            this.btnFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFile_ItemClick);
+            this.btnKetQuaThi.Caption = "Kết quả thi";
+            this.btnKetQuaThi.Id = 17;
+            this.btnKetQuaThi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.btnKetQuaThi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.btnKetQuaThi.Name = "btnKetQuaThi";
+            this.btnKetQuaThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKetQuaThi_ItemClick);
             // 
             // frm_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 769);
+            this.ClientSize = new System.Drawing.Size(1020, 625);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_main";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -345,6 +356,7 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnFile;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnKetQuaThi;
     }
 }
 

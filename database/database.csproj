@@ -60,7 +60,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SachKinhDien.cs" />
     <Compile Include="sysdiagram.cs" />
+    <Compile Include="TaiLieuThamKhao.cs" />
     <Compile Include="tbl_BaiViet.cs" />
+    <Compile Include="TraCuuThuatNgu.cs" />
     <Compile Include="tuSach.cs" />
     <Compile Include="TuSachKinhDien.cs" />
     <Compile Include="TV.cs" />

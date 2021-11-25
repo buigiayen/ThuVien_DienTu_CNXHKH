@@ -163,11 +163,23 @@
     <Compile Include="form\Frm_NhomSachKinhDien.Designer.cs">
       <DependentUpon>Frm_NhomSachKinhDien.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frm_TaiLieuThamKhao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_TaiLieuThamKhao.Designer.cs">
+      <DependentUpon>frm_TaiLieuThamKhao.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frm_Thi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frm_Thi.Designer.cs">
       <DependentUpon>frm_Thi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_TraCuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_TraCuu.Designer.cs">
+      <DependentUpon>frm_TraCuu.cs</DependentUpon>
     </Compile>
     <Compile Include="form\frm_TuSach.cs">
       <SubType>Form</SubType>
@@ -231,8 +243,14 @@
     <EmbeddedResource Include="form\Frm_NhomSachKinhDien.resx">
       <DependentUpon>Frm_NhomSachKinhDien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_TaiLieuThamKhao.resx">
+      <DependentUpon>frm_TaiLieuThamKhao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frm_Thi.resx">
       <DependentUpon>frm_Thi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_TraCuu.resx">
+      <DependentUpon>frm_TraCuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_TuSach.resx">
       <DependentUpon>frm_TuSach.cs</DependentUpon>

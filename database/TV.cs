@@ -21,7 +21,9 @@ namespace database
         public virtual DbSet<NhomSach> NhomSaches { get; set; }
         public virtual DbSet<SachKinhDien> SachKinhDiens { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TaiLieuThamKhao> TaiLieuThamKhaos { get; set; }
         public virtual DbSet<tbl_BaiViet> tbl_BaiViet { get; set; }
+        public virtual DbSet<TraCuuThuatNgu> TraCuuThuatNgus { get; set; }
         public virtual DbSet<tuSach> tuSaches { get; set; }
         public virtual DbSet<TuSachKinhDien> TuSachKinhDiens { get; set; }
         public virtual DbSet<UserLogin> UserLogins { get; set; }
@@ -43,6 +45,11 @@ namespace database
                 .HasMany(e => e.SachKinhDiens)
                 .WithOptional(e => e.File)
                 .HasForeignKey(e => e.link_File);
+
+            modelBuilder.Entity<File>()
+                .HasMany(e => e.TaiLieuThamKhaos)
+                .WithOptional(e => e.File)
+                .HasForeignKey(e => e.idFile);
 
             modelBuilder.Entity<File>()
                 .HasMany(e => e.tbl_BaiViet)
@@ -80,6 +87,11 @@ namespace database
                 .WithRequired(e => e.tbl_BaiViet)
                 .HasForeignKey(e => e.BaiVietId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<tbl_BaiViet>()
+                .HasMany(e => e.TaiLieuThamKhaos)
+                .WithOptional(e => e.tbl_BaiViet)
+                .HasForeignKey(e => e.idBaiViet);
 
             modelBuilder.Entity<TuSachKinhDien>()
                 .HasMany(e => e.SachKinhDiens)

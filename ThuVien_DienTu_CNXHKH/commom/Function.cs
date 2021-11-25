@@ -38,8 +38,12 @@ namespace ThuVien_DienTu_CNXHKH.commom
         {
             return data.Files.Where(p => p.ID == idFile).FirstOrDefault().FilePath;
         }
+        public async Task<List<TraCuuThuatNgu>> Get_TraCuuThuatNgu(bool? Status = null)
+        {
+            return data.TraCuuThuatNgus.Where(p => Status == null ? true : p.status == Status).ToList();
+        }
 
-      
-             
+
+
     }
 }
