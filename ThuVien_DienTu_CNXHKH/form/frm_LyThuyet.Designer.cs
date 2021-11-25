@@ -42,14 +42,14 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTracNghiem = new DevExpress.XtraEditors.SimpleButton();
             this.btnPowerPoint = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowFileMp3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
@@ -192,9 +192,17 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControl2.TabIndex = 3;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // richEditControl1
+            // 
+            this.richEditControl1.Location = new System.Drawing.Point(2, 2);
+            this.richEditControl1.Name = "richEditControl1";
+            this.richEditControl1.Size = new System.Drawing.Size(816, 560);
+            this.richEditControl1.TabIndex = 6;
+            this.richEditControl1.Text = "richEditControl1";
+            // 
             // stackPanel1
             // 
-            this.stackPanel1.Controls.Add(this.simpleButton1);
+            this.stackPanel1.Controls.Add(this.btnTracNghiem);
             this.stackPanel1.Controls.Add(this.btnPowerPoint);
             this.stackPanel1.Controls.Add(this.btnShowFileMp3);
             this.stackPanel1.Controls.Add(this.simpleButton4);
@@ -203,18 +211,19 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.stackPanel1.Size = new System.Drawing.Size(816, 24);
             this.stackPanel1.TabIndex = 5;
             // 
-            // simpleButton1
+            // btnTracNghiem
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(3, 0);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(141, 23);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Trắc nghiệm";
+            this.btnTracNghiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnTracNghiem.Location = new System.Drawing.Point(3, 0);
+            this.btnTracNghiem.Name = "btnTracNghiem";
+            this.btnTracNghiem.Size = new System.Drawing.Size(141, 23);
+            this.btnTracNghiem.TabIndex = 0;
+            this.btnTracNghiem.Text = "Trắc nghiệm";
+            this.btnTracNghiem.Click += new System.EventHandler(this.btnTracNghiem_Click);
             // 
             // btnPowerPoint
             // 
-            this.btnPowerPoint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnPowerPoint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPowerPoint.ImageOptions.Image")));
             this.btnPowerPoint.Location = new System.Drawing.Point(150, 0);
             this.btnPowerPoint.Name = "btnPowerPoint";
             this.btnPowerPoint.Size = new System.Drawing.Size(141, 23);
@@ -224,7 +233,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             // 
             // btnShowFileMp3
             // 
-            this.btnShowFileMp3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnShowFileMp3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFileMp3.ImageOptions.Image")));
             this.btnShowFileMp3.Location = new System.Drawing.Point(297, 0);
             this.btnShowFileMp3.Name = "btnShowFileMp3";
             this.btnShowFileMp3.Size = new System.Drawing.Size(141, 23);
@@ -261,14 +270,6 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlItem4.Size = new System.Drawing.Size(820, 28);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // richEditControl1
-            // 
-            this.richEditControl1.Location = new System.Drawing.Point(2, 2);
-            this.richEditControl1.Name = "richEditControl1";
-            this.richEditControl1.Size = new System.Drawing.Size(816, 560);
-            this.richEditControl1.TabIndex = 6;
-            this.richEditControl1.Text = "richEditControl1";
             // 
             // layoutControlItem5
             // 
@@ -324,7 +325,7 @@ namespace ThuVien_DienTu_CNXHKH.from
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnTracNghiem;
         private DevExpress.XtraEditors.SimpleButton btnPowerPoint;
         private DevExpress.XtraEditors.SimpleButton btnShowFileMp3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;

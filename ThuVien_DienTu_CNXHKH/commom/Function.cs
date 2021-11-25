@@ -38,5 +38,8 @@ namespace ThuVien_DienTu_CNXHKH.commom
         {
             return data.Files.Where(p => p.ID == idFile).FirstOrDefault().FilePath;
         }
+
+      
+             
     }
 }
