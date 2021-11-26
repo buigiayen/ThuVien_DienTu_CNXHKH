@@ -13,6 +13,7 @@ namespace database
         {
             BaiThis = new HashSet<BaiThi>();
             CauHois = new HashSet<CauHoi>();
+            TaiLieuThamKhaos = new HashSet<TaiLieuThamKhao>();
         }
 
         public int id { get; set; }
@@ -44,5 +45,8 @@ namespace database
         public virtual File File2 { get; set; }
 
         public virtual NhomSach NhomSach { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TaiLieuThamKhao> TaiLieuThamKhaos { get; set; }
     }
 }

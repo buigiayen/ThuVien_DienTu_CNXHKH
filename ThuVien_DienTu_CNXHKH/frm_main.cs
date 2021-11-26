@@ -112,5 +112,16 @@ namespace ThuVien_DienTu_CNXHKH
         {
             Moform<form.frm_File>(0); 
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.frm_TraCuu>(0);
+            
+        }
+
+        private void btnKetQuaThi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.frm_KetQuaThi>(0);
+        }
     }
 }
