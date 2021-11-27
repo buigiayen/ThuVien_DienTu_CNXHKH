@@ -77,8 +77,15 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
             try
             {
-                System.Diagnostics.Process.Start(file_patd);
-                return true;
+                if (File.Exists(file_patd))
+                {
+                    System.Diagnostics.Process.Start(file_patd);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {

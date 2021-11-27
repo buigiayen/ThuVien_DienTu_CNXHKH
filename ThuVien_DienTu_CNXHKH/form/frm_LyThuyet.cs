@@ -114,5 +114,16 @@ namespace ThuVien_DienTu_CNXHKH.from
                     
            
         }
+
+        private void btnTaiLieuThamKhao_Click(object sender, EventArgs e)
+        {
+            if (grvNhomLyThuyet.FocusedRowHandle >= 0)
+            {
+                int IDBaiViet = (int)grvNhomLyThuyet.GetFocusedRowCellValue("id");
+                frm_TaiLieuThamKhao frm = new frm_TaiLieuThamKhao(IDBaiViet);
+                frm.ShowDialog();
+            }
+
+        }
     }
 }

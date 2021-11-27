@@ -47,7 +47,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.btnTracNghiem = new DevExpress.XtraEditors.SimpleButton();
             this.btnPowerPoint = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowFileMp3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTaiLieuThamKhao = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -205,7 +205,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.stackPanel1.Controls.Add(this.btnTracNghiem);
             this.stackPanel1.Controls.Add(this.btnPowerPoint);
             this.stackPanel1.Controls.Add(this.btnShowFileMp3);
-            this.stackPanel1.Controls.Add(this.simpleButton4);
+            this.stackPanel1.Controls.Add(this.btnTaiLieuThamKhao);
             this.stackPanel1.Location = new System.Drawing.Point(2, 566);
             this.stackPanel1.Name = "stackPanel1";
             this.stackPanel1.Size = new System.Drawing.Size(816, 24);
@@ -213,7 +213,6 @@ namespace ThuVien_DienTu_CNXHKH.from
             // 
             // btnTracNghiem
             // 
-            this.btnTracNghiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.btnTracNghiem.Location = new System.Drawing.Point(3, 0);
             this.btnTracNghiem.Name = "btnTracNghiem";
             this.btnTracNghiem.Size = new System.Drawing.Size(141, 23);
@@ -241,14 +240,15 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.btnShowFileMp3.Text = "Tài liệu phim ảnh";
             this.btnShowFileMp3.Click += new System.EventHandler(this.btnShowFileMp3_Click);
             // 
-            // simpleButton4
+            // btnTaiLieuThamKhao
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(444, 0);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(141, 23);
-            this.simpleButton4.TabIndex = 3;
-            this.simpleButton4.Text = "Tài liệu tham khảo";
+            this.btnTaiLieuThamKhao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnTaiLieuThamKhao.Location = new System.Drawing.Point(444, 0);
+            this.btnTaiLieuThamKhao.Name = "btnTaiLieuThamKhao";
+            this.btnTaiLieuThamKhao.Size = new System.Drawing.Size(141, 23);
+            this.btnTaiLieuThamKhao.TabIndex = 3;
+            this.btnTaiLieuThamKhao.Text = "Tài liệu tham khảo";
+            this.btnTaiLieuThamKhao.Click += new System.EventHandler(this.btnTaiLieuThamKhao_Click);
             // 
             // layoutControlGroup1
             // 
@@ -328,7 +328,7 @@ namespace ThuVien_DienTu_CNXHKH.from
         private DevExpress.XtraEditors.SimpleButton btnTracNghiem;
         private DevExpress.XtraEditors.SimpleButton btnPowerPoint;
         private DevExpress.XtraEditors.SimpleButton btnShowFileMp3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnTaiLieuThamKhao;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;

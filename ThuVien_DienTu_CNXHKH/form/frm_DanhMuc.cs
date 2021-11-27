@@ -94,6 +94,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 {
                     List<properties.Button_edit> btnDanhSachBaiThi = new List<properties.Button_edit>();
                     btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", NameButton = "btnDanhMucBaiThi", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, toolTip = "Danh sách bài thi", Action = new Action(() => showListbaiThi("id")) });
+                    btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 1, colname = "TenBaiViet", NameButton = "btnTaiLieuThamKhao", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, toolTip = "Danh sách tham khảo", Action = new Action(() => ShowDSThamKhao("id")) });
                     Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(btnDanhSachBaiThi);
                 }
             }
@@ -101,6 +102,19 @@ namespace ThuVien_DienTu_CNXHKH.form
             grvBaiViet.CellValueChanging += GrvBaiViet_CellValueChanging;
 
         }
+
+        private void ShowDSThamKhao(string colName)
+        {
+            if (grvBaiViet.FocusedRowHandle >= 0)
+            {
+                int IDBaiViet = (int)grvBaiViet.GetFocusedRowCellValue(colName);
+                frm_TaiLieuThamKhao frm = new frm_TaiLieuThamKhao(IDBaiViet);
+                frm.ShowDialog();
+            }
+
+
+        }
+
         private async void LoadNhomSach()
         {
 

@@ -31,22 +31,25 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TaiLieuThamKhao));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.btnReload = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.grcList = new DevExpress.XtraGrid.GridControl();
             this.grvList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colShowFile = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnShowFile = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnReload = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grcList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grcList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnShowFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +65,71 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // stackPanel1
+            // 
+            this.stackPanel1.Controls.Add(this.btnReload);
+            this.stackPanel1.Controls.Add(this.btnThemMoi);
+            this.stackPanel1.Location = new System.Drawing.Point(2, 2);
+            this.stackPanel1.Name = "stackPanel1";
+            this.stackPanel1.Size = new System.Drawing.Size(945, 37);
+            this.stackPanel1.TabIndex = 5;
+            // 
+            // btnReload
+            // 
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.Location = new System.Drawing.Point(3, 7);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(113, 23);
+            this.btnReload.TabIndex = 0;
+            this.btnReload.Text = "Tải danh sách";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // btnThemMoi
+            // 
+            this.btnThemMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnThemMoi.Location = new System.Drawing.Point(122, 7);
+            this.btnThemMoi.Name = "btnThemMoi";
+            this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnThemMoi.TabIndex = 1;
+            this.btnThemMoi.Text = "Thêm mới";
+            this.btnThemMoi.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // grcList
+            // 
+            this.grcList.Location = new System.Drawing.Point(2, 43);
+            this.grcList.MainView = this.grvList;
+            this.grcList.Name = "grcList";
+            this.grcList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnShowFile});
+            this.grcList.Size = new System.Drawing.Size(945, 560);
+            this.grcList.TabIndex = 4;
+            this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvList});
+            // 
+            // grvList
+            // 
+            this.grvList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colShowFile});
+            this.grvList.GridControl = this.grcList;
+            this.grvList.Name = "grvList";
+            // 
+            // colShowFile
+            // 
+            this.colShowFile.Caption = "Xem file";
+            this.colShowFile.ColumnEdit = this.btnShowFile;
+            this.colShowFile.Name = "colShowFile";
+            this.colShowFile.Visible = true;
+            this.colShowFile.VisibleIndex = 0;
+            // 
+            // btnShowFile
+            // 
+            this.btnShowFile.AutoHeight = false;
+            this.btnShowFile.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
+            this.btnShowFile.Name = "btnShowFile";
+            this.btnShowFile.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnShowFile.Click += new System.EventHandler(this.btnShowFile_Click);
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -74,21 +142,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Root.Size = new System.Drawing.Size(949, 605);
             this.Root.TextVisible = false;
             // 
-            // grcList
-            // 
-            this.grcList.Location = new System.Drawing.Point(2, 43);
-            this.grcList.MainView = this.grvList;
-            this.grcList.Name = "grcList";
-            this.grcList.Size = new System.Drawing.Size(945, 560);
-            this.grcList.TabIndex = 4;
-            this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grvList});
-            // 
-            // grvList
-            // 
-            this.grvList.GridControl = this.grcList;
-            this.grvList.Name = "grvList";
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grcList;
@@ -97,15 +150,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Size = new System.Drawing.Size(949, 564);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // stackPanel1
-            // 
-            this.stackPanel1.Controls.Add(this.btnReload);
-            this.stackPanel1.Controls.Add(this.simpleButton2);
-            this.stackPanel1.Location = new System.Drawing.Point(2, 2);
-            this.stackPanel1.Name = "stackPanel1";
-            this.stackPanel1.Size = new System.Drawing.Size(945, 37);
-            this.stackPanel1.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -116,26 +160,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // btnReload
-            // 
-            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnReload.Location = new System.Drawing.Point(3, 7);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(113, 23);
-            this.btnReload.TabIndex = 0;
-            this.btnReload.Text = "Tải danh sách";
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(122, 7);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Thêm mới";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
             // frm_TaiLieuThamKhao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,15 +167,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.ClientSize = new System.Drawing.Size(949, 605);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frm_TaiLieuThamKhao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tài liệu tham khảo";
+            this.Load += new System.EventHandler(this.frm_TaiLieuThamKhao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grcList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.stackPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grcList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnShowFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
@@ -163,10 +190,12 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
         private DevExpress.XtraEditors.SimpleButton btnReload;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnThemMoi;
         private DevExpress.XtraGrid.GridControl grcList;
         private DevExpress.XtraGrid.Views.Grid.GridView grvList;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn colShowFile;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnShowFile;
     }
 }
