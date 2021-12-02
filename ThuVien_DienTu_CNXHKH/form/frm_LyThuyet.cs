@@ -28,7 +28,7 @@ namespace ThuVien_DienTu_CNXHKH.from
         private void frm_LyThuyet_Load(object sender, EventArgs e)
         {
             view_GridControl_NhomLyThuyet();
-
+            ShowNhomLyThuyet();
         }
         private async void view_GridControl_NhomLyThuyet()
         {
@@ -42,8 +42,8 @@ namespace ThuVien_DienTu_CNXHKH.from
             columnsproperties.Add(new properties.columns { Caption_Columns = "Power Point", FieldName_Columns = "ID_File_PPT", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Âm thanh", FieldName_Columns = "ID_FileWord", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "FileWord", FieldName_Columns = "Link_voice", Visible = false });
-         
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
+
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, false, true);
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
                 button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShowWord", toolTip = "Mở file word", Action = new Action(() => { showFileWord("ID_FileWord"); }) });
@@ -57,9 +57,9 @@ namespace ThuVien_DienTu_CNXHKH.from
             int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue(colName) ?? null;
             if (IDFile != null)
             {
-                richEditControl1.LoadDocument( await Function.Instance.getFilePatd(IDFile));
+                richEditControl1.LoadDocument(await Function.Instance.getFilePatd(IDFile));
             }
-           
+
         }
 
         private async void ShowNhomLyThuyet()
@@ -90,7 +90,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_PPT") ?? null;
             if (IDFile != null)
             {
-               commom.Commom.ThuchiencongViec.process_Application(await Function.Instance.getFilePatd(IDFile));
+                commom.Common.ThuchiencongViec.process_Application(await Function.Instance.getFilePatd(IDFile));
             }
         }
 
@@ -99,20 +99,28 @@ namespace ThuVien_DienTu_CNXHKH.from
             int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("Link_voice") ?? null;
             if (IDFile != null)
             {
-                commom.Commom.ThuchiencongViec.process_Application(await Function.Instance.getFilePatd(IDFile));
+                commom.Common.ThuchiencongViec.process_Application(await Function.Instance.getFilePatd(IDFile));
             }
         }
 
-        private void btnTracNghiem_Click(object sender, EventArgs e)
+        private async void btnTracNghiem_Click(object sender, EventArgs e)
         {
             if (grvNhomLyThuyet.FocusedRowHandle >= 0)
             {
                 int IDBaiViet = (int)grvNhomLyThuyet.GetFocusedRowCellValue("id");
-                frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
-                frm.ShowDialog();
+                if ((await commom.Function.Instance.Get_Thi(commom.Commom_static.IDUser, IDBaiViet)).Count() == 0 )
+                {
+                    frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Bạn đã thi bài này", "Thông báo");
+                }
+             
             }
-                    
-           
+
+
         }
 
         private void btnTaiLieuThamKhao_Click(object sender, EventArgs e)
@@ -124,6 +132,15 @@ namespace ThuVien_DienTu_CNXHKH.from
                 frm.ShowDialog();
             }
 
+        }
+
+        private void grvNhomLyThuyet_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle >= 0)
+            {
+                btnPowerPoint.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_PPT")?.ToString());
+                btnShowFileMp3.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("Link_voice")?.ToString());    
+            }
         }
     }
 }

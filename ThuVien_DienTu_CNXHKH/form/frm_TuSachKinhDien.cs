@@ -99,7 +99,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     Name = grvNhomSach.GetRowCellValue(i, "TenTuSach")?.ToString() + "-" + grvNhomSach.GetRowCellValue(i, "TenSach")?.ToString(),
                     Tep = grvNhomSach.GetRowCellValue(i, "LinkPDF")?.ToString(),
                     Vitri = "Dòng 1 trang 2",
-                    Valid = await commom.Commom.ThuchiencongViec.GetTextFromPDF(LinkPDF,text)
+                    Valid = await commom.Common.ThuchiencongViec.GetTextFromPDF(LinkPDF,text)
                 });
 
             }

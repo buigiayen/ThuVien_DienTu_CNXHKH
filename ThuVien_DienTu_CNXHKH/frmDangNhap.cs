@@ -23,7 +23,7 @@ namespace ThuVien_DienTu_CNXHKH
             if (!string.IsNullOrEmpty(txtUsername.Text) || !string.IsNullOrEmpty(txtPassword.Text))
             {
                 string username = txtUsername.Text;
-                string passWord = commom.Commom.ThuchiencongViec.Md5(txtPassword.Text);
+                string passWord = commom.Common.ThuchiencongViec.Md5(txtPassword.Text);
                 var login = data.UserLogins.Where(p => p.Username == username && p.Password == passWord && p.status == true).ToList();
                 if (login.Count() >0 && login != null)
                 {

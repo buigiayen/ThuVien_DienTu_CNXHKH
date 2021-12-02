@@ -42,6 +42,10 @@ namespace ThuVien_DienTu_CNXHKH.commom
         {
             return data.TraCuuThuatNgus.Where(p => Status == null ? true : p.status == Status).ToList();
         }
+        public async Task<List<BaiThi>> Get_Thi(int? idUser = null, int? idbaithi = null)
+        {
+            return data.BaiThis.Where(p => p.UserId == idUser && p.BaiVietId == idbaithi).ToList();
+        }
 
 
 

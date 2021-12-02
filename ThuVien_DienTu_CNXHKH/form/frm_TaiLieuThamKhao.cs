@@ -93,7 +93,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             {
                 int idFile = (int)grvList.GetFocusedRowCellValue("idFile");
                 string filePath = await commom.Function.Instance.getFilePatd(idFile);
-                if (!await commom.Commom.ThuchiencongViec.process_Application(filePath))
+                if (!await commom.Common.ThuchiencongViec.process_Application(filePath))
                 {
                     XtraMessageBox.Show("Không thể mở file");
                 }

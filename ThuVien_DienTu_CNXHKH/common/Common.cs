@@ -22,26 +22,26 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public static string File_Voice = "Mp3";
         public static string File_PPT = "PPTX";
     }
-    public class Commom
+    public class Common
     {
 
         #region cấu trúc
-        private static Commom instance;
-        public static Commom ThuchiencongViec
+        private static Common instance;
+        public static Common ThuchiencongViec
         {
             get
             {
                 if (instance == null)
-                    ThuchiencongViec = new Commom();
-                return Commom.instance;
+                    ThuchiencongViec = new Common();
+                return Common.instance;
             }
             private set
             {
-                Commom.instance = value;
+                Common.instance = value;
 
             }
         }
-        private Commom()
+        private Common()
         {
         }
         #endregion

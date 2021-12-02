@@ -288,7 +288,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     case FormName.ThemMoiSinhVien:
                         foreach (var item in userLogins.Where(p => p.id == items && p.TenSinhVien != null && p.TenSinhVien != "" && p.Username != null && p.Username != "" && p.Password != null && p.Password != ""))
                         {
-                            tV.UserLogins.Add(new database.UserLogin { Username = item.TenSinhVien, Password = commom.Commom.ThuchiencongViec.Md5(item.Password), TenSinhVien = item.TenSinhVien, isAdmin = item.isAdmin, status = item.status });
+                            tV.UserLogins.Add(new database.UserLogin { Username = item.TenSinhVien, Password = commom.Common.ThuchiencongViec.Md5(item.Password), TenSinhVien = item.TenSinhVien, isAdmin = item.isAdmin, status = item.status });
                         }
                         break;
                     case FormName.ThemMoiSach:
@@ -341,7 +341,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                         foreach (var item in userLogins.Where(p => p.TenSinhVien != null && p.TenSinhVien != "" && p.Username != null && p.Username != "" && p.Password != null && p.Password != ""))
                         {
 
-                            tV.UserLogins.Add(new database.UserLogin { Username = item.TenSinhVien, Password = commom.Commom.ThuchiencongViec.Md5(item.Password), TenSinhVien = item.TenSinhVien, isAdmin = item.isAdmin, status = item.status });
+                            tV.UserLogins.Add(new database.UserLogin { Username = item.TenSinhVien, Password = commom.Common.ThuchiencongViec.Md5(item.Password), TenSinhVien = item.TenSinhVien, isAdmin = item.isAdmin, status = item.status });
                         }
 
                         break;

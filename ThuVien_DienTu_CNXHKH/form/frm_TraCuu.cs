@@ -34,12 +34,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Thuật ngữ", FieldName_Columns = "ThuatNgu" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
             grvTraCuuThuatNgu.Columns["id"].OptionsColumn.ReadOnly = true;
             grvTraCuuThuatNgu.CellValueChanging += GrvTraCuuThuatNgu_CellValueChanging;
         }
         private async void GrvTraCuuThuatNgu_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (grvTraCuuThuatNgu.RowCount > 0)
+            if (grvTraCuuThuatNgu.FocusedRowHandle >= 0)
             {
                 int id = (int)grvTraCuuThuatNgu.GetFocusedRowCellValue("id");
                 database.TraCuuThuatNgu traCuu = data.TraCuuThuatNgus.SingleOrDefault(p => p.id == id);
@@ -61,7 +62,9 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void LoadTraCuuThuaNgu()
         {
-            grcTraCuuThuatNgu.DataSource = await commom.Function.Instance.Get_TraCuuThuatNgu();
+            bool? visibleIsAdmin = null;
+            if (commom.Commom_static.isAdmin) visibleIsAdmin = false;
+            grcTraCuuThuatNgu.DataSource = await commom.Function.Instance.Get_TraCuuThuatNgu(visibleIsAdmin);
         }
         private async void btnThemMoiTraCuuThuatNgu_Click(object sender, EventArgs e)
         {

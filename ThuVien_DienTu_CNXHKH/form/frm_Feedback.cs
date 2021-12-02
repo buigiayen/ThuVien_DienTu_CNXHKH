@@ -22,7 +22,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (e.Button.Index == 0)
             {
-                string filePath = await commom.Commom.ThuchiencongViec.open_dialogFile();
+                string filePath = await commom.Common.ThuchiencongViec.open_dialogFile();
                 if (!string.IsNullOrEmpty(filePath))
                 {
                     btnFileAtt.EditValue = filePath;
@@ -40,7 +40,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (lupEmailto.EditValue != null)
             {
-                var status = await commom.Commom.ThuchiencongViec.SendEmail(lupEmailto.EditValue.ToString(), txtTieuDe.Text, txtNoiDung.HtmlText, btnFileAtt.Text);
+                var status = await commom.Common.ThuchiencongViec.SendEmail(lupEmailto.EditValue.ToString(), txtTieuDe.Text, txtNoiDung.HtmlText, btnFileAtt.Text);
                 XtraMessageBox.Show(status.FirstOrDefault().messeger, "Thông báo", MessageBoxButtons.OK, status.FirstOrDefault().sendStatus == true ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                 database.HomThu homThu = new database.HomThu();
                 homThu.emailTo = lupEmailto.EditValue.ToString();
@@ -62,7 +62,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         private async void frm_Feedback_Load(object sender, EventArgs e)
         {
         
-            lupEmailto.Properties.DataSource = await  commom.Commom.ThuchiencongViec.Email_Connecs();
+            lupEmailto.Properties.DataSource = await  commom.Common.ThuchiencongViec.Email_Connecs();
             lupEmailto.Properties.ValueMember = "Email";
             lupEmailto.Properties.DisplayMember = "MoTa";
             

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThuVien_DienTu_CNXHKH", "Th
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database", "database\database.csproj", "{0945AAD4-1410-4A24-8613-165D792A33A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cresoft_controlCustomer", "..\Cresoft\library\Cresoft_controlCustomer\Cresoft_controlCustomer.csproj", "{0C7C2486-463E-4423-9FC6-31A31B9E4A2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0945AAD4-1410-4A24-8613-165D792A33A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0945AAD4-1410-4A24-8613-165D792A33A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0945AAD4-1410-4A24-8613-165D792A33A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C7C2486-463E-4423-9FC6-31A31B9E4A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7C2486-463E-4423-9FC6-31A31B9E4A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7C2486-463E-4423-9FC6-31A31B9E4A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7C2486-463E-4423-9FC6-31A31B9E4A2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

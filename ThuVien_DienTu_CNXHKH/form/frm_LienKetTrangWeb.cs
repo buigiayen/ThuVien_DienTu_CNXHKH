@@ -55,7 +55,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             if (grvList.FocusedRowHandle >= 0)
             {
                 string link = grvList.GetFocusedRowCellValue("link").ToString();
-                commom.Commom.ThuchiencongViec.process_Application(link);
+                commom.Common.ThuchiencongViec.process_Application(link);
             }
                     
           

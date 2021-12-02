@@ -123,7 +123,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             // btnTaiLaiDanhSach
             // 
             this.btnTaiLaiDanhSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiLaiDanhSach.ImageOptions.Image")));
-            this.btnTaiLaiDanhSach.Location = new System.Drawing.Point(2, 2);
+            this.btnTaiLaiDanhSach.Location = new System.Drawing.Point(2, 525);
             this.btnTaiLaiDanhSach.Name = "btnTaiLaiDanhSach";
             this.btnTaiLaiDanhSach.Size = new System.Drawing.Size(326, 36);
             this.btnTaiLaiDanhSach.StyleController = this.layoutControl1;
@@ -133,7 +133,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             // 
             // grcNhomLyThuyet
             // 
-            this.grcNhomLyThuyet.Location = new System.Drawing.Point(2, 42);
+            this.grcNhomLyThuyet.Location = new System.Drawing.Point(2, 2);
             this.grcNhomLyThuyet.MainView = this.grvNhomLyThuyet;
             this.grcNhomLyThuyet.Name = "grcNhomLyThuyet";
             this.grcNhomLyThuyet.Size = new System.Drawing.Size(326, 519);
@@ -146,9 +146,11 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.grvNhomLyThuyet.GridControl = this.grcNhomLyThuyet;
             this.grvNhomLyThuyet.Name = "grvNhomLyThuyet";
             this.grvNhomLyThuyet.OptionsBehavior.ReadOnly = true;
+            this.grvNhomLyThuyet.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.False;
             this.grvNhomLyThuyet.OptionsView.ShowGroupPanel = false;
             this.grvNhomLyThuyet.OptionsView.ShowViewCaption = true;
             this.grvNhomLyThuyet.ViewCaption = "Danh sách lý thuyết";
+            this.grvNhomLyThuyet.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvNhomLyThuyet_FocusedRowChanged);
             // 
             // Root
             // 
@@ -165,7 +167,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grcNhomLyThuyet;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 40);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(330, 523);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -174,7 +176,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnTaiLaiDanhSach;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 523);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(330, 40);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -196,9 +198,9 @@ namespace ThuVien_DienTu_CNXHKH.from
             // 
             this.richEditControl1.Location = new System.Drawing.Point(2, 2);
             this.richEditControl1.Name = "richEditControl1";
+            this.richEditControl1.ReadOnly = true;
             this.richEditControl1.Size = new System.Drawing.Size(816, 560);
             this.richEditControl1.TabIndex = 6;
-            this.richEditControl1.Text = "richEditControl1";
             // 
             // stackPanel1
             // 
@@ -242,7 +244,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             // 
             // btnTaiLieuThamKhao
             // 
-            this.btnTaiLieuThamKhao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnTaiLieuThamKhao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiLieuThamKhao.ImageOptions.Image")));
             this.btnTaiLieuThamKhao.Location = new System.Drawing.Point(444, 0);
             this.btnTaiLieuThamKhao.Name = "btnTaiLieuThamKhao";
             this.btnTaiLieuThamKhao.Size = new System.Drawing.Size(141, 23);

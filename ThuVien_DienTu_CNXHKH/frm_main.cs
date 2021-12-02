@@ -1,11 +1,15 @@
-﻿using System;
+﻿
+using DevExpress.XtraSplashScreen;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThuVien_DienTu_CNXHKH.form;
 
 namespace ThuVien_DienTu_CNXHKH
 {
@@ -42,10 +46,10 @@ namespace ThuVien_DienTu_CNXHKH
 
             }
         }
-
+        
         private void btnLyThuyet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Moform<from.frm_LyThuyet>(0);
+             Moform<from.frm_LyThuyet>(0);
         }
 
         private void btnDanhMucLyThuyet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

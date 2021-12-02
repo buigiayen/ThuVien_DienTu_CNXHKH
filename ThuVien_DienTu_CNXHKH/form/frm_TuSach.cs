@@ -81,7 +81,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (grvTuSach.FocusedRowHandle >= 0)
             {
-                commom.Commom.ThuchiencongViec.process_Application(grvTuSach.GetFocusedRowCellValue(nameField)?.ToString());
+                commom.Common.ThuchiencongViec.process_Application(grvTuSach.GetFocusedRowCellValue(nameField)?.ToString());
             }
 
 
@@ -93,7 +93,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             if (grvTuSach.FocusedRowHandle >= 0)
             {
                 string fileSource = grvTuSach.GetFocusedRowCellValue(nameField)?.ToString();
-                string filePatd = await commom.Commom.ThuchiencongViec.save_dialogFile();
+                string filePatd = await commom.Common.ThuchiencongViec.save_dialogFile();
                 if (!string.IsNullOrEmpty(fileSource) && !string.IsNullOrEmpty(filePatd))
                 {       
                     File.Copy(fileSource, filePatd);
