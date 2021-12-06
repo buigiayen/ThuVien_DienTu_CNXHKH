@@ -43,20 +43,20 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
+            this.btnLoadTraCuuKinhDien = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemMoiTraCuuKinhDien = new DevExpress.XtraEditors.SimpleButton();
+            this.grcTraCuuKinhDien = new DevExpress.XtraGrid.GridControl();
+            this.grvTraCuuKinhDien = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -70,16 +70,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
-            this.stackPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
+            this.stackPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -195,6 +195,93 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.xtraTabPage2.Size = new System.Drawing.Size(1136, 752);
             this.xtraTabPage2.Text = "Tra cứu kinh điển";
             // 
+            // layoutControl2
+            // 
+            this.layoutControl2.Controls.Add(this.stackPanel2);
+            this.layoutControl2.Controls.Add(this.grcTraCuuKinhDien);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup1;
+            this.layoutControl2.Size = new System.Drawing.Size(1136, 752);
+            this.layoutControl2.TabIndex = 7;
+            this.layoutControl2.Text = "layoutControl2";
+            // 
+            // stackPanel2
+            // 
+            this.stackPanel2.Controls.Add(this.btnLoadTraCuuKinhDien);
+            this.stackPanel2.Controls.Add(this.btnThemMoiTraCuuKinhDien);
+            this.stackPanel2.FireScrollEventOnMouseWheel = true;
+            this.stackPanel2.Location = new System.Drawing.Point(2, 2);
+            this.stackPanel2.Name = "stackPanel2";
+            this.stackPanel2.Size = new System.Drawing.Size(1132, 27);
+            this.stackPanel2.TabIndex = 6;
+            // 
+            // btnLoadTraCuuKinhDien
+            // 
+            this.btnLoadTraCuuKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadTraCuuKinhDien.ImageOptions.Image")));
+            this.btnLoadTraCuuKinhDien.Location = new System.Drawing.Point(3, 2);
+            this.btnLoadTraCuuKinhDien.Name = "btnLoadTraCuuKinhDien";
+            this.btnLoadTraCuuKinhDien.Size = new System.Drawing.Size(129, 23);
+            this.btnLoadTraCuuKinhDien.TabIndex = 0;
+            this.btnLoadTraCuuKinhDien.Text = "Tải danh sách";
+            this.btnLoadTraCuuKinhDien.Click += new System.EventHandler(this.btnLoadTraCuuKinhDien_Click);
+            // 
+            // btnThemMoiTraCuuKinhDien
+            // 
+            this.btnThemMoiTraCuuKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnThemMoiTraCuuKinhDien.Location = new System.Drawing.Point(138, 2);
+            this.btnThemMoiTraCuuKinhDien.Name = "btnThemMoiTraCuuKinhDien";
+            this.btnThemMoiTraCuuKinhDien.Size = new System.Drawing.Size(102, 23);
+            this.btnThemMoiTraCuuKinhDien.TabIndex = 1;
+            this.btnThemMoiTraCuuKinhDien.Text = "Thêm mới";
+            this.btnThemMoiTraCuuKinhDien.Click += new System.EventHandler(this.btnThemMoiTraCuuKinhDien_Click);
+            // 
+            // grcTraCuuKinhDien
+            // 
+            this.grcTraCuuKinhDien.Location = new System.Drawing.Point(2, 33);
+            this.grcTraCuuKinhDien.MainView = this.grvTraCuuKinhDien;
+            this.grcTraCuuKinhDien.Name = "grcTraCuuKinhDien";
+            this.grcTraCuuKinhDien.Size = new System.Drawing.Size(1132, 717);
+            this.grcTraCuuKinhDien.TabIndex = 5;
+            this.grcTraCuuKinhDien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvTraCuuKinhDien});
+            // 
+            // grvTraCuuKinhDien
+            // 
+            this.grvTraCuuKinhDien.GridControl = this.grcTraCuuKinhDien;
+            this.grvTraCuuKinhDien.Name = "grvTraCuuKinhDien";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem3,
+            this.layoutControlItem4});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1136, 752);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.stackPanel2;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(1136, 31);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.grcTraCuuKinhDien;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 31);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1136, 721);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // barManager1
             // 
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -235,91 +322,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 777);
             // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(2, 33);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1132, 717);
-            this.gridControl1.TabIndex = 5;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // stackPanel2
-            // 
-            this.stackPanel2.Controls.Add(this.simpleButton1);
-            this.stackPanel2.Controls.Add(this.simpleButton2);
-            this.stackPanel2.FireScrollEventOnMouseWheel = true;
-            this.stackPanel2.Location = new System.Drawing.Point(2, 2);
-            this.stackPanel2.Name = "stackPanel2";
-            this.stackPanel2.Size = new System.Drawing.Size(1132, 27);
-            this.stackPanel2.TabIndex = 6;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(3, 2);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(129, 23);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Tải danh sách";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(138, 2);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(102, 23);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Thêm mới";
-            // 
-            // layoutControl2
-            // 
-            this.layoutControl2.Controls.Add(this.stackPanel2);
-            this.layoutControl2.Controls.Add(this.gridControl1);
-            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(1136, 752);
-            this.layoutControl2.TabIndex = 7;
-            this.layoutControl2.Text = "layoutControl2";
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3,
-            this.layoutControlItem4});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1136, 752);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.stackPanel2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1136, 31);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.gridControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 31);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1136, 721);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
             // frm_TraCuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,16 +348,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
-            this.stackPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
+            this.stackPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,12 +384,12 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraEditors.SimpleButton btnThemMoiTraCuuThuatNgu;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.Utils.Layout.StackPanel stackPanel2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton btnThemMoiTraCuuKinhDien;
+        private DevExpress.XtraGrid.GridControl grcTraCuuKinhDien;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvTraCuuKinhDien;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.SimpleButton btnLoadTraCuuKinhDien;
     }
 }
