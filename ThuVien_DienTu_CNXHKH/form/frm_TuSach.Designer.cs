@@ -33,10 +33,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSach));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.grcTuSach = new DevExpress.XtraGrid.GridControl();
-            this.grvTuSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnReloadTuSach = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddSach = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -44,14 +44,14 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnAddSach = new DevExpress.XtraBars.BarButtonItem();
+            this.grvTuSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcTuSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -75,12 +75,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcTuSach.TabIndex = 4;
             this.grcTuSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvTuSach});
-            // 
-            // grvTuSach
-            // 
-            this.grvTuSach.GridControl = this.grcTuSach;
-            this.grvTuSach.Name = "grvTuSach";
-            this.grvTuSach.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grvTuSach_CellValueChanging);
             // 
             // barManager1
             // 
@@ -113,10 +107,19 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.btnReloadTuSach.Caption = "Tải lại danh sách";
             this.btnReloadTuSach.Id = 0;
-            this.btnReloadTuSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnReloadTuSach.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnReloadTuSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReloadTuSach.ImageOptions.Image")));
+            this.btnReloadTuSach.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReloadTuSach.ImageOptions.LargeImage")));
             this.btnReloadTuSach.Name = "btnReloadTuSach";
             this.btnReloadTuSach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // btnAddSach
+            // 
+            this.btnAddSach.Caption = "Thêm sách";
+            this.btnAddSach.Id = 2;
+            this.btnAddSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddSach.ImageOptions.Image")));
+            this.btnAddSach.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddSach.ImageOptions.LargeImage")));
+            this.btnAddSach.Name = "btnAddSach";
+            this.btnAddSach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddSach_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -175,14 +178,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // btnAddSach
+            // grvTuSach
             // 
-            this.btnAddSach.Caption = "Thêm sách";
-            this.btnAddSach.Id = 2;
-            this.btnAddSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
-            this.btnAddSach.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
-            this.btnAddSach.Name = "btnAddSach";
-            this.btnAddSach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddSach_ItemClick);
+            this.grvTuSach.GridControl = this.grcTuSach;
+            this.grvTuSach.Name = "grvTuSach";
+            this.grvTuSach.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
             // frm_TuSach
             // 
@@ -200,10 +200,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcTuSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +214,6 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraGrid.GridControl grcTuSach;
-        private DevExpress.XtraGrid.Views.Grid.GridView grvTuSach;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem btnReloadTuSach;
@@ -225,5 +224,6 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarButtonItem btnAddSach;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvTuSach;
     }
 }

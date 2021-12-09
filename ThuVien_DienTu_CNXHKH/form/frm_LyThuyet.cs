@@ -117,7 +117,6 @@ namespace ThuVien_DienTu_CNXHKH.from
                 {
                     XtraMessageBox.Show("Bạn đã thi bài này", "Thông báo");
                 }
-             
             }
 
 

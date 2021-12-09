@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Thi));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gridControlCauHoi = new DevExpress.XtraGrid.GridControl();
             this.gridViewCauHoi = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -39,6 +40,7 @@
             this.btnKetThucBaiThi = new DevExpress.XtraEditors.SimpleButton();
             this.btnCauTiepTheo = new DevExpress.XtraEditors.SimpleButton();
             this.btnCauTruoc = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBatDauThi = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.radioGroup_TraLoi = new DevExpress.XtraEditors.RadioGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -48,8 +50,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnBatDauThi = new DevExpress.XtraEditors.SimpleButton();
-            this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -87,6 +87,19 @@
             this.layoutControl1.Size = new System.Drawing.Size(1071, 545);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lblTime
+            // 
+            this.lblTime.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblTime.Appearance.Options.UseFont = true;
+            this.lblTime.Appearance.Options.UseForeColor = true;
+            this.lblTime.Location = new System.Drawing.Point(12, 12);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(192, 16);
+            this.lblTime.StyleController = this.layoutControl1;
+            this.lblTime.TabIndex = 9;
+            this.lblTime.Text = "Hãy bắt đầu bài thi ngay nào!";
             // 
             // groupControl3
             // 
@@ -198,6 +211,18 @@
             this.btnCauTruoc.Text = "Câu trước";
             this.btnCauTruoc.Click += new System.EventHandler(this.btnCauTruoc_Click);
             // 
+            // btnBatDauThi
+            // 
+            this.btnBatDauThi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBatDauThi.Appearance.Options.UseFont = true;
+            this.btnBatDauThi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBatDauThi.ImageOptions.Image")));
+            this.btnBatDauThi.Location = new System.Drawing.Point(121, 9);
+            this.btnBatDauThi.Name = "btnBatDauThi";
+            this.btnBatDauThi.Size = new System.Drawing.Size(100, 34);
+            this.btnBatDauThi.TabIndex = 0;
+            this.btnBatDauThi.Text = "Bắt đầu thi";
+            this.btnBatDauThi.Click += new System.EventHandler(this.btnBatDauThi_Click);
+            // 
             // groupControl2
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,30 +317,6 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // btnBatDauThi
-            // 
-            this.btnBatDauThi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBatDauThi.Appearance.Options.UseFont = true;
-            this.btnBatDauThi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnBatDauThi.Location = new System.Drawing.Point(121, 9);
-            this.btnBatDauThi.Name = "btnBatDauThi";
-            this.btnBatDauThi.Size = new System.Drawing.Size(100, 34);
-            this.btnBatDauThi.TabIndex = 0;
-            this.btnBatDauThi.Text = "Bắt đầu thi";
-            this.btnBatDauThi.Click += new System.EventHandler(this.btnBatDauThi_Click);
-            // 
-            // lblTime
-            // 
-            this.lblTime.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblTime.Appearance.Options.UseFont = true;
-            this.lblTime.Appearance.Options.UseForeColor = true;
-            this.lblTime.Location = new System.Drawing.Point(12, 12);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(1047, 16);
-            this.lblTime.StyleController = this.layoutControl1;
-            this.lblTime.TabIndex = 9;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.lblTime;
@@ -331,9 +332,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 545);
             this.Controls.Add(this.layoutControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_Thi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bài thi";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_Thi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

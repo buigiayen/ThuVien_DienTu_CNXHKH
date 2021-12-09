@@ -84,6 +84,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 }
                 else
                 {
+                    XtraMessageBox.Show("Không thể mở file, Đường dẫn không tồn tại hoặc đã xóa","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return false;
                 }
             }
