@@ -60,15 +60,15 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnPhanHoi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.lblAppInfomation = new DevExpress.XtraBars.BarStaticItem();
+            this.lblUser = new DevExpress.XtraBars.BarStaticItem();
+            this.btnLogOut = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
-            this.lblUser = new DevExpress.XtraBars.BarStaticItem();
-            this.lblAppInfomation = new DevExpress.XtraBars.BarStaticItem();
-            this.btnLogOut = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -280,7 +280,7 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationButtonImageOptions.Image = global::ThuVien_DienTu_CNXHKH.Properties.Resources.Lovepik_com_828791119_Original_Party_Emblem_Party_Building_Hand_painted_Red_Flag_Poste;
+            this.ribbonControl1.ApplicationButtonImageOptions.Image = global::ThuVien_DienTu_CNXHKH.Properties.Resources.Toast1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -346,6 +346,49 @@ namespace ThuVien_DienTu_CNXHKH
             this.repositoryItemTimeEdit1});
             this.barManager1.StatusBar = this.bar3;
             // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.lblAppInfomation),
+            new DevExpress.XtraBars.LinkPersistInfo(this.lblUser),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLogOut, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
+            // lblAppInfomation
+            // 
+            this.lblAppInfomation.Caption = "Phần mềm thư viện điện tử";
+            this.lblAppInfomation.Id = 2;
+            this.lblAppInfomation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblAppInfomation.ImageOptions.Image")));
+            this.lblAppInfomation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblAppInfomation.ImageOptions.LargeImage")));
+            this.lblAppInfomation.Name = "lblAppInfomation";
+            this.lblAppInfomation.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // lblUser
+            // 
+            this.lblUser.Caption = "User:";
+            this.lblUser.Id = 1;
+            this.lblUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.Image")));
+            this.lblUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.LargeImage")));
+            this.lblUser.Name = "lblUser";
+            this.lblUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Caption = "Đăng xuất";
+            this.btnLogOut.Id = 3;
+            this.btnLogOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.Image")));
+            this.btnLogOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.LargeImage")));
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogOut_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -378,54 +421,12 @@ namespace ThuVien_DienTu_CNXHKH
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 597);
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.lblAppInfomation),
-            new DevExpress.XtraBars.LinkPersistInfo(this.lblUser),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLogOut, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
             // repositoryItemTimeEdit1
             // 
             this.repositoryItemTimeEdit1.AutoHeight = false;
             this.repositoryItemTimeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
-            // 
-            // lblUser
-            // 
-            this.lblUser.Caption = "User:";
-            this.lblUser.Id = 1;
-            this.lblUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.Image")));
-            this.lblUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.LargeImage")));
-            this.lblUser.Name = "lblUser";
-            this.lblUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // lblAppInfomation
-            // 
-            this.lblAppInfomation.Caption = "Phần mềm thư viện điện tử";
-            this.lblAppInfomation.Id = 2;
-            this.lblAppInfomation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStaticItem1.ImageOptions.Image")));
-            this.lblAppInfomation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem1.ImageOptions.LargeImage")));
-            this.lblAppInfomation.Name = "lblAppInfomation";
-            this.lblAppInfomation.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Caption = "Đăng xuất";
-            this.btnLogOut.Id = 3;
-            this.btnLogOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.btnLogOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogOut_ItemClick);
             // 
             // frm_main
             // 
@@ -437,7 +438,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.IconOptions.Image = global::ThuVien_DienTu_CNXHKH.Properties.Resources.Lovepik_com_828791119_Original_Party_Emblem_Party_Building_Hand_painted_Red_Flag_Poste;
+            this.IconOptions.Image = global::ThuVien_DienTu_CNXHKH.Properties.Resources.Toast1;
             this.IsMdiContainer = true;
             this.Name = "frm_main";
             this.Ribbon = this.ribbonControl1;

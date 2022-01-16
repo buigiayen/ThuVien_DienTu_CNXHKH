@@ -12,6 +12,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid;
+using DevExpress.XtraBars.ToastNotifications;
+using System.Drawing;
+using DevExpress.Utils.Base;
+using System.Collections;
 
 namespace ThuVien_DienTu_CNXHKH.commom
 {
@@ -189,7 +193,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                                         ViTri = i
                                     });
 
-                                    gridControl.Invoke( new Action(() => { gridControl.DataSource = null; gridControl.DataSource = Listbook; }));
+                                    gridControl.Invoke(new Action(() => { gridControl.DataSource = null; gridControl.DataSource = Listbook; }));
                                 }
                             }
 
@@ -222,8 +226,8 @@ namespace ThuVien_DienTu_CNXHKH.commom
             }
             return FileInfos;
         }
-     
-            
+
+      
     }
 
     public class Model
@@ -264,6 +268,8 @@ namespace ThuVien_DienTu_CNXHKH.commom
             public int? LinkPDF { get; set; }
             public int ViTri { get; set; }
         }
+
+       
 
     }
 }

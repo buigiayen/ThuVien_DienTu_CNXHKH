@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Lovepik_com-828791119-Original-Party-Emblem-Party-Building-Hand-painted-Red-Flag-Poste.ico</ApplicationIcon>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -122,6 +122,7 @@
     <Compile Include="common\Common.cs" />
     <Compile Include="common\Function.cs" />
     <Compile Include="common\FunctionPattent\BaseFunction.cs" />
+    <Compile Include="common\Notification.cs" />
     <Compile Include="form\Form_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,8 +351,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Lovepik_com-828791119-Original-Party-Emblem-Party-Building-Hand-painted-Red-Flag-Poste.ico" />
-    <None Include="Resources\Lovepik_com-828791119-Original Party Emblem Party Building Hand-painted Red Flag Poste.png" />
+    <Content Include="Logo.ico" />
+    <None Include="Resources\Image2.bmp" />
+    <None Include="Resources\Toast1.png" />
+    <None Include="Resources\Toast.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

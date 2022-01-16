@@ -63,10 +63,29 @@ namespace ThuVien_DienTu_CNXHKH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lovepik_com_828791119_Original_Party_Emblem_Party_Building_Hand_painted_Red_Flag_Poste {
+        internal static System.Drawing.Bitmap Image2 {
             get {
-                object obj = ResourceManager.GetObject("Lovepik_com-828791119-Original Party Emblem Party Building Hand-painted Red Flag " +
-                        "Poste", resourceCulture);
+                object obj = ResourceManager.GetObject("Image2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Toast {
+            get {
+                object obj = ResourceManager.GetObject("Toast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Toast1 {
+            get {
+                object obj = ResourceManager.GetObject("Toast1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

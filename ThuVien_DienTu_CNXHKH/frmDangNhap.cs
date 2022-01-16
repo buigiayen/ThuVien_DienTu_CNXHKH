@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThuVien_DienTu_CNXHKH.common;
 
 namespace ThuVien_DienTu_CNXHKH
 {
@@ -27,6 +28,7 @@ namespace ThuVien_DienTu_CNXHKH
                 var login = data.UserLogins.Where(p => p.Username == username && p.Password == passWord && p.status == true).ToList();
                 if (login.Count() >0 && login != null)
                 {
+                    Notification.GetInstance().ShowInformationToast("Đăng nhập thành công!");
                     commom.Commom_static.IDUser = login.FirstOrDefault().id;
                     commom.Commom_static.InfoUser = (login.FirstOrDefault().isAdmin ? "Quản trị viên: " : "Người dùng: ") + login.FirstOrDefault().Username + " - " + login.FirstOrDefault().TenSinhVien;
                     commom.Commom_static.isAdmin = login.FirstOrDefault().isAdmin;
@@ -35,7 +37,7 @@ namespace ThuVien_DienTu_CNXHKH
                 }
                 else
                 {
-                    XtraMessageBox.Show("Tài khoản hoặc mật khẩu đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Notification.GetInstance().ShowInformationToast("Tài khoản hoặc mật khẩu đúng!");
                 }
                         
             }
