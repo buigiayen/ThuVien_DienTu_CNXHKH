@@ -61,7 +61,7 @@
             this.gridControl_KetQuaThi.Name = "gridControl_KetQuaThi";
             this.gridControl_KetQuaThi.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gridControl_KetQuaThi.Size = new System.Drawing.Size(747, 429);
+            this.gridControl_KetQuaThi.Size = new System.Drawing.Size(733, 422);
             this.gridControl_KetQuaThi.TabIndex = 0;
             this.gridControl_KetQuaThi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_KetQuaThi});
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 429);
+            this.ClientSize = new System.Drawing.Size(733, 422);
             this.Controls.Add(this.gridControl_KetQuaThi);
             this.Name = "frm_KetQuaThi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

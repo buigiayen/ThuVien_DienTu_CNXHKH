@@ -90,7 +90,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_PPT") ?? null;
             if (IDFile != null)
             {
-                commom.Common.ThuchiencongViec.process_Application(await Function.Instance.getFilePatd(IDFile));
+                commom.Common.GetInstance().process_Application(await Function.Instance.getFilePatd(IDFile));
             }
         }
 
@@ -99,7 +99,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("Link_voice") ?? null;
             if (IDFile != null)
             {
-                commom.Common.ThuchiencongViec.process_Application(await Function.Instance.getFilePatd(IDFile));
+                commom.Common.GetInstance().process_Application(await Function.Instance.getFilePatd(IDFile));
             }
         }
 

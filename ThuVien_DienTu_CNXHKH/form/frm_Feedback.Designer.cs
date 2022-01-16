@@ -169,7 +169,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.txtNoiDung.Location = new System.Drawing.Point(2, 26);
             this.txtNoiDung.MenuManager = this.barManager1;
             this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(772, 504);
+            this.txtNoiDung.Size = new System.Drawing.Size(764, 489);
             this.txtNoiDung.TabIndex = 0;
             // 
             // barManager1
@@ -717,31 +717,31 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1053, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1045, 28);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 556);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 545);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1053, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1045, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 532);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 517);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1053, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1045, 28);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 532);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 517);
             // 
             // dockManager1
             // 
@@ -767,19 +767,19 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel1.ID = new System.Guid("ced80007-f0c6-45c2-8c3c-22bb867754ef");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 24);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 28);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(277, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(277, 532);
+            this.dockPanel1.Size = new System.Drawing.Size(277, 517);
             this.dockPanel1.Text = "Tùy chọn";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.layoutControl1);
             this.dockPanel1_Container.Controls.Add(this.richEditCommentControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 26);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 38);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(270, 503);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(268, 475);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // layoutControl1
@@ -792,7 +792,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(526, 413, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(270, 503);
+            this.layoutControl1.Size = new System.Drawing.Size(268, 475);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -804,7 +804,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.btnFileAtt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnFileAtt.Properties.ReadOnly = true;
-            this.btnFileAtt.Size = new System.Drawing.Size(200, 24);
+            this.btnFileAtt.Size = new System.Drawing.Size(198, 22);
             this.btnFileAtt.StyleController = this.layoutControl1;
             this.btnFileAtt.TabIndex = 9;
             this.btnFileAtt.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnFileAtt_ButtonClick);
@@ -816,7 +816,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.lupEmailto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lupEmailto.Properties.PopupView = this.gridLookUpEdit1View;
-            this.lupEmailto.Size = new System.Drawing.Size(200, 20);
+            this.lupEmailto.Size = new System.Drawing.Size(198, 20);
             this.lupEmailto.StyleController = this.layoutControl1;
             this.lupEmailto.TabIndex = 8;
             // 
@@ -849,9 +849,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             // btnSendEmail
             // 
             this.btnSendEmail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmail.ImageOptions.Image")));
-            this.btnSendEmail.Location = new System.Drawing.Point(70, 54);
+            this.btnSendEmail.Location = new System.Drawing.Point(69, 52);
             this.btnSendEmail.Name = "btnSendEmail";
-            this.btnSendEmail.Size = new System.Drawing.Size(198, 22);
+            this.btnSendEmail.Size = new System.Drawing.Size(197, 22);
             this.btnSendEmail.StyleController = this.layoutControl1;
             this.btnSendEmail.TabIndex = 7;
             this.btnSendEmail.Text = "Gửi email";
@@ -869,23 +869,23 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.emptySpaceItem2});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(270, 503);
+            this.Root.Size = new System.Drawing.Size(268, 475);
             this.Root.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 78);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 76);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 425);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(268, 399);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnSendEmail;
-            this.layoutControlItem4.Location = new System.Drawing.Point(68, 52);
+            this.layoutControlItem4.Location = new System.Drawing.Point(67, 50);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(202, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(201, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -894,7 +894,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.lupEmailto;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(268, 24);
             this.layoutControlItem1.Text = "Email nhận:";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(63, 13);
             // 
@@ -903,16 +903,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.Control = this.btnFileAtt;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(270, 28);
+            this.layoutControlItem2.Size = new System.Drawing.Size(268, 26);
             this.layoutControlItem2.Text = "file đính kèm:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(63, 13);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 52);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 50);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(68, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(67, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // richEditCommentControl1
@@ -923,7 +923,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.richEditCommentControl1.Name = "richEditCommentControl1";
             this.richEditCommentControl1.ReadOnly = false;
             this.richEditCommentControl1.RichEditControl = this.txtNoiDung;
-            this.richEditCommentControl1.Size = new System.Drawing.Size(270, 503);
+            this.richEditCommentControl1.Size = new System.Drawing.Size(268, 475);
             this.richEditCommentControl1.TabIndex = 0;
             // 
             // richEditBarController1
@@ -999,10 +999,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.Controls.Add(this.txtTieuDe);
             this.layoutControl2.Controls.Add(this.txtNoiDung);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(277, 24);
+            this.layoutControl2.Location = new System.Drawing.Point(277, 28);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(776, 532);
+            this.layoutControl2.Size = new System.Drawing.Size(768, 517);
             this.layoutControl2.TabIndex = 3;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -1010,7 +1010,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.txtTieuDe.Location = new System.Drawing.Point(44, 2);
             this.txtTieuDe.Name = "txtTieuDe";
-            this.txtTieuDe.Size = new System.Drawing.Size(730, 20);
+            this.txtTieuDe.Size = new System.Drawing.Size(722, 20);
             this.txtTieuDe.StyleController = this.layoutControl2;
             this.txtTieuDe.TabIndex = 4;
             // 
@@ -1023,7 +1023,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem6});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(776, 532);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(768, 517);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem5
@@ -1031,7 +1031,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem5.Control = this.txtNoiDung;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(776, 508);
+            this.layoutControlItem5.Size = new System.Drawing.Size(768, 493);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -1040,7 +1040,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem6.Control = this.txtTieuDe;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(776, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(768, 24);
             this.layoutControlItem6.Text = "Tiêu đề:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(39, 13);
             // 
@@ -1048,7 +1048,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 556);
+            this.ClientSize = new System.Drawing.Size(1045, 545);
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.barDockControlLeft);

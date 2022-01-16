@@ -32,9 +32,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_NhomSachKinhDien));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.btnEditGroupBook = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddNewGroupBook = new DevExpress.XtraEditors.SimpleButton();
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
             this.grcSachKinhDien = new DevExpress.XtraGrid.GridControl();
             this.grvSachKinhDien = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,10 +52,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcSachKinhDien)).BeginInit();
@@ -69,17 +65,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton5);
             this.layoutControl1.Controls.Add(this.btnEditGroupBook);
-            this.layoutControl1.Controls.Add(this.btnAddNewGroupBook);
             this.layoutControl1.Controls.Add(this.btnReload);
             this.layoutControl1.Controls.Add(this.grcSachKinhDien);
             this.layoutControl1.Controls.Add(this.grcNhomSachKinhDien);
@@ -88,49 +80,27 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 306, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1014, 577);
+            this.layoutControl1.Size = new System.Drawing.Size(1006, 566);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(296, 2);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(168, 22);
-            this.simpleButton5.StyleController = this.layoutControl1;
-            this.simpleButton5.TabIndex = 10;
-            this.simpleButton5.Text = "Thêm mới danh sách kinh điển";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // btnEditGroupBook
             // 
             this.btnEditGroupBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditGroupBook.ImageOptions.Image")));
-            this.btnEditGroupBook.Location = new System.Drawing.Point(468, 2);
+            this.btnEditGroupBook.Location = new System.Drawing.Point(121, 2);
             this.btnEditGroupBook.Name = "btnEditGroupBook";
-            this.btnEditGroupBook.Size = new System.Drawing.Size(85, 22);
+            this.btnEditGroupBook.Size = new System.Drawing.Size(148, 22);
             this.btnEditGroupBook.StyleController = this.layoutControl1;
             this.btnEditGroupBook.TabIndex = 8;
             this.btnEditGroupBook.Text = "Sửa";
             this.btnEditGroupBook.Click += new System.EventHandler(this.btnEditGroupBook_Click);
-            // 
-            // btnAddNewGroupBook
-            // 
-            this.btnAddNewGroupBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewGroupBook.ImageOptions.Image")));
-            this.btnAddNewGroupBook.Location = new System.Drawing.Point(122, 2);
-            this.btnAddNewGroupBook.Name = "btnAddNewGroupBook";
-            this.btnAddNewGroupBook.Size = new System.Drawing.Size(170, 22);
-            this.btnAddNewGroupBook.StyleController = this.layoutControl1;
-            this.btnAddNewGroupBook.TabIndex = 7;
-            this.btnAddNewGroupBook.Text = "Thêm mới nhóm sách kinh điển";
-            this.btnAddNewGroupBook.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btnReload
             // 
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.Location = new System.Drawing.Point(2, 2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(116, 22);
+            this.btnReload.Size = new System.Drawing.Size(115, 22);
             this.btnReload.StyleController = this.layoutControl1;
             this.btnReload.TabIndex = 6;
             this.btnReload.Text = "Tải danh sách";
@@ -138,11 +108,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // grcSachKinhDien
             // 
-            this.grcSachKinhDien.Location = new System.Drawing.Point(527, 28);
+            this.grcSachKinhDien.Location = new System.Drawing.Point(273, 28);
             this.grcSachKinhDien.MainView = this.grvSachKinhDien;
             this.grcSachKinhDien.MenuManager = this.barManager1;
             this.grcSachKinhDien.Name = "grcSachKinhDien";
-            this.grcSachKinhDien.Size = new System.Drawing.Size(485, 547);
+            this.grcSachKinhDien.Size = new System.Drawing.Size(731, 536);
             this.grcSachKinhDien.TabIndex = 5;
             this.grcSachKinhDien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvSachKinhDien});
@@ -174,15 +144,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1014, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1006, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 577);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 566);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1014, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1006, 0);
             // 
             // barDockControlLeft
             // 
@@ -190,15 +160,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 577);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 566);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1014, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1006, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 577);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
             // 
             // btnTaiDanhSach
             // 
@@ -241,7 +211,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcNhomSachKinhDien.MainView = this.grvNhomSachKinhDien;
             this.grcNhomSachKinhDien.MenuManager = this.barManager1;
             this.grcNhomSachKinhDien.Name = "grcNhomSachKinhDien";
-            this.grcNhomSachKinhDien.Size = new System.Drawing.Size(521, 547);
+            this.grcNhomSachKinhDien.Size = new System.Drawing.Size(267, 536);
             this.grcNhomSachKinhDien.TabIndex = 4;
             this.grcNhomSachKinhDien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvNhomSachKinhDien});
@@ -261,13 +231,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4,
             this.layoutControlItem5,
-            this.emptySpaceItem2,
-            this.layoutControlItem7});
+            this.emptySpaceItem2});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(1014, 577);
+            this.Root.Size = new System.Drawing.Size(1006, 566);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -275,16 +243,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.grcNhomSachKinhDien;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(525, 551);
+            this.layoutControlItem1.Size = new System.Drawing.Size(271, 540);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.grcSachKinhDien;
-            this.layoutControlItem2.Location = new System.Drawing.Point(525, 26);
+            this.layoutControlItem2.Location = new System.Drawing.Point(271, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(489, 551);
+            this.layoutControlItem2.Size = new System.Drawing.Size(735, 540);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -293,50 +261,32 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem3.Control = this.btnReload;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(120, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(119, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.btnAddNewGroupBook;
-            this.layoutControlItem4.Location = new System.Drawing.Point(120, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(174, 26);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnEditGroupBook;
-            this.layoutControlItem5.Location = new System.Drawing.Point(466, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(119, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(89, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(152, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(555, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(271, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(459, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(735, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.simpleButton5;
-            this.layoutControlItem7.Location = new System.Drawing.Point(294, 0);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(172, 26);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
             // 
             // Frm_NhomSachKinhDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 577);
+            this.ClientSize = new System.Drawing.Size(1006, 566);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -356,10 +306,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,14 +333,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraGrid.Views.Grid.GridView grvSachKinhDien;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton btnEditGroupBook;
-        private DevExpress.XtraEditors.SimpleButton btnAddNewGroupBook;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
     }
 }

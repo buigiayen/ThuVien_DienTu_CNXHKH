@@ -61,7 +61,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(949, 605);
+            this.layoutControl1.Size = new System.Drawing.Size(941, 594);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -71,13 +71,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.stackPanel1.Controls.Add(this.btnThemMoi);
             this.stackPanel1.Location = new System.Drawing.Point(2, 2);
             this.stackPanel1.Name = "stackPanel1";
-            this.stackPanel1.Size = new System.Drawing.Size(945, 37);
+            this.stackPanel1.Size = new System.Drawing.Size(937, 36);
             this.stackPanel1.TabIndex = 5;
             // 
             // btnReload
             // 
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
-            this.btnReload.Location = new System.Drawing.Point(3, 7);
+            this.btnReload.Location = new System.Drawing.Point(3, 6);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(113, 23);
             this.btnReload.TabIndex = 0;
@@ -86,8 +86,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // btnThemMoi
             // 
-            this.btnThemMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnThemMoi.Location = new System.Drawing.Point(122, 7);
+            this.btnThemMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoi.ImageOptions.Image")));
+            this.btnThemMoi.Location = new System.Drawing.Point(122, 6);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
             this.btnThemMoi.TabIndex = 1;
@@ -96,12 +96,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // grcList
             // 
-            this.grcList.Location = new System.Drawing.Point(2, 43);
+            this.grcList.Location = new System.Drawing.Point(2, 42);
             this.grcList.MainView = this.grvList;
             this.grcList.Name = "grcList";
             this.grcList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnShowFile});
-            this.grcList.Size = new System.Drawing.Size(945, 560);
+            this.grcList.Size = new System.Drawing.Size(937, 550);
             this.grcList.TabIndex = 4;
             this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvList});
@@ -139,15 +139,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(949, 605);
+            this.Root.Size = new System.Drawing.Size(941, 594);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grcList;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 41);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(949, 564);
+            this.layoutControlItem1.Size = new System.Drawing.Size(941, 554);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -156,7 +156,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.Control = this.stackPanel1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(949, 41);
+            this.layoutControlItem2.Size = new System.Drawing.Size(941, 40);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -164,7 +164,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 605);
+            this.ClientSize = new System.Drawing.Size(941, 594);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frm_TaiLieuThamKhao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

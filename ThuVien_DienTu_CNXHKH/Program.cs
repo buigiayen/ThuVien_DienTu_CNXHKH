@@ -20,7 +20,7 @@ namespace ThuVien_DienTu_CNXHKH
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += new ThreadExceptionEventHandler(threadException);
-            Application.Run(new frmDangNhap());
+            Application.Run(new frm_main(false));
         }
         private static void threadException(object sender, ThreadExceptionEventArgs e)
         {

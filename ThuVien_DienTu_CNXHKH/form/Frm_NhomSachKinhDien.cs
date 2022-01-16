@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThuVien_DienTu_CNXHKH.commom;
 using static Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol;
 
 namespace ThuVien_DienTu_CNXHKH.form
@@ -19,11 +20,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             InitializeComponent();
             
         }
-
-      
-
         private database.TV data = new database.TV();
-
         private void LoadNhomSach()
         {
             grcNhomSachKinhDien.DataSource = data.TuSachKinhDiens.ToList();
@@ -31,7 +28,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             grcSachKinhDien.DataSource = data.SachKinhDiens.ToList();
             grvSachKinhDien.OptionsBehavior.Editable = false;
         }
-
         private void Frm_NhomSachKinhDien_Load(object sender, EventArgs e)
         {
             LoadGridControl_TuSachKinhDien_Nhom();
@@ -55,66 +51,72 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "ID", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Nhóm sách", FieldName_Columns = "IDNhomSachKinhDien" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Sách", FieldName_Columns = "TenBai" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Link bài", FieldName_Columns = "linkPPT" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Link bài", FieldName_Columns = "link_File" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status" });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
-            Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
-            columns_GridLookUpedit.Add("Mã", "ID");
-            columns_GridLookUpedit.Add("Nhóm", "TenTuSach");
+            Dictionary<string, string> columns_GridLookUpedit;
+            //PDF
             {
-                List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "linkPPT", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnUploadFile", toolTip = "upload File", Action = new Action(() => OpenSaveFile(1, "linkPPT")) });
-                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+                columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "ID");
+                columns_GridLookUpedit.Add("Tên file", "FileName");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_PDF), new string[] { "link_File" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
             }
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.TuSachKinhDiens.ToList(), new string[] { "IDNhomSachKinhDien" }, columns_GridLookUpedit, "ID", "TenTuSach");
+            {
+                columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "ID");
+                columns_GridLookUpedit.Add("Nhóm", "TenTuSach");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.TuSachKinhDiens.ToList(), new string[] { "IDNhomSachKinhDien" }, columns_GridLookUpedit, "ID", "TenTuSach");
+            }
+            grvSachKinhDien.CellValueChanging += GrvSachKinhDien_CellValueChanging;
         }
-        private void OpenSaveFile(int value, string nameFiled)
+
+        private async void GrvSachKinhDien_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-       
-            XtraOpenFileDialog openFileDialog = new XtraOpenFileDialog();
-            if (value == 2)
+            if (e.RowHandle >= 0)
             {
-                openFileDialog.Filter = "mp3 files (*.mp3)|*.mp3";
-            }
-            else
-            {
-                openFileDialog.Filter = "All files (*.*)|*.*";
-            }
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (!string.IsNullOrEmpty(openFileDialog.FileName))
+                int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
+                database.SachKinhDien SachKinhDien = data.SachKinhDiens.SingleOrDefault(p => p.ID == _ID);
+                if (e.Column.FieldName == "IDNhomSachKinhDien")
                 {
-
-                    DevExpress.XtraGrid.Columns.GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-                    gridColumn.FieldName = nameFiled;
-                    
+                    SachKinhDien.IDNhomSachKinhDien = (int)e.Value;
                 }
-
+                if (e.Column.FieldName == "TenBai")
+                {
+                    SachKinhDien.TenBai = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "link_File")
+                {
+                    SachKinhDien.link_File = (int)e.Value;
+                }
+                if (e.Column.FieldName == "status")
+                {
+                    SachKinhDien.status = (bool)e.Value;
+                }
+                data.SaveChanges();
             }
+         
         }
+
         private void grvList_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            int _ID = (int)grvNhomSachKinhDien.GetFocusedRowCellValue("ID");
-            database.TuSachKinhDien tuSachKinhDiens = data.TuSachKinhDiens.SingleOrDefault(p => p.ID == _ID);
-            if (e.Column.FieldName == "TenTuSach")
+            if (e.RowHandle >0)
             {
-                tuSachKinhDiens.TenTuSach = e.Value.ToString();
+                int _ID = (int)grvNhomSachKinhDien.GetFocusedRowCellValue("ID");
+                database.TuSachKinhDien tuSachKinhDiens = data.TuSachKinhDiens.SingleOrDefault(p => p.ID == _ID);
+                if (e.Column.FieldName == "TenTuSach")
+                {
+                    tuSachKinhDiens.TenTuSach = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "status")
+                {
+                    tuSachKinhDiens.status = (bool)e.Value;
+                }
+                data.SaveChanges();
             }
-            if (e.Column.FieldName == "status")
-            {
-                tuSachKinhDiens.status = (bool)e.Value;
-            }
-            data.SaveChanges();
+          
         }
       
-       
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            Form_Panel form_Panel = new Form_Panel(Form_Panel.FormName.ThemMoiNhomSachKinhDien, "Thêm mới nhóm tủ sách kinh điển");
-            form_Panel.ShowDialog();
-        }
-
         private void btnEditGroupBook_Click(object sender, EventArgs e)
         {
             if (btnEditGroupBook.Text.Contains("Sửa"))
@@ -134,10 +136,5 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadNhomSach);
         }
 
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            Form_Panel form_Panel = new Form_Panel(Form_Panel.FormName.ThemMoiSachKinhDien, "Thêm mới tủ sách kinh điển");
-            form_Panel.ShowDialog();
-        }
     }
 }

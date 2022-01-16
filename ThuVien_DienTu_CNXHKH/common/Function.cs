@@ -47,7 +47,47 @@ namespace ThuVien_DienTu_CNXHKH.commom
             return data.BaiThis.Where(p => p.UserId == idUser && p.BaiVietId == idbaithi).ToList();
         }
 
+        public async Task<List<KQThi>> KQThisAsync(int? UserID, int? IDBaiViet)
+        {
+            List<KQThi> kQThis = (from bv in data.tbl_BaiViet.Where(p => p.id == IDBaiViet)
+                                  join ch in data.CauHois on bv.id equals ch.BaiVietId
+                                  join ctl in data.CauTraLois on ch.IdCauTraLoiDung equals ctl.Id
+                                  join bt in data.BaiThis on bv.id equals bt.BaiVietId
+                                  join us in data.UserLogins on bt.UserId equals us.id
+                                  select new KQThi
+                                  {
+                                      IDBaiThi = bv.id,
+                                      TenBai = bv.TenBaiViet,
+                                      User = us.id,
+                                      UserName = us.TenSinhVien,
 
+                                  }).ToList();
+
+            return kQThis;
+        }
+        public async Task<string> ChangePassword(int UserID,string passold, string passnew)
+        {
+         
+            string passoldHashMD5 = commom.Common.GetInstance().Md5(passold);
+            string passNewHashMD5 = commom.Common.GetInstance().Md5(passnew);
+            string dataPassOld = data.UserLogins.Where(p => p.id == UserID).FirstOrDefault().Password;
+            if (!dataPassOld.Equals(passoldHashMD5)) return "Mật khẩu chưa chính xác!";
+            var UserLogin = data.UserLogins.Single(p => p.id == UserID);
+            UserLogin.Password = passNewHashMD5;
+            data.SaveChanges();
+            return "Thay đổi mật khẩu thành công!";
+        }
 
     }
+    public class KQThi
+    {
+        public int IDBaiThi { get; set; }
+        public string TenBai { get; set; }
+        public int User { get; set; }
+        public string UserName { get; set; }
+        public string CauHoi { get; set; }
+        public string CauTraLoiCuaBan { get; set; }
+
+    }
+
 }

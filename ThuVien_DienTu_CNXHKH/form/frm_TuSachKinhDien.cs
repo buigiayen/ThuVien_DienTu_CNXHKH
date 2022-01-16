@@ -14,6 +14,8 @@ using System.Windows.Forms;
 using static Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol;
 using static ThuVien_DienTu_CNXHKH.commom.Model;
 using DevExpress.Pdf;
+using ThuVien_DienTu_CNXHKH.commom;
+using System.Threading;
 
 namespace ThuVien_DienTu_CNXHKH.form
 {
@@ -36,41 +38,45 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã bài", FieldName_Columns = "IDBai", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên bài", FieldName_Columns = "TenSach" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "LinkPDF", FieldName_Columns = "LinkPDF", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Trang", FieldName_Columns = "ViTri", Visible = false });
+
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
                 button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenSach", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnViewGroupBook", toolTip = "Xem nhóm", Action = new Action(() => ShowViewBook("LinkPDF")) });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
                 grvNhomSach.Columns["TenTuSach"].GroupIndex = 1;
-
             }
-        }
 
-        private async void ShowViewBook(string Colname)
+            grvNhomSach.OptionsBehavior.ReadOnly = true;
+        }
+        private async void ShowViewBook(string Colname, int? Page = null)
         {
             if (!string.IsNullOrEmpty(Colname))
             {
-                string LinkPDF = grvNhomSach.GetFocusedRowCellValue(Colname)?.ToString();
-                if (!string.IsNullOrEmpty(LinkPDF))
+                string filePath = await commom.Function.Instance.getFilePatd(Convert.ToInt32(grvNhomSach.GetFocusedRowCellValue(Colname)?.ToString()));
+                pdfViewer1.LoadDocument(filePath);
+                if (Page != null)
                 {
-                    pdfViewer1.LoadDocument(LinkPDF);
+                    pdfViewer1.CurrentPageNumber = Convert.ToInt32(Page);
+                    pdfViewer1.FindText(btnTimKiemToanTap.Text);
+
                 }
             }
         }
-
-
         private async void reload_Group_Book()
         {
-            var datas = (from ns in data.TuSachKinhDiens
-                         join ss in data.SachKinhDiens.Where(p => p.status == true) on ns.ID equals ss.IDNhomSachKinhDien
-                         select new
-                         {
-                             ID = ns.ID,
-                             TenTuSach = ns.TenTuSach,
-                             IDBai = ss.IDNhomSachKinhDien,
-                             TenSach = ss.TenBai,
-                             LinkPDF = ss.link_File
-                         }).ToList();
+            List<Model.Books> datas = (from ns in data.TuSachKinhDiens
+                                       join ss in data.SachKinhDiens.Where(p => p.status == true) on ns.ID equals ss.IDNhomSachKinhDien
+                                       select new Model.Books
+                                       {
+                                           ID = ns.ID,
+                                           TenTuSach = ns.TenTuSach,
+                                           IDBai = ss.IDNhomSachKinhDien,
+                                           TenSach = ss.TenBai,
+                                           LinkPDF = ss.link_File,
+                                           ViTri = 0
+                                       }).ToList();
             grcNhomSach.DataSource = datas;
             grvNhomSach.ExpandAllGroups();
         }
@@ -82,26 +88,26 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void btnTimKiemToanTap_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(new Action(() => { FindKey(btnTimKiemToanTap.Text); }));
+            grvNhomSach.ExpandAllGroups();
+            grvNhomSach.Columns["ViTri"].Visible = true;
+            grvNhomSach.Columns["TenSach"].GroupIndex = 2;
+            {
+                List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
+                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "ViTri", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnViewPageBook", toolTip = "Chuyển đến trang", Action = new Action(() => ShowViewBook("LinkPDF", (int)grvNhomSach.GetFocusedRowCellValue("ViTri"))) });
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+            }
+          
+            FindKey(btnTimKiemToanTap.Text);
+        
         }
 
 
-        private async void FindKey(string text)
+        private async Task FindKey(string text)
         {
-            List<FindCheck> keyValuePairs = new List<FindCheck>();
-            for (int i = 0; i < grvNhomSach.RowCount; i++)
+            if (!string.IsNullOrEmpty(text) && grvNhomSach.RowCount >= 0)
             {
-
-                string LinkPDF = grvNhomSach.GetRowCellValue(i, "LinkPDF")?.ToString();
-                keyValuePairs.Add(new FindCheck
-                {
-                    Key = text,
-                    Name = grvNhomSach.GetRowCellValue(i, "TenTuSach")?.ToString() + "-" + grvNhomSach.GetRowCellValue(i, "TenSach")?.ToString(),
-                    Tep = grvNhomSach.GetRowCellValue(i, "LinkPDF")?.ToString(),
-                    Vitri = "Dòng 1 trang 2",
-                    Valid = await commom.Common.ThuchiencongViec.GetTextFromPDF(LinkPDF,text)
-                });
-
+                var dataList = (List<Model.Books>)grcNhomSach.DataSource;
+                Task.Run(() => commom.Common.GetInstance().GetContextFromPDF(dataList, text, grcNhomSach));
             }
 
         }

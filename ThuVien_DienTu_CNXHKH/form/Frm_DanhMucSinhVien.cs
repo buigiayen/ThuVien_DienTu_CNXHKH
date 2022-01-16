@@ -31,13 +31,25 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên sinh viên", FieldName_Columns = "TenSinhVien" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Quyền admin", FieldName_Columns = "isAdmin" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Sử dụng", FieldName_Columns = "status" });
+
+            List<properties.Button_edit> listButton = new List<properties.Button_edit>();
+            listButton.Add(new properties.Button_edit { buttonIndex = 0, colname = "Username", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Redo, Action = ShowChangePassword });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
-            
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(listButton);
         }
+
+        private void ShowChangePassword()
+        {
+            int UserID =(int)grvDanhSachSinhVien.GetFocusedRowCellValue("id");
+            string UserName = grvDanhSachSinhVien.GetFocusedRowCellValue("Username").ToString();
+            frm_ChangePassword frm = new frm_ChangePassword(UserID, UserName);
+            frm.ShowDialog();
+        }
+
         private void btnTaiDanhSach_Click(object sender, EventArgs e)
         {
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadDSSinHVien);
-           
+
         }
         private void LoadDSSinHVien()
         {

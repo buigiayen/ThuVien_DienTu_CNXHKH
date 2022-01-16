@@ -43,7 +43,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
                 button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenSach", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShow", toolTip = "Xem sách", Action = new Action(() => Show_task("ID_File")) });
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 1, colname = "TenSach", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, NameButton = "btnDownFile", toolTip = "Tải bài", Action = new Action(() => DownLoadFile("LinkSach")) });
+                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 1, colname = "TenSach", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, NameButton = "btnDownFile", toolTip = "Tải bài", Action = new Action(() => DownLoadFile("ID_File")) });
                 if (commom.Commom_static.isAdmin)
                 {
                     button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 2, colname = "TenSach", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, NameButton = "btnDeleteBook", toolTip = "Xóa bài", Action = new Action(() => Delete_Book()) });
@@ -63,6 +63,43 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
+            grvTuSach.CellValueChanging += GrvTuSach_CellValueChanging;
+
+        }
+
+        private async void GrvTuSach_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (grvTuSach.FocusedRowHandle >= 0)
+            {
+                int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
+                database.tuSach ts = data.tuSaches.Single(p => p.ID == iDBook);
+                if (e.Column.FieldName == "status")
+                {
+                    ts.status = (bool)e.Value;
+                }
+                if (e.Column.FieldName == "TacGia")
+                {
+                    ts.TacGia = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "LoaiTaiLieu")
+                {
+                    ts.LoaiTaiLieu = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "NamXuatBan")
+                {
+                    ts.NamXuatBan = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "ID_File")
+                {
+                    ts.ID_File = (int)e.Value;
+                }
+                if (e.Column.FieldName == "TenSach")
+                {
+                    ts.TenSach = e.Value.ToString();
+                }
+
+                data.SaveChanges();
+            }
 
 
         }
@@ -75,7 +112,8 @@ namespace ThuVien_DienTu_CNXHKH.form
                 if (r == DialogResult.OK)
                 {
                     int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
-                    data.tuSaches.Remove(new database.tuSach { ID = iDBook });
+                    var DeleteBook = data.tuSaches.Single(p => p.ID == iDBook);
+                    data.tuSaches.Remove(DeleteBook);
                     data.SaveChanges();
                     Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(ShowBook);
                 }
@@ -98,15 +136,16 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (grvTuSach.FocusedRowHandle >= 0 && grvTuSach.GetFocusedRowCellValue(nameField) != null)
             {
-                commom.Common.ThuchiencongViec.process_Application( await commom.Function.Instance.getFilePatd((int)grvTuSach.GetFocusedRowCellValue(nameField)));
+                commom.Common.GetInstance().process_Application( await commom.Function.Instance.getFilePatd((int)grvTuSach.GetFocusedRowCellValue(nameField)));
             }
         }
         private async void DownLoadFile(string nameField)
         {
             if (grvTuSach.FocusedRowHandle >= 0 && grvTuSach.GetFocusedRowCellValue(nameField) != null)
             {
-                string fileSource = grvTuSach.GetFocusedRowCellValue(nameField)?.ToString();
-                string filePatd = await commom.Common.ThuchiencongViec.save_dialogFile();
+                string fileSource = await commom.Function.Instance.getFilePatd((int)grvTuSach.GetFocusedRowCellValue(nameField));
+                string filePatd = await commom.Common.GetInstance().save_dialogFile();
+                
                 if (!string.IsNullOrEmpty(fileSource) && !string.IsNullOrEmpty(filePatd))
                 {
                     File.Copy(fileSource, filePatd);
@@ -122,41 +161,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(ShowBook);
         }
 
-        private void grvTuSach_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            if (grvTuSach.FocusedRowHandle >= 0)
-            {
-                int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
-                database.tuSach ts = data.tuSaches.Single(p => p.ID == iDBook);
-                if (e.Column.FieldName == "status")
-                {
-                    ts.status = (bool)e.Value;
-                }
-                if (e.Column.FieldName == "TacGia")
-                {
-                    ts.TacGia = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "LoaiTaiLieu")
-                {
-                    ts.LoaiTaiLieu = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "NamXuatBan")
-                {
-                    ts.NamXuatBan = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "LinkSach")
-                {
-                    ts.ID_File = (int)e.Value;
-                }
-                if (e.Column.FieldName == "TenSach")
-                {
-                    ts.TenSach = e.Value.ToString();
-                }
-
-                data.SaveChanges();
-            }
-
-
-        }
+      
     }
 }

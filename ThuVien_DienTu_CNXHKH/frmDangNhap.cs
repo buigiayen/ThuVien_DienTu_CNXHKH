@@ -23,15 +23,15 @@ namespace ThuVien_DienTu_CNXHKH
             if (!string.IsNullOrEmpty(txtUsername.Text) || !string.IsNullOrEmpty(txtPassword.Text))
             {
                 string username = txtUsername.Text;
-                string passWord = commom.Common.ThuchiencongViec.Md5(txtPassword.Text);
+                string passWord = commom.Common.GetInstance().Md5(txtPassword.Text);
                 var login = data.UserLogins.Where(p => p.Username == username && p.Password == passWord && p.status == true).ToList();
                 if (login.Count() >0 && login != null)
                 {
                     commom.Commom_static.IDUser = login.FirstOrDefault().id;
+                    commom.Commom_static.InfoUser = (login.FirstOrDefault().isAdmin ? "Quản trị viên: " : "Người dùng: ") + login.FirstOrDefault().Username + " - " + login.FirstOrDefault().TenSinhVien;
                     commom.Commom_static.isAdmin = login.FirstOrDefault().isAdmin;
-                    frm_main frm = new frm_main();
+                    frm_main frm = new frm_main(true);
                     this.Hide();
-                    frm.ShowDialog();
                 }
                 else
                 {

@@ -61,16 +61,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 261, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1098, 522);
+            this.layoutControl1.Size = new System.Drawing.Size(1090, 511);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnThemMoiSinhVien
             // 
             this.btnThemMoiSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoiSinhVien.ImageOptions.Image")));
-            this.btnThemMoiSinhVien.Location = new System.Drawing.Point(149, 2);
+            this.btnThemMoiSinhVien.Location = new System.Drawing.Point(148, 2);
             this.btnThemMoiSinhVien.Name = "btnThemMoiSinhVien";
-            this.btnThemMoiSinhVien.Size = new System.Drawing.Size(160, 22);
+            this.btnThemMoiSinhVien.Size = new System.Drawing.Size(159, 22);
             this.btnThemMoiSinhVien.StyleController = this.layoutControl1;
             this.btnThemMoiSinhVien.TabIndex = 6;
             this.btnThemMoiSinhVien.Text = "Thêm mới sinh viên";
@@ -81,7 +81,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.btnTaiDanhSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiDanhSach.ImageOptions.Image")));
             this.btnTaiDanhSach.Location = new System.Drawing.Point(2, 2);
             this.btnTaiDanhSach.Name = "btnTaiDanhSach";
-            this.btnTaiDanhSach.Size = new System.Drawing.Size(143, 22);
+            this.btnTaiDanhSach.Size = new System.Drawing.Size(142, 22);
             this.btnTaiDanhSach.StyleController = this.layoutControl1;
             this.btnTaiDanhSach.TabIndex = 5;
             this.btnTaiDanhSach.Text = "Tải danh sách";
@@ -92,7 +92,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcDanhSachSinhVien.Location = new System.Drawing.Point(2, 28);
             this.grcDanhSachSinhVien.MainView = this.grvDanhSachSinhVien;
             this.grcDanhSachSinhVien.Name = "grcDanhSachSinhVien";
-            this.grcDanhSachSinhVien.Size = new System.Drawing.Size(1094, 492);
+            this.grcDanhSachSinhVien.Size = new System.Drawing.Size(1086, 481);
             this.grcDanhSachSinhVien.TabIndex = 4;
             this.grcDanhSachSinhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvDanhSachSinhVien});
@@ -113,7 +113,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.emptySpaceItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(1098, 522);
+            this.Root.Size = new System.Drawing.Size(1090, 511);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -121,7 +121,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.grcDanhSachSinhVien;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1098, 496);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1090, 485);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -130,32 +130,32 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.Control = this.btnTaiDanhSach;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(147, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(146, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnThemMoiSinhVien;
-            this.layoutControlItem3.Location = new System.Drawing.Point(147, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(146, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(164, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(163, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(311, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(309, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(787, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(781, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Frm_DanhMucSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 522);
+            this.ClientSize = new System.Drawing.Size(1090, 511);
             this.Controls.Add(this.layoutControl1);
             this.Name = "Frm_DanhMucSinhVien";
             this.Text = "Danh mục sinh viên";

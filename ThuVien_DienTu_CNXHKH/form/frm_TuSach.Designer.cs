@@ -33,6 +33,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSach));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.grcTuSach = new DevExpress.XtraGrid.GridControl();
+            this.grvTuSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnReloadTuSach = new DevExpress.XtraBars.BarButtonItem();
@@ -44,14 +45,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.grvTuSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcTuSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -61,7 +61,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(861, 489);
+            this.layoutControl1.Size = new System.Drawing.Size(847, 478);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -71,10 +71,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcTuSach.MainView = this.grvTuSach;
             this.grcTuSach.MenuManager = this.barManager1;
             this.grcTuSach.Name = "grcTuSach";
-            this.grcTuSach.Size = new System.Drawing.Size(857, 485);
+            this.grcTuSach.Size = new System.Drawing.Size(843, 474);
             this.grcTuSach.TabIndex = 4;
             this.grcTuSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvTuSach});
+            // 
+            // grvTuSach
+            // 
+            this.grvTuSach.GridControl = this.grcTuSach;
+            this.grvTuSach.Name = "grvTuSach";
+            this.grvTuSach.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
             // barManager1
             // 
@@ -127,15 +133,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(861, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(847, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 489);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 478);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(861, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(847, 28);
             // 
             // barDockControlLeft
             // 
@@ -143,15 +149,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 478);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(861, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(847, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 478);
             // 
             // barButtonItem2
             // 
@@ -166,7 +172,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(861, 489);
+            this.Root.Size = new System.Drawing.Size(847, 478);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -174,21 +180,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.grcTuSach;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(861, 489);
+            this.layoutControlItem1.Size = new System.Drawing.Size(847, 478);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // grvTuSach
-            // 
-            this.grvTuSach.GridControl = this.grcTuSach;
-            this.grvTuSach.Name = "grvTuSach";
-            this.grvTuSach.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
             // frm_TuSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 513);
+            this.ClientSize = new System.Drawing.Size(847, 506);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -200,10 +200,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcTuSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

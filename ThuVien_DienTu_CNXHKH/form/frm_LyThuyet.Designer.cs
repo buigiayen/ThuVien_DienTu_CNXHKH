@@ -97,15 +97,15 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.dockPanel1.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(337, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(337, 592);
+            this.dockPanel1.Size = new System.Drawing.Size(337, 585);
             this.dockPanel1.Text = "Tùy chọn";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.layoutControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 26);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 38);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(330, 563);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(328, 543);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // layoutControl1
@@ -116,16 +116,16 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(330, 563);
+            this.layoutControl1.Size = new System.Drawing.Size(328, 543);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnTaiLaiDanhSach
             // 
             this.btnTaiLaiDanhSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiLaiDanhSach.ImageOptions.Image")));
-            this.btnTaiLaiDanhSach.Location = new System.Drawing.Point(2, 525);
+            this.btnTaiLaiDanhSach.Location = new System.Drawing.Point(2, 505);
             this.btnTaiLaiDanhSach.Name = "btnTaiLaiDanhSach";
-            this.btnTaiLaiDanhSach.Size = new System.Drawing.Size(326, 36);
+            this.btnTaiLaiDanhSach.Size = new System.Drawing.Size(324, 36);
             this.btnTaiLaiDanhSach.StyleController = this.layoutControl1;
             this.btnTaiLaiDanhSach.TabIndex = 4;
             this.btnTaiLaiDanhSach.Text = "Tải lại danh sách";
@@ -136,7 +136,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.grcNhomLyThuyet.Location = new System.Drawing.Point(2, 2);
             this.grcNhomLyThuyet.MainView = this.grvNhomLyThuyet;
             this.grcNhomLyThuyet.Name = "grcNhomLyThuyet";
-            this.grcNhomLyThuyet.Size = new System.Drawing.Size(326, 519);
+            this.grcNhomLyThuyet.Size = new System.Drawing.Size(324, 499);
             this.grcNhomLyThuyet.TabIndex = 0;
             this.grcNhomLyThuyet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvNhomLyThuyet});
@@ -161,7 +161,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(330, 563);
+            this.Root.Size = new System.Drawing.Size(328, 543);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -169,16 +169,16 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlItem1.Control = this.grcNhomLyThuyet;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(330, 523);
+            this.layoutControlItem1.Size = new System.Drawing.Size(328, 503);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnTaiLaiDanhSach;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 523);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 503);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(330, 40);
+            this.layoutControlItem2.Size = new System.Drawing.Size(328, 40);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -190,7 +190,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControl2.Location = new System.Drawing.Point(337, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(820, 592);
+            this.layoutControl2.Size = new System.Drawing.Size(806, 585);
             this.layoutControl2.TabIndex = 3;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -199,7 +199,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.richEditControl1.Location = new System.Drawing.Point(2, 2);
             this.richEditControl1.Name = "richEditControl1";
             this.richEditControl1.ReadOnly = true;
-            this.richEditControl1.Size = new System.Drawing.Size(816, 560);
+            this.richEditControl1.Size = new System.Drawing.Size(802, 554);
             this.richEditControl1.TabIndex = 6;
             // 
             // stackPanel1
@@ -208,9 +208,9 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.stackPanel1.Controls.Add(this.btnPowerPoint);
             this.stackPanel1.Controls.Add(this.btnShowFileMp3);
             this.stackPanel1.Controls.Add(this.btnTaiLieuThamKhao);
-            this.stackPanel1.Location = new System.Drawing.Point(2, 566);
+            this.stackPanel1.Location = new System.Drawing.Point(2, 560);
             this.stackPanel1.Name = "stackPanel1";
-            this.stackPanel1.Size = new System.Drawing.Size(816, 24);
+            this.stackPanel1.Size = new System.Drawing.Size(802, 23);
             this.stackPanel1.TabIndex = 5;
             // 
             // btnTracNghiem
@@ -261,15 +261,15 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlItem5});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(820, 592);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(806, 585);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.stackPanel1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 564);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 558);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(820, 28);
+            this.layoutControlItem4.Size = new System.Drawing.Size(806, 27);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -278,7 +278,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlItem5.Control = this.richEditControl1;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(820, 564);
+            this.layoutControlItem5.Size = new System.Drawing.Size(806, 558);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -286,7 +286,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 592);
+            this.ClientSize = new System.Drawing.Size(1143, 585);
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.dockPanel1);
             this.Name = "frm_LyThuyet";

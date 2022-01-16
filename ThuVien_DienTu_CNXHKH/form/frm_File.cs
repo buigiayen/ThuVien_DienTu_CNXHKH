@@ -50,7 +50,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void btnAddNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var fileInfo = await commom.Common.ThuchiencongViec.FileSave();
+            var fileInfo = await commom.Common.GetInstance().FileSave();
             if (!string.IsNullOrEmpty(fileInfo.nameFile))
             {
                 int fileExit = data.Files.Where(p => p.FileName == fileInfo.nameFile).Count();

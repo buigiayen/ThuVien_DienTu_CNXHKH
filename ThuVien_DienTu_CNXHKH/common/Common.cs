@@ -6,45 +6,29 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Text;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid;
 
 namespace ThuVien_DienTu_CNXHKH.commom
 {
     public class Commom_static
     {
         public static bool isAdmin { get; set; }
+        public static string InfoUser { get; set; }
         public static int IDUser { get; set; }
         public static string File_DOCX = "DOCX";
         public static string File_PDF = "PDF";
         public static string File_Voice = "Mp3";
         public static string File_PPT = "PPTX";
     }
-    public class Common
+    public class Common : common.FunctionPattent.BaseFunction<Common>
     {
 
-        #region cấu trúc
-        private static Common instance;
-        public static Common ThuchiencongViec
-        {
-            get
-            {
-                if (instance == null)
-                    ThuchiencongViec = new Common();
-                return Common.instance;
-            }
-            private set
-            {
-                Common.instance = value;
 
-            }
-        }
-        private Common()
-        {
-        }
-        #endregion
         /// <summary>
         /// Open file dialog
         /// </summary>
@@ -84,7 +68,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 }
                 else
                 {
-                    XtraMessageBox.Show("Không thể mở file, Đường dẫn không tồn tại hoặc đã xóa","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    XtraMessageBox.Show("Không thể mở file, Đường dẫn không tồn tại hoặc đã xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return false;
                 }
             }
@@ -114,8 +98,6 @@ namespace ThuVien_DienTu_CNXHKH.commom
             text = sb.ToString();
             return text;
         }
-
-
         public async Task<List<Model.SendEmailStatus>> SendEmail(string emailto, string title, string body, string filePath)
         {
             List<Model.SendEmailStatus> listSend = new List<Model.SendEmailStatus>();
@@ -165,6 +147,58 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
             return text.ToString().Contains(textContains);
         }
+        public async Task<int> PageSize(string file)
+        {
+            int pageSize = 0;
+            using (PdfReader reader = new PdfReader(file))
+            {
+                if (!string.IsNullOrEmpty(file))
+                {
+                    pageSize = reader.NumberOfPages;
+                }
+            }
+            return pageSize;
+        }
+        public async Task GetContextFromPDF(List<Model.Books> books, string textContains, GridControl gridControl)
+        {
+            List<Model.Books> Listbook = new List<Model.Books>();
+            string contentPage = string.Empty;
+            StringBuilder text = new StringBuilder();
+            foreach (var item in books)
+            {
+                string fileName = await commom.Function.Instance.getFilePatd(item.LinkPDF);
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    using (PdfReader reader = new PdfReader(fileName))
+                    {
+                        for (int i = 1; i <= reader.NumberOfPages; i++)
+                        {
+                            if (reader != null)
+                            {
+                                contentPage = PdfTextExtractor.GetTextFromPage(reader, i);
+                                contentPage = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(contentPage));
+                                if (contentPage.ToLower().Contains(textContains.Trim().ToLower()))
+                                {
+                                    Listbook.Add(new Model.Books
+                                    {
+                                        ID = item.ID,
+                                        IDBai = item.IDBai,
+                                        LinkPDF = item.LinkPDF,
+                                        TenSach = item.TenSach,
+                                        TenTuSach = item.TenTuSach,
+                                        ViTri = i
+                                    });
+
+                                    gridControl.Invoke( new Action(() => { gridControl.DataSource = null; gridControl.DataSource = Listbook; }));
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
         public async Task<Model.FileInfos> FileSave()
         {
             Model.FileInfos FileInfos = new Model.FileInfos();
@@ -188,6 +222,8 @@ namespace ThuVien_DienTu_CNXHKH.commom
             }
             return FileInfos;
         }
+     
+            
     }
 
     public class Model
@@ -218,5 +254,16 @@ namespace ThuVien_DienTu_CNXHKH.commom
             public double size { get; set; }
             public string ex { get; set; }
         }
+
+        public class Books
+        {
+            public int ID { get; set; }
+            public string TenTuSach { get; set; }
+            public int? IDBai { get; set; }
+            public string TenSach { get; set; }
+            public int? LinkPDF { get; set; }
+            public int ViTri { get; set; }
+        }
+
     }
 }

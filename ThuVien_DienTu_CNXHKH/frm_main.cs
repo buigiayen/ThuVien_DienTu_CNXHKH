@@ -15,10 +15,25 @@ namespace ThuVien_DienTu_CNXHKH
 {
     public partial class frm_main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frm_main()
+        private bool IsLogin { get; set; }
+        public frm_main(bool _IsLogin)
         {
             InitializeComponent();
+            IsLogin = _IsLogin;
+            lblAppInfomation.Caption = lblAppInfomation.Caption + " - version: " + Application.ProductVersion;
         }
+
+        private void ShowLogin()
+        {
+            if (!IsLogin)
+            {
+                frmDangNhap frmDangNhap = new frmDangNhap();
+                frmDangNhap.ShowDialog();
+                lblUser.Caption = commom.Commom_static.InfoUser;
+              
+            }
+        }
+
         private Form kiemtraform(Type ftype, int Tabcon)
         {
             foreach (Form f in this.MdiChildren)
@@ -32,24 +47,29 @@ namespace ThuVien_DienTu_CNXHKH
         }
         private void Moform<T>(int tabcon) where T : DevExpress.XtraEditors.XtraForm, new()
         {
-            Form frm = kiemtraform(typeof(T), tabcon);
-            if (frm == null)
+            if (!IsLogin)
             {
-                T mofrom = new T();
-                mofrom.MdiParent = this;
-
-                mofrom.Show();
+                Form frm = kiemtraform(typeof(T), tabcon);
+                if (frm == null)
+                {
+                    T mofrom = new T();
+                    mofrom.MdiParent = this;
+                    mofrom.Show();
+                }
+                else
+                {
+                    frm.Activate();
+                }
             }
             else
             {
-                frm.Activate();
-
+                ShowLogin();
             }
         }
-        
+
         private void btnLyThuyet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             Moform<from.frm_LyThuyet>(0);
+            Moform<from.frm_LyThuyet>(0);
         }
 
         private void btnDanhMucLyThuyet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -59,11 +79,12 @@ namespace ThuVien_DienTu_CNXHKH
 
         private void frm_main_Load(object sender, EventArgs e)
         {
+            ShowLogin();
             if (!commom.Commom_static.isAdmin)
             {
                 ribbonPage2.Visible = false;
             }
-            
+
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -78,7 +99,7 @@ namespace ThuVien_DienTu_CNXHKH
         private void btnTuSach_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Moform<form.frm_TuSach>(0);
-            
+
         }
 
         private void btnLienKetTrangWeb_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -86,8 +107,6 @@ namespace ThuVien_DienTu_CNXHKH
 
             Moform<form.frm_LienKetTrangWeb>(0);
         }
-
-  
 
         private void btnEmailPhanHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -98,7 +117,7 @@ namespace ThuVien_DienTu_CNXHKH
         private void btnTuSachKinhDien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Moform<form.frm_TuSachKinhDien>(0);
-            
+
         }
 
         private void btnNhomSachKinhDien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -109,23 +128,29 @@ namespace ThuVien_DienTu_CNXHKH
         private void btnSachKinhDien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-         
+
         }
 
         private void btnFile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Moform<form.frm_File>(0); 
+            Moform<form.frm_File>(0);
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Moform<form.frm_TraCuu>(0);
-            
+
         }
 
         private void btnKetQuaThi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Moform<form.frm_KetQuaThi>(0);
+        }
+
+        private void btnLogOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IsLogin = false;
+            ShowLogin();
         }
     }
 }
