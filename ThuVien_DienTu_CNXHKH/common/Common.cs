@@ -16,6 +16,7 @@ using DevExpress.XtraBars.ToastNotifications;
 using System.Drawing;
 using DevExpress.Utils.Base;
 using System.Collections;
+using System.Threading;
 
 namespace ThuVien_DienTu_CNXHKH.commom
 {
@@ -168,9 +169,10 @@ namespace ThuVien_DienTu_CNXHKH.commom
             List<Model.Books> Listbook = new List<Model.Books>();
             string contentPage = string.Empty;
             StringBuilder text = new StringBuilder();
+
             foreach (var item in books)
             {
-                string fileName = await commom.Function.Instance.getFilePatd(item.LinkPDF);
+                string fileName = commom.Function.Instance.getFilePatd(item.LinkPDF).Result;
                 if (!string.IsNullOrEmpty(fileName))
                 {
                     using (PdfReader reader = new PdfReader(fileName))
@@ -193,7 +195,12 @@ namespace ThuVien_DienTu_CNXHKH.commom
                                         ViTri = i
                                     });
 
-                                    gridControl.Invoke(new Action(() => { gridControl.DataSource = null; gridControl.DataSource = Listbook; }));
+                                    gridControl.BeginInvoke(new Action(async () =>
+                                    {
+                                        gridControl.BeginUpdate();
+                                        gridControl.DataSource = Listbook;
+                                        gridControl.EndUpdate();
+                                    }));
                                 }
                             }
 
@@ -201,7 +208,9 @@ namespace ThuVien_DienTu_CNXHKH.commom
                     }
                 }
 
-            }
+
+            };
+
         }
         public async Task<Model.FileInfos> FileSave()
         {
@@ -227,7 +236,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             return FileInfos;
         }
 
-      
+
     }
 
     public class Model
@@ -269,7 +278,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             public int ViTri { get; set; }
         }
 
-       
+
 
     }
 }

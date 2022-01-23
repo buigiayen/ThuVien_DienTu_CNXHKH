@@ -36,6 +36,19 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
+            {
+                List<properties.Button_edit> button_Edits = new List<properties.Button_edit>();
+                button_Edits.Add(new properties.Button_edit
+                {
+                    buttonIndex = 0,
+                    colname = "ThuatNgu",
+                    toolTip = "Xem thuật ngữ",
+                    NameButton = "btnViewThuatNgu",
+                    styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search,
+                    Action = new Action(() => { TextView(gridView); })
+                });
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+            }
             gridView.Columns["id"].OptionsColumn.ReadOnly = true;
             if (gridControl == grcTraCuuKinhDien)
                 grvTraCuuKinhDien.CellValueChanging += GrvTraCuuKinhDien_CellValueChanging;
@@ -43,6 +56,14 @@ namespace ThuVien_DienTu_CNXHKH.form
                 grvTraCuuThuatNgu.CellValueChanging += GrvTraCuuThuatNgu_CellValueChanging;
 
         }
+
+        private void TextView(GridView gridView)
+        {
+            string viewTexts = gridView.GetFocusedRowCellValue("ThuatNgu").ToString();
+            form.ViewText viewText = new ViewText(viewTexts);
+            viewText.Show();
+        }
+
         private async void GrvTraCuuThuatNgu_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             changeData(grvTraCuuThuatNgu, e);
@@ -87,7 +108,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadTraCuuKinhDien);
                     break;
             }
-        
+
         }
         private void btnThemMoiTraCuuKinhDien_Click(object sender, EventArgs e)
         {
@@ -95,7 +116,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private void GrvTraCuuKinhDien_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            changeData(grvTraCuuKinhDien,e);
+            changeData(grvTraCuuKinhDien, e);
         }
         private async void changeData(GridView gridView, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {

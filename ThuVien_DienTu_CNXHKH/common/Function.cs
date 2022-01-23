@@ -67,11 +67,13 @@ namespace ThuVien_DienTu_CNXHKH.commom
         }
         public async Task<string> ChangePassword(int UserID,string passold, string passnew)
         {
-         
-            string passoldHashMD5 = commom.Common.GetInstance().Md5(passold);
             string passNewHashMD5 = commom.Common.GetInstance().Md5(passnew);
-            string dataPassOld = data.UserLogins.Where(p => p.id == UserID).FirstOrDefault().Password;
-            if (!dataPassOld.Equals(passoldHashMD5)) return "Mật khẩu chưa chính xác!";
+            if (!commom.Commom_static.isAdmin)
+            {
+                string dataPassOld = data.UserLogins.Where(p => p.id == UserID).FirstOrDefault().Password;
+                string passoldHashMD5 = commom.Common.GetInstance().Md5(passold);
+                if (!dataPassOld.Equals(passoldHashMD5)) return "Mật khẩu chưa chính xác!";
+            }
             var UserLogin = data.UserLogins.Single(p => p.id == UserID);
             UserLogin.Password = passNewHashMD5;
             data.SaveChanges();

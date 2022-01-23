@@ -68,6 +68,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 columns_GridLookUpedit.Add("Nhóm", "TenTuSach");
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.TuSachKinhDiens.ToList(), new string[] { "IDNhomSachKinhDien" }, columns_GridLookUpedit, "ID", "TenTuSach");
             }
+            grvSachKinhDien.Columns["IDNhomSachKinhDien"].GroupIndex = 0;
             grvSachKinhDien.CellValueChanging += GrvSachKinhDien_CellValueChanging;
         }
 
@@ -100,7 +101,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private void grvList_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (e.RowHandle >0)
+            if (e.RowHandle >= 0)
             {
                 int _ID = (int)grvNhomSachKinhDien.GetFocusedRowCellValue("ID");
                 database.TuSachKinhDien tuSachKinhDiens = data.TuSachKinhDiens.SingleOrDefault(p => p.ID == _ID);
@@ -136,5 +137,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadNhomSach);
         }
 
+        private void btnThemMoiNhomSachKinhDien_Click(object sender, EventArgs e)
+        {
+            Form_Panel form_Panel = new Form_Panel(Form_Panel.FormName.ThemMoiNhomSachKinhDien, "Thêm mới nhóm tủ sách kinh điển");
+            form_Panel.ShowDialog();
+          
+        }
+
+        private void btnThemMoiSachKinhDien_Click(object sender, EventArgs e)
+        {
+            Form_Panel form_Panel = new Form_Panel(Form_Panel.FormName.ThemMoiSachKinhDien, "Thêm mới tủ sách kinh điển");
+            form_Panel.ShowDialog();
+        }
     }
 }

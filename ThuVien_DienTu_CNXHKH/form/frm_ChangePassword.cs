@@ -83,6 +83,12 @@ namespace ThuVien_DienTu_CNXHKH.form
                 valid = false;
                 messenger += "Mật khẩu mới không thể để null ";
             }
+            if (!valid)
+            {
+                XtraMessageBox.Show(messenger, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+          
             return valid;
         }
 

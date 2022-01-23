@@ -53,7 +53,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.btnThemMoiNhomSachKinhDien = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnThemMoiSachKinhDien = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcSachKinhDien)).BeginInit();
@@ -66,11 +70,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnThemMoiSachKinhDien);
+            this.layoutControl1.Controls.Add(this.btnThemMoiNhomSachKinhDien);
             this.layoutControl1.Controls.Add(this.btnEditGroupBook);
             this.layoutControl1.Controls.Add(this.btnReload);
             this.layoutControl1.Controls.Add(this.grcSachKinhDien);
@@ -87,9 +95,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             // btnEditGroupBook
             // 
             this.btnEditGroupBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditGroupBook.ImageOptions.Image")));
-            this.btnEditGroupBook.Location = new System.Drawing.Point(121, 2);
+            this.btnEditGroupBook.Location = new System.Drawing.Point(98, 2);
             this.btnEditGroupBook.Name = "btnEditGroupBook";
-            this.btnEditGroupBook.Size = new System.Drawing.Size(148, 22);
+            this.btnEditGroupBook.Size = new System.Drawing.Size(45, 22);
             this.btnEditGroupBook.StyleController = this.layoutControl1;
             this.btnEditGroupBook.TabIndex = 8;
             this.btnEditGroupBook.Text = "Sửa";
@@ -100,7 +108,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.Location = new System.Drawing.Point(2, 2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(115, 22);
+            this.btnReload.Size = new System.Drawing.Size(92, 22);
             this.btnReload.StyleController = this.layoutControl1;
             this.btnReload.TabIndex = 6;
             this.btnReload.Text = "Tải danh sách";
@@ -108,11 +116,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // grcSachKinhDien
             // 
-            this.grcSachKinhDien.Location = new System.Drawing.Point(273, 28);
+            this.grcSachKinhDien.Location = new System.Drawing.Point(321, 28);
             this.grcSachKinhDien.MainView = this.grvSachKinhDien;
             this.grcSachKinhDien.MenuManager = this.barManager1;
             this.grcSachKinhDien.Name = "grcSachKinhDien";
-            this.grcSachKinhDien.Size = new System.Drawing.Size(731, 536);
+            this.grcSachKinhDien.Size = new System.Drawing.Size(683, 536);
             this.grcSachKinhDien.TabIndex = 5;
             this.grcSachKinhDien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvSachKinhDien});
@@ -211,7 +219,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcNhomSachKinhDien.MainView = this.grvNhomSachKinhDien;
             this.grcNhomSachKinhDien.MenuManager = this.barManager1;
             this.grcNhomSachKinhDien.Name = "grcNhomSachKinhDien";
-            this.grcNhomSachKinhDien.Size = new System.Drawing.Size(267, 536);
+            this.grcNhomSachKinhDien.Size = new System.Drawing.Size(315, 536);
             this.grcNhomSachKinhDien.TabIndex = 4;
             this.grcNhomSachKinhDien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvNhomSachKinhDien});
@@ -229,10 +237,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem5,
-            this.emptySpaceItem2});
+            this.layoutControlItem4,
+            this.layoutControlItem6,
+            this.layoutControlItem2,
+            this.emptySpaceItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.Root.Size = new System.Drawing.Size(1006, 566);
@@ -243,16 +253,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.grcNhomSachKinhDien;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(271, 540);
+            this.layoutControlItem1.Size = new System.Drawing.Size(319, 540);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.grcSachKinhDien;
-            this.layoutControlItem2.Location = new System.Drawing.Point(271, 26);
+            this.layoutControlItem2.Location = new System.Drawing.Point(319, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(735, 540);
+            this.layoutControlItem2.Size = new System.Drawing.Size(687, 540);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -261,26 +271,66 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem3.Control = this.btnReload;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(119, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(96, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnEditGroupBook;
-            this.layoutControlItem5.Location = new System.Drawing.Point(119, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(96, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(152, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(49, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // emptySpaceItem2
+            // btnThemMoiNhomSachKinhDien
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(271, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(735, 26);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.btnThemMoiNhomSachKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThemMoiNhomSachKinhDien.Location = new System.Drawing.Point(147, 2);
+            this.btnThemMoiNhomSachKinhDien.Name = "btnThemMoiNhomSachKinhDien";
+            this.btnThemMoiNhomSachKinhDien.Size = new System.Drawing.Size(170, 22);
+            this.btnThemMoiNhomSachKinhDien.StyleController = this.layoutControl1;
+            this.btnThemMoiNhomSachKinhDien.TabIndex = 9;
+            this.btnThemMoiNhomSachKinhDien.Text = "Thêm mới nhóm sách kinh điển";
+            this.btnThemMoiNhomSachKinhDien.Click += new System.EventHandler(this.btnThemMoiNhomSachKinhDien_Click);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnThemMoiNhomSachKinhDien;
+            this.layoutControlItem4.Location = new System.Drawing.Point(145, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(174, 26);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // btnThemMoiSachKinhDien
+            // 
+            this.btnThemMoiSachKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnThemMoiSachKinhDien.Location = new System.Drawing.Point(321, 2);
+            this.btnThemMoiSachKinhDien.Name = "btnThemMoiSachKinhDien";
+            this.btnThemMoiSachKinhDien.Size = new System.Drawing.Size(141, 22);
+            this.btnThemMoiSachKinhDien.StyleController = this.layoutControl1;
+            this.btnThemMoiSachKinhDien.TabIndex = 10;
+            this.btnThemMoiSachKinhDien.Text = "Thêm mới sách kinh điển";
+            this.btnThemMoiSachKinhDien.Click += new System.EventHandler(this.btnThemMoiSachKinhDien_Click);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.btnThemMoiSachKinhDien;
+            this.layoutControlItem6.Location = new System.Drawing.Point(319, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(145, 26);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(464, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(542, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Frm_NhomSachKinhDien
             // 
@@ -307,7 +357,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,6 +389,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.SimpleButton btnThemMoiSachKinhDien;
+        private DevExpress.XtraEditors.SimpleButton btnThemMoiNhomSachKinhDien;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

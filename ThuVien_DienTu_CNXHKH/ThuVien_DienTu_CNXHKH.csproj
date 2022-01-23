@@ -120,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="common\Common.cs" />
+    <Compile Include="common\FromView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common\FromView.Designer.cs">
+      <DependentUpon>FromView.cs</DependentUpon>
+    </Compile>
     <Compile Include="common\Function.cs" />
     <Compile Include="common\FunctionPattent\BaseFunction.cs" />
     <Compile Include="common\Notification.cs" />
@@ -231,6 +237,18 @@
     <Compile Include="form\frm_TuSachKinhDien.Designer.cs">
       <DependentUpon>frm_TuSachKinhDien.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\view\ViewFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\view\ViewFile.Designer.cs">
+      <DependentUpon>ViewFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\view\ViewText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\view\ViewText.Designer.cs">
+      <DependentUpon>ViewText.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +263,9 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="common\FromView.resx">
+      <DependentUpon>FromView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Form_Panel.resx">
       <DependentUpon>Form_Panel.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +320,12 @@
     <EmbeddedResource Include="form\frm_TuSachKinhDien.resx">
       <DependentUpon>frm_TuSachKinhDien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\view\ViewFile.resx">
+      <DependentUpon>ViewFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\view\ViewText.resx">
+      <DependentUpon>ViewText.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,6 +379,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\Logo.ico" />
     <None Include="Resources\Image2.bmp" />
     <None Include="Resources\Toast1.png" />
     <None Include="Resources\Toast.png" />

@@ -129,14 +129,15 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private void ShowBook()
         {
-            grcTuSach.DataSource = data.tuSaches.Where(p => commom.Commom_static.isAdmin ? true : p.status == false).ToList();
+            grcTuSach.DataSource = data.tuSaches.Where(p => commom.Commom_static.isAdmin ? true : p.status == true).ToList();
         }
 
         private async void Show_task(string nameField)
         {
             if (grvTuSach.FocusedRowHandle >= 0 && grvTuSach.GetFocusedRowCellValue(nameField) != null)
             {
-                commom.Common.GetInstance().process_Application( await commom.Function.Instance.getFilePatd((int)grvTuSach.GetFocusedRowCellValue(nameField)));
+                view.ViewFile viewFile = new view.ViewFile(await commom.Function.Instance.getFilePatd((int)grvTuSach.GetFocusedRowCellValue(nameField)));
+                viewFile.Show();
             }
         }
         private async void DownLoadFile(string nameField)
