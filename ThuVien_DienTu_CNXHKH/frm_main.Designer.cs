@@ -37,12 +37,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhMucLyThuyet = new DevExpress.XtraBars.BarButtonItem();
             this.btnKetQuaThi = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnNhomSachKinhDien = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSachKinhDien = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnFile = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -82,10 +77,7 @@ namespace ThuVien_DienTu_CNXHKH
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup2});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Danh mục";
             // 
@@ -96,6 +88,8 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDanhMucLyThuyet);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnKetQuaThi);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnNhomSachKinhDien);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnFile);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // barButtonItem1
@@ -125,27 +119,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnKetQuaThi.Name = "btnKetQuaThi";
             this.btnKetQuaThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKetQuaThi_ItemClick);
             // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.AllowTextClipping = false;
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Hòm thư phản hồi";
-            this.barButtonItem4.Id = 9;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnNhomSachKinhDien);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnSachKinhDien);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Tủ sách kinh điển";
-            // 
             // btnNhomSachKinhDien
             // 
             this.btnNhomSachKinhDien.Caption = "Nhóm sách kinh điển";
@@ -155,23 +128,9 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnNhomSachKinhDien.Name = "btnNhomSachKinhDien";
             this.btnNhomSachKinhDien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhomSachKinhDien_ItemClick);
             // 
-            // btnSachKinhDien
-            // 
-            this.btnSachKinhDien.Caption = "Sách kinh điển";
-            this.btnSachKinhDien.Id = 15;
-            this.btnSachKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSachKinhDien.ImageOptions.Image")));
-            this.btnSachKinhDien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSachKinhDien.ImageOptions.LargeImage")));
-            this.btnSachKinhDien.Name = "btnSachKinhDien";
-            this.btnSachKinhDien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSachKinhDien_ItemClick);
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnFile);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            // 
             // btnFile
             // 
-            this.btnFile.Caption = "File";
+            this.btnFile.Caption = "Quản lý File";
             this.btnFile.Id = 16;
             this.btnFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.Image")));
             this.btnFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.LargeImage")));
@@ -280,7 +239,6 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationButtonImageOptions.Image = global::ThuVien_DienTu_CNXHKH.Properties.Resources.Toast1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -294,12 +252,10 @@ namespace ThuVien_DienTu_CNXHKH
             this.barButtonItem5,
             this.btnLienKetTrangWeb,
             this.barButtonItem2,
-            this.barButtonItem4,
             this.barButtonItem6,
             this.btnEmailPhanHoi,
             this.btnTuSachKinhDien,
             this.btnNhomSachKinhDien,
-            this.btnSachKinhDien,
             this.btnFile,
             this.btnKetQuaThi,
             this.skinDropDownButtonItem1});
@@ -438,7 +394,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.IconOptions.Image = global::ThuVien_DienTu_CNXHKH.Properties.Resources.Toast1;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frm_main.IconOptions.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frm_main";
             this.Ribbon = this.ribbonControl1;
@@ -468,21 +424,16 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnLienKetTrangWeb;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnEmailPhanHoi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnTuSachKinhDien;
         private DevExpress.XtraBars.BarButtonItem btnNhomSachKinhDien;
-        private DevExpress.XtraBars.BarButtonItem btnSachKinhDien;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnFile;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnKetQuaThi;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

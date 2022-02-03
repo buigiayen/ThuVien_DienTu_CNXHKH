@@ -134,8 +134,6 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public async Task<List<Model.Email_connec>> Email_Connecs()
         {
             List<Model.Email_connec> email_Connecs = new List<Model.Email_connec>();
-            email_Connecs.Add(new Model.Email_connec { Email = "Buiyen.cresoft@gmail.com", MoTa = "Kỹ thuật!" });
-            email_Connecs.Add(new Model.Email_connec { Email = "20A72010129@students.hou.edu.vn", MoTa = "Kinh doanh!" });
             email_Connecs.Add(new Model.Email_connec { Email = "Nguyentruongminhtp1@gmail.com", MoTa = "Admin!" });
             return email_Connecs;
         }
@@ -164,7 +162,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             }
             return pageSize;
         }
-        public async Task GetContextFromPDF(List<Model.Books> books, string textContains, GridControl gridControl)
+        public async Task<List<Model.Books>> GetContextFromPDF(List<Model.Books> books, string textContains)
         {
             List<Model.Books> Listbook = new List<Model.Books>();
             string contentPage = string.Empty;
@@ -195,12 +193,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                                         ViTri = i
                                     });
 
-                                    gridControl.BeginInvoke(new Action(async () =>
-                                    {
-                                        gridControl.BeginUpdate();
-                                        gridControl.DataSource = Listbook;
-                                        gridControl.EndUpdate();
-                                    }));
+                                 
                                 }
                             }
 
@@ -210,6 +203,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
 
             };
+            return Listbook;
 
         }
         public async Task<Model.FileInfos> FileSave()

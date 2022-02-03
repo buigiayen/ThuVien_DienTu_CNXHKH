@@ -24,10 +24,15 @@ namespace ThuVien_DienTu_CNXHKH.form
         public frm_TuSachKinhDien()
         {
             InitializeComponent();
+            LoadTuSach();
             LoadGridControl_TuSachKinhDien();
         }
         private database.TV data = new database.TV();
+        private async void LoadTuSach()
+        {
+            lupTuSachKinhDien.Properties.DataSource = data.TuSachKinhDiens.Where(p => p.status == true).ToList();
 
+        }
         private async void LoadGridControl_TuSachKinhDien()
         {
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcNhomSach;
@@ -60,13 +65,18 @@ namespace ThuVien_DienTu_CNXHKH.form
                 {
                     pdfViewer1.CurrentPageNumber = Convert.ToInt32(Page);
                     pdfViewer1.FindText(btnTimKiemToanTap.Text);
-
+                    grvNhomSach.Columns["TenTuSach"].GroupIndex = 1;
                 }
             }
         }
         private async void reload_Group_Book()
         {
-            List<Model.Books> datas = (from ns in data.TuSachKinhDiens
+            int IDTuSach = -1;
+            if (lupTuSachKinhDien.EditValue != null)
+            {
+                IDTuSach = (int)lupTuSachKinhDien.EditValue;
+            }
+            List<Model.Books> datas = (from ns in data.TuSachKinhDiens.Where(p => IDTuSach == -1 ? true : p.ID == IDTuSach)
                                        join ss in data.SachKinhDiens.Where(p => p.status == true) on ns.ID equals ss.IDNhomSachKinhDien
                                        select new Model.Books
                                        {
@@ -96,20 +106,27 @@ namespace ThuVien_DienTu_CNXHKH.form
                 button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "ViTri", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnViewPageBook", toolTip = "Chuyển đến trang", Action = new Action(() => ShowViewBook("LinkPDF", (int)grvNhomSach.GetFocusedRowCellValue("ViTri"))) });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
-          
-            FindKey(btnTimKiemToanTap.Text);
-        
+
+            Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(new Action(() => { FindKey(btnTimKiemToanTap.Text); }));
+
+
         }
 
 
-        private async Task FindKey(string text)
+        private async void FindKey(string text)
         {
             if (!string.IsNullOrEmpty(text) && grvNhomSach.RowCount >= 0)
             {
                 var dataList = (List<Model.Books>)grcNhomSach.DataSource;
-                Task.Run(() => commom.Common.GetInstance().GetContextFromPDF(dataList, text, grcNhomSach));
+                grcNhomSach.DataSource = null;
+                grcNhomSach.DataSource = await commom.Common.GetInstance().GetContextFromPDF(dataList.Where(p=>p.LinkPDF != null).ToList(), text);
             }
 
+        }
+
+        private void lupTuSachKinhDien_EditValueChanged(object sender, EventArgs e)
+        {
+            Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(reload_Group_Book);
         }
     }
 }

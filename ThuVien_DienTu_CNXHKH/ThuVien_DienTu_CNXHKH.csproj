@@ -237,6 +237,12 @@
     <Compile Include="form\frm_TuSachKinhDien.Designer.cs">
       <DependentUpon>frm_TuSachKinhDien.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frm_TuSachV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_TuSachV2.Designer.cs">
+      <DependentUpon>frm_TuSachV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\view\ViewFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_TuSachKinhDien.resx">
       <DependentUpon>frm_TuSachKinhDien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_TuSachV2.resx">
+      <DependentUpon>frm_TuSachV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\view\ViewFile.resx">
       <DependentUpon>ViewFile.cs</DependentUpon>

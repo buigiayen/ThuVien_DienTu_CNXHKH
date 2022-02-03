@@ -70,12 +70,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.lupTuSachKinhDien = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnTimKiemToanTap = new DevExpress.XtraEditors.ButtonEdit();
             this.grcNhomSach = new DevExpress.XtraGrid.GridControl();
             this.grvNhomSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -87,12 +92,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lupTuSachKinhDien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTimKiemToanTap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcNhomSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvNhomSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -419,6 +427,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.lupTuSachKinhDien);
             this.layoutControl2.Controls.Add(this.btnTimKiemToanTap);
             this.layoutControl2.Controls.Add(this.grcNhomSach);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -429,23 +438,63 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // lupTuSachKinhDien
+            // 
+            this.lupTuSachKinhDien.Location = new System.Drawing.Point(51, 2);
+            this.lupTuSachKinhDien.MenuManager = this.barManager1;
+            this.lupTuSachKinhDien.Name = "lupTuSachKinhDien";
+            this.lupTuSachKinhDien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lupTuSachKinhDien.Properties.DisplayMember = "TenTuSach";
+            this.lupTuSachKinhDien.Properties.NullText = "[Chọn tủ sách]";
+            this.lupTuSachKinhDien.Properties.PopupView = this.gridLookUpEdit1View;
+            this.lupTuSachKinhDien.Properties.ValueMember = "ID";
+            this.lupTuSachKinhDien.Size = new System.Drawing.Size(252, 20);
+            this.lupTuSachKinhDien.StyleController = this.layoutControl2;
+            this.lupTuSachKinhDien.TabIndex = 6;
+            this.lupTuSachKinhDien.EditValueChanged += new System.EventHandler(this.lupTuSachKinhDien_EditValueChanged);
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã tủ";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên tủ sách";
+            this.gridColumn2.FieldName = "TenTuSach";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
             // btnTimKiemToanTap
             // 
-            this.btnTimKiemToanTap.Location = new System.Drawing.Point(45, 2);
+            this.btnTimKiemToanTap.Location = new System.Drawing.Point(51, 26);
             this.btnTimKiemToanTap.Name = "btnTimKiemToanTap";
             this.btnTimKiemToanTap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.btnTimKiemToanTap.Size = new System.Drawing.Size(258, 20);
+            this.btnTimKiemToanTap.Size = new System.Drawing.Size(252, 20);
             this.btnTimKiemToanTap.StyleController = this.layoutControl2;
             this.btnTimKiemToanTap.TabIndex = 5;
             this.btnTimKiemToanTap.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnTimKiemToanTap_ButtonClick);
             // 
             // grcNhomSach
             // 
-            this.grcNhomSach.Location = new System.Drawing.Point(2, 26);
+            this.grcNhomSach.Location = new System.Drawing.Point(2, 50);
             this.grcNhomSach.MainView = this.grvNhomSach;
             this.grcNhomSach.Name = "grcNhomSach";
-            this.grcNhomSach.Size = new System.Drawing.Size(301, 548);
+            this.grcNhomSach.Size = new System.Drawing.Size(301, 524);
             this.grcNhomSach.TabIndex = 4;
             this.grcNhomSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvNhomSach});
@@ -462,7 +511,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(305, 576);
@@ -471,20 +521,31 @@ namespace ThuVien_DienTu_CNXHKH.form
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.grcNhomSach;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(305, 552);
+            this.layoutControlItem2.Size = new System.Drawing.Size(305, 528);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnTimKiemToanTap;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(305, 24);
-            this.layoutControlItem3.Text = "Tìm kiếm";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(40, 13);
+            this.layoutControlItem3.Text = "Tìm kiếm:";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(46, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.lupTuSachKinhDien;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(305, 24);
+            this.layoutControlItem4.Text = "Tủ sách:";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(46, 13);
             // 
             // layoutControl1
             // 
@@ -565,12 +626,15 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lupTuSachKinhDien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTimKiemToanTap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcNhomSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvNhomSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -632,5 +696,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraPdfViewer.Bars.PdfSetFitWidthZoomModeCheckItem pdfSetFitWidthZoomModeCheckItem1;
         private DevExpress.XtraPdfViewer.Bars.PdfSetFitVisibleZoomModeCheckItem pdfSetFitVisibleZoomModeCheckItem1;
         private DevExpress.XtraPdfViewer.Bars.PdfBarController pdfBarController1;
+        private DevExpress.XtraEditors.GridLookUpEdit lupTuSachKinhDien;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

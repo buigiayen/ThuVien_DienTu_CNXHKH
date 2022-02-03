@@ -1056,6 +1056,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frm_Feedback";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gửi yêu cầu - phản hồi";
             this.Load += new System.EventHandler(this.frm_Feedback_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

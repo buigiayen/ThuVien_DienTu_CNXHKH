@@ -57,7 +57,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     columns_GridLookUpedit.Add("Đường dẫn", "FilePath");
                     //All file
                     {
-                        Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(string.Empty), new string[] { "ID_File" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
+                        Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_PDF), new string[] { "ID_File" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
                     }
                 }
 

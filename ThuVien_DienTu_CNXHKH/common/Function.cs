@@ -38,9 +38,9 @@ namespace ThuVien_DienTu_CNXHKH.commom
         {
             return data.Files.Where(p => p.ID == idFile).FirstOrDefault().FilePath;
         }
-        public async Task<List<TraCuuThuatNgu>> Get_TraCuu(bool? Status = null, int PhanLoai = 0)
+        public async Task<List<TraCuuThuatNgu>> Get_TraCuu( int PhanLoai = 0)
         {
-            return data.TraCuuThuatNgus.Where(p => (Status == null ? true : p.status == Status) && p.PhanLoai == PhanLoai).ToList();
+            return data.TraCuuThuatNgus.Where(p => (commom.Commom_static.isAdmin == true ? true : p.status == true) && p.PhanLoai == PhanLoai).ToList();
         }
         public async Task<List<BaiThi>> Get_Thi(int? idUser = null, int? idbaithi = null)
         {

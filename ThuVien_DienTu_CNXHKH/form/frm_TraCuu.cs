@@ -74,9 +74,8 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void LoadTraCuuThuatNgu()
         {
-            bool? visibleIsAdmin = null;
-            if (!commom.Commom_static.isAdmin) visibleIsAdmin = false;
-            grcTraCuuThuatNgu.DataSource = await commom.Function.Instance.Get_TraCuu(visibleIsAdmin, 0);
+
+            grcTraCuuThuatNgu.DataSource = await commom.Function.Instance.Get_TraCuu(0);
         }
         private async void btnThemMoiTraCuuThuatNgu_Click(object sender, EventArgs e)
         {
@@ -84,9 +83,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void LoadTraCuuKinhDien()
         {
-            bool? visibleIsAdmin = null;
-            if (!commom.Commom_static.isAdmin) visibleIsAdmin = false;
-            grcTraCuuKinhDien.DataSource = await commom.Function.Instance.Get_TraCuu(visibleIsAdmin, 1);
+            grcTraCuuKinhDien.DataSource = await commom.Function.Instance.Get_TraCuu(1);
         }
         private void btnLoadTraCuuKinhDien_Click(object sender, EventArgs e)
         {

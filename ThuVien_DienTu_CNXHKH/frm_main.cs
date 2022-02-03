@@ -99,7 +99,7 @@ namespace ThuVien_DienTu_CNXHKH
 
         private void btnTuSach_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Moform<form.frm_TuSach>(0);
+            Moform<form.frm_TuSachV2>(0);
 
         }
 
@@ -153,8 +153,10 @@ namespace ThuVien_DienTu_CNXHKH
             IsLogin = false;
             ShowLogin();
         }
-    
 
-    
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
