@@ -24,6 +24,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
     {
         public static bool isAdmin { get; set; }
         public static string InfoUser { get; set; }
+        public static string TenNguoiDung { get; set; }
         public static int IDUser { get; set; }
         public static string File_DOCX = "DOCX";
         public static string File_PDF = "PDF";

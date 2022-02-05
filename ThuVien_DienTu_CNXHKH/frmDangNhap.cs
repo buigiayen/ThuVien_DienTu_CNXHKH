@@ -29,7 +29,8 @@ namespace ThuVien_DienTu_CNXHKH
                 if (login.Count() >0 && login != null)
                 {
                     Notification.GetInstance().ShowInformationToast("Đăng nhập thành công!");
-                    commom.Commom_static.IDUser = login.FirstOrDefault().id;
+                    commom.Commom_static.IDUser = login.FirstOrDefault().id; 
+                    commom.Commom_static.TenNguoiDung = login.FirstOrDefault().TenSinhVien;
                     commom.Commom_static.InfoUser = (login.FirstOrDefault().isAdmin ? "Quản trị viên: " : "Người dùng: ") + login.FirstOrDefault().Username + " - " + login.FirstOrDefault().TenSinhVien;
                     commom.Commom_static.isAdmin = login.FirstOrDefault().isAdmin;
                     frm_main frm = new frm_main(true);

@@ -127,7 +127,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void GrvBaiViet_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (grvBaiViet.FocusedRowHandle > 0)
+            if (grvBaiViet.FocusedRowHandle >= 0)
             {
                 int IDBai = (int)grvBaiViet.GetFocusedRowCellValue("id");
                 database.tbl_BaiViet bv = tV.tbl_BaiViet.Single(p => p.id == IDBai);

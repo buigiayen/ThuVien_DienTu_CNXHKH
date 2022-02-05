@@ -60,7 +60,6 @@ namespace ThuVien_DienTu_CNXHKH.commom
                                       TenBai = bv.TenBaiViet,
                                       User = us.id,
                                       UserName = us.TenSinhVien,
-
                                   }).ToList();
 
             return kQThis;

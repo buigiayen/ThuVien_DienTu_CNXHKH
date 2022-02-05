@@ -17,6 +17,7 @@ namespace ThuVien_DienTu_CNXHKH.form
     {
         int idBaiViet;
         int idUser;
+        public string TieuDe { get; set; }
         List<DaTraLoi> listDaTraLois;
         DateTime thoiGianBatDau;
         public frm_Thi(int _idBaiViet, int _idUser)
@@ -34,7 +35,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private void frm_Thi_Load(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -98,6 +99,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             {
                 listDaTraLois.FirstOrDefault(o => o.CauHoiId == item.CauHoiId).CauTraLoiId = item.Id;
             }
+           
         }
 
         private void btnCauTiepTheo_Click(object sender, EventArgs e)
@@ -120,13 +122,30 @@ namespace ThuVien_DienTu_CNXHKH.form
             addBt.ThoiGianKetThucThi = DateTime.Now;
             addBt.UserId = idUser;
             int soCauDung = 0;
+            int STT = 1;
+            List<frm_DanhGiaKetQuaThi.CauTraLoi> cauTraLois = new List<frm_DanhGiaKetQuaThi.CauTraLoi>();
             foreach (var item in listDaTraLois)
             {
-                var cauHoi = dataContext.CauHois.FirstOrDefault(o => o.Id == item.CauHoiId && o.IdCauTraLoiDung == item.CauTraLoiId);
-                if (cauHoi != null)
+                frm_DanhGiaKetQuaThi.CauTraLoi cauTraLoi = new frm_DanhGiaKetQuaThi.CauTraLoi();
+                cauTraLoi.STT = STT;
+                var cauHoi = dataContext.CauHois.FirstOrDefault(o => o.Id == item.CauHoiId);
+                cauTraLoi.CauHoi = cauHoi.NoiDung;
+              
+                if (cauHoi.IdCauTraLoiDung == item.CauTraLoiId)
                 {
                     soCauDung += 1;
+                    cauTraLoi.Thuong = 1;
+                   
+                    cauTraLoi.KetQua = true;
                 }
+                else
+                {
+                    cauTraLoi.Thuong = 0;
+                }
+                cauTraLoi.Diem = 1;
+                cauTraLois.Add(cauTraLoi);
+                STT++;
+               
             }
             addBt.IsThiLai = false;
             addBt.SoCauTraLoiDung = soCauDung;
@@ -139,7 +158,21 @@ namespace ThuVien_DienTu_CNXHKH.form
             }
             else
                 XtraMessageBox.Show($"Lưu bài thi thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            this.Close();
+
+
+            frm_DanhGiaKetQuaThi frm = new frm_DanhGiaKetQuaThi(new frm_DanhGiaKetQuaThi.DanhGiaKetQua
+            {
+                TieuDe = TieuDe,
+                ThoiGian = lblTime.Text,
+                TiLePhanTram = ((double)soCauDung / (double)listDaTraLois.Count) * 100,
+                DiemDat = $"{((double)listDaTraLois.Count * 50) / 100 } (50%)",
+                DiemCuaNguoiHoc = $"{ soCauDung }/{ listDaTraLois.Count } {soCauDung} ({((double)soCauDung / (double)listDaTraLois.Count) * 100}%)",
+                IDNguoiDung = commom.Commom_static.TenNguoiDung,
+                DaTraLoi = $"{ soCauDung }/{ listDaTraLois.Count }",
+                cauTraLois = cauTraLois
+
+            }) ;
+            frm.ShowDialog();
         }
 
         private void btnBatDauThi_Click(object sender, EventArgs e)

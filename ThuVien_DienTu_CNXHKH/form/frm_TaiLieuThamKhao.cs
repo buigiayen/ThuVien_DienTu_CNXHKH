@@ -41,6 +41,8 @@ namespace ThuVien_DienTu_CNXHKH.form
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.Files.ToList(), new string[] { "idFile" }, columns_GridLookUpedit, "ID", "FileName");
             }
             grvList.Columns["idBaiViet"].GroupIndex = 0;
+            grvList.OptionsBehavior.ReadOnly = !commom.Commom_static.isAdmin;
+
             if (commom.Commom_static.isAdmin)
             {
                 grvList.CellValueChanging += GrvList_CellValueChanging;

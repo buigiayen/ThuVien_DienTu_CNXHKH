@@ -153,6 +153,12 @@
     <Compile Include="form\frm_ChangePassword.Designer.cs">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frm_DanhGiaKetQuaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_DanhGiaKetQuaThi.Designer.cs">
+      <DependentUpon>frm_DanhGiaKetQuaThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frm_DanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_DanhGiaKetQuaThi.resx">
+      <DependentUpon>frm_DanhGiaKetQuaThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_DanhMuc.resx">
       <DependentUpon>frm_DanhMuc.cs</DependentUpon>

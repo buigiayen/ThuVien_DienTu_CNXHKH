@@ -108,15 +108,16 @@ namespace ThuVien_DienTu_CNXHKH.from
             if (grvNhomLyThuyet.FocusedRowHandle >= 0)
             {
                 int IDBaiViet = (int)grvNhomLyThuyet.GetFocusedRowCellValue("id");
-                if ((await commom.Function.Instance.Get_Thi(commom.Commom_static.IDUser, IDBaiViet)).Count() == 0 )
-                {
-                    frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
-                    frm.ShowDialog();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Bạn đã thi bài này", "Thông báo");
-                }
+                //    if ((await commom.Function.Instance.Get_Thi(commom.Commom_static.IDUser, IDBaiViet)).Count() == 0 )
+                //    {
+                frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
+                frm.TieuDe = grvNhomLyThuyet.GetFocusedRowCellValue("TenBaiViet").ToString();
+                frm.ShowDialog();
+                //    }
+                //    else
+                //    {
+                //        XtraMessageBox.Show("Bạn đã thi bài này", "Thông báo");
+                //    }
             }
 
 
@@ -138,7 +139,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             if (e.FocusedRowHandle >= 0)
             {
                 btnPowerPoint.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_PPT")?.ToString());
-                btnShowFileMp3.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("Link_voice")?.ToString());    
+                btnShowFileMp3.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("Link_voice")?.ToString());
             }
         }
     }

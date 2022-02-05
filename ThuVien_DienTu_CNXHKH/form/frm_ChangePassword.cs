@@ -19,6 +19,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             InitializeComponent();
             txtUsername.Text = UserName;
             CheckIsAdmin();
+            UserID = IDUser;
         }
         private async void CheckIsAdmin()
         {
@@ -35,7 +36,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             if (await CheckCondition())
             {
                 string PassOld = txtPasswordOld.Text.Trim();
-                string passNew = txtPassNew2.Text.Trim();
+                string passNew = txtPassNew.Text.Trim();
                 string mess = await commom.Function.Instance.ChangePassword(UserID, PassOld, passNew);
                 XtraMessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
