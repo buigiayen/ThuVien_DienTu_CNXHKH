@@ -227,6 +227,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.simpleButton1.Size = new System.Drawing.Size(106, 23);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "In kết quả";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // grcDanhSachDiem
             // 

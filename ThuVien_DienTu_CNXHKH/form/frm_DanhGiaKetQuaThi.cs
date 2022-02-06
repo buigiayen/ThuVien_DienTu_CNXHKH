@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThuVien_DienTu_CNXHKH.Report;
 using static Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol;
 
 namespace ThuVien_DienTu_CNXHKH.form
@@ -60,6 +62,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             progressBarControl1.EditValue = danhGiaKetQua1.TiLePhanTram;
             groupControl3.Text = danhGiaKetQua1.TieuDe.ToUpper();
             grcDanhSachDiem.DataSource = danhGiaKetQua1.cauTraLois;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Rep_Thi rep_Thi = new Rep_Thi(danhGiaKetQua1);
+            ReportPrintTool printTool = new ReportPrintTool(rep_Thi);
+            printTool.ShowPreview();
         }
     }
 }
