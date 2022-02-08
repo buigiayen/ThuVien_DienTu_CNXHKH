@@ -69,5 +69,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             grcList.DataSource = data.LienKets.Where(p => commom.Commom_static.isAdmin == true ? true : p.status == true).ToList();
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
