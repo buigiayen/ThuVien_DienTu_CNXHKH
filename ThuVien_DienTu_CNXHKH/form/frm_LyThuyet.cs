@@ -40,6 +40,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã bài", FieldName_Columns = "id", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên bài", FieldName_Columns = "TenBaiViet" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Power Point", FieldName_Columns = "ID_File_PPT", Visible = false });
+
             columnsproperties.Add(new properties.columns { Caption_Columns = "Âm thanh", FieldName_Columns = "ID_FileWord", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "FileWord", FieldName_Columns = "Link_voice", Visible = false });
 

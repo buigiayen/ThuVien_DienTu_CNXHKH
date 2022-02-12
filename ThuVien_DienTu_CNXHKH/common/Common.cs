@@ -163,7 +163,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             }
             return pageSize;
         }
-        public async Task<List<Model.Books>> GetContextFromPDF(List<Model.Books> books, string textContains)
+        public async Task GetContextFromPDF(List<Model.Books> books, string textContains, GridControl gridControl)
         {
             List<Model.Books> Listbook = new List<Model.Books>();
             string contentPage = string.Empty;
@@ -200,11 +200,16 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
                         }
                     }
+                    if (gridControl.DataSource != null)
+                    {
+                        gridControl.DataSource = null;
+                        gridControl.DataSource = Listbook.ToList();
+                    }
                 }
 
 
             };
-            return Listbook;
+          
 
         }
         public async Task<Model.FileInfos> FileSave()

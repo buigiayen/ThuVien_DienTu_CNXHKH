@@ -27,12 +27,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mô tả ", FieldName_Columns = "Mota" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Link", FieldName_Columns = "link"});
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Link", FieldName_Columns = "link", Visible = commom.Commom_static.isAdmin });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị ", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "link", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShowLink", toolTip = "Tải bài", Action = new Action(() => Show_Link()) });
+                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "Mota", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShowLink", toolTip = "Tải bài", Action = new Action(() => Show_Link()) });
                 if (commom.Commom_static.isAdmin)
                 {
                     button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 1, colname = "Mota", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, NameButton = "btnDeleteBook", toolTip = "Xóa bài", Action = new Action(() => Delete_Link()) });
@@ -72,7 +72,9 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            data.LienKets.Add(new database.LienKet { });
+            data.SaveChanges();
+            Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadDS);
         }
     }
 }

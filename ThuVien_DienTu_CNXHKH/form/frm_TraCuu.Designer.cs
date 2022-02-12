@@ -192,7 +192,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.xtraTabPage2.Controls.Add(this.layoutControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1136, 754);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1128, 741);
             this.xtraTabPage2.Text = "Tra cứu kinh điển";
             // 
             // layoutControl2
@@ -203,7 +203,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(1136, 754);
+            this.layoutControl2.Size = new System.Drawing.Size(1128, 741);
             this.layoutControl2.TabIndex = 7;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -214,7 +214,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.stackPanel2.FireScrollEventOnMouseWheel = true;
             this.stackPanel2.Location = new System.Drawing.Point(2, 2);
             this.stackPanel2.Name = "stackPanel2";
-            this.stackPanel2.Size = new System.Drawing.Size(1132, 27);
+            this.stackPanel2.Size = new System.Drawing.Size(1124, 26);
             this.stackPanel2.TabIndex = 6;
             // 
             // btnLoadTraCuuKinhDien
@@ -239,10 +239,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // grcTraCuuKinhDien
             // 
-            this.grcTraCuuKinhDien.Location = new System.Drawing.Point(2, 33);
+            this.grcTraCuuKinhDien.Location = new System.Drawing.Point(2, 32);
             this.grcTraCuuKinhDien.MainView = this.grvTraCuuKinhDien;
             this.grcTraCuuKinhDien.Name = "grcTraCuuKinhDien";
-            this.grcTraCuuKinhDien.Size = new System.Drawing.Size(1132, 719);
+            this.grcTraCuuKinhDien.Size = new System.Drawing.Size(1124, 707);
             this.grcTraCuuKinhDien.TabIndex = 5;
             this.grcTraCuuKinhDien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvTraCuuKinhDien});
@@ -261,7 +261,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem4});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1136, 754);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1128, 741);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem3
@@ -269,16 +269,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem3.Control = this.stackPanel2;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1136, 31);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1128, 30);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.grcTraCuuKinhDien;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 31);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1136, 723);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1128, 711);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 

@@ -106,20 +106,17 @@ namespace ThuVien_DienTu_CNXHKH.form
                 button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "ViTri", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnViewPageBook", toolTip = "Chuyển đến trang", Action = new Action(() => ShowViewBook("LinkPDF", (int)grvNhomSach.GetFocusedRowCellValue("ViTri"))) });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
-
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(new Action(() => { FindKey(btnTimKiemToanTap.Text); }));
-
-
         }
 
 
         private async void FindKey(string text)
         {
+            reload_Group_Book();
             if (!string.IsNullOrEmpty(text) && grvNhomSach.RowCount >= 0)
             {
                 var dataList = (List<Model.Books>)grcNhomSach.DataSource;
-                grcNhomSach.DataSource = null;
-                grcNhomSach.DataSource = await commom.Common.GetInstance().GetContextFromPDF(dataList.Where(p=>p.LinkPDF != null).ToList(), text);
+                await commom.Common.GetInstance().GetContextFromPDF(dataList.Where(p => p.LinkPDF != null).ToList(), text, grcNhomSach);
             }
 
         }
