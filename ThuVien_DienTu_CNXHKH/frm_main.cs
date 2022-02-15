@@ -67,7 +67,7 @@ namespace ThuVien_DienTu_CNXHKH
                 ShowLogin();
             }
         }
-
+                   
         private void btnLyThuyet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Moform<from.frm_LyThuyet>(0);
@@ -157,6 +157,14 @@ namespace ThuVien_DienTu_CNXHKH
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void btnTuSachVanKien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var a = new from.frm_LyThuyet();
+            a.isTuSachVanKien = true;
+            a.MdiParent = this;
+            a.Show();
         }
     }
 }

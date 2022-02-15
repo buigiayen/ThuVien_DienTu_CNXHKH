@@ -15,5 +15,6 @@ namespace database
 
         public bool? status { get; set; }
         public int PhanLoai { get; set; }
+        public string MoTaThuatNgu { get; set; }
     }
 }

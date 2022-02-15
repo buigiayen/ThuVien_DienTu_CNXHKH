@@ -17,6 +17,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         public frm_TuSachV2()
         {
             InitializeComponent();
+            btnAddBook.Visibility = commom.Commom_static.isAdmin ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
         }
         private database.TV data = new database.TV();
         private async void ShowBook()
@@ -131,8 +132,8 @@ namespace ThuVien_DienTu_CNXHKH.form
                 {
                     ShowBook();
                 }
-                        
-               
+
+
             }
         }
 

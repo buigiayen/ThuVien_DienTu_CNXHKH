@@ -258,6 +258,12 @@
     <Compile Include="form\frm_TuSachV2.Designer.cs">
       <DependentUpon>frm_TuSachV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frm_XemKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_XemKetQua.Designer.cs">
+      <DependentUpon>frm_XemKetQua.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\view\ViewFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_TuSachV2.resx">
       <DependentUpon>frm_TuSachV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_XemKetQua.resx">
+      <DependentUpon>frm_XemKetQua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\view\ViewFile.resx">
       <DependentUpon>ViewFile.cs</DependentUpon>

@@ -61,6 +61,20 @@ namespace ThuVien_DienTu_CNXHKH.commom
             else
                 return "";
         }
+        public async Task<bool> process_ShowLink(string path)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(path);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lỗi: " + ex, "Thông báo lỗi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
         //Open file 
         public async Task<bool> process_Application(string file_patd)
         {
@@ -110,7 +124,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             try
             {
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("Buiyen.cresoft@gmail.com");
+                mail.From = new MailAddress("truongminh.qltv@gmail.com");
                 mail.To.Add(emailto);
                 mail.Subject = title;
                 mail.IsBodyHtml = true;
@@ -120,7 +134,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 client.Host = "smtp.gmail.com";
                 client.UseDefaultCredentials = false;
                 client.Port = 587;
-                client.Credentials = new System.Net.NetworkCredential("Buiyen.cresoft@gmail.com", "Buiyen45");
+                client.Credentials = new System.Net.NetworkCredential("truongminh.qltv@gmail.com", "truongminhgmail");
                 client.EnableSsl = true; //vì ta cần thiết lập kết nối SSL với SMTP server nên cần gán nó bằng true
                 client.Send(mail);
                 listSend.Add(new Model.SendEmailStatus { messeger = "Thành công!", sendStatus = true });
@@ -135,7 +149,8 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public async Task<List<Model.Email_connec>> Email_Connecs()
         {
             List<Model.Email_connec> email_Connecs = new List<Model.Email_connec>();
-            email_Connecs.Add(new Model.Email_connec { Email = "Nguyentruongminhtp1@gmail.com", MoTa = "Admin!" });
+            email_Connecs.Add(new Model.Email_connec { Email = "Nguyentruongminhtp1@gmail.com", MoTa = "Admin - Người dùng" });
+            email_Connecs.Add(new Model.Email_connec { Email = "buiyen.cresoft@gmail.com", MoTa = "Admin - Kỹ thuật" });
             return email_Connecs;
         }
         public async Task<bool> GetTextFromPDF(string filePath, string textContains)
@@ -191,10 +206,11 @@ namespace ThuVien_DienTu_CNXHKH.commom
                                         LinkPDF = item.LinkPDF,
                                         TenSach = item.TenSach,
                                         TenTuSach = item.TenTuSach,
+                                        TrangHienThi = "Trang: " + i,
                                         ViTri = i
                                     });
 
-                                 
+
                                 }
                             }
 
@@ -209,7 +225,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
 
             };
-          
+
 
         }
         public async Task<Model.FileInfos> FileSave()
@@ -276,6 +292,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             public string TenSach { get; set; }
             public int? LinkPDF { get; set; }
             public int ViTri { get; set; }
+            public string TrangHienThi { get; set; }
         }
 
 

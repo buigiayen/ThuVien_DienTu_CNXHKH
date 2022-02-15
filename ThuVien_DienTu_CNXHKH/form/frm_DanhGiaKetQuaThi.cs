@@ -32,10 +32,15 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             public int STT { get; set; }
             public string CauHoi { get; set; }
+            public string CauTraLoiDungText { get; set; }
+      
+            public string CauTraLoiText { get; set; }
+
+
             public int Thuong { get; set; }
             public int Diem { get; set; }
             public bool KetQua { get; set; } = false;
-           
+
         }
         private DanhGiaKetQua danhGiaKetQua1;
         public frm_DanhGiaKetQuaThi(DanhGiaKetQua danhGiaKetQua)
@@ -47,7 +52,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void BindingData()
         {
-            txtNgayGio.Text = DateTime.Now.Day + " Tháng " + DateTime.Now.Month + " Năm " + DateTime.Now.Year + " " +DateTime.Now.Hour + ":"+ DateTime.Now.Second;
+            txtNgayGio.Text = DateTime.Now.Day + " Tháng " + DateTime.Now.Month + " Năm " + DateTime.Now.Year + " " + DateTime.Now.Hour + ":" + DateTime.Now.Second;
             lblTieuDe.Text += danhGiaKetQua1.TieuDe;
             txtIDNguoiDung.Text = danhGiaKetQua1.IDNguoiDung;
             txtDiaChiEmail.Text = danhGiaKetQua1.DiaChiEmail;
@@ -55,7 +60,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             txtDiemCuaNguoiHoc.Text = danhGiaKetQua1.DiemCuaNguoiHoc;
             txtThoiGian.Text = danhGiaKetQua1.ThoiGian;
             lblTiLe.Text = danhGiaKetQua1.TiLePhanTram + "%";
-            lblTiLe.Appearance.ForeColor = danhGiaKetQua1.TiLePhanTram  >= 50 ? Color.Green : Color.Red;
+            lblTiLe.Appearance.ForeColor = danhGiaKetQua1.TiLePhanTram >= 50 ? Color.Green : Color.Red;
             txtKetQua.Text = danhGiaKetQua1.TiLePhanTram >= 50 ? "Bạn đã hoàn thành!" : "Bạn chưa hoàn thành!";
             txtKetQua.Appearance.ForeColor = danhGiaKetQua1.TiLePhanTram >= 50 ? Color.Green : Color.Red;
             txtDiemDat.Text = danhGiaKetQua1.DiemDat;
@@ -69,6 +74,22 @@ namespace ThuVien_DienTu_CNXHKH.form
             Rep_Thi rep_Thi = new Rep_Thi(danhGiaKetQua1);
             ReportPrintTool printTool = new ReportPrintTool(rep_Thi);
             printTool.ShowPreview();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            var listXemCauHoi = new List<frm_XemKetQua.XemCauHoi>();
+            frm_XemKetQua frm_XemKetQua = new frm_XemKetQua();
+            foreach (var item in danhGiaKetQua1.cauTraLois)
+            {
+                frm_XemKetQua.XemCauHoi xemCauHoi = new frm_XemKetQua.XemCauHoi();
+                xemCauHoi.CauHoi = item.CauHoi;
+                xemCauHoi.CauTraLoiDung = item.CauTraLoiDungText;
+                xemCauHoi.CauTraLoi = item.CauTraLoiText;
+                listXemCauHoi.Add(xemCauHoi);
+            }
+            frm_XemKetQua.DataBindGridControl(listXemCauHoi);
+            frm_XemKetQua.ShowDialog();
         }
     }
 }

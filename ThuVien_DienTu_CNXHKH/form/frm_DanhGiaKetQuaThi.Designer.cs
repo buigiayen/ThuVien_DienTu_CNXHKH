@@ -214,6 +214,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.simpleButton2.Size = new System.Drawing.Size(107, 23);
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "Xem kết quả";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 

@@ -43,6 +43,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã bài", FieldName_Columns = "IDBai", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên bài", FieldName_Columns = "TenSach" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "LinkPDF", FieldName_Columns = "LinkPDF", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Trang", FieldName_Columns = "TrangHienThi", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Trang", FieldName_Columns = "ViTri", Visible = false });
 
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
@@ -55,15 +56,15 @@ namespace ThuVien_DienTu_CNXHKH.form
 
             grvNhomSach.OptionsBehavior.ReadOnly = true;
         }
-        private async void ShowViewBook(string Colname, int? Page = null)
+        private async void ShowViewBook(string Colname, int Page = -1)
         {
             if (!string.IsNullOrEmpty(Colname))
             {
                 string filePath = await commom.Function.Instance.getFilePatd(Convert.ToInt32(grvNhomSach.GetFocusedRowCellValue(Colname)?.ToString()));
                 pdfViewer1.LoadDocument(filePath);
-                if (Page != null)
+                if (Page != -1)
                 {
-                    pdfViewer1.CurrentPageNumber = Convert.ToInt32(Page);
+                    pdfViewer1.CurrentPageNumber = Page;
                     pdfViewer1.FindText(btnTimKiemToanTap.Text);
                     grvNhomSach.Columns["TenTuSach"].GroupIndex = 1;
                 }
@@ -71,6 +72,8 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void reload_Group_Book()
         {
+            grvNhomSach.Columns.Clear();
+            LoadGridControl_TuSachKinhDien();
             int IDTuSach = -1;
             if (lupTuSachKinhDien.EditValue != null)
             {
@@ -98,12 +101,24 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void btnTimKiemToanTap_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+
+           
+            reload_Group_Book();
             grvNhomSach.ExpandAllGroups();
-            grvNhomSach.Columns["ViTri"].Visible = true;
+            grvNhomSach.Columns["TrangHienThi"].Visible = true;
             grvNhomSach.Columns["TenSach"].GroupIndex = 2;
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "ViTri", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnViewPageBook", toolTip = "Chuyển đến trang", Action = new Action(() => ShowViewBook("LinkPDF", (int)grvNhomSach.GetFocusedRowCellValue("ViTri"))) });
+                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit
+                {
+                    buttonIndex = 0,
+                    colname = "TrangHienThi",
+                    styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search,
+                    NameButton = "btnViewPageBook",
+                    toolTip = "Chuyển đến trang",
+                    Action = new Action(() => ShowViewBook("LinkPDF",
+                      (int)grvNhomSach?.GetFocusedRowCellValue("ViTri")))
+                });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(new Action(() => { FindKey(btnTimKiemToanTap.Text); }));
@@ -112,7 +127,6 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void FindKey(string text)
         {
-            reload_Group_Book();
             if (!string.IsNullOrEmpty(text) && grvNhomSach.RowCount >= 0)
             {
                 var dataList = (List<Model.Books>)grcNhomSach.DataSource;

@@ -24,6 +24,8 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             LoadGridControl(grcTraCuuKinhDien, grvTraCuuKinhDien);
             LoadGridControl(grcTraCuuThuatNgu, grvTraCuuThuatNgu);
+            btnThemMoiTraCuuThuatNgu.Visible = commom.Commom_static.isAdmin;
+            btnThemMoiTraCuuKinhDien.Visible = commom.Commom_static.isAdmin;
         }
         private async void LoadGridControl(DevExpress.XtraGrid.GridControl gridControl, GridView gridView)
         {
@@ -32,7 +34,11 @@ namespace ThuVien_DienTu_CNXHKH.form
 
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = commom.Commom_static.isAdmin });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Thuật ngữ", FieldName_Columns = "ThuatNgu" });
+            if (gridControl == grcTraCuuThuatNgu)
+            {
+                columnsproperties.Add(new properties.columns { Caption_Columns = "Thuật ngữ", FieldName_Columns = "MoTaThuatNgu" });
+            }
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Giải ngữ", FieldName_Columns = "ThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true  });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
@@ -41,7 +47,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 button_Edits.Add(new properties.Button_edit
                 {
                     buttonIndex = 0,
-                    colname = "ThuatNgu",
+                    colname = gridControl == grcTraCuuThuatNgu ? "MoTaThuatNgu" : "ThuatNgu",
                     toolTip = "Xem thuật ngữ",
                     NameButton = "btnViewThuatNgu",
                     styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search,
@@ -124,6 +130,10 @@ namespace ThuVien_DienTu_CNXHKH.form
                 if (e.Column.FieldName == "ThuatNgu")
                 {
                     traCuu.ThuatNgu = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "MoTaThuatNgu")
+                {
+                    traCuu.MoTaThuatNgu = e.Value.ToString();
                 }
                 if (e.Column.FieldName == "status")
                 {

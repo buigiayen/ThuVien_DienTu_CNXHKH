@@ -124,19 +124,21 @@ namespace ThuVien_DienTu_CNXHKH.form
             int soCauDung = 0;
             int STT = 1;
             List<frm_DanhGiaKetQuaThi.CauTraLoi> cauTraLois = new List<frm_DanhGiaKetQuaThi.CauTraLoi>();
+            var listCauTraLoiDung = dataContext.CauTraLois.ToList();
             foreach (var item in listDaTraLois)
             {
                 frm_DanhGiaKetQuaThi.CauTraLoi cauTraLoi = new frm_DanhGiaKetQuaThi.CauTraLoi();
                 cauTraLoi.STT = STT;
                 var cauHoi = dataContext.CauHois.FirstOrDefault(o => o.Id == item.CauHoiId);
                 cauTraLoi.CauHoi = cauHoi.NoiDung;
-              
+                cauTraLoi.CauTraLoiDungText = listCauTraLoiDung.Where(p => p.Id == cauHoi.IdCauTraLoiDung).FirstOrDefault().NoiDung;
+                cauTraLoi.CauTraLoiText = listCauTraLoiDung.Where(p => p.Id == item.CauTraLoiId).FirstOrDefault()?.NoiDung;
                 if (cauHoi.IdCauTraLoiDung == item.CauTraLoiId)
                 {
                     soCauDung += 1;
                     cauTraLoi.Thuong = 1;
-                   
                     cauTraLoi.KetQua = true;
+                    
                 }
                 else
                 {

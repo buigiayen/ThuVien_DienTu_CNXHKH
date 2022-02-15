@@ -64,6 +64,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.btnTuSachVanKien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -151,6 +152,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLyThuyet);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnTuSach);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnTuSachVanKien);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnTuSachKinhDien);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLienKetTrangWeb);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -258,9 +260,10 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnNhomSachKinhDien,
             this.btnFile,
             this.btnKetQuaThi,
-            this.skinDropDownButtonItem1});
+            this.skinDropDownButtonItem1,
+            this.btnTuSachVanKien});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 23;
+            this.ribbonControl1.MaxItemId = 24;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -384,6 +387,15 @@ namespace ThuVien_DienTu_CNXHKH
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
             // 
+            // btnTuSachVanKien
+            // 
+            this.btnTuSachVanKien.Caption = "Tủ sách văn kiện";
+            this.btnTuSachVanKien.Id = 23;
+            this.btnTuSachVanKien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnTuSachVanKien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnTuSachVanKien.Name = "btnTuSachVanKien";
+            this.btnTuSachVanKien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTuSachVanKien_ItemClick);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,6 +458,7 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
         private DevExpress.XtraBars.BarButtonItem btnLogOut;
+        private DevExpress.XtraBars.BarButtonItem btnTuSachVanKien;
     }
 }
 
