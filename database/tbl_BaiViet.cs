@@ -31,7 +31,8 @@ namespace database
         public int TrangThaiThi { get; set; }
 
         public int? ID_FileWord { get; set; }
-        public bool? TuSachVanKien { get; set; }
+        public int? ID_File_PDF { get; set; }
+        public bool? isTuSachVanKien { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiThi> BaiThis { get; set; }

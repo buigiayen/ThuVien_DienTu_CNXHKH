@@ -92,11 +92,11 @@ namespace ThuVien_DienTu_CNXHKH
             this.labelControl1.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Warning;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(6, 3);
+            this.labelControl1.Location = new System.Drawing.Point(39, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(299, 18);
+            this.labelControl1.Size = new System.Drawing.Size(234, 18);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "ĐĂNG NHẬP HỆ THỐNG THƯ VIỆN ĐIỆN TỬ";
+            this.labelControl1.Text = "ĐĂNG NHẬP HỆ THỐNG THƯ VIỆN";
             // 
             // stackPanel1
             // 

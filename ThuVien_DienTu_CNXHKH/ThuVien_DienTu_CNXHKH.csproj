@@ -51,6 +51,13 @@
   <PropertyGroup>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -144,6 +151,12 @@
     <Compile Include="form\Form_Panel.Designer.cs">
       <DependentUpon>Form_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\FrmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\FrmView.Designer.cs">
+      <DependentUpon>FrmView.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frm_CauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +180,12 @@
     </Compile>
     <Compile Include="form\frm_DanhGiaKetQuaThi.Designer.cs">
       <DependentUpon>frm_DanhGiaKetQuaThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frm_DanhMucTuSachVanKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_DanhMucTuSachVanKien.Designer.cs">
+      <DependentUpon>frm_DanhMucTuSachVanKien.cs</DependentUpon>
     </Compile>
     <Compile Include="form\frm_DanhMuc.cs">
       <SubType>Form</SubType>
@@ -246,6 +265,12 @@
     <Compile Include="form\frm_Feedback.Designer.cs">
       <DependentUpon>frm_Feedback.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frm_TuSachVanKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frm_TuSachVanKien.Designer.cs">
+      <DependentUpon>frm_TuSachVanKien.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frm_TuSachKinhDien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +327,9 @@
     <EmbeddedResource Include="form\Form_Panel.resx">
       <DependentUpon>Form_Panel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\FrmView.resx">
+      <DependentUpon>FrmView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frm_CauHoi.resx">
       <DependentUpon>frm_CauHoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_DanhGiaKetQuaThi.resx">
       <DependentUpon>frm_DanhGiaKetQuaThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_DanhMucTuSachVanKien.resx">
+      <DependentUpon>frm_DanhMucTuSachVanKien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_DanhMuc.resx">
       <DependentUpon>frm_DanhMuc.cs</DependentUpon>
@@ -352,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_Feedback.resx">
       <DependentUpon>frm_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frm_TuSachVanKien.resx">
+      <DependentUpon>frm_TuSachVanKien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frm_TuSachKinhDien.resx">
       <DependentUpon>frm_TuSachKinhDien.cs</DependentUpon>
@@ -419,11 +453,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Logo.ico" />
     <None Include="Resources\Logo.ico" />
     <None Include="Resources\Image2.bmp" />
     <None Include="Resources\Toast1.png" />
     <None Include="Resources\Toast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+    <None Include="Resources\86f219c76cffa0a1f9ee.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

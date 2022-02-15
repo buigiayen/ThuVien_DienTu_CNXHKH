@@ -161,10 +161,17 @@ namespace ThuVien_DienTu_CNXHKH
 
         private void btnTuSachVanKien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var a = new from.frm_LyThuyet();
-            a.isTuSachVanKien = true;
-            a.MdiParent = this;
-            a.Show();
+            Moform<form.frm_TuSachVanKien>(0);
+        }
+
+        private void barButtonItem4_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Moform<form.frm_DanhMucTuSachVanKien>(0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

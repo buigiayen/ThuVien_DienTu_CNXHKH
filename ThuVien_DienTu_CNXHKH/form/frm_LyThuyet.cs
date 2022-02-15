@@ -24,7 +24,7 @@ namespace ThuVien_DienTu_CNXHKH.from
         {
             InitializeComponent();
         }
-        public bool isTuSachVanKien { get; set; } = false;
+     
         database.TV tV = new database.TV();
         private void frm_LyThuyet_Load(object sender, EventArgs e)
         {
@@ -68,7 +68,7 @@ namespace ThuVien_DienTu_CNXHKH.from
         {
 
             grcNhomLyThuyet.DataSource = (from ns in tV.NhomSaches.Where(p => p.status == true)
-                                          join s in tV.tbl_BaiViet.Where(p=>p.TuSachVanKien == isTuSachVanKien) on ns.IDNhomSach equals s.ID_NhomSach
+                                          join s in tV.tbl_BaiViet.Where(p=> p.isTuSachVanKien == false) on ns.IDNhomSach equals s.ID_NhomSach
                                           select new
                                           {
                                               ns.IDNhomSach,

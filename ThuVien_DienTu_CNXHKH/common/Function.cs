@@ -38,7 +38,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
         {
             return data.Files.Where(p => p.ID == idFile).FirstOrDefault().FilePath;
         }
-        public async Task<List<TraCuuThuatNgu>> Get_TraCuu( int PhanLoai = 0)
+        public async Task<List<TraCuuThuatNgu>> Get_TraCuu(int PhanLoai = 0)
         {
             return data.TraCuuThuatNgus.Where(p => (commom.Commom_static.isAdmin == true ? true : p.status == true) && p.PhanLoai == PhanLoai).ToList();
         }
@@ -46,7 +46,10 @@ namespace ThuVien_DienTu_CNXHKH.commom
         {
             return data.BaiThis.Where(p => p.UserId == idUser && p.BaiVietId == idbaithi).ToList();
         }
-
+        public async Task<List<CauHoi>> KiemTraThi(int idbaithi)
+        {
+            return data.CauHois.Where(p => p.BaiVietId == idbaithi).ToList();
+        }
         public async Task<List<KQThi>> KQThisAsync(int? UserID, int? IDBaiViet)
         {
             List<KQThi> kQThis = (from bv in data.tbl_BaiViet.Where(p => p.id == IDBaiViet)
@@ -64,7 +67,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
             return kQThis;
         }
-        public async Task<string> ChangePassword(int UserID,string passold, string passnew)
+        public async Task<string> ChangePassword(int UserID, string passold, string passnew)
         {
             string passNewHashMD5 = commom.Common.GetInstance().Md5(passnew);
             if (!commom.Commom_static.isAdmin)

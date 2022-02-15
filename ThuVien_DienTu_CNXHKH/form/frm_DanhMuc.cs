@@ -183,7 +183,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     break;
 
                 case 2:
-                    grcBaiViet.DataSource = tV.tbl_BaiViet.ToList();
+                    grcBaiViet.DataSource = tV.tbl_BaiViet.Where(p => p.isTuSachVanKien == false).ToList();
                     break;
             }
         }
