@@ -36,7 +36,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.grcList = new DevExpress.XtraGrid.GridControl();
             this.grvList = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colShowFile = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnShowFile = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -108,18 +107,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // grvList
             // 
-            this.grvList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colShowFile});
             this.grvList.GridControl = this.grcList;
             this.grvList.Name = "grvList";
-            // 
-            // colShowFile
-            // 
-            this.colShowFile.Caption = "Xem file";
-            this.colShowFile.ColumnEdit = this.btnShowFile;
-            this.colShowFile.Name = "colShowFile";
-            this.colShowFile.Visible = true;
-            this.colShowFile.VisibleIndex = 0;
             // 
             // btnShowFile
             // 
@@ -195,7 +184,6 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraGrid.Views.Grid.GridView grvList;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraGrid.Columns.GridColumn colShowFile;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnShowFile;
     }
 }

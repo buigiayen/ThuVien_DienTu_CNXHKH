@@ -85,7 +85,7 @@ namespace ThuVien_DienTu_CNXHKH
             {
                 ribbonPage2.Visible = false;
             }
-
+            Moform<form.FrmView>(0);
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

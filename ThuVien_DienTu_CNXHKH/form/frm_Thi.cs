@@ -175,6 +175,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
             }) ;
             frm.ShowDialog();
+            this.Close();
         }
 
         private void btnBatDauThi_Click(object sender, EventArgs e)

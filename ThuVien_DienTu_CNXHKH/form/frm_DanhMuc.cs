@@ -147,6 +147,10 @@ namespace ThuVien_DienTu_CNXHKH.form
                 {
                     bv.ID_File_Voice = (int?)e.Value;
                 }
+                if (e.Column.FieldName == "ID_NhomSach")
+                {
+                    bv.ID_NhomSach = (int?)e.Value;
+                }
                 if (e.Column.FieldName == "status")
                 {
                     bv.status = (bool)e.Value;
@@ -220,7 +224,9 @@ namespace ThuVien_DienTu_CNXHKH.form
         private async void btnThemMoiBaiViet_Click(object sender, EventArgs e)
         {
             database.tbl_BaiViet baiViet = new database.tbl_BaiViet();
+            baiViet.TenBaiViet = ""; 
             baiViet.status = false;
+            baiViet.isTuSachVanKien = false;
             tV.tbl_BaiViet.Add(baiViet);
             await tV.SaveChangesAsync();
             LoadDS(2);

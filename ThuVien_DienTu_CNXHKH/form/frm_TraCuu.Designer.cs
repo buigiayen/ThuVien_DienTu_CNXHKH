@@ -35,6 +35,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnReloadTraCuuThuatNgu = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemMoiTraCuuThuatNgu = new DevExpress.XtraEditors.SimpleButton();
             this.grcTraCuuThuatNgu = new DevExpress.XtraGrid.GridControl();
@@ -45,6 +52,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.btnLoadTraCuuKinhDien = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemMoiTraCuuKinhDien = new DevExpress.XtraEditors.SimpleButton();
             this.grcTraCuuKinhDien = new DevExpress.XtraGrid.GridControl();
@@ -52,11 +60,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -64,6 +67,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuThuatNgu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuThuatNgu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -74,12 +79,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
             this.stackPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -115,6 +120,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // stackPanel1
             // 
+            this.stackPanel1.Controls.Add(this.textEdit1);
+            this.stackPanel1.Controls.Add(this.labelControl1);
             this.stackPanel1.Controls.Add(this.btnReloadTraCuuThuatNgu);
             this.stackPanel1.Controls.Add(this.btnThemMoiTraCuuThuatNgu);
             this.stackPanel1.FireScrollEventOnMouseWheel = true;
@@ -123,10 +130,67 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.stackPanel1.Size = new System.Drawing.Size(1124, 28);
             this.stackPanel1.TabIndex = 5;
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(3, 4);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.NullText = "Tìm kiếm [Enter]";
+            this.textEdit1.Size = new System.Drawing.Size(278, 20);
+            this.textEdit1.TabIndex = 4;
+            this.textEdit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress_1);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1130, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 766);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1130, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 766);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1130, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 766);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(287, 7);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(0, 13);
+            this.labelControl1.TabIndex = 3;
+            // 
             // btnReloadTraCuuThuatNgu
             // 
             this.btnReloadTraCuuThuatNgu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReloadTraCuuThuatNgu.ImageOptions.Image")));
-            this.btnReloadTraCuuThuatNgu.Location = new System.Drawing.Point(3, 2);
+            this.btnReloadTraCuuThuatNgu.Location = new System.Drawing.Point(293, 2);
             this.btnReloadTraCuuThuatNgu.Name = "btnReloadTraCuuThuatNgu";
             this.btnReloadTraCuuThuatNgu.Size = new System.Drawing.Size(129, 23);
             this.btnReloadTraCuuThuatNgu.TabIndex = 0;
@@ -136,7 +200,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // btnThemMoiTraCuuThuatNgu
             // 
             this.btnThemMoiTraCuuThuatNgu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoiTraCuuThuatNgu.ImageOptions.Image")));
-            this.btnThemMoiTraCuuThuatNgu.Location = new System.Drawing.Point(138, 2);
+            this.btnThemMoiTraCuuThuatNgu.Location = new System.Drawing.Point(428, 2);
             this.btnThemMoiTraCuuThuatNgu.Name = "btnThemMoiTraCuuThuatNgu";
             this.btnThemMoiTraCuuThuatNgu.Size = new System.Drawing.Size(102, 23);
             this.btnThemMoiTraCuuThuatNgu.TabIndex = 1;
@@ -157,6 +221,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.grvTraCuuThuatNgu.GridControl = this.grcTraCuuThuatNgu;
             this.grvTraCuuThuatNgu.Name = "grvTraCuuThuatNgu";
+            this.grvTraCuuThuatNgu.OptionsView.ShowGroupPanel = false;
             // 
             // Root
             // 
@@ -209,6 +274,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // stackPanel2
             // 
+            this.stackPanel2.Controls.Add(this.textEdit2);
             this.stackPanel2.Controls.Add(this.btnLoadTraCuuKinhDien);
             this.stackPanel2.Controls.Add(this.btnThemMoiTraCuuKinhDien);
             this.stackPanel2.FireScrollEventOnMouseWheel = true;
@@ -217,10 +283,20 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.stackPanel2.Size = new System.Drawing.Size(1124, 26);
             this.stackPanel2.TabIndex = 6;
             // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(3, 3);
+            this.textEdit2.MenuManager = this.barManager1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.NullText = "Tìm kiếm [Enter]";
+            this.textEdit2.Size = new System.Drawing.Size(301, 20);
+            this.textEdit2.TabIndex = 3;
+            this.textEdit2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit2_KeyPress);
+            // 
             // btnLoadTraCuuKinhDien
             // 
             this.btnLoadTraCuuKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadTraCuuKinhDien.ImageOptions.Image")));
-            this.btnLoadTraCuuKinhDien.Location = new System.Drawing.Point(3, 2);
+            this.btnLoadTraCuuKinhDien.Location = new System.Drawing.Point(310, 1);
             this.btnLoadTraCuuKinhDien.Name = "btnLoadTraCuuKinhDien";
             this.btnLoadTraCuuKinhDien.Size = new System.Drawing.Size(129, 23);
             this.btnLoadTraCuuKinhDien.TabIndex = 0;
@@ -230,7 +306,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // btnThemMoiTraCuuKinhDien
             // 
             this.btnThemMoiTraCuuKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoiTraCuuKinhDien.ImageOptions.Image")));
-            this.btnThemMoiTraCuuKinhDien.Location = new System.Drawing.Point(138, 2);
+            this.btnThemMoiTraCuuKinhDien.Location = new System.Drawing.Point(445, 1);
             this.btnThemMoiTraCuuKinhDien.Name = "btnThemMoiTraCuuKinhDien";
             this.btnThemMoiTraCuuKinhDien.Size = new System.Drawing.Size(102, 23);
             this.btnThemMoiTraCuuKinhDien.TabIndex = 1;
@@ -251,6 +327,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.grvTraCuuKinhDien.GridControl = this.grcTraCuuKinhDien;
             this.grvTraCuuKinhDien.Name = "grvTraCuuKinhDien";
+            this.grvTraCuuKinhDien.OptionsView.ShowGroupPanel = false;
             // 
             // layoutControlGroup1
             // 
@@ -282,46 +359,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1130, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 766);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1130, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 766);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1130, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 766);
-            // 
             // frm_TraCuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +379,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.stackPanel1.ResumeLayout(false);
+            this.stackPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuThuatNgu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuThuatNgu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -352,12 +392,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
             this.stackPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,7 +410,6 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
-        private DevExpress.XtraEditors.SimpleButton btnReloadTraCuuThuatNgu;
         private DevExpress.XtraGrid.GridControl grcTraCuuThuatNgu;
         private DevExpress.XtraGrid.Views.Grid.GridView grvTraCuuThuatNgu;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
@@ -391,5 +430,9 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.SimpleButton btnLoadTraCuuKinhDien;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnReloadTraCuuThuatNgu;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
     }
 }

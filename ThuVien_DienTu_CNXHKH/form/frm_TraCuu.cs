@@ -26,6 +26,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             LoadGridControl(grcTraCuuThuatNgu, grvTraCuuThuatNgu);
             btnThemMoiTraCuuThuatNgu.Visible = commom.Commom_static.isAdmin;
             btnThemMoiTraCuuKinhDien.Visible = commom.Commom_static.isAdmin;
+            btnReloadTraCuuThuatNgu.Visible = commom.Commom_static.isAdmin;
+            btnLoadTraCuuKinhDien.Visible = commom.Commom_static.isAdmin;
         }
         private async void LoadGridControl(DevExpress.XtraGrid.GridControl gridControl, GridView gridView)
         {
@@ -38,9 +40,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             {
                 columnsproperties.Add(new properties.columns { Caption_Columns = "Thuật ngữ", FieldName_Columns = "MoTaThuatNgu" });
             }
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Giải ngữ", FieldName_Columns = "ThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true  });
+            columnsproperties.Add(new properties.columns { Caption_Columns = gridControl == grcTraCuuKinhDien ? "Câu trích" :  "Giải ngữ", FieldName_Columns = "ThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true  });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, AutoFilter: false);
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
             {
                 List<properties.Button_edit> button_Edits = new List<properties.Button_edit>();
@@ -141,6 +143,27 @@ namespace ThuVien_DienTu_CNXHKH.form
                 }
             }
             data.SaveChanges();
+        }
+
+        private async void textEdit1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         
+        }
+
+        private async void textEdit2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                grcTraCuuKinhDien.DataSource = await commom.Function.Instance.Get_TraCuu(1, textEdit2.Text);
+            }
+        }
+
+        private async void textEdit1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                grcTraCuuThuatNgu.DataSource = await commom.Function.Instance.Get_TraCuu(0, textEdit1.Text);
+            }
         }
     }
 }

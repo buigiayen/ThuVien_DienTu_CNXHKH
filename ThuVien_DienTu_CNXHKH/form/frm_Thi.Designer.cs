@@ -263,7 +263,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(968, 275);
             this.groupControl1.TabIndex = 5;
-            this.groupControl1.Text = "Nội dung";
+            this.groupControl1.Text = "Câu hỏi";
             // 
             // txtNoiDung
             // 

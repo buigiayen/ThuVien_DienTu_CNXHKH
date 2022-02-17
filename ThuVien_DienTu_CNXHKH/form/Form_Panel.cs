@@ -187,7 +187,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "ID", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Bài", FieldName_Columns = "TenBai" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tủ sách", FieldName_Columns = "IDNhomSachKinhDien" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Link PPT", FieldName_Columns = "link_File" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Link PDF", FieldName_Columns = "link_File" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status" });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
 
@@ -197,7 +197,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 columns_GridLookUpedit.Add("Mã", "ID");
                 columns_GridLookUpedit.Add("Tên file", "FileName");
                 columns_GridLookUpedit.Add("Đường dẫn", "FilePath");
-                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_PPT), new string[] { "link_File" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_PDF), new string[] { "link_File" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
             }
          
             {

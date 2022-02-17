@@ -17,5 +17,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             InitializeComponent();
         }
+
+        private void FrmView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

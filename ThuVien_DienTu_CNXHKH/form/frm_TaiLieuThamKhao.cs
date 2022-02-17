@@ -29,17 +29,35 @@ namespace ThuVien_DienTu_CNXHKH.form
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = commom.Commom_static.isAdmin });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên bài", FieldName_Columns = "idBaiViet" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "File tham khảo", FieldName_Columns = "idFile" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Tên tài liệu", FieldName_Columns = "TenTaiLieu" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "File tham khảo", FieldName_Columns = "idFile", Visible = commom.Commom_static.isAdmin });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
 
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             showTenBai();
+            {
+                var Listbutton = new List<properties.Button_edit>();
+                Listbutton.Add(new properties.Button_edit
+                {
+                    buttonIndex = 0,
+                    colname = "TenTaiLieu",
+                    NameButton = "btnTenTaiLieu",
+                    styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search,
+                    toolTip = "Xem file",
+                    Action = new Action(() =>
+                    {
+                        showFile();
+                    })
+                });
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(Listbutton);
+            }
             {
                 Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
                 columns_GridLookUpedit.Add("Mã", "ID");
                 columns_GridLookUpedit.Add("Nhóm", "FileName");
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.Files.ToList(), new string[] { "idFile" }, columns_GridLookUpedit, "ID", "FileName");
             }
+
             grvList.Columns["idBaiViet"].GroupIndex = 0;
             grvList.OptionsBehavior.ReadOnly = !commom.Commom_static.isAdmin;
 
@@ -53,13 +71,21 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (grvList.FocusedRowHandle >= 0)
             {
+                int idTaiLieu = (int)grvList.GetFocusedRowCellValue("id");
+                database.TaiLieuThamKhao taiLieuThamKhao = data.TaiLieuThamKhaos.SingleOrDefault(p => p.id == idTaiLieu);
                 if (e.Column.FieldName == "idFile")
                 {
-                    int idTaiLieu = (int)grvList.GetFocusedRowCellValue("id");
-                    database.TaiLieuThamKhao taiLieuThamKhao = data.TaiLieuThamKhaos.SingleOrDefault(p => p.id == idTaiLieu);
                     taiLieuThamKhao.idFile = (int)e.Value;
-                    await data.SaveChangesAsync();
                 }
+                if (e.Column.FieldName == "status")
+                {
+                    taiLieuThamKhao.status = (bool)e.Value;
+                }
+                if (e.Column.FieldName == "TenTaiLieu")
+                {
+                    taiLieuThamKhao.TenTaiLieu = e.Value.ToString();
+                }
+                data.SaveChanges();
             }
         }
 
@@ -67,8 +93,9 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
             columns_GridLookUpedit.Add("Mã", "id");
+
             columns_GridLookUpedit.Add("Nhóm", "TenBaiViet");
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.tbl_BaiViet.Where(p=>p.id == _idBaiViet).ToList(), new string[] { "idBaiViet" }, columns_GridLookUpedit, "id", "TenBaiViet");
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.tbl_BaiViet.Where(p => p.id == _idBaiViet).ToList(), new string[] { "idBaiViet" }, columns_GridLookUpedit, "id", "TenBaiViet");
         }
         private async void btnReload_Click(object sender, EventArgs e)
         {
@@ -76,7 +103,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void ShowTaiLieu()
         {
-            grcList.DataSource = data.TaiLieuThamKhaos.Where(p => p.idBaiViet == _idBaiViet).ToList();
+            grcList.DataSource = data.TaiLieuThamKhaos.Where(p => p.idBaiViet == _idBaiViet && commom.Commom_static.isAdmin == true ? true : p.status == true).ToList();
         }
         private async void simpleButton2_Click(object sender, EventArgs e)
         {
@@ -91,6 +118,10 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void btnShowFile_Click(object sender, EventArgs e)
         {
+
+        }
+        private async void showFile()
+        {
             if (grvList.FocusedRowHandle >= 0)
             {
                 int idFile = (int)grvList.GetFocusedRowCellValue("idFile");
@@ -101,11 +132,12 @@ namespace ThuVien_DienTu_CNXHKH.form
                 }
 
             }
-        }
 
+        }
         private void frm_TaiLieuThamKhao_Load(object sender, EventArgs e)
         {
             btnThemMoi.Visible = commom.Commom_static.isAdmin;
+            ShowTaiLieu();
         }
     }
 }

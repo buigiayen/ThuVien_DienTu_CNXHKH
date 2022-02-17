@@ -73,6 +73,16 @@ namespace ThuVien_DienTu_CNXHKH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap db5ff3c2d7011b5f4210 {
+            get {
+                object obj = ResourceManager.GetObject("db5ff3c2d7011b5f4210", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Image2 {
             get {
                 object obj = ResourceManager.GetObject("Image2", resourceCulture);
