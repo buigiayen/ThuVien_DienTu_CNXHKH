@@ -61,7 +61,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.lblAppInfomation = new DevExpress.XtraBars.BarStaticItem();
             this.lblUser = new DevExpress.XtraBars.BarStaticItem();
-            this.btnLogOut = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -329,8 +328,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.lblUser,
-            this.lblAppInfomation,
-            this.btnLogOut});
+            this.lblAppInfomation});
             this.barManager1.MaxItemId = 4;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTimeEdit1});
@@ -345,8 +343,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.lblAppInfomation),
-            new DevExpress.XtraBars.LinkPersistInfo(this.lblUser),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLogOut, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.lblUser)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -369,15 +366,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.lblUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.LargeImage")));
             this.lblUser.Name = "lblUser";
             this.lblUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Caption = "Đăng xuất";
-            this.btnLogOut.Id = 3;
-            this.btnLogOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.Image")));
-            this.btnLogOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.LargeImage")));
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogOut_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -495,7 +483,6 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
-        private DevExpress.XtraBars.BarButtonItem btnLogOut;
         private DevExpress.XtraBars.BarButtonItem btnTuSachVanKien;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -17,6 +17,10 @@ using System.Drawing;
 using DevExpress.Utils.Base;
 using System.Collections;
 using System.Threading;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Configuration;
 
 namespace ThuVien_DienTu_CNXHKH.commom
 {
@@ -30,6 +34,10 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public static string File_PDF = "PDF";
         public static string File_Voice = "Mp3";
         public static string File_PPT = "PPTX";
+        public static string APPID { get; set; } = ConfigurationManager.AppSettings["APPID"].ToString();
+        public static string URL { get; set; } = ConfigurationManager.AppSettings["URL"].ToString();
+        public static string APPRUN { get; set; } = ConfigurationManager.AppSettings["APPrun"].ToString();
+
     }
     public class Common : common.FunctionPattent.BaseFunction<Common>
     {
@@ -251,7 +259,48 @@ namespace ThuVien_DienTu_CNXHKH.commom
             }
             return FileInfos;
         }
+        public async Task<List<Model.APIresult>> API_data_Async(string uri, JObject jObjectbody = null)
+        {
+            List<Model.APIresult> aPIresults = new List<Model.APIresult>();
+            HttpClient restClient = new HttpClient();
+            HttpResponseMessage restRequest = null;
+            restRequest = await restClient.GetAsync(Commom_static.URL + uri);
+            if (restRequest.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                aPIresults = JsonConvert.DeserializeObject<List<Model.APIresult>>(restRequest.Content.ReadAsStringAsync().Result.ToString());
+            }
 
+            return aPIresults;
+        }
+        public async Task<List<T>> ConvertObjectToListClassAsync<T>(Model.Enums.Httpstatuscode_API httpstatuscode_API, object Content, string mesenger = "") where T : class
+        {
+            List<T> Tcontext = new List<T>();
+            Tcontext = null;
+            if (Content != null)
+            {
+                switch (httpstatuscode_API)
+                {
+                    case Model.Enums.Httpstatuscode_API.OK:
+                        Tcontext = JsonConvert.DeserializeObject<List<T>>(Content.ToString());
+                        break;
+                    case Model.Enums.Httpstatuscode_API.ERROR:
+                   
+                        break;
+                    case Model.Enums.Httpstatuscode_API.NULL:
+                        break;
+                    case Model.Enums.Httpstatuscode_API.WARN:
+                        Tcontext = JsonConvert.DeserializeObject<List<T>>(Content.ToString());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+              
+            }
+            return Tcontext;
+        }
 
     }
 
@@ -296,6 +345,21 @@ namespace ThuVien_DienTu_CNXHKH.commom
         }
 
 
-
+        public class Enums
+        {
+            public enum Httpstatuscode_API
+            {
+                OK = 200,
+                ERROR = 401,
+                NULL = 402,
+                WARN = 403,
+            }
+        }
+        public class APIresult
+        {
+            public Enums.Httpstatuscode_API code { get; set; }
+            public object Data { get; set; }
+            public string Messenger { get; set; }
+        }
     }
 }

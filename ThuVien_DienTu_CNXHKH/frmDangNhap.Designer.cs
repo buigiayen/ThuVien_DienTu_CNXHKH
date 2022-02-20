@@ -34,31 +34,32 @@ namespace ThuVien_DienTu_CNXHKH
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnNangCapPhanMen = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
             this.stackPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -100,12 +101,35 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             // stackPanel1
             // 
+            this.stackPanel1.Controls.Add(this.btnNangCapPhanMen);
             this.stackPanel1.Controls.Add(this.btnDangNhap);
-            this.stackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.TopDown;
+            this.stackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
             this.stackPanel1.Location = new System.Drawing.Point(176, 125);
             this.stackPanel1.Name = "stackPanel1";
             this.stackPanel1.Size = new System.Drawing.Size(312, 36);
             this.stackPanel1.TabIndex = 8;
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+            this.btnDangNhap.Appearance.Options.UseBackColor = true;
+            this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
+            this.btnDangNhap.Location = new System.Drawing.Point(39, 7);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(125, 22);
+            this.btnDangNhap.TabIndex = 6;
+            this.btnDangNhap.Text = "ĐĂNG NHẬP";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 149);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // txtPassword
             // 
@@ -166,6 +190,15 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(58, 13);
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.pictureBox1;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(164, 153);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.stackPanel1;
@@ -184,36 +217,20 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // btnDangNhap
+            // btnNangCapPhanMen
             // 
-            this.btnDangNhap.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
-            this.btnDangNhap.Appearance.Options.UseBackColor = true;
-            this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
-            this.btnDangNhap.Location = new System.Drawing.Point(93, 3);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(125, 22);
-            this.btnDangNhap.TabIndex = 6;
-            this.btnDangNhap.Text = "ĐĂNG NHẬP";
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 149);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.pictureBox1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(164, 153);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
+            this.btnNangCapPhanMen.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.btnNangCapPhanMen.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
+            this.btnNangCapPhanMen.Appearance.Options.UseBackColor = true;
+            this.btnNangCapPhanMen.Appearance.Options.UseForeColor = true;
+            this.btnNangCapPhanMen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnNangCapPhanMen.Location = new System.Drawing.Point(170, 6);
+            this.btnNangCapPhanMen.Name = "btnNangCapPhanMen";
+            this.btnNangCapPhanMen.Size = new System.Drawing.Size(139, 23);
+            this.btnNangCapPhanMen.TabIndex = 7;
+            this.btnNangCapPhanMen.Text = "Nâng cấp phần mềm";
+            this.btnNangCapPhanMen.ToolTip = "nâng cấp phần mềm";
+            this.btnNangCapPhanMen.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // frmDangNhap
             // 
@@ -223,7 +240,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.ClientSize = new System.Drawing.Size(500, 173);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Image = global::ThuVien_DienTu_CNXHKH.Properties.Resources.Toast1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDangNhap";
@@ -239,15 +255,15 @@ namespace ThuVien_DienTu_CNXHKH
             this.stackPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.stackPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,5 +284,6 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.Utils.Layout.StackPanel stackPanel2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.SimpleButton btnNangCapPhanMen;
     }
 }

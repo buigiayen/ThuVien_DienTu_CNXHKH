@@ -16,6 +16,7 @@ using static ThuVien_DienTu_CNXHKH.commom.Model;
 using DevExpress.Pdf;
 using ThuVien_DienTu_CNXHKH.commom;
 using System.Threading;
+using DevExpress.XtraPdfViewer;
 
 namespace ThuVien_DienTu_CNXHKH.form
 {
@@ -65,7 +66,9 @@ namespace ThuVien_DienTu_CNXHKH.form
                 if (Page != -1)
                 {
                     pdfViewer1.CurrentPageNumber = Page;
+                    PdfFindDialogOptions pdfFindDialogOptions = new PdfFindDialogOptions( btnTimKiemToanTap.Text, false, false);
                     pdfViewer1.FindText(btnTimKiemToanTap.Text);
+                    pdfViewer1.ShowFindDialog(pdfFindDialogOptions);
                     grvNhomSach.Columns["TenTuSach"].GroupIndex = 1;
                 }
             }

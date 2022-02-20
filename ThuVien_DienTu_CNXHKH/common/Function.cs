@@ -84,6 +84,24 @@ namespace ThuVien_DienTu_CNXHKH.commom
             return "Thay đổi mật khẩu thành công!";
         }
 
+        private Newtonsoft.Json.Linq.JObject parameter = null;
+        public async Task<List<DonVi>> InfoUnits(string IDDonVi)
+        {
+            string url = "GetCongifVersion?IDDonVi=" + IDDonVi;
+            parameter = new Newtonsoft.Json.Linq.JObject();
+            parameter.Add("IDDonVi", IDDonVi);
+            var data = await commom.Common.GetInstance().API_data_Async(url, parameter);
+            if (data.Count > 0 && data !=null)
+            {
+                var dataContext = data.FirstOrDefault();
+                return await  commom.Common.GetInstance().ConvertObjectToListClassAsync<DonVi>(dataContext.code, dataContext.Data, dataContext.Messenger);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
     public class KQThi
     {
@@ -95,5 +113,15 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public string CauTraLoiCuaBan { get; set; }
 
     }
-
+    public class DonVi
+    {
+        public int ID { get; set; }
+        public string MaDonVi { get; set; }
+        public string TenDonVi { get; set; }
+        public bool Active { get; set; }
+        public string URL { get; set; }
+        public string Bucket { get; set; }
+        public string Note { get; set; }
+        public string Version { get; set; }
+    }
 }

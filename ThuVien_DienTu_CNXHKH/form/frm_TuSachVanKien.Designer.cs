@@ -571,7 +571,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frm_TuSachVanKien";
-            this.Text = "Tủ sách kinh điển";
+            this.Text = "Tủ sách văn kiện";
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPageNumberEdit1)).EndInit();
