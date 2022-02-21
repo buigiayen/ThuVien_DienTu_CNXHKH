@@ -36,13 +36,24 @@ namespace ThuVien_DienTu_CNXHKH.commom
         }
         public async Task<string> getFilePatd(int? idFile)
         {
-            return data.Files.Where(p => p.ID == idFile).FirstOrDefault().FilePath;
+            string currentPath = AppDomain.CurrentDomain.BaseDirectory + "File";
+            string filePath = "";
+            if (!System.IO.Directory.Exists(currentPath)) { System.IO.Directory.CreateDirectory(currentPath); }
+            var dataFile = data.Files.Where(p => p.ID == idFile).FirstOrDefault()?.FileName;
+            if (!string.IsNullOrEmpty(dataFile))
+            {
+                filePath = System.IO.Path.Combine(currentPath, dataFile);
+                if (!System.IO.File.Exists(filePath))
+                {
+                   await commom.Common.GetInstance().DownloadFile(commom.Commom_static.Bucket , dataFile, currentPath);
+                }
+            }
+            return filePath;
+
         }
         public async Task<List<TraCuuThuatNgu>> Get_TraCuu(int PhanLoai = 0, string key = "")
         {
-           
-                return data.TraCuuThuatNgus.Where(p => (commom.Commom_static.isAdmin == true ? true : (p.status == true && p.ThuatNgu.Contains(key))) && p.PhanLoai == PhanLoai ).ToList();
-           
+            return data.TraCuuThuatNgus.Where(p => (commom.Commom_static.isAdmin == true ? true : (p.status == true && p.ThuatNgu.Contains(key))) && p.PhanLoai == PhanLoai).ToList();
         }
         public async Task<List<BaiThi>> Get_Thi(int? idUser = null, int? idbaithi = null)
         {
@@ -91,10 +102,10 @@ namespace ThuVien_DienTu_CNXHKH.commom
             parameter = new Newtonsoft.Json.Linq.JObject();
             parameter.Add("IDDonVi", IDDonVi);
             var data = await commom.Common.GetInstance().API_data_Async(url, parameter);
-            if (data.Count > 0 && data !=null)
+            if (data.Count > 0 && data != null)
             {
                 var dataContext = data.FirstOrDefault();
-                return await  commom.Common.GetInstance().ConvertObjectToListClassAsync<DonVi>(dataContext.code, dataContext.Data, dataContext.Messenger);
+                return await commom.Common.GetInstance().ConvertObjectToListClassAsync<DonVi>(dataContext.code, dataContext.Data, dataContext.Messenger);
             }
             else
             {

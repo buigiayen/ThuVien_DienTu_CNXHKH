@@ -21,6 +21,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Configuration;
+using System.Net;
 
 namespace ThuVien_DienTu_CNXHKH.commom
 {
@@ -37,6 +38,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public static string APPID { get; set; } = ConfigurationManager.AppSettings["APPID"].ToString();
         public static string URL { get; set; } = ConfigurationManager.AppSettings["URL"].ToString();
         public static string APPRUN { get; set; } = ConfigurationManager.AppSettings["APPrun"].ToString();
+        public static string Bucket { get; set; } = "filecontent";
 
     }
     public class Common : common.FunctionPattent.BaseFunction<Common>
@@ -239,7 +241,6 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public async Task<Model.FileInfos> FileSave()
         {
             Model.FileInfos FileInfos = new Model.FileInfos();
-
             XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
             xtraOpenFileDialog.ShowDialog();
             if (!string.IsNullOrEmpty(xtraOpenFileDialog.FileName))
@@ -284,7 +285,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                         Tcontext = JsonConvert.DeserializeObject<List<T>>(Content.ToString());
                         break;
                     case Model.Enums.Httpstatuscode_API.ERROR:
-                   
+
                         break;
                     case Model.Enums.Httpstatuscode_API.NULL:
                         break;
@@ -297,11 +298,76 @@ namespace ThuVien_DienTu_CNXHKH.commom
             }
             else
             {
-              
+
             }
             return Tcontext;
         }
+        public async Task<bool> DownloadFile(string Bucket, string FileName, string filePath)
+        {
+            string url = string.Format("{0}DownloadFileBucket?Bucket={1}&FileName={2}", commom.Commom_static.URL, Bucket, FileName);
+            return Download(url, FileName, filePath);
+        }
+        public bool Download(string url, string downloadFileName, string Pathlocal)
+        {
+            string downloadfile = System.IO.Path.Combine(Pathlocal, downloadFileName);
+            string httpPathWebResource = null;
+            Boolean ifFileDownoadedchk = false;
+            ifFileDownoadedchk = false;
+            WebClient myWebClient = new WebClient();
+            httpPathWebResource = url;
+            myWebClient.DownloadFile(httpPathWebResource, downloadfile);
+            ifFileDownoadedchk = true;
+            return ifFileDownoadedchk;
+        }
+        public async Task<bool> UploadFile(string Bucket, string FileName, string filePath)
+        {
+            string url = string.Format("{0}DownloadFileBucket?Bucket={1}&FileName={2}", commom.Commom_static.URL, Bucket, FileName);
+            return Download(url, FileName, filePath);
+        }
+        public async Task<bool> UploadFile(string sourcePath, string destinationPath, bool createPath, bool overwriteFile)
+        {
+            bool status = false;
 
+            try
+            {
+                MultipartFormDataContent multipart = new MultipartFormDataContent();
+                multipart.Add(new StringContent(destinationPath), "destinationPath");
+                multipart.Add(new StringContent(overwriteFile.ToString()), "overwriteFile");
+                multipart.Add(new ByteArrayContent(File.ReadAllBytes(sourcePath)), "files", "files");
+                WebClient myWebClient = new WebClient();
+                // Select the API to call
+                string path = $"UploadFile/{multipart}";
+
+                // Make request and get response
+                HttpResponseMessage response = await restClient.PostAsync(path, multipart);
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResult = await response.Content.ReadAsStringAsync();
+                    if (jsonResult.Contains("true"))
+                        status = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private async Task<IRestResponse> UploadAsync(string fileName, string server)
+        {
+            using (var fileStream = File.Open(fileName, FileMode.Open))
+            {
+                var client = new RestClient(server);
+                var request = new RestRequest(Method.POST);
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    await fileStream.CopyToAsync(memoryStream);
+                    request.AddFile("file", memoryStream.ToArray(), fileName);
+                    request.AlwaysMultipartFormData = true;
+                    var response = await client.ExecuteTaskAsync(request);
+                    return response;
+                }
+            }
+        }
     }
 
     public class Model
