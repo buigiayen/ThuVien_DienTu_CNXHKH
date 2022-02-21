@@ -167,6 +167,12 @@
     <Compile Include="form\Form_Panel.Designer.cs">
       <DependentUpon>Form_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\frmDangKiTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmDangKiTaiKhoan.Designer.cs">
+      <DependentUpon>frmDangKiTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\FrmView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Form_Panel.resx">
       <DependentUpon>Form_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmDangKiTaiKhoan.resx">
+      <DependentUpon>frmDangKiTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\FrmView.resx">
       <DependentUpon>FrmView.cs</DependentUpon>

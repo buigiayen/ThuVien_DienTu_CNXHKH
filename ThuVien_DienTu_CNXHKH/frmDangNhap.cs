@@ -117,5 +117,11 @@ namespace ThuVien_DienTu_CNXHKH
            
           
         }
+
+        private void lblDanhKiTaiKhoan_Click(object sender, EventArgs e)
+        {
+            form.frmDangKiTaiKhoan frm = new form.frmDangKiTaiKhoan();
+            frm.ShowDialog();
+        }
     }
 }

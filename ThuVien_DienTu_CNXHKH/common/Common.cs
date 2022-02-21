@@ -333,9 +333,9 @@ namespace ThuVien_DienTu_CNXHKH.commom
             {
                 var uri = new Uri(url);
                 { 
-                    client.Headers.Add("Content-Type", "multipart/form-data");
+                 
                     client.Headers.Add("fileName", System.IO.Path.GetFileName(fileName));
-                    client.UploadFileAsync(uri, fileName);
+                    client.UploadFile(uri, fileName);
                 }
             }
             catch (Exception ex)

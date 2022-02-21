@@ -26,5 +26,6 @@ namespace database
 
         [StringLength(200)]
         public string TenSinhVien { get; set; }
+        public string Email { get; set; }
     }
 }
