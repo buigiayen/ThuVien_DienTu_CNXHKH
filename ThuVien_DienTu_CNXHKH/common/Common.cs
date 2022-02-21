@@ -250,13 +250,15 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
                 FileInfo fileInfos = new FileInfo(xtraOpenFileDialog.FileName);
                 string destFileName = Application.StartupPath + "/File/" + fileInfos.Name;
-
+                
                 File.Copy(xtraOpenFileDialog.FileName, destFileName, true);
+                commom.Common.GetInstance().UploadFile(commom.Commom_static.Bucket, destFileName);
                 FileInfo fileInfo = new FileInfo(destFileName);
                 FileInfos.nameFile = fileInfo.Name;
                 FileInfos.Path = fileInfo.FullName;
                 FileInfos.size = fileInfo.Length;
                 FileInfos.ex = fileInfo.Extension;
+                
             }
             return FileInfos;
         }
@@ -319,55 +321,30 @@ namespace ThuVien_DienTu_CNXHKH.commom
             ifFileDownoadedchk = true;
             return ifFileDownoadedchk;
         }
-        public async Task<bool> UploadFile(string Bucket, string FileName, string filePath)
+        public async Task UploadFile(string Bucket, string filePath)
         {
-            string url = string.Format("{0}DownloadFileBucket?Bucket={1}&FileName={2}", commom.Commom_static.URL, Bucket, FileName);
-            return Download(url, FileName, filePath);
+            string url = string.Format("{0}MinioUpload?bucket={1}", commom.Commom_static.URL, Bucket);
+            Upload(url, filePath);
         }
-        public async Task<bool> UploadFile(string sourcePath, string destinationPath, bool createPath, bool overwriteFile)
+        private void Upload(string url, string fileName)
         {
-            bool status = false;
-
+            var client = new WebClient();
             try
             {
-                MultipartFormDataContent multipart = new MultipartFormDataContent();
-                multipart.Add(new StringContent(destinationPath), "destinationPath");
-                multipart.Add(new StringContent(overwriteFile.ToString()), "overwriteFile");
-                multipart.Add(new ByteArrayContent(File.ReadAllBytes(sourcePath)), "files", "files");
-                WebClient myWebClient = new WebClient();
-                // Select the API to call
-                string path = $"UploadFile/{multipart}";
-
-                // Make request and get response
-                HttpResponseMessage response = await restClient.PostAsync(path, multipart);
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonResult = await response.Content.ReadAsStringAsync();
-                    if (jsonResult.Contains("true"))
-                        status = true;
+                var uri = new Uri(url);
+                { 
+                    client.Headers.Add("Content-Type", "multipart/form-data");
+                    client.Headers.Add("fileName", System.IO.Path.GetFileName(fileName));
+                    client.UploadFileAsync(uri, fileName);
                 }
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-            }
-        }
-        private async Task<IRestResponse> UploadAsync(string fileName, string server)
-        {
-            using (var fileStream = File.Open(fileName, FileMode.Open))
-            {
-                var client = new RestClient(server);
-                var request = new RestRequest(Method.POST);
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    await fileStream.CopyToAsync(memoryStream);
-                    request.AddFile("file", memoryStream.ToArray(), fileName);
-                    request.AlwaysMultipartFormData = true;
-                    var response = await client.ExecuteTaskAsync(request);
-                    return response;
-                }
-            }
-        }
+
     }
 
     public class Model
