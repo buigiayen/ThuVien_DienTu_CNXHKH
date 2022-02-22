@@ -56,8 +56,9 @@ namespace ThuVien_DienTu_CNXHKH.form
                     database.UserLogin userLogin = new database.UserLogin();
                     userLogin.isAdmin = false;
                     userLogin.status = true;
-                    userLogin.Username = lblHoTen.Text.Trim();
-                    userLogin.Email = lblHoTen.Text.Trim();
+                    userLogin.Username = lblTaiKhoan.Text.Trim();
+                    userLogin.TenSinhVien = lblHoTen.Text.Trim();
+                    userLogin.Email = lblEmail.Text.Trim();
                     userLogin.Password = commom.Common.GetInstance().Md5(lblXacNhanMatKhau.Text);
                     data.UserLogins.Add(userLogin);
                     if (data.SaveChanges() > 0)

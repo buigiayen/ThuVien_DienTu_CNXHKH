@@ -22,6 +22,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Configuration;
 using System.Net;
+using RestSharp;
 
 namespace ThuVien_DienTu_CNXHKH.commom
 {
@@ -249,8 +250,8 @@ namespace ThuVien_DienTu_CNXHKH.commom
                     Directory.CreateDirectory(Application.StartupPath + "/File");
 
                 FileInfo fileInfos = new FileInfo(xtraOpenFileDialog.FileName);
-                string destFileName = Application.StartupPath + "/File/" + fileInfos.Name;
-                
+                string destFileName = Application.StartupPath + "\\File\\" + fileInfos.Name;
+
                 File.Copy(xtraOpenFileDialog.FileName, destFileName, true);
                 commom.Common.GetInstance().UploadFile(commom.Commom_static.Bucket, destFileName);
                 FileInfo fileInfo = new FileInfo(destFileName);
@@ -258,7 +259,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 FileInfos.Path = fileInfo.FullName;
                 FileInfos.size = fileInfo.Length;
                 FileInfos.ex = fileInfo.Extension;
-                
+
             }
             return FileInfos;
         }
@@ -326,17 +327,18 @@ namespace ThuVien_DienTu_CNXHKH.commom
             string url = string.Format("{0}MinioUpload?bucket={1}", commom.Commom_static.URL, Bucket);
             Upload(url, filePath);
         }
-        private void Upload(string url, string fileName)
+        private async void Upload(string url, string fileName)
         {
-            var client = new WebClient();
             try
             {
-                var uri = new Uri(url);
-                { 
-                 
-                    client.Headers.Add("fileName", System.IO.Path.GetFileName(fileName));
-                    client.UploadFile(uri, fileName);
-                }
+                string value = null;
+                var client = new RestClient(url);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Content-Type", "multipart/form-data");
+                request.AddParameter("multipart/form-data", fileName, ParameterType.RequestBody);
+                request.AlwaysMultipartFormData = true;
+                request.AddFile("files", fileName);
+                var result = await client.ExecuteAsync(request);
             }
             catch (Exception ex)
             {

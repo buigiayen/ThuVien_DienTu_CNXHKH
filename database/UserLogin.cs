@@ -10,12 +10,8 @@ namespace database
     public partial class UserLogin
     {
         [Key]
-        [Column(Order = 0)]
+       
         public int id { get; set; }
-
-        [Key]
-        [Column(Order = 1)]
-        [StringLength(50)]
         public string Username { get; set; }
 
         public string Password { get; set; }
@@ -26,6 +22,8 @@ namespace database
 
         [StringLength(200)]
         public string TenSinhVien { get; set; }
+
+        [StringLength(100)]
         public string Email { get; set; }
     }
 }

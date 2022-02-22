@@ -20,7 +20,6 @@ namespace database
         public virtual DbSet<LienKet> LienKets { get; set; }
         public virtual DbSet<NhomSach> NhomSaches { get; set; }
         public virtual DbSet<SachKinhDien> SachKinhDiens { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiLieuThamKhao> TaiLieuThamKhaos { get; set; }
         public virtual DbSet<tbl_BaiViet> tbl_BaiViet { get; set; }
         public virtual DbSet<TraCuuThuatNgu> TraCuuThuatNgus { get; set; }
@@ -65,6 +64,11 @@ namespace database
                 .HasMany(e => e.tbl_BaiViet2)
                 .WithOptional(e => e.File2)
                 .HasForeignKey(e => e.ID_FileWord);
+
+            modelBuilder.Entity<File>()
+                .HasMany(e => e.tbl_BaiViet3)
+                .WithOptional(e => e.File3)
+                .HasForeignKey(e => e.ID_File_PDF);
 
             modelBuilder.Entity<File>()
                 .HasMany(e => e.tuSaches)

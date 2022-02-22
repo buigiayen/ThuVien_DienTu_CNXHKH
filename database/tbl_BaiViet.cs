@@ -18,6 +18,7 @@ namespace database
 
         public int id { get; set; }
 
+        [Required]
         public string TenBaiViet { get; set; }
 
         public int? ID_File_PPT { get; set; }
@@ -31,7 +32,9 @@ namespace database
         public int TrangThaiThi { get; set; }
 
         public int? ID_FileWord { get; set; }
+
         public int? ID_File_PDF { get; set; }
+
         public bool? isTuSachVanKien { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -45,6 +48,8 @@ namespace database
         public virtual File File1 { get; set; }
 
         public virtual File File2 { get; set; }
+
+        public virtual File File3 { get; set; }
 
         public virtual NhomSach NhomSach { get; set; }
 

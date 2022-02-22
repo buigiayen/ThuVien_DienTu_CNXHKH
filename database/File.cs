@@ -17,6 +17,7 @@ namespace database
             tbl_BaiViet = new HashSet<tbl_BaiViet>();
             tbl_BaiViet1 = new HashSet<tbl_BaiViet>();
             tbl_BaiViet2 = new HashSet<tbl_BaiViet>();
+            tbl_BaiViet3 = new HashSet<tbl_BaiViet>();
             tuSaches = new HashSet<tuSach>();
         }
 
@@ -47,6 +48,9 @@ namespace database
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_BaiViet> tbl_BaiViet2 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_BaiViet> tbl_BaiViet3 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tuSach> tuSaches { get; set; }

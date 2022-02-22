@@ -17,12 +17,17 @@ namespace database
         public bool? status { get; set; }
 
         public int ID { get; set; }
+
         [StringLength(500)]
         public string LoaiTaiLieu { get; set; }
+
         [StringLength(500)]
         public string TacGia { get; set; }
+
         [StringLength(50)]
         public string NamXuatBan { get; set; }
+
+        [StringLength(500)]
         public string GhiChu { get; set; }
 
         public virtual File File { get; set; }

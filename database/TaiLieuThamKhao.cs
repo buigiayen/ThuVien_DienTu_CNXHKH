@@ -14,11 +14,12 @@ namespace database
         public int? idFile { get; set; }
 
         public int? idBaiViet { get; set; }
-        public string TenTaiLieu { get; set; }
+
         public bool? status { get; set; }
 
         public virtual File File { get; set; }
 
         public virtual tbl_BaiViet tbl_BaiViet { get; set; }
+        public string TenTaiLieu { get; set; }
     }
 }
