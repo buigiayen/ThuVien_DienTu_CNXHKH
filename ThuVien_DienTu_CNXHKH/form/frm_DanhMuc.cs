@@ -228,7 +228,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             baiViet.status = false;
             baiViet.isTuSachVanKien = false;
             tV.tbl_BaiViet.Add(baiViet);
-            await tV.SaveChangesAsync();
+             tV.SaveChanges();
             LoadDS(2);
 
         }

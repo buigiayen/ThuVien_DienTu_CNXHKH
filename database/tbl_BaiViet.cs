@@ -18,7 +18,7 @@ namespace database
 
         public int id { get; set; }
 
-        [Required]
+       
         public string TenBaiViet { get; set; }
 
         public int? ID_File_PPT { get; set; }
@@ -29,7 +29,7 @@ namespace database
 
         public bool status { get; set; }
 
-        public int TrangThaiThi { get; set; }
+      
 
         public int? ID_FileWord { get; set; }
 

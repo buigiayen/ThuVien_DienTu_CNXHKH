@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace database
@@ -11,7 +12,7 @@ namespace database
             : base("name=TV")
         {
         }
-
+       
         public virtual DbSet<BaiThi> BaiThis { get; set; }
         public virtual DbSet<CauHoi> CauHois { get; set; }
         public virtual DbSet<CauTraLoi> CauTraLois { get; set; }

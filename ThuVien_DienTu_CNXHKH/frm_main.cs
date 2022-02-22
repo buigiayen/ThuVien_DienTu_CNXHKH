@@ -17,7 +17,7 @@ namespace ThuVien_DienTu_CNXHKH
 {
     public partial class frm_main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private bool IsLogin { get; set; }
+        private static bool IsLogin { get; set; }
         public frm_main(bool _IsLogin)
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace ThuVien_DienTu_CNXHKH
         }
         private void Moform<T>(int tabcon) where T : DevExpress.XtraEditors.XtraForm, new()
         {
-            if (!IsLogin)
+            if (IsLogin)
             {
                 Form frm = kiemtraform(typeof(T), tabcon);
                 if (frm == null)
