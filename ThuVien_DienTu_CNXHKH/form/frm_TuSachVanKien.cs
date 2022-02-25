@@ -56,17 +56,22 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (!string.IsNullOrEmpty(Colname))
             {
-                string filePath = await commom.Function.Instance.getFilePatd(Convert.ToInt32(grvNhomSach.GetFocusedRowCellValue(Colname)?.ToString()));
-                pdfViewer1.LoadDocument(filePath);
-                if (Page != -1)
+                string FilePath = commom.Function.Instance.getFilePatd(Convert.ToInt32(grvNhomSach.GetFocusedRowCellValue(Colname)?.ToString())).Result;
+                if (!string.IsNullOrEmpty(FilePath))
                 {
-                    pdfViewer1.CurrentPageNumber = Page;
-                    PdfFindDialogOptions pdfFindDialogOptions = new PdfFindDialogOptions(btnTimKiemToanTap.Text, false, false);
-                    pdfViewer1.FindText(btnTimKiemToanTap.Text);
-                    pdfViewer1.ShowFindDialog(pdfFindDialogOptions);
-                    pdfViewer1.FindText(btnTimKiemToanTap.Text);
-                   
+                    pdfViewer1.LoadDocument(FilePath);
+                    if (Page != -1)
+                    {
+                        pdfViewer1.CurrentPageNumber = Page;
+                        PdfFindDialogOptions pdfFindDialogOptions = new PdfFindDialogOptions(btnTimKiemToanTap.Text, false, false);
+                        pdfViewer1.FindText(btnTimKiemToanTap.Text);
+                        pdfViewer1.ShowFindDialog(pdfFindDialogOptions);
+                        pdfViewer1.FindText(btnTimKiemToanTap.Text);
+
+                    }
                 }
+              
+              
             }
         }
         private async void reload_Group_Book()

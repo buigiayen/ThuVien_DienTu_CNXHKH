@@ -46,24 +46,40 @@ namespace ThuVien_DienTu_CNXHKH.from
             columnsproperties.Add(new properties.columns { Caption_Columns = "FileWord", FieldName_Columns = "Link_voice", Visible = false });
 
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, false, true);
-            {
-                List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
-                button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShowWord", toolTip = "Mở file word", Action = new Action(() => { showFileWord("ID_FileWord"); }) });
-                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
-            }
+            //{
+            //    List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
+            //    button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShowWord", toolTip = "Mở file word", Action = new Action(() => { showFileWord("ID_FileWord"); }) });
+            //    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+            //}
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "TenBaiViet" }, AllowEdit: false);
+          
+       
             grvNhomLyThuyet.Columns["TenNhomSach"].GroupIndex = 0;
+            grvNhomLyThuyet.RowClick += GrvNhomLyThuyet_RowClick; 
         }
 
-        private async void showFileWord(string colName)
+        private async void GrvNhomLyThuyet_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue(colName) ?? null;
-            if (IDFile != null)
+            if (e.RowHandle >= 0)
             {
-                richEditControl1.LoadDocument(await Function.Instance.getFilePatd(IDFile));
+                int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("IDNhomSach") ?? null;
+                if (IDFile != null)
+                {
+                    string FilePath =  Function.Instance.getFilePatd(IDFile).Result;
+                    if (!string.IsNullOrEmpty(FilePath))
+                    {
+                        richEditControl1.LoadDocument(FilePath);
+                    }
+                  
+                }
+
             }
 
         }
 
+   
+
+      
         private async void ShowNhomLyThuyet()
         {
 

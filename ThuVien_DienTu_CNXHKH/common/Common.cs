@@ -329,21 +329,21 @@ namespace ThuVien_DienTu_CNXHKH.commom
         }
         private async void Upload(string url, string fileName)
         {
-            //try
-            //{
-            //    string value = null;
-            //    var client = new RestClient(url);
-            //    var request = new RestRequest(Method.Post);
-            //    request.AddHeader("Content-Type", "multipart/form-data");
-            //    request.AddParameter("multipart/form-data", fileName, ParameterType.RequestBody);
-            //    request.AlwaysMultipartFormData = true;
-            //    request.AddFile("files", fileName);
-            //    var result = await client.ExecuteAsync(request);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            try
+            {
+             
+                var client = new RestClient(url);
+                var request = new RestRequest("",Method.Post);
+                request.AddHeader("Content-Type", "multipart/form-data");
+                request.AddParameter("multipart/form-data", fileName, ParameterType.RequestBody);
+                request.AlwaysMultipartFormData = true;
+                request.AddFile("files", fileName);
+                var result = await client.ExecuteAsync(request);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

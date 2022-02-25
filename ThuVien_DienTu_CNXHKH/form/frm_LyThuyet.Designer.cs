@@ -36,10 +36,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnTaiLaiDanhSach = new DevExpress.XtraEditors.SimpleButton();
-            this.grcNhomLyThuyet = new DevExpress.XtraGrid.GridControl();
-            this.grvNhomLyThuyet = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
@@ -51,15 +48,16 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.grvNhomLyThuyet = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grcNhomLyThuyet = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grcNhomLyThuyet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvNhomLyThuyet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -68,6 +66,9 @@ namespace ThuVien_DienTu_CNXHKH.from
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvNhomLyThuyet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcNhomLyThuyet)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -131,27 +132,6 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.btnTaiLaiDanhSach.Text = "Tải lại danh sách";
             this.btnTaiLaiDanhSach.Click += new System.EventHandler(this.btnTaiLaiDanhSach_Click);
             // 
-            // grcNhomLyThuyet
-            // 
-            this.grcNhomLyThuyet.Location = new System.Drawing.Point(2, 2);
-            this.grcNhomLyThuyet.MainView = this.grvNhomLyThuyet;
-            this.grcNhomLyThuyet.Name = "grcNhomLyThuyet";
-            this.grcNhomLyThuyet.Size = new System.Drawing.Size(324, 499);
-            this.grcNhomLyThuyet.TabIndex = 0;
-            this.grcNhomLyThuyet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grvNhomLyThuyet});
-            // 
-            // grvNhomLyThuyet
-            // 
-            this.grvNhomLyThuyet.GridControl = this.grcNhomLyThuyet;
-            this.grvNhomLyThuyet.Name = "grvNhomLyThuyet";
-            this.grvNhomLyThuyet.OptionsBehavior.ReadOnly = true;
-            this.grvNhomLyThuyet.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.False;
-            this.grvNhomLyThuyet.OptionsView.ShowGroupPanel = false;
-            this.grvNhomLyThuyet.OptionsView.ShowViewCaption = true;
-            this.grvNhomLyThuyet.ViewCaption = "Danh sách lý thuyết";
-            this.grvNhomLyThuyet.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvNhomLyThuyet_FocusedRowChanged);
-            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -163,15 +143,6 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.Root.Size = new System.Drawing.Size(328, 543);
             this.Root.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.grcNhomLyThuyet;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(328, 503);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
@@ -282,6 +253,44 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.grcNhomLyThuyet;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(328, 503);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // grvNhomLyThuyet
+            // 
+            this.grvNhomLyThuyet.GridControl = this.grcNhomLyThuyet;
+            this.grvNhomLyThuyet.Name = "grvNhomLyThuyet";
+            this.grvNhomLyThuyet.OptionsBehavior.ReadOnly = true;
+            this.grvNhomLyThuyet.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.False;
+            this.grvNhomLyThuyet.OptionsView.RowAutoHeight = true;
+            this.grvNhomLyThuyet.OptionsView.ShowGroupPanel = false;
+            this.grvNhomLyThuyet.OptionsView.ShowViewCaption = true;
+            this.grvNhomLyThuyet.ViewCaption = "Danh sách lý thuyết";
+            this.grvNhomLyThuyet.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvNhomLyThuyet_FocusedRowChanged);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // grcNhomLyThuyet
+            // 
+            this.grcNhomLyThuyet.Location = new System.Drawing.Point(2, 2);
+            this.grcNhomLyThuyet.MainView = this.grvNhomLyThuyet;
+            this.grcNhomLyThuyet.Name = "grcNhomLyThuyet";
+            this.grcNhomLyThuyet.Size = new System.Drawing.Size(324, 499);
+            this.grcNhomLyThuyet.TabIndex = 0;
+            this.grcNhomLyThuyet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvNhomLyThuyet});
+            // 
             // frm_LyThuyet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,10 +306,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grcNhomLyThuyet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvNhomLyThuyet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
@@ -309,6 +315,9 @@ namespace ThuVien_DienTu_CNXHKH.from
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvNhomLyThuyet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcNhomLyThuyet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,10 +329,7 @@ namespace ThuVien_DienTu_CNXHKH.from
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnTaiLaiDanhSach;
-        private DevExpress.XtraGrid.GridControl grcNhomLyThuyet;
-        private DevExpress.XtraGrid.Views.Grid.GridView grvNhomLyThuyet;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
@@ -335,5 +341,9 @@ namespace ThuVien_DienTu_CNXHKH.from
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraGrid.GridControl grcNhomLyThuyet;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvNhomLyThuyet;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

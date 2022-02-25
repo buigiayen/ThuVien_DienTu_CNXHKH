@@ -73,30 +73,35 @@ namespace ThuVien_DienTu_CNXHKH.form
 
             LoadNhomSach();
             {
-                Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
-                columns_GridLookUpedit.Add("Mã", "ID");
-                columns_GridLookUpedit.Add("Tên file", "FileName");
-                columns_GridLookUpedit.Add("Đường dẫn", "FilePath");
+          
                 //word
-                {
-
-                    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_DOCX), new string[] { "ID_FileWord" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
-                }
+                
+                    Dictionary<string, string> columns_GridLookUpedit1 = new Dictionary<string, string>();
+                    columns_GridLookUpedit1.Add("Mã", "ID");
+                    columns_GridLookUpedit1.Add("Tên file", "FileName");
+                    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_DOCX), new string[] { "ID_FileWord" }, columns_GridLookUpedit1, valueMember: "ID", DisplayFormat: "FileName");
+                
                 //PDF
-                {
-                    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_PPT), new string[] { "ID_File_PPT" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
-                }
+                
+                    Dictionary<string, string> columns_GridLookUpedit2  = new Dictionary<string, string>();
+                    columns_GridLookUpedit2.Add("Mã", "ID");
+                    columns_GridLookUpedit2.Add("Tên file", "FileName");
+                    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_PPT), new string[] { "ID_File_PPT" }, columns_GridLookUpedit2, valueMember: "ID", DisplayFormat: "FileName");
+                
                 //PDF
-                {
-                    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_Voice), new string[] { "ID_File_Voice" }, columns_GridLookUpedit, valueMember: "ID", DisplayFormat: "FileName");
-                }
+                
+                    Dictionary<string, string> columns_GridLookUpedit3 = new Dictionary<string, string>();
+                    columns_GridLookUpedit3.Add("Mã", "ID");
+                    columns_GridLookUpedit3.Add("Tên file", "FileName");
+                    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(await Function.Instance.getfile(commom.Commom_static.File_Voice), new string[] { "ID_File_Voice" }, columns_GridLookUpedit3, valueMember: "ID", DisplayFormat: "FileName");
+                
                 // Danh sách câu hỏi
-                {
+                
                     List<properties.Button_edit> btnDanhSachBaiThi = new List<properties.Button_edit>();
                     btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", NameButton = "btnDanhMucBaiThi", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, toolTip = "Danh sách bài thi", Action = new Action(() => showListbaiThi("id")) });
                     btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 1, colname = "TenBaiViet", NameButton = "btnTaiLieuThamKhao", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, toolTip = "Danh sách tham khảo", Action = new Action(() => ShowDSThamKhao("id")) });
                     Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(btnDanhSachBaiThi);
-                }
+                
             }
 
             grvBaiViet.CellValueChanging += GrvBaiViet_CellValueChanging;
@@ -156,6 +161,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     bv.status = (bool)e.Value;
                 }
                 tV.SaveChanges();
+
             }
         }
 
@@ -217,18 +223,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             database.NhomSach nhomSach = new database.NhomSach();
             nhomSach.status = false;
             tV.NhomSaches.Add(nhomSach);
-            await tV.SaveChangesAsync();
+            tV.SaveChanges();
             LoadDS(1);
         }
 
         private async void btnThemMoiBaiViet_Click(object sender, EventArgs e)
         {
             database.tbl_BaiViet baiViet = new database.tbl_BaiViet();
-            baiViet.TenBaiViet = ""; 
+            baiViet.TenBaiViet = "";
             baiViet.status = false;
             baiViet.isTuSachVanKien = false;
             tV.tbl_BaiViet.Add(baiViet);
-             tV.SaveChanges();
+            tV.SaveChanges();
             LoadDS(2);
 
         }

@@ -17,7 +17,7 @@ namespace database
 
         public int PhanLoai { get; set; }
 
-        [StringLength(500)]
+      
         public string MoTaThuatNgu { get; set; }
     }
 }

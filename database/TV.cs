@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.Validation;
 using System.Linq;
 
@@ -12,7 +13,7 @@ namespace database
             : base("name=TV")
         {
         }
-       
+   
         public virtual DbSet<BaiThi> BaiThis { get; set; }
         public virtual DbSet<CauHoi> CauHois { get; set; }
         public virtual DbSet<CauTraLoi> CauTraLois { get; set; }
@@ -102,6 +103,7 @@ namespace database
                 .HasMany(e => e.SachKinhDiens)
                 .WithOptional(e => e.TuSachKinhDien)
                 .HasForeignKey(e => e.IDNhomSachKinhDien);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }

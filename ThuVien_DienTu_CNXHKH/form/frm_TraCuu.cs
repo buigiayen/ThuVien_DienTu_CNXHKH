@@ -35,15 +35,20 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridView = gridView;
 
             List<properties.columns> columnsproperties = new List<properties.columns>();
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = commom.Commom_static.isAdmin });
-            if (gridControl == grcTraCuuThuatNgu)
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = gridControl == grcTraCuuKinhDien ? "Câu trích" : "Thuật ngữ", FieldName_Columns = "ThuatNgu" });
+            if (gridControl == grcTraCuuKinhDien)
             {
-                columnsproperties.Add(new properties.columns { Caption_Columns = "Thuật ngữ", FieldName_Columns = "MoTaThuatNgu" });
+                columnsproperties.Add(new properties.columns { Caption_Columns = "Giải ngữ", FieldName_Columns = "MoTaThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true });
             }
-            columnsproperties.Add(new properties.columns { Caption_Columns = gridControl == grcTraCuuKinhDien ? "Câu trích" :  "Giải ngữ", FieldName_Columns = "ThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true  });
+
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, AutoFilter: false);
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
+            if (gridControl == grcTraCuuKinhDien)
+            {
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
+            }
+         
             {
                 List<properties.Button_edit> button_Edits = new List<properties.Button_edit>();
                 button_Edits.Add(new properties.Button_edit
@@ -147,7 +152,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void textEdit1_KeyPress(object sender, KeyPressEventArgs e)
         {
-         
+
         }
 
         private async void textEdit2_KeyPress(object sender, KeyPressEventArgs e)
