@@ -35,6 +35,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public static string File_DOCX = "DOCX";
         public static string File_PDF = "PDF";
         public static string File_Voice = "Mp3";
+        public static string File_MP = "Mp3 Mp4";
         public static string File_PPT = "PPTX";
         public static string APPID { get; set; } = ConfigurationManager.AppSettings["APPID"].ToString();
         public static string URL { get; set; } = ConfigurationManager.AppSettings["URL"].ToString();
@@ -239,8 +240,39 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
 
         }
-        public async Task<Model.FileInfos> FileSave()
+        public  List<Model.FileInfos> OpenMultiselectFile()
         {
+            List<Model.FileInfos> ListFileinfo = new List<Model.FileInfos>();
+            XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
+            xtraOpenFileDialog.Multiselect = true;
+            xtraOpenFileDialog.ShowDialog();
+            foreach (var items in xtraOpenFileDialog.FileNames)
+            {
+                Model.FileInfos fileInfos1 = new Model.FileInfos();
+                if (!string.IsNullOrEmpty(items))
+                {
+                    if (!Directory.Exists(Application.StartupPath + "/File/"))
+                        Directory.CreateDirectory(Application.StartupPath + "/File");
+
+                    FileInfo fileInfos = new FileInfo(items);
+                    string destFileName = Application.StartupPath + "\\File\\" + fileInfos.Name;
+
+                    File.Copy(items, destFileName, true);
+                    commom.Common.GetInstance().UploadFile(commom.Commom_static.Bucket, destFileName);
+                    FileInfo fileInfo = new FileInfo(destFileName);
+                    fileInfos1.nameFile = fileInfo.Name;
+                    fileInfos1.Path = fileInfo.FullName;
+                    fileInfos1.size = fileInfo.Length;
+                    fileInfos1.ex = fileInfo.Extension;
+                    ListFileinfo.Add(fileInfos1);
+                }
+            }
+            
+            return ListFileinfo;
+        }
+        public List<Model.FileInfos> Openfile()
+        {
+            List<Model.FileInfos> fileInfos1 = new List<Model.FileInfos>();
             Model.FileInfos FileInfos = new Model.FileInfos();
             XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
             xtraOpenFileDialog.ShowDialog();
@@ -259,10 +291,12 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 FileInfos.Path = fileInfo.FullName;
                 FileInfos.size = fileInfo.Length;
                 FileInfos.ex = fileInfo.Extension;
-
+                fileInfos1.Add(FileInfos);
             }
-            return FileInfos;
+            return fileInfos1;
         }
+
+
         public async Task<List<Model.APIresult>> API_data_Async(string uri, JObject jObjectbody = null)
         {
             List<Model.APIresult> aPIresults = new List<Model.APIresult>();
@@ -331,9 +365,9 @@ namespace ThuVien_DienTu_CNXHKH.commom
         {
             try
             {
-             
+
                 var client = new RestClient(url);
-                var request = new RestRequest("",Method.Post);
+                var request = new RestRequest("", Method.POST);
                 request.AddHeader("Content-Type", "multipart/form-data");
                 request.AddParameter("multipart/form-data", fileName, ParameterType.RequestBody);
                 request.AlwaysMultipartFormData = true;

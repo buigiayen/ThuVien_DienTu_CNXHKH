@@ -50,29 +50,33 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void btnAddNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var fileInfo = await commom.Common.GetInstance().FileSave();
-            if (!string.IsNullOrEmpty(fileInfo.nameFile))
+            var fileInfo =  commom.Common.GetInstance().OpenMultiselectFile();
+            if (fileInfo != null && fileInfo.Count > 0)
             {
-                int fileExit = data.Files.Where(p => p.FileName == fileInfo.nameFile).Count();
-                if (fileExit > 0)
+                foreach (var fileInfos in fileInfo)
                 {
-                    DialogResult r = XtraMessageBox.Show("File đã tồn tại bạn muốn thêm mới!","Thông báo",MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (r == DialogResult.OK)
+                    if (!string.IsNullOrEmpty(fileInfos.nameFile))
                     {
-                        fileInfo.nameFile += "_" + DateTime.Now.ToString("ddMMyyyHHmmss");
-                        saveFile(fileInfo);
-                    }
-                    else
-                    {
-                        saveFile(fileInfo);
-                    }
-                }
-                else
-                {
-                    saveFile(fileInfo);
-                }
+                        int fileExit = data.Files.Where(p => p.FileName == fileInfos.nameFile).Count();
+                        if (fileExit > 0)
+                        {
+                            DialogResult r = XtraMessageBox.Show("File đã tồn tại bạn muốn thêm mới!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (r == DialogResult.OK)
+                            {
+                                fileInfos.nameFile += "_" + DateTime.Now.ToString("ddMMyyyHHmmss");
+                                saveFile(fileInfos);
+                            }
+                        }
+                        else
+                        {
+                            saveFile(fileInfos);
+                        }
 
+                    }
+                }
+               
             }
+            
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadData);
         }
         private async void saveFile(Model.FileInfos files)

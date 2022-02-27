@@ -87,6 +87,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcBaiViet.TabIndex = 8;
             this.grcBaiViet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvBaiViet});
+            this.grcBaiViet.Click += new System.EventHandler(this.grcBaiViet_Click);
             // 
             // grvBaiViet
             // 

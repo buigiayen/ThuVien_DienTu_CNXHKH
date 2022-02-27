@@ -43,7 +43,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             columnsproperties.Add(new properties.columns { Caption_Columns = "Power Point", FieldName_Columns = "ID_File_PPT", Visible = false });
 
             columnsproperties.Add(new properties.columns { Caption_Columns = "Âm thanh", FieldName_Columns = "ID_FileWord", Visible = false });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "FileWord", FieldName_Columns = "Link_voice", Visible = false });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "FileWord", FieldName_Columns = "ID_File_Voice", Visible = false });
 
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, false, true);
             //{
@@ -114,7 +114,7 @@ namespace ThuVien_DienTu_CNXHKH.from
 
         private async void btnShowFileMp3_Click(object sender, EventArgs e)
         {
-            int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("Link_voice") ?? null;
+            int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_Voice") ?? null;
             if (IDFile != null)
             {
                 commom.Common.GetInstance().process_Application(await Function.Instance.getFilePatd(IDFile));
@@ -157,7 +157,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             if (e.FocusedRowHandle >= 0)
             {
                 btnPowerPoint.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_PPT")?.ToString());
-                btnShowFileMp3.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("Link_voice")?.ToString());
+                btnShowFileMp3.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_Voice")?.ToString());
             }
         }
     }

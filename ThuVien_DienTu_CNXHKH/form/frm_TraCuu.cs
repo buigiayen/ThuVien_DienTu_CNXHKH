@@ -40,21 +40,34 @@ namespace ThuVien_DienTu_CNXHKH.form
             if (gridControl == grcTraCuuThuatNgu)
             {
                 columnsproperties.Add(new properties.columns { Caption_Columns = "Giải ngữ", FieldName_Columns = "MoTaThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true });
+               
+            }
+            if (commom.Commom_static.isAdmin)
+            {
+                columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
             }
 
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, AutoFilter: false);
+            if (gridControl == grcTraCuuThuatNgu)
+            {
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "MoTaThuatNgu" }, AllowEdit: true);
+            }
+
             if (gridControl == grcTraCuuKinhDien)
             {
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
             }
-         
+
+
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" }, AllowEdit: true);
+
+
             {
                 List<properties.Button_edit> button_Edits = new List<properties.Button_edit>();
                 button_Edits.Add(new properties.Button_edit
                 {
                     buttonIndex = 0,
-                    colname = gridControl == grcTraCuuThuatNgu ? "MoTaThuatNgu" : "ThuatNgu",
+                    colname = "ThuatNgu",
                     toolTip = "Xem thuật ngữ",
                     NameButton = "btnViewThuatNgu",
                     styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search,
@@ -72,7 +85,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private void TextView(GridView gridView)
         {
-            string viewTexts = gridView.GetFocusedRowCellValue("ThuatNgu").ToString();
+            string viewTexts = gridView == grvTraCuuThuatNgu ? gridView.GetFocusedRowCellValue("MoTaThuatNgu").ToString() : gridView.GetFocusedRowCellValue("ThuatNgu").ToString();
             form.ViewText viewText = new ViewText(viewTexts);
             viewText.Show();
         }

@@ -98,7 +98,7 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "Danh sách sinh viên";
+            this.barButtonItem1.Caption = "Danh sách người dùng";
             this.barButtonItem1.Id = 4;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));

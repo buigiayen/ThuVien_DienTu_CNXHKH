@@ -239,6 +239,9 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         }
 
+        private void grcBaiViet_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
