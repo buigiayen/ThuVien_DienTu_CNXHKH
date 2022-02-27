@@ -187,6 +187,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frm_LienKetTrangWeb";
             this.Text = "Liên kết trang web";
+            this.Load += new System.EventHandler(this.frm_LienKetTrangWeb_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcList)).EndInit();

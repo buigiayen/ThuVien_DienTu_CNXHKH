@@ -37,7 +37,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = gridControl == grcTraCuuKinhDien ? "Câu trích" : "Thuật ngữ", FieldName_Columns = "ThuatNgu" });
-            if (gridControl == grcTraCuuKinhDien)
+            if (gridControl == grcTraCuuThuatNgu)
             {
                 columnsproperties.Add(new properties.columns { Caption_Columns = "Giải ngữ", FieldName_Columns = "MoTaThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true });
             }

@@ -369,6 +369,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Report\Rep_Thi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -468,14 +473,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Report\Rep_Thi.resx">
       <DependentUpon>Rep_Thi.cs</DependentUpon>
     </EmbeddedResource>
@@ -516,11 +516,11 @@
   <ItemGroup>
     <None Include="Resources\Logo.ico" />
     <None Include="Resources\Image2.bmp" />
-    <None Include="Resources\Toast1.png" />
-    <None Include="Resources\Toast.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\z3212214802435_e4e701fd4c7a7bb6801184cdd5a09218.jpg" />
+    <None Include="Resources\trangchu1.png" />
     <None Include="Resources\db5ff3c2d7011b5f4210.jpg" />
     <None Include="Resources\86f219c76cffa0a1f9ee.jpg" />
   </ItemGroup>

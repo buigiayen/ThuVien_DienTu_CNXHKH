@@ -31,33 +31,33 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangKiTaiKhoan));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lblEmail = new DevExpress.XtraEditors.TextEdit();
+            this.lblXacNhanMatKhau = new DevExpress.XtraEditors.TextEdit();
+            this.lblMatKhau = new DevExpress.XtraEditors.TextEdit();
+            this.lblTaiKhoan = new DevExpress.XtraEditors.TextEdit();
             this.lblHoTen = new DevExpress.XtraEditors.TextEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lblTaiKhoan = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblMatKhau = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblXacNhanMatKhau = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblEmail = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnDangKi = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblXacNhanMatKhau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblMatKhau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTaiKhoan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblHoTen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblTaiKhoan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblXacNhanMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,48 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // lblEmail
+            // 
+            this.lblEmail.Location = new System.Drawing.Point(100, 26);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(383, 20);
+            this.lblEmail.StyleController = this.layoutControl1;
+            this.lblEmail.TabIndex = 8;
+            // 
+            // lblXacNhanMatKhau
+            // 
+            this.lblXacNhanMatKhau.Location = new System.Drawing.Point(100, 98);
+            this.lblXacNhanMatKhau.Name = "lblXacNhanMatKhau";
+            this.lblXacNhanMatKhau.Properties.UseSystemPasswordChar = true;
+            this.lblXacNhanMatKhau.Size = new System.Drawing.Size(383, 20);
+            this.lblXacNhanMatKhau.StyleController = this.layoutControl1;
+            this.lblXacNhanMatKhau.TabIndex = 7;
+            // 
+            // lblMatKhau
+            // 
+            this.lblMatKhau.Location = new System.Drawing.Point(100, 74);
+            this.lblMatKhau.Name = "lblMatKhau";
+            this.lblMatKhau.Properties.UseSystemPasswordChar = true;
+            this.lblMatKhau.Size = new System.Drawing.Size(383, 20);
+            this.lblMatKhau.StyleController = this.layoutControl1;
+            this.lblMatKhau.TabIndex = 6;
+            // 
+            // lblTaiKhoan
+            // 
+            this.lblTaiKhoan.Location = new System.Drawing.Point(100, 50);
+            this.lblTaiKhoan.Name = "lblTaiKhoan";
+            this.lblTaiKhoan.Size = new System.Drawing.Size(383, 20);
+            this.lblTaiKhoan.StyleController = this.layoutControl1;
+            this.lblTaiKhoan.TabIndex = 5;
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.Location = new System.Drawing.Point(100, 2);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(383, 20);
+            this.lblHoTen.StyleController = this.layoutControl1;
+            this.lblHoTen.TabIndex = 4;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -94,14 +136,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.Root.Size = new System.Drawing.Size(485, 148);
             this.Root.TextVisible = false;
-            // 
-            // lblHoTen
-            // 
-            this.lblHoTen.Location = new System.Drawing.Point(101, 2);
-            this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(382, 20);
-            this.lblHoTen.StyleController = this.layoutControl1;
-            this.lblHoTen.TabIndex = 4;
             // 
             // layoutControlItem1
             // 
@@ -120,14 +154,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.emptySpaceItem1.Size = new System.Drawing.Size(382, 28);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // lblTaiKhoan
-            // 
-            this.lblTaiKhoan.Location = new System.Drawing.Point(101, 50);
-            this.lblTaiKhoan.Name = "lblTaiKhoan";
-            this.lblTaiKhoan.Size = new System.Drawing.Size(382, 20);
-            this.lblTaiKhoan.StyleController = this.layoutControl1;
-            this.lblTaiKhoan.TabIndex = 5;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.lblTaiKhoan;
@@ -136,15 +162,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.Size = new System.Drawing.Size(485, 24);
             this.layoutControlItem2.Text = "Tài khoản:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(95, 13);
-            // 
-            // lblMatKhau
-            // 
-            this.lblMatKhau.Location = new System.Drawing.Point(101, 74);
-            this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Properties.UseSystemPasswordChar = true;
-            this.lblMatKhau.Size = new System.Drawing.Size(382, 20);
-            this.lblMatKhau.StyleController = this.layoutControl1;
-            this.lblMatKhau.TabIndex = 6;
             // 
             // layoutControlItem3
             // 
@@ -155,15 +172,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem3.Text = "Mật khẩu:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(95, 13);
             // 
-            // lblXacNhanMatKhau
-            // 
-            this.lblXacNhanMatKhau.Location = new System.Drawing.Point(101, 98);
-            this.lblXacNhanMatKhau.Name = "lblXacNhanMatKhau";
-            this.lblXacNhanMatKhau.Properties.UseSystemPasswordChar = true;
-            this.lblXacNhanMatKhau.Size = new System.Drawing.Size(382, 20);
-            this.lblXacNhanMatKhau.StyleController = this.layoutControl1;
-            this.lblXacNhanMatKhau.TabIndex = 7;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lblXacNhanMatKhau;
@@ -172,14 +180,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem4.Size = new System.Drawing.Size(485, 24);
             this.layoutControlItem4.Text = "Xác nhận mật khẩu:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(95, 13);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.Location = new System.Drawing.Point(101, 26);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(382, 20);
-            this.lblEmail.StyleController = this.layoutControl1;
-            this.lblEmail.TabIndex = 8;
             // 
             // layoutControlItem5
             // 
@@ -196,7 +196,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.btnDangKi.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
             this.btnDangKi.Appearance.Options.UseBackColor = true;
             this.btnDangKi.Appearance.Options.UseForeColor = true;
-            this.btnDangKi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnDangKi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangKi.ImageOptions.Image")));
             this.btnDangKi.Location = new System.Drawing.Point(384, 122);
             this.btnDangKi.Name = "btnDangKi";
             this.btnDangKi.Size = new System.Drawing.Size(99, 22);
@@ -227,17 +227,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Text = "Đăng kí tài khoản";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblXacNhanMatKhau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblMatKhau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTaiKhoan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblHoTen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblTaiKhoan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblXacNhanMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);

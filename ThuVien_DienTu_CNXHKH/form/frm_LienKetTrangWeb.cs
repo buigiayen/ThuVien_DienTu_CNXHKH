@@ -19,6 +19,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             InitializeComponent();
             Load_GridControl_ViewLienKet();
             barButtonItem2.Visibility = commom.Commom_static.isAdmin ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
+            LoadDS();
         }
         database.TV data = new database.TV();
         private async void Load_GridControl_ViewLienKet()
@@ -52,7 +53,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             }
             if (commom.Commom_static.isAdmin)
             {
+                
                 grvList.CellValueChanged += GrvList_CellValueChanged;
+            }
+            else
+            {
+                grvList.Columns["Mota"].OptionsColumn.ReadOnly = true;
             }
 
 
@@ -117,6 +123,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             data.LienKets.Add(new database.LienKet { });
             data.SaveChanges();
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadDS);
+        }
+
+        private void frm_LienKetTrangWeb_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

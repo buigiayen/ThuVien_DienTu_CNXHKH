@@ -413,6 +413,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1.ID = new System.Guid("c879bc1d-6c3e-4cab-99dd-d61824f48b10");
             this.dockPanel1.Location = new System.Drawing.Point(0, 28);
             this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.Options.ShowCloseButton = false;
             this.dockPanel1.OriginalSize = new System.Drawing.Size(337, 200);
             this.dockPanel1.Size = new System.Drawing.Size(337, 618);
             this.dockPanel1.Text = "Bộ sách";

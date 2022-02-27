@@ -19,7 +19,7 @@ namespace ThuVien_DienTu_CNXHKH.common
             toastNotificationProperties.AttributionText = text;
             toastNotificationProperties.Sound = ToastNotificationSound.Mail;
             toastNotificationProperties.Header = "Thư viện điện tử";
-            toastNotificationProperties.Image = (Image)Properties.Resources.Toast;
+         
             toastNotificationsManager.ShowNotification(toastNotificationProperties);
 
         }

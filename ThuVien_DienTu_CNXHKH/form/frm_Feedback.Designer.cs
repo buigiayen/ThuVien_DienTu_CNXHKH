@@ -769,6 +769,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1.ID = new System.Guid("ced80007-f0c6-45c2-8c3c-22bb867754ef");
             this.dockPanel1.Location = new System.Drawing.Point(0, 28);
             this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.Options.ShowCloseButton = false;
             this.dockPanel1.OriginalSize = new System.Drawing.Size(277, 200);
             this.dockPanel1.Size = new System.Drawing.Size(277, 517);
             this.dockPanel1.Text = "Tùy chọn";

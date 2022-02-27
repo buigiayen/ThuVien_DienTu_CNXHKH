@@ -36,11 +36,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // pictureEdit1
             // 
             this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.EditValue = global::ThuVien_DienTu_CNXHKH.Properties.Resources.db5ff3c2d7011b5f4210;
+            this.pictureEdit1.EditValue = global::ThuVien_DienTu_CNXHKH.Properties.Resources.trangchu;
             this.pictureEdit1.Location = new System.Drawing.Point(0, 0);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.pictureEdit1.Size = new System.Drawing.Size(1219, 699);
             this.pictureEdit1.TabIndex = 0;
             // 

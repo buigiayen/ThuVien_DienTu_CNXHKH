@@ -31,6 +31,7 @@ namespace ThuVien_DienTu_CNXHKH
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lblDanhKiTaiKhoan = new System.Windows.Forms.LinkLabel();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
@@ -41,7 +42,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblDanhKiTaiKhoan = new System.Windows.Forms.LinkLabel();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.btnNangCapPhanMen = new DevExpress.XtraEditors.SimpleButton();
@@ -81,6 +81,17 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControl1.Size = new System.Drawing.Size(500, 191);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lblDanhKiTaiKhoan
+            // 
+            this.lblDanhKiTaiKhoan.Location = new System.Drawing.Point(176, 129);
+            this.lblDanhKiTaiKhoan.Name = "lblDanhKiTaiKhoan";
+            this.lblDanhKiTaiKhoan.Size = new System.Drawing.Size(312, 20);
+            this.lblDanhKiTaiKhoan.TabIndex = 10;
+            this.lblDanhKiTaiKhoan.TabStop = true;
+            this.lblDanhKiTaiKhoan.Text = "Đăng kí tài khoản mới";
+            this.lblDanhKiTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDanhKiTaiKhoan.Click += new System.EventHandler(this.lblDanhKiTaiKhoan_Click);
             // 
             // stackPanel2
             // 
@@ -190,17 +201,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.layoutControlItem3.Size = new System.Drawing.Size(316, 37);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // lblDanhKiTaiKhoan
-            // 
-            this.lblDanhKiTaiKhoan.Location = new System.Drawing.Point(176, 129);
-            this.lblDanhKiTaiKhoan.Name = "lblDanhKiTaiKhoan";
-            this.lblDanhKiTaiKhoan.Size = new System.Drawing.Size(312, 20);
-            this.lblDanhKiTaiKhoan.TabIndex = 10;
-            this.lblDanhKiTaiKhoan.TabStop = true;
-            this.lblDanhKiTaiKhoan.Text = "Đăng kí tài khoản mới";
-            this.lblDanhKiTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDanhKiTaiKhoan.Click += new System.EventHandler(this.lblDanhKiTaiKhoan_Click);
             // 
             // layoutControlItem6
             // 

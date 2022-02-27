@@ -103,9 +103,9 @@ namespace ThuVien_DienTu_CNXHKH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Toast {
+        internal static System.Drawing.Bitmap trangchu {
             get {
-                object obj = ResourceManager.GetObject("Toast", resourceCulture);
+                object obj = ResourceManager.GetObject("trangchu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace ThuVien_DienTu_CNXHKH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Toast1 {
+        internal static System.Drawing.Bitmap z3212214802435_e4e701fd4c7a7bb6801184cdd5a09218 {
             get {
-                object obj = ResourceManager.GetObject("Toast1", resourceCulture);
+                object obj = ResourceManager.GetObject("z3212214802435_e4e701fd4c7a7bb6801184cdd5a09218", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

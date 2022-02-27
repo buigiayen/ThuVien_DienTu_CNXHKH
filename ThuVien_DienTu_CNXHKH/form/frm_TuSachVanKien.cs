@@ -80,7 +80,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             LoadGridControl_TuSachKinhDien();
             int IDTuSach = -1;
           
-            List<Model.Books> datas = (from ns in data.tbl_BaiViet.Where(p=>p.isTuSachVanKien == true)
+            List<Model.Books> datas = (from ns in data.tbl_BaiViet.Where(p=>p.isTuSachVanKien == true && p.status == true)
                                        select new Model.Books
                                        {
                                            ID = ns.id,
