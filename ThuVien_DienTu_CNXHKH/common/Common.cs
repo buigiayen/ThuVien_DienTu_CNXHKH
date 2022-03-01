@@ -34,7 +34,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public static int IDUser { get; set; }
         public static string File_DOCX = "DOC";
         public static string File_PDF = "PDF";
-        public static string File_Voice = "Mp3";
+        public static string File_Voice = "Mp4";
         public static string File_MP = "Mp3 Mp4";
         public static string File_PPT = "PPTX";
         public static string APPID { get; set; } = ConfigurationManager.AppSettings["APPID"].ToString();
@@ -367,7 +367,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
             {
 
                 var client = new RestClient(url);
-                var request = new RestRequest("", Method.Post);
+                var request = new RestRequest("", Method.POST);
                 request.AddHeader("Content-Type", "multipart/form-data");
                 request.AddParameter("multipart/form-data", fileName, ParameterType.RequestBody);
                 request.AlwaysMultipartFormData = true;

@@ -131,7 +131,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 cauTraLoi.STT = STT;
                 var cauHoi = dataContext.CauHois.FirstOrDefault(o => o.Id == item.CauHoiId);
                 cauTraLoi.CauHoi = cauHoi.NoiDung;
-                cauTraLoi.CauTraLoiDungText = listCauTraLoiDung.Where(p => p.Id == cauHoi.IdCauTraLoiDung).FirstOrDefault().NoiDung;
+                cauTraLoi.CauTraLoiDungText = listCauTraLoiDung.Where(p => p.Id == cauHoi.IdCauTraLoiDung).FirstOrDefault()?.NoiDung;
                 cauTraLoi.CauTraLoiText = listCauTraLoiDung.Where(p => p.Id == item.CauTraLoiId).FirstOrDefault()?.NoiDung;
                 if (cauHoi.IdCauTraLoiDung == item.CauTraLoiId)
                 {

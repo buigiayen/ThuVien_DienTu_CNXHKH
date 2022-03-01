@@ -54,6 +54,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.skinDropDownButtonItem2 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.btnPhanHoi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -262,8 +263,10 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.CaptionBarItemLinks.Add(this.skinDropDownButtonItem2);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.skinDropDownButtonItem2,
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.btnPhanHoi,
@@ -285,14 +288,20 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnTuSachVanKien,
             this.barButtonItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1134, 147);
+            this.ribbonControl1.Size = new System.Drawing.Size(1134, 158);
+            // 
+            // skinDropDownButtonItem2
+            // 
+            this.skinDropDownButtonItem2.Id = 26;
+            this.skinDropDownButtonItem2.Name = "skinDropDownButtonItem2";
+            this.skinDropDownButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.skinDropDownButtonItem2_ItemClick);
             // 
             // btnPhanHoi
             // 
@@ -377,9 +386,9 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 716);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 717);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1134, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1134, 27);
             // 
             // barDockControlLeft
             // 
@@ -387,7 +396,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 716);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 717);
             // 
             // barDockControlRight
             // 
@@ -395,7 +404,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1134, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 716);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 717);
             // 
             // repositoryItemTimeEdit1
             // 
@@ -470,6 +479,7 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.BarButtonItem btnTuSachVanKien;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem2;
     }
 }
 

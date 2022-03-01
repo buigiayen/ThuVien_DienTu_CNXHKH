@@ -63,46 +63,13 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
-            grvTuSach.CellValueChanging += GrvTuSach_CellValueChanging;
+         
 
         }
 
-        private async void GrvTuSach_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            if (grvTuSach.FocusedRowHandle >= 0)
-            {
-                int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
-                database.tuSach ts = data.tuSaches.Single(p => p.ID == iDBook);
-                if (e.Column.FieldName == "status")
-                {
-                    ts.status = (bool)e.Value;
-                }
-                if (e.Column.FieldName == "TacGia")
-                {
-                    ts.TacGia = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "LoaiTaiLieu")
-                {
-                    ts.LoaiTaiLieu = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "NamXuatBan")
-                {
-                    ts.NamXuatBan = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "ID_File")
-                {
-                    ts.ID_File = (int)e.Value;
-                }
-                if (e.Column.FieldName == "TenSach")
-                {
-                    ts.TenSach = e.Value.ToString();
-                }
+      
 
-                data.SaveChanges();
-            }
-
-
-        }
+     
 
         private void Delete_Book()
         {
@@ -162,6 +129,39 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(ShowBook);
         }
 
-      
+        private void grvTuSach_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (grvTuSach.FocusedRowHandle >= 0)
+            {
+                int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
+                database.tuSach ts = data.tuSaches.Single(p => p.ID == iDBook);
+                if (e.Column.FieldName == "status")
+                {
+                    ts.status = (bool)e.Value;
+                }
+                if (e.Column.FieldName == "TacGia")
+                {
+                    ts.TacGia = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "LoaiTaiLieu")
+                {
+                    ts.LoaiTaiLieu = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "NamXuatBan")
+                {
+                    ts.NamXuatBan = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "ID_File")
+                {
+                    ts.ID_File = (int)e.Value;
+                }
+                if (e.Column.FieldName == "TenSach")
+                {
+                    ts.TenSach = e.Value.ToString();
+                }
+
+                data.SaveChanges();
+            }
+        }
     }
 }

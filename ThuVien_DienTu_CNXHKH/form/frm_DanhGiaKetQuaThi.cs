@@ -72,6 +72,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             Rep_Thi rep_Thi = new Rep_Thi(danhGiaKetQua1);
+            rep_Thi.DataSource = danhGiaKetQua1.cauTraLois;
             ReportPrintTool printTool = new ReportPrintTool(rep_Thi);
             printTool.ShowPreview();
         }

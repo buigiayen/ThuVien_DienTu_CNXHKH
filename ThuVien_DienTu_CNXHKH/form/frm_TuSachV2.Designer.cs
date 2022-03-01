@@ -30,22 +30,22 @@ namespace ThuVien_DienTu_CNXHKH.form
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSachV2));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSachV2));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.grcTuSach = new DevExpress.XtraGrid.GridControl();
             this.grvTuSach = new DevExpress.XtraGrid.Views.Layout.LayoutView();
@@ -131,10 +131,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.layoutControl1.Controls.Add(this.grcTuSach);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(270, 26);
+            this.layoutControl1.Location = new System.Drawing.Point(270, 24);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(835, 528);
+            this.layoutControl1.Size = new System.Drawing.Size(835, 530);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -147,7 +147,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcTuSach.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.lupListFile});
-            this.grcTuSach.Size = new System.Drawing.Size(831, 524);
+            this.grcTuSach.Size = new System.Drawing.Size(831, 526);
             this.grcTuSach.TabIndex = 4;
             this.grcTuSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvTuSach});
@@ -172,6 +172,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grvTuSach.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
             this.grvTuSach.TemplateCard = this.layoutViewCard1;
             this.grvTuSach.ViewCaption = "Sách";
+            this.grvTuSach.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grvTuSach_CellValueChanging);
             // 
             // ID
             // 
@@ -284,7 +285,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewColumn6.AppearanceCell.Options.UseForeColor = true;
             this.layoutViewColumn6.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.layoutViewColumn6.AppearanceHeader.Options.UseFont = true;
-            this.layoutViewColumn6.Caption = "Ghi chú";
+            this.layoutViewColumn6.Caption = "Nhà xuất bản";
             this.layoutViewColumn6.FieldName = "GhiChu";
             this.layoutViewColumn6.LayoutViewField = this.layoutViewField_layoutViewColumn6;
             this.layoutViewColumn6.Name = "layoutViewColumn6";
@@ -331,12 +332,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             // lupListFile
             // 
             this.lupListFile.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.lupListFile.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.lupListFile.DisplayMember = "FileName";
             this.lupListFile.Name = "lupListFile";
             this.lupListFile.NullText = "[Chọn sách]";
@@ -445,7 +446,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1105, 26);
+            this.barDockControlTop.Size = new System.Drawing.Size(1105, 24);
             // 
             // barDockControlBottom
             // 
@@ -459,17 +460,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 528);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 530);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1105, 26);
+            this.barDockControlRight.Location = new System.Drawing.Point(1105, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 528);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 530);
             // 
             // dockManager1
             // 
@@ -496,19 +497,19 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel1.ID = new System.Guid("37c8464f-fd1c-4813-ac82-11900b8c3dc7");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 26);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 24);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Options.ShowCloseButton = false;
             this.dockPanel1.OriginalSize = new System.Drawing.Size(270, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(270, 528);
+            this.dockPanel1.Size = new System.Drawing.Size(270, 530);
             this.dockPanel1.Text = "Tìm kiếm";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.layoutControl2);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 38);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(261, 486);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(263, 501);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // layoutControl2
@@ -520,7 +521,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(261, 486);
+            this.layoutControl2.Size = new System.Drawing.Size(263, 501);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -529,7 +530,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.txtTacGia.Location = new System.Drawing.Point(72, 50);
             this.txtTacGia.MenuManager = this.barManager1;
             this.txtTacGia.Name = "txtTacGia";
-            this.txtTacGia.Size = new System.Drawing.Size(187, 20);
+            this.txtTacGia.Size = new System.Drawing.Size(189, 20);
             this.txtTacGia.StyleController = this.layoutControl2;
             this.txtTacGia.TabIndex = 6;
             this.txtTacGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTacGia_KeyPress);
@@ -539,7 +540,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.txtLoaiTaiLieu.Location = new System.Drawing.Point(72, 26);
             this.txtLoaiTaiLieu.MenuManager = this.barManager1;
             this.txtLoaiTaiLieu.Name = "txtLoaiTaiLieu";
-            this.txtLoaiTaiLieu.Size = new System.Drawing.Size(187, 20);
+            this.txtLoaiTaiLieu.Size = new System.Drawing.Size(189, 20);
             this.txtLoaiTaiLieu.StyleController = this.layoutControl2;
             this.txtLoaiTaiLieu.TabIndex = 5;
             this.txtLoaiTaiLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoaiTaiLieu_KeyPress);
@@ -549,7 +550,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.txtTenSach.Location = new System.Drawing.Point(72, 2);
             this.txtTenSach.MenuManager = this.barManager1;
             this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.Size = new System.Drawing.Size(187, 20);
+            this.txtTenSach.Size = new System.Drawing.Size(189, 20);
             this.txtTenSach.StyleController = this.layoutControl2;
             this.txtTenSach.TabIndex = 4;
             this.txtTenSach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSach_KeyPress);
@@ -565,7 +566,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem4});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(261, 486);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(263, 501);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
@@ -575,7 +576,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.Control = this.txtTenSach;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(261, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(263, 24);
             this.layoutControlItem2.Text = "Tên sách:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -584,7 +585,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 72);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(261, 414);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(263, 429);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -594,7 +595,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem3.Control = this.txtLoaiTaiLieu;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(261, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(263, 24);
             this.layoutControlItem3.Text = "Loại tài liệu:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -605,17 +606,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem4.Control = this.txtTacGia;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(261, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(263, 24);
             this.layoutControlItem4.Text = "Tác giả:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(67, 13);
             // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Tải sách", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Tải sách", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 
@@ -627,7 +628,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(835, 528);
+            this.Root.Size = new System.Drawing.Size(835, 530);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -635,7 +636,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.grcTuSach;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(835, 528);
+            this.layoutControlItem1.Size = new System.Drawing.Size(835, 530);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

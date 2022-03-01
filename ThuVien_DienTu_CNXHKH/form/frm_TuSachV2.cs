@@ -36,40 +36,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             grvTuSach.OptionsBehavior.ReadOnly = !commom.Commom_static.isAdmin;
         }
 
-        private void grvTuSach_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            if (grvTuSach.FocusedRowHandle >= 0)
-            {
-                int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
-                database.tuSach ts = data.tuSaches.Single(p => p.ID == iDBook);
-                if (e.Column.FieldName == "status")
-                {
-                    ts.status = (bool)e.Value;
-                }
-                if (e.Column.FieldName == "TacGia")
-                {
-                    ts.TacGia = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "LoaiTaiLieu")
-                {
-                    ts.LoaiTaiLieu = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "NamXuatBan")
-                {
-                    ts.NamXuatBan = e.Value.ToString();
-                }
-                if (e.Column.FieldName == "ID_File")
-                {
-                    ts.ID_File = (int)e.Value;
-                }
-                if (e.Column.FieldName == "TenSach")
-                {
-                    ts.TenSach = e.Value.ToString();
-                }
-
-                data.SaveChanges();
-            }
-        }
+      
 
         private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -170,6 +137,41 @@ namespace ThuVien_DienTu_CNXHKH.form
                 }
 
 
+            }
+        }
+
+        private void grvTuSach_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (grvTuSach.FocusedRowHandle >= 0)
+            {
+                int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
+                database.tuSach ts = data.tuSaches.Single(p => p.ID == iDBook);
+                if (e.Column.FieldName == "status")
+                {
+                    ts.status = (bool)e.Value;
+                }
+                if (e.Column.FieldName == "TacGia")
+                {
+                    ts.TacGia = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "LoaiTaiLieu")
+                {
+                    ts.LoaiTaiLieu = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "NamXuatBan")
+                {
+                    ts.NamXuatBan = e.Value.ToString();
+                }
+                if (e.Column.FieldName == "ID_File")
+                {
+                    ts.ID_File = (int)e.Value;
+                }
+                if (e.Column.FieldName == "TenSach")
+                {
+                    ts.TenSach = e.Value.ToString();
+                }
+
+                data.SaveChanges();
             }
         }
     }

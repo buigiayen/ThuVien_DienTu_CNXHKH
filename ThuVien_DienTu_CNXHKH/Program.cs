@@ -1,4 +1,5 @@
-﻿using DevExpress.Skins;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.Skins;
 using DevExpress.UserSkins;
 using DevExpress.XtraEditors;
 using System;
@@ -20,6 +21,7 @@ namespace ThuVien_DienTu_CNXHKH
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += new ThreadExceptionEventHandler(threadException);
+         
             Application.Run(new frm_main(false));
         }
         private static void threadException(object sender, ThreadExceptionEventArgs e)

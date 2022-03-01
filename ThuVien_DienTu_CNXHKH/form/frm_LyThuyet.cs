@@ -24,7 +24,7 @@ namespace ThuVien_DienTu_CNXHKH.from
         {
             InitializeComponent();
         }
-     
+
         database.TV tV = new database.TV();
         private void frm_LyThuyet_Load(object sender, EventArgs e)
         {
@@ -52,39 +52,39 @@ namespace ThuVien_DienTu_CNXHKH.from
             //    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             //}
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "TenBaiViet" }, AllowEdit: false);
-          
-       
+
+
             grvNhomLyThuyet.Columns["TenNhomSach"].GroupIndex = 0;
-            grvNhomLyThuyet.RowClick += GrvNhomLyThuyet_RowClick; 
+            grvNhomLyThuyet.RowClick += GrvNhomLyThuyet_RowClick;
         }
 
         private async void GrvNhomLyThuyet_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             if (e.RowHandle >= 0)
             {
-                int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("IDNhomSach") ?? null;
+                int? IDFile = (int?)grvNhomLyThuyet.GetFocusedRowCellValue("ID_FileWord") ?? null;
                 if (IDFile != null)
                 {
-                    string FilePath =  Function.Instance.getFilePatd(IDFile).Result;
+                    string FilePath = Function.Instance.getFilePatd(IDFile).Result;
                     if (!string.IsNullOrEmpty(FilePath))
                     {
                         richEditControl1.LoadDocument(FilePath);
                     }
-                  
+
                 }
 
             }
 
         }
 
-   
 
-      
+
+
         private async void ShowNhomLyThuyet()
         {
 
             grcNhomLyThuyet.DataSource = (from ns in tV.NhomSaches.Where(p => p.status == true)
-                                          join s in tV.tbl_BaiViet.Where(p=> p.isTuSachVanKien == false) on ns.IDNhomSach equals s.ID_NhomSach
+                                          join s in tV.tbl_BaiViet.Where(p => p.isTuSachVanKien == false) on ns.IDNhomSach equals s.ID_NhomSach
                                           select new
                                           {
                                               ns.IDNhomSach,
@@ -126,16 +126,9 @@ namespace ThuVien_DienTu_CNXHKH.from
             if (grvNhomLyThuyet.FocusedRowHandle >= 0)
             {
                 int IDBaiViet = (int)grvNhomLyThuyet.GetFocusedRowCellValue("id");
-                if ((await commom.Function.Instance.Get_Thi(commom.Commom_static.IDUser, IDBaiViet)).Count() == 0)
-                {
-                    frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
-                    frm.TieuDe = grvNhomLyThuyet.GetFocusedRowCellValue("TenBaiViet").ToString();
-                    frm.ShowDialog();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Bạn đã thi bài này", "Thông báo");
-                }
+                frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
+                frm.TieuDe = grvNhomLyThuyet.GetFocusedRowCellValue("TenBaiViet").ToString();
+                frm.ShowDialog();
             }
 
 

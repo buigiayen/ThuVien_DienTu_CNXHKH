@@ -100,6 +100,7 @@ namespace ThuVien_DienTu_CNXHKH.Report
             this.xrTable1});
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
+            this.Detail.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.Detail_BeforePrint);
             // 
             // xrTable1
             // 
@@ -577,6 +578,7 @@ namespace ThuVien_DienTu_CNXHKH.Report
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(38, 40, 24, 15);
             this.Version = "20.1";
+            this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.Rep_Thi_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();

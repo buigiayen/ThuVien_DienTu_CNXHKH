@@ -61,7 +61,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(847, 478);
+            this.layoutControl1.Size = new System.Drawing.Size(847, 482);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -71,7 +71,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcTuSach.MainView = this.grvTuSach;
             this.grcTuSach.MenuManager = this.barManager1;
             this.grcTuSach.Name = "grcTuSach";
-            this.grcTuSach.Size = new System.Drawing.Size(843, 474);
+            this.grcTuSach.Size = new System.Drawing.Size(843, 478);
             this.grcTuSach.TabIndex = 4;
             this.grcTuSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvTuSach});
@@ -81,6 +81,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grvTuSach.GridControl = this.grcTuSach;
             this.grvTuSach.Name = "grvTuSach";
             this.grvTuSach.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            this.grvTuSach.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grvTuSach_CellValueChanging);
             // 
             // barManager1
             // 
@@ -139,9 +140,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 478);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 482);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(847, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(847, 24);
             // 
             // barDockControlLeft
             // 
@@ -149,7 +150,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 482);
             // 
             // barDockControlRight
             // 
@@ -157,7 +158,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(847, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 482);
             // 
             // barButtonItem2
             // 
@@ -172,7 +173,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(847, 478);
+            this.Root.Size = new System.Drawing.Size(847, 482);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -180,7 +181,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.grcTuSach;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(847, 478);
+            this.layoutControlItem1.Size = new System.Drawing.Size(847, 482);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

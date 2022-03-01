@@ -178,5 +178,10 @@ namespace ThuVien_DienTu_CNXHKH
         {
 
         }
+
+        private void skinDropDownButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+          
+        }
     }
 }

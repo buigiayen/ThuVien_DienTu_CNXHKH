@@ -118,10 +118,10 @@
             // gridControlCauHoi
             // 
             this.gridControlCauHoi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlCauHoi.Location = new System.Drawing.Point(1, 21);
+            this.gridControlCauHoi.Location = new System.Drawing.Point(1, 23);
             this.gridControlCauHoi.MainView = this.gridViewCauHoi;
             this.gridControlCauHoi.Name = "gridControlCauHoi";
-            this.gridControlCauHoi.Size = new System.Drawing.Size(0, 467);
+            this.gridControlCauHoi.Size = new System.Drawing.Size(0, 465);
             this.gridControlCauHoi.TabIndex = 4;
             this.gridControlCauHoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCauHoi});
@@ -242,14 +242,14 @@
             // radioGroup_TraLoi
             // 
             this.radioGroup_TraLoi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioGroup_TraLoi.Location = new System.Drawing.Point(2, 21);
+            this.radioGroup_TraLoi.Location = new System.Drawing.Point(2, 23);
             this.radioGroup_TraLoi.Name = "radioGroup_TraLoi";
             this.radioGroup_TraLoi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioGroup_TraLoi.Properties.Appearance.Options.UseFont = true;
             this.radioGroup_TraLoi.Properties.Appearance.Options.UseTextOptions = true;
             this.radioGroup_TraLoi.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.radioGroup_TraLoi.Properties.Columns = 1;
-            this.radioGroup_TraLoi.Size = new System.Drawing.Size(964, 107);
+            this.radioGroup_TraLoi.Size = new System.Drawing.Size(964, 105);
             this.radioGroup_TraLoi.TabIndex = 0;
             this.radioGroup_TraLoi.SelectedIndexChanged += new System.EventHandler(this.radioGroup_TraLoi_SelectedIndexChanged);
             // 
@@ -268,11 +268,11 @@
             // txtNoiDung
             // 
             this.txtNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNoiDung.Location = new System.Drawing.Point(2, 21);
+            this.txtNoiDung.Location = new System.Drawing.Point(2, 23);
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoiDung.Properties.Appearance.Options.UseFont = true;
-            this.txtNoiDung.Size = new System.Drawing.Size(964, 252);
+            this.txtNoiDung.Size = new System.Drawing.Size(964, 250);
             this.txtNoiDung.TabIndex = 0;
             // 
             // Root

@@ -86,7 +86,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         private void TextView(GridView gridView)
         {
             string viewTexts = gridView == grvTraCuuThuatNgu ? gridView.GetFocusedRowCellValue("MoTaThuatNgu").ToString() : gridView.GetFocusedRowCellValue("ThuatNgu").ToString();
-            form.ViewText viewText = new ViewText(viewTexts);
+            form.view.frm_ViewDocument viewText = new form.view.frm_ViewDocument(viewTexts);
             viewText.Show();
         }
 
