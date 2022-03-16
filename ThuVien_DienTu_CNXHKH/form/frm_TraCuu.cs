@@ -50,7 +50,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, AutoFilter: false);
             if (gridControl == grcTraCuuThuatNgu)
             {
-                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "MoTaThuatNgu" }, AllowEdit: true);
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "MoTaThuatNgu" }, AllowEdit: true, WordWrap:false);
             }
 
             if (gridControl == grcTraCuuKinhDien)
@@ -59,8 +59,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             }
 
 
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" }, AllowEdit: true);
-
+         
 
             {
                 List<properties.Button_edit> button_Edits = new List<properties.Button_edit>();

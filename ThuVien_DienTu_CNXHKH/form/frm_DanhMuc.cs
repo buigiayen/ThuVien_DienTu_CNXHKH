@@ -70,8 +70,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Nhóm bài", FieldName_Columns = "ID_NhomSach" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị bài viết", FieldName_Columns = "status" });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
-
-            LoadNhomSach();
+            {
+                Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
+                columns_GridLookUpedit.Add("Mã", "IDNhomSach");
+                columns_GridLookUpedit.Add("Nhóm", "TenNhomSach");
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(tV.NhomSaches.ToList(), new string[] { "ID_NhomSach" }, columns_GridLookUpedit, "IDNhomSach", "TenNhomSach");
+            }
+           
             {
           
                 //word
@@ -120,16 +125,8 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         }
 
-        private async void LoadNhomSach()
-        {
-
-            Dictionary<string, string> columns_GridLookUpedit = new Dictionary<string, string>();
-            columns_GridLookUpedit.Add("Mã", "IDNhomSach");
-            columns_GridLookUpedit.Add("Nhóm", "TenNhomSach");
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(tV.NhomSaches.ToList(), new string[] { "ID_NhomSach" }, columns_GridLookUpedit, "IDNhomSach", "TenNhomSach");
-
-
-        }
+       
+            
         private async void GrvBaiViet_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (grvBaiViet.FocusedRowHandle >= 0)
@@ -188,7 +185,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             switch (value)
             {
                 case 1:
-                    LoadNhomSach();
                     grcDanhMuc.DataSource = tV.NhomSaches.ToList();
                     break;
 

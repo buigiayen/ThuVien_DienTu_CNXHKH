@@ -41,6 +41,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         public class CauTraLoiCheck
         {
+            public Guid LocationIndex { get; set; }  
             public int Id { get; set; }
             public int CauHoiId { get; set; }
             public string NoiDung { get; set; }
@@ -55,7 +56,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             {
                 txtNoiDung.Text = row.NoiDung;
                 TV dataContext = new TV();
-                var cauTraLois = dataContext.CauTraLois.Where(o => o.CauHoiId == row.Id).ToList().Select(o => new CauTraLoiCheck { Check = null, Id = o.Id, CauHoiId = o.CauHoiId, NoiDung = o.NoiDung }).ToList();
+                var cauTraLois = dataContext.CauTraLois.Where(o => o.CauHoiId == row.Id).ToList().Select(o => new CauTraLoiCheck { Check = null, Id = o.Id, CauHoiId = o.CauHoiId, NoiDung = o.NoiDung , LocationIndex = Guid.NewGuid() }).OrderByDescending(p=>p.LocationIndex).ToList();
                 var cauDaTraLoi = listDaTraLois.FirstOrDefault(o => o.CauHoiId == row.Id);
                 var check = cauTraLois.FirstOrDefault(o => o.Id == cauDaTraLoi.CauTraLoiId);
                 if (check != null)
@@ -65,15 +66,19 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                 radioGroup_TraLoi.Properties.Items.Clear();
                 int selectIndex = -1;
-                for (int i = 0; i < cauTraLois.Count; i++)
+                if (cauTraLois != null)
                 {
-                    radioGroup_TraLoi.Properties.Items.Add(new RadioGroupItem { Description = cauTraLois[i].NoiDung, Tag = cauTraLois[i] });
-                    if (cauTraLois[i].Check == true)
+                  
+                    var CloneCauTraLoi = cauTraLois.OrderByDescending(p => p.LocationIndex).ToList();
+                    foreach (var item in CloneCauTraLoi)
                     {
-                        selectIndex = i;
+                        radioGroup_TraLoi.Properties.Items.Add(new RadioGroupItem { Description = item.NoiDung, Tag = item });
+
                     }
+
+                    radioGroup_TraLoi.SelectedIndex = selectIndex;
                 }
-                radioGroup_TraLoi.SelectedIndex = selectIndex;
+              
 
             }
         }

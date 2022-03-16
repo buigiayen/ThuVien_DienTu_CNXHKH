@@ -62,9 +62,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
+            this.stackPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuThuatNgu)).BeginInit();
@@ -72,9 +74,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
+            this.stackPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).BeginInit();
@@ -98,7 +102,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.layoutControl1);
-            this.xtraTabPage1.Enabled = true;
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1128, 741);
             this.xtraTabPage1.Text = "Tra cứu thuật ngữ";
@@ -132,9 +135,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.textEdit1.Location = new System.Drawing.Point(3, 4);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
-            // 
-            // 
-            // 
             this.textEdit1.Properties.NullText = "Tìm kiếm [Enter]";
             this.textEdit1.Size = new System.Drawing.Size(278, 20);
             this.textEdit1.TabIndex = 4;
@@ -256,7 +256,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.layoutControl2);
-            this.xtraTabPage2.Enabled = true;
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(1128, 741);
             this.xtraTabPage2.Text = "Tra cứu kinh điển";
@@ -289,9 +288,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.textEdit2.Location = new System.Drawing.Point(3, 3);
             this.textEdit2.MenuManager = this.barManager1;
             this.textEdit2.Name = "textEdit2";
-            // 
-            // 
-            // 
             this.textEdit2.Properties.NullText = "Tìm kiếm [Enter]";
             this.textEdit2.Size = new System.Drawing.Size(301, 20);
             this.textEdit2.TabIndex = 3;
@@ -378,9 +374,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.Load += new System.EventHandler(this.frm_TraCuu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
+            this.stackPanel1.ResumeLayout(false);
+            this.stackPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuThuatNgu)).EndInit();
@@ -388,9 +387,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
+            this.stackPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).EndInit();

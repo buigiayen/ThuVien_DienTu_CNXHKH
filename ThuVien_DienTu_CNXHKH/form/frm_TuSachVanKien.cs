@@ -25,12 +25,12 @@ namespace ThuVien_DienTu_CNXHKH.form
         public frm_TuSachVanKien()
         {
             InitializeComponent();
-           
+
             LoadGridControl_TuSachKinhDien();
             btnThiVanKien.Enabled = false;
         }
         private database.TV data = new database.TV();
-       
+
         private async void LoadGridControl_TuSachKinhDien()
         {
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcNhomSach;
@@ -47,9 +47,8 @@ namespace ThuVien_DienTu_CNXHKH.form
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();
                 button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenTuSach", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnViewGroupBook", toolTip = "Xem nhóm", Action = new Action(() => ShowViewBook("LinkPDF")) });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
-             
             }
-          
+
             grvNhomSach.OptionsBehavior.ReadOnly = true;
         }
         private async void ShowViewBook(string Colname, int Page = -1)
@@ -70,8 +69,8 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                     }
                 }
-              
-              
+
+
             }
         }
         private async void reload_Group_Book()
@@ -79,8 +78,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             grvNhomSach.Columns.Clear();
             LoadGridControl_TuSachKinhDien();
             int IDTuSach = -1;
-          
-            List<Model.Books> datas = (from ns in data.tbl_BaiViet.Where(p=>p.isTuSachVanKien == true && p.status == true)
+
+            List<Model.Books> datas = (from ns in data.tbl_BaiViet.Where(p => p.isTuSachVanKien == true && p.status == true)
                                        select new Model.Books
                                        {
                                            ID = ns.id,
@@ -100,7 +99,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         private async void btnTimKiemToanTap_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
 
-           
+
             reload_Group_Book();
             grvNhomSach.ExpandAllGroups();
             grvNhomSach.Columns["TrangHienThi"].Visible = true;
@@ -143,24 +142,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             if (grvNhomSach.FocusedRowHandle >= 0)
             {
                 int IDBaiViet = (int)grvNhomSach.GetFocusedRowCellValue("ID");
-                if ((await commom.Function.Instance.Get_Thi(commom.Commom_static.IDUser, IDBaiViet)).Count() == 0)
-                {
-                    frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
-                    frm.TieuDe = grvNhomSach.GetFocusedRowCellValue("TenTuSach").ToString();
-                    frm.ShowDialog();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Bạn đã thi bài này", "Thông báo");
-                }
+                frm_Thi frm = new frm_Thi(IDBaiViet, commom.Commom_static.IDUser);
+                frm.TieuDe = grvNhomSach.GetFocusedRowCellValue("TenTuSach").ToString();
+                frm.ShowDialog();
+
             }
         }
 
-      
-
         private async void grvNhomSach_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-           
+
         }
 
         private async void grvNhomSach_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -168,7 +159,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             if (e.RowHandle >= 0)
             {
                 int IDBaiViet = (int)grvNhomSach.GetFocusedRowCellValue("ID");
-                bool enablebtnThi = (await commom.Function.Instance.KiemTraThi( IDBaiViet)).Count() > 0 ? true : false;
+                bool enablebtnThi = (await commom.Function.Instance.KiemTraThi(IDBaiViet)).Count() > 0 ? true : false;
                 btnThiVanKien.Enabled = enablebtnThi;
             }
         }
