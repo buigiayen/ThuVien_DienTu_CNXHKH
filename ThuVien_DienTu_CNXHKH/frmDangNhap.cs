@@ -123,5 +123,17 @@ namespace ThuVien_DienTu_CNXHKH
             form.frmDangKiTaiKhoan frm = new form.frmDangKiTaiKhoan();
             frm.ShowDialog();
         }
+
+        private void llblHuongDanSuDung_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string FilePathAbout = AppDomain.CurrentDomain.BaseDirectory + @"\HuongDanSuDungThuVienDientu.txt";
+            if (System.IO.File.Exists(FilePathAbout))
+            {
+                string TextDocument = System.IO.File.ReadAllText(FilePathAbout);
+                ThuVien_DienTu_CNXHKH.form.ViewText frm_ViewDocument = new ThuVien_DienTu_CNXHKH.form.ViewText(TextDocument);
+                frm_ViewDocument.ShowDialog();
+            }
+                    
+        }
     }
 }

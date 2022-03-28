@@ -50,7 +50,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void btnAddNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var fileInfo =  commom.Common.GetInstance().OpenMultiselectFile();
+            var fileInfo =   commom.Common.GetInstance().OpenMultiselectFile();
             if (fileInfo != null && fileInfo.Count > 0)
             {
                 foreach (var fileInfos in fileInfo)

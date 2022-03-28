@@ -30,22 +30,22 @@ namespace ThuVien_DienTu_CNXHKH.form
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSachV2));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSachV2));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.grcTuSach = new DevExpress.XtraGrid.GridControl();
             this.grvTuSach = new DevExpress.XtraGrid.Views.Layout.LayoutView();
@@ -155,6 +155,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // grvTuSach
             // 
             this.grvTuSach.CardCaptionFormat = "Thẻ sách";
+            this.grvTuSach.CardMinSize = new System.Drawing.Size(250, 20);
             this.grvTuSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.ID,
             this.layoutViewColumn2,
@@ -190,7 +191,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_ID.EditorPreferredWidth = 124;
             this.layoutViewField_ID.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_ID.Name = "layoutViewField_ID";
-            this.layoutViewField_ID.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_ID.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_ID.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn2
@@ -211,7 +212,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_layoutViewColumn2.EditorPreferredWidth = 124;
             this.layoutViewField_layoutViewColumn2.Location = new System.Drawing.Point(0, 24);
             this.layoutViewField_layoutViewColumn2.Name = "layoutViewField_layoutViewColumn2";
-            this.layoutViewField_layoutViewColumn2.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_layoutViewColumn2.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn2.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn3
@@ -232,7 +233,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_layoutViewColumn3.EditorPreferredWidth = 124;
             this.layoutViewField_layoutViewColumn3.Location = new System.Drawing.Point(0, 48);
             this.layoutViewField_layoutViewColumn3.Name = "layoutViewField_layoutViewColumn3";
-            this.layoutViewField_layoutViewColumn3.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_layoutViewColumn3.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn3.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn4
@@ -253,7 +254,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_layoutViewColumn4.EditorPreferredWidth = 124;
             this.layoutViewField_layoutViewColumn4.Location = new System.Drawing.Point(0, 72);
             this.layoutViewField_layoutViewColumn4.Name = "layoutViewField_layoutViewColumn4";
-            this.layoutViewField_layoutViewColumn4.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_layoutViewColumn4.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn4.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn5
@@ -274,7 +275,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_layoutViewColumn5.EditorPreferredWidth = 124;
             this.layoutViewField_layoutViewColumn5.Location = new System.Drawing.Point(0, 96);
             this.layoutViewField_layoutViewColumn5.Name = "layoutViewField_layoutViewColumn5";
-            this.layoutViewField_layoutViewColumn5.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_layoutViewColumn5.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn5.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn6
@@ -295,7 +296,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_layoutViewColumn6.EditorPreferredWidth = 124;
             this.layoutViewField_layoutViewColumn6.Location = new System.Drawing.Point(0, 120);
             this.layoutViewField_layoutViewColumn6.Name = "layoutViewField_layoutViewColumn6";
-            this.layoutViewField_layoutViewColumn6.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_layoutViewColumn6.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn6.TextSize = new System.Drawing.Size(71, 13);
             // 
             // gridColumn3
@@ -312,7 +313,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_gridColumn3.EditorPreferredWidth = 124;
             this.layoutViewField_gridColumn3.Location = new System.Drawing.Point(0, 144);
             this.layoutViewField_gridColumn3.Name = "layoutViewField_gridColumn3";
-            this.layoutViewField_gridColumn3.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_gridColumn3.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_gridColumn3.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn7
@@ -332,12 +333,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             // lupListFile
             // 
             this.lupListFile.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.lupListFile.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.lupListFile.DisplayMember = "FileName";
             this.lupListFile.Name = "lupListFile";
             this.lupListFile.NullText = "[Chọn sách]";
@@ -376,7 +377,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_layoutViewColumn7.EditorPreferredWidth = 124;
             this.layoutViewField_layoutViewColumn7.Location = new System.Drawing.Point(0, 168);
             this.layoutViewField_layoutViewColumn7.Name = "layoutViewField_layoutViewColumn7";
-            this.layoutViewField_layoutViewColumn7.Size = new System.Drawing.Size(203, 26);
+            this.layoutViewField_layoutViewColumn7.Size = new System.Drawing.Size(202, 28);
             this.layoutViewField_layoutViewColumn7.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewCard1
@@ -391,7 +392,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutViewField_layoutViewColumn6,
             this.layoutViewField_gridColumn3,
             this.layoutViewField_layoutViewColumn7});
-            this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.Name = "layoutViewTemplateCard";
             // 
             // barManager1
             // 
@@ -613,10 +614,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Tải sách", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Tải sách", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 

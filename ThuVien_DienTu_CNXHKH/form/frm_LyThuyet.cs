@@ -51,7 +51,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             //    button_Edits.Add(new Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, NameButton = "btnShowWord", toolTip = "Mở file word", Action = new Action(() => { showFileWord("ID_FileWord"); }) });
             //    Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             //}
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "TenBaiViet" }, AllowEdit: false);
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "TenBaiViet" }, AllowEdit: false, WordWrap: true);
 
 
             grvNhomLyThuyet.Columns["TenNhomSach"].GroupIndex = 0;

@@ -533,6 +533,9 @@
     <None Include="Resources\Image2.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HuongDanSuDungThuviendientu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Logo.ico" />
     <None Include="Resources\z3212214802435_e4e701fd4c7a7bb6801184cdd5a09218.jpg" />
     <None Include="Resources\trangchu1.png" />

@@ -217,7 +217,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.pdfViewer1.Location = new System.Drawing.Point(2, 2);
             this.pdfViewer1.Name = "pdfViewer1";
-            this.pdfViewer1.Size = new System.Drawing.Size(790, 614);
+            this.pdfViewer1.Size = new System.Drawing.Size(790, 618);
             this.pdfViewer1.TabIndex = 4;
             // 
             // pdfFileOpenBarItem1
@@ -376,7 +376,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1131, 28);
+            this.barDockControlTop.Size = new System.Drawing.Size(1131, 24);
             // 
             // barDockControlBottom
             // 
@@ -390,17 +390,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 618);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 622);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1131, 28);
+            this.barDockControlRight.Location = new System.Drawing.Point(1131, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 618);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 622);
             // 
             // btnReload
             // 
@@ -415,19 +415,19 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel1.ID = new System.Guid("c879bc1d-6c3e-4cab-99dd-d61824f48b10");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 28);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 24);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Options.ShowCloseButton = false;
             this.dockPanel1.OriginalSize = new System.Drawing.Size(337, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(337, 618);
+            this.dockPanel1.Size = new System.Drawing.Size(337, 622);
             this.dockPanel1.Text = "Bộ sách";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.layoutControl2);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 38);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(328, 576);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(330, 593);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // layoutControl2
@@ -438,7 +438,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(328, 576);
+            this.layoutControl2.Size = new System.Drawing.Size(330, 593);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -448,7 +448,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.btnTimKiemToanTap.Name = "btnTimKiemToanTap";
             this.btnTimKiemToanTap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.btnTimKiemToanTap.Size = new System.Drawing.Size(233, 20);
+            this.btnTimKiemToanTap.Size = new System.Drawing.Size(235, 20);
             this.btnTimKiemToanTap.StyleController = this.layoutControl2;
             this.btnTimKiemToanTap.TabIndex = 5;
             this.btnTimKiemToanTap.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnTimKiemToanTap_ButtonClick);
@@ -458,7 +458,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcNhomSach.Location = new System.Drawing.Point(2, 26);
             this.grcNhomSach.MainView = this.grvNhomSach;
             this.grcNhomSach.Name = "grcNhomSach";
-            this.grcNhomSach.Size = new System.Drawing.Size(324, 548);
+            this.grcNhomSach.Size = new System.Drawing.Size(326, 565);
             this.grcNhomSach.TabIndex = 4;
             this.grcNhomSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvNhomSach});
@@ -480,7 +480,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(328, 576);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(330, 593);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
@@ -488,7 +488,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.Control = this.grcNhomSach;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(328, 552);
+            this.layoutControlItem2.Size = new System.Drawing.Size(330, 569);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -497,7 +497,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem3.Control = this.btnTimKiemToanTap;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(328, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(330, 24);
             this.layoutControlItem3.Text = "Tìm kiếm toàn tập:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(88, 13);
             // 
@@ -505,10 +505,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.layoutControl1.Controls.Add(this.pdfViewer1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(337, 28);
+            this.layoutControl1.Location = new System.Drawing.Point(337, 24);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(794, 618);
+            this.layoutControl1.Size = new System.Drawing.Size(794, 622);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -520,7 +520,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(794, 618);
+            this.Root.Size = new System.Drawing.Size(794, 622);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -528,7 +528,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem1.Control = this.pdfViewer1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(794, 618);
+            this.layoutControlItem1.Size = new System.Drawing.Size(794, 622);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

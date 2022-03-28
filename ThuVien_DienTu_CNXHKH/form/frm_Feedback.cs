@@ -17,6 +17,11 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             InitializeComponent();
         }
+        public frm_Feedback(string Text)
+        {
+            InitializeComponent();
+            txtNoiDung.Text = Text;
+        }
         private database.TV data = new database.TV();
         private async void btnFileAtt_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

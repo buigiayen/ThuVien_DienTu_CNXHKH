@@ -240,41 +240,77 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
 
         }
-        public  List<Model.FileInfos> OpenMultiselectFile()
+        public List<Model.FileInfos> OpenMultiselectFile()
         {
+            if (!Directory.Exists(Application.StartupPath + "/File/"))
+                Directory.CreateDirectory(Application.StartupPath + "/File");
+
             List<Model.FileInfos> ListFileinfo = new List<Model.FileInfos>();
-            XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
+            OpenFileDialog xtraOpenFileDialog = new OpenFileDialog();
             xtraOpenFileDialog.Multiselect = true;
             xtraOpenFileDialog.ShowDialog();
-            foreach (var items in xtraOpenFileDialog.FileNames)
+
+            var FileResult = CheckListFileToSize(xtraOpenFileDialog.FileNames).Result;
+            if (FileResult != null && FileResult.Count > 0)
             {
-                Model.FileInfos fileInfos1 = new Model.FileInfos();
-                if (!string.IsNullOrEmpty(items))
+                foreach (var items in FileResult)
                 {
-                    if (!Directory.Exists(Application.StartupPath + "/File/"))
-                        Directory.CreateDirectory(Application.StartupPath + "/File");
+                    Model.FileInfos fileInfos1 = new Model.FileInfos();
+                    if (!string.IsNullOrEmpty(items.FileName) && items.Status == true)
+                    {
+                        string destFileName = Application.StartupPath + "\\File\\" + items.FileName;
 
-                    FileInfo fileInfos = new FileInfo(items);
-                    string destFileName = Application.StartupPath + "\\File\\" + fileInfos.Name;
+                        File.Copy(items.FileName, destFileName, true);
+                        commom.Common.GetInstance().UploadFile(commom.Commom_static.Bucket, destFileName);
+                        FileInfo fileInfo = new FileInfo(destFileName);
+                        fileInfos1.nameFile = fileInfo.Name;
+                        fileInfos1.Path = fileInfo.FullName;
+                        fileInfos1.size = fileInfo.Length;
+                        fileInfos1.ex = fileInfo.Extension;
+                        ListFileinfo.Add(fileInfos1);
+                    }
 
-                    File.Copy(items, destFileName, true);
-                    commom.Common.GetInstance().UploadFile(commom.Commom_static.Bucket, destFileName);
-                    FileInfo fileInfo = new FileInfo(destFileName);
-                    fileInfos1.nameFile = fileInfo.Name;
-                    fileInfos1.Path = fileInfo.FullName;
-                    fileInfos1.size = fileInfo.Length;
-                    fileInfos1.ex = fileInfo.Extension;
-                    ListFileinfo.Add(fileInfos1);
-                }
+                }       
             }
-            
             return ListFileinfo;
         }
+
+        private async Task<List<Model.FileInfoStatus>> CheckListFileToSize(string[] FileName)
+        {
+            List<Model.FileInfoStatus> ListStringFile = new List<Model.FileInfoStatus>();
+            if (FileName != null)
+            {
+                foreach (var item in FileName)
+                {
+                    FileInfo fileInfo = new FileInfo(item);
+                    ListStringFile.Add(new Model.FileInfoStatus { FileName = fileInfo.Name, FilePath = fileInfo.FullName, Status = fileInfo.Length > 20000000 ? false : true });
+                }
+            }
+            if (ListStringFile.Where(p => p.Status == false).Count() >= 0)
+            {
+                string messenger = "Xin lỗi vì sự bất tiện này nhưng các file bạn upload có file có kích thước quá lớn so với hệ thống cho phép xin hãy gửi file qua hòm thư hệ thống để được hỗ trợ tải lên!: \r\n Files: " + string.Join(" - ", ListStringFile.Where(p => p.Status == false).Select(p => p.FileName).ToList());
+                DialogResult r = XtraMessageBox.Show(messenger, "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (r == DialogResult.OK)
+                {
+                    return ListStringFile.Where(p => p.Status == true).ToList();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return ListStringFile;
+            }
+
+        }
+
         public List<Model.FileInfos> Openfile()
         {
             List<Model.FileInfos> fileInfos1 = new List<Model.FileInfos>();
             Model.FileInfos FileInfos = new Model.FileInfos();
-            XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
+            OpenFileDialog xtraOpenFileDialog = new OpenFileDialog();
             xtraOpenFileDialog.ShowDialog();
             if (!string.IsNullOrEmpty(xtraOpenFileDialog.FileName))
             {
@@ -346,22 +382,31 @@ namespace ThuVien_DienTu_CNXHKH.commom
         }
         public bool Download(string url, string downloadFileName, string Pathlocal)
         {
-            string downloadfile = System.IO.Path.Combine(Pathlocal, downloadFileName);
-            string httpPathWebResource = null;
             Boolean ifFileDownoadedchk = false;
-            ifFileDownoadedchk = false;
-            WebClient myWebClient = new WebClient();
-            httpPathWebResource = url;
-            myWebClient.DownloadFile(httpPathWebResource, downloadfile);
-            ifFileDownoadedchk = true;
+            try
+            {
+                string downloadfile = System.IO.Path.Combine(Pathlocal, downloadFileName);
+                string httpPathWebResource = null;
+                ifFileDownoadedchk = false;
+                WebClient myWebClient = new WebClient();
+                httpPathWebResource = url;
+                myWebClient.DownloadFile(httpPathWebResource, downloadfile);
+                ifFileDownoadedchk = true;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Xin lỗi file không tồn tại trên server! Xin hãy liên hệ admin về lỗi này. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+          
             return ifFileDownoadedchk;
         }
-        public async Task UploadFile(string Bucket, string filePath)
+        public void UploadFile(string Bucket, string filePath)
         {
             string url = string.Format("{0}MinioUpload?bucket={1}", commom.Commom_static.URL, Bucket);
             Upload(url, filePath);
         }
-        private async void Upload(string url, string fileName)
+        private void Upload(string url, string fileName)
         {
             try
             {
@@ -372,7 +417,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 request.AddParameter("multipart/form-data", fileName, ParameterType.RequestBody);
                 request.AlwaysMultipartFormData = true;
                 request.AddFile("files", fileName);
-                var result = await client.ExecuteAsync(request);
+                var data = client.Execute(request);
             }
             catch (Exception ex)
             {
@@ -385,6 +430,12 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
     public class Model
     {
+        public class FileInfoStatus
+        {
+            public string FileName { get; set; }
+            public string FilePath { get; set; }
+            public bool Status { get; set; }
+        }
         public class Email_connec
         {
             public string Email { get; set; }
