@@ -18,14 +18,14 @@ namespace ThuVien_DienTu_CNXHKH.form
         public Frm_NhomSachKinhDien()
         {
             InitializeComponent();
-            
+
         }
         private database.TV data = new database.TV();
         private void LoadNhomSach()
         {
-            grcNhomSachKinhDien.DataSource = data.TuSachKinhDiens.ToList();
+            grcNhomSachKinhDien.DataSource = data.TuSachKinhDiens.Where(p=>p.status == true).ToList();
             grvNhomSachKinhDien.OptionsBehavior.Editable = false;
-            grcSachKinhDien.DataSource = data.SachKinhDiens.ToList();
+            grcSachKinhDien.DataSource = data.SachKinhDiens.Where(p => p.status == true).ToList();
             grvSachKinhDien.OptionsBehavior.Editable = false;
         }
         private void Frm_NhomSachKinhDien_Load(object sender, EventArgs e)
@@ -40,9 +40,27 @@ namespace ThuVien_DienTu_CNXHKH.form
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "ID", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tủ sách", FieldName_Columns = "TenTuSach" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status", Visible = false });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
+            {
+                var button_Edits = new List<properties.Button_edit>();
+                button_Edits.Add(new properties.Button_edit { colname = "TenTuSach", buttonIndex = 0 , styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear, NameButton = "btnDeleteGroup", toolTip = "Xóa", Action = new Action(() => { Deletegroup(); })  });
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+            }
         }
+
+        private async void Deletegroup()
+        {
+            if (grvNhomSachKinhDien.FocusedRowHandle >= 0)
+            {
+                int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
+                database.SachKinhDien SachKinhDien = data.SachKinhDiens.SingleOrDefault(p => p.ID == _ID);
+                SachKinhDien.status = false;
+                data.SaveChanges();
+            }
+            LoadNhomSach();
+        }
+
         private async void LoadGridControl_TuSachKinhDien_Sach()
         {
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcSachKinhDien;
@@ -52,7 +70,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Nhóm sách", FieldName_Columns = "IDNhomSachKinhDien" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Sách", FieldName_Columns = "TenBai" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Link bài", FieldName_Columns = "link_File" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status", Visible = false });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             Dictionary<string, string> columns_GridLookUpedit;
             //PDF
@@ -68,8 +86,26 @@ namespace ThuVien_DienTu_CNXHKH.form
                 columns_GridLookUpedit.Add("Nhóm", "TenTuSach");
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemGridLookUpEdit(data.TuSachKinhDiens.ToList(), new string[] { "IDNhomSachKinhDien" }, columns_GridLookUpedit, "ID", "TenTuSach");
             }
+            {
+                var button_Edits = new List<properties.Button_edit>();
+                button_Edits.Add(new properties.Button_edit { colname = "TenBai", buttonIndex = 0, styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear, NameButton = "btnDelete", toolTip = "Xóa", Action = new Action(() => { DeleteBookgroup(); }) });
+                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
+            }
             grvSachKinhDien.Columns["IDNhomSachKinhDien"].GroupIndex = 0;
             grvSachKinhDien.CellValueChanging += GrvSachKinhDien_CellValueChanging;
+        }
+
+        private async  void DeleteBookgroup()
+        {
+
+            if (grvSachKinhDien.FocusedRowHandle >= 0)
+            {
+                int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
+                database.TuSachKinhDien TuSachKinhDien = data.TuSachKinhDiens.SingleOrDefault(p => p.ID == _ID);
+                TuSachKinhDien.status = false;
+                data.SaveChanges();
+            }
+            LoadNhomSach();
         }
 
         private async void GrvSachKinhDien_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -96,7 +132,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 }
                 data.SaveChanges();
             }
-         
+            LoadNhomSach();
         }
 
         private void grvList_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -115,9 +151,9 @@ namespace ThuVien_DienTu_CNXHKH.form
                 }
                 data.SaveChanges();
             }
-          
+            LoadNhomSach();
         }
-      
+
         private void btnEditGroupBook_Click(object sender, EventArgs e)
         {
             if (btnEditGroupBook.Text.Contains("Sửa"))
@@ -141,7 +177,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             Form_Panel form_Panel = new Form_Panel(Form_Panel.FormName.ThemMoiNhomSachKinhDien, "Thêm mới nhóm tủ sách kinh điển");
             form_Panel.ShowDialog();
-          
+
         }
 
         private void btnThemMoiSachKinhDien_Click(object sender, EventArgs e)

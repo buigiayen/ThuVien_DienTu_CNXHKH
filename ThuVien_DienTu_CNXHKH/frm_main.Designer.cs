@@ -34,12 +34,15 @@ namespace ThuVien_DienTu_CNXHKH
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhMucLyThuyet = new DevExpress.XtraBars.BarButtonItem();
             this.btnKetQuaThi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhomSachKinhDien = new DevExpress.XtraBars.BarButtonItem();
             this.btnFile = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNangCapPhanMen = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnLyThuyet = new DevExpress.XtraBars.BarButtonItem();
@@ -61,11 +64,11 @@ namespace ThuVien_DienTu_CNXHKH
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.lblAppInfomation = new DevExpress.XtraBars.BarStaticItem();
-            this.lblUser = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.lblUser = new DevExpress.XtraBars.BarStaticItem();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -85,7 +88,8 @@ namespace ThuVien_DienTu_CNXHKH
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Danh mục";
             // 
@@ -93,22 +97,11 @@ namespace ThuVien_DienTu_CNXHKH
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
             this.ribbonPageGroup2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup2.ImageOptions.Image")));
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDanhMucLyThuyet);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnKetQuaThi);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnNhomSachKinhDien);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnFile);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Danh sách người dùng";
-            this.barButtonItem1.Id = 4;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btnDanhMucLyThuyet
             // 
@@ -154,6 +147,39 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFile.ImageOptions.LargeImage")));
             this.btnFile.Name = "btnFile";
             this.btnFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFile_ItemClick);
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnNangCapPhanMen);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Hướng dẫn sử dụng";
+            this.barButtonItem7.Id = 27;
+            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
+            // btnNangCapPhanMen
+            // 
+            this.btnNangCapPhanMen.Caption = "Nâng cấp hệ thống";
+            this.btnNangCapPhanMen.Id = 28;
+            this.btnNangCapPhanMen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNangCapPhanMen.ImageOptions.Image")));
+            this.btnNangCapPhanMen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNangCapPhanMen.ImageOptions.LargeImage")));
+            this.btnNangCapPhanMen.Name = "btnNangCapPhanMen";
+            this.btnNangCapPhanMen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNangCapPhanMen_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Danh sách người dùng";
+            this.barButtonItem1.Id = 4;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -290,9 +316,11 @@ namespace ThuVien_DienTu_CNXHKH
             this.btnKetQuaThi,
             this.skinDropDownButtonItem1,
             this.btnTuSachVanKien,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.barButtonItem7,
+            this.btnNangCapPhanMen});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 27;
+            this.ribbonControl1.MaxItemId = 29;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -300,6 +328,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
             this.ribbonControl1.Size = new System.Drawing.Size(1134, 158);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // skinDropDownButtonItem2
             // 
@@ -353,8 +382,7 @@ namespace ThuVien_DienTu_CNXHKH
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.lblAppInfomation),
-            new DevExpress.XtraBars.LinkPersistInfo(this.lblUser)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.lblAppInfomation)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -368,15 +396,6 @@ namespace ThuVien_DienTu_CNXHKH
             this.lblAppInfomation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblAppInfomation.ImageOptions.LargeImage")));
             this.lblAppInfomation.Name = "lblAppInfomation";
             this.lblAppInfomation.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // lblUser
-            // 
-            this.lblUser.Caption = "User:";
-            this.lblUser.Id = 1;
-            this.lblUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.Image")));
-            this.lblUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.LargeImage")));
-            this.lblUser.Name = "lblUser";
-            this.lblUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // barDockControlTop
             // 
@@ -409,6 +428,15 @@ namespace ThuVien_DienTu_CNXHKH
             this.barDockControlRight.Location = new System.Drawing.Point(1134, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 717);
+            // 
+            // lblUser
+            // 
+            this.lblUser.Caption = "User:";
+            this.lblUser.Id = 1;
+            this.lblUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.Image")));
+            this.lblUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblUser.ImageOptions.LargeImage")));
+            this.lblUser.Name = "lblUser";
+            this.lblUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // repositoryItemTimeEdit1
             // 
@@ -484,6 +512,9 @@ namespace ThuVien_DienTu_CNXHKH
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem btnNangCapPhanMen;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }
 

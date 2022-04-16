@@ -28,7 +28,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
 {
     public class Commom_static
     {
-        public static bool isAdmin { get; set; }
+        public static bool isAdmin { get; set; } = true;
         public static string InfoUser { get; set; }
         public static string TenNguoiDung { get; set; }
         public static int IDUser { get; set; }
@@ -249,29 +249,25 @@ namespace ThuVien_DienTu_CNXHKH.commom
             OpenFileDialog xtraOpenFileDialog = new OpenFileDialog();
             xtraOpenFileDialog.Multiselect = true;
             xtraOpenFileDialog.ShowDialog();
-
-            var FileResult = CheckListFileToSize(xtraOpenFileDialog.FileNames).Result;
-            if (FileResult != null && FileResult.Count > 0)
+            foreach (var items in xtraOpenFileDialog.FileNames)
             {
-                foreach (var items in FileResult)
+                Model.FileInfos fileInfos1 = new Model.FileInfos();
+                if (!string.IsNullOrEmpty(items))
                 {
-                    Model.FileInfos fileInfos1 = new Model.FileInfos();
-                    if (!string.IsNullOrEmpty(items.FileName) && items.Status == true)
-                    {
-                        string destFileName = Application.StartupPath + "\\File\\" + items.FileName;
+                    string FileName = new FileInfo(items).Name; 
+                    string destFileName = Application.StartupPath + "\\File\\" + FileName;
 
-                        File.Copy(items.FileName, destFileName, true);
-                        commom.Common.GetInstance().UploadFile(commom.Commom_static.Bucket, destFileName);
-                        FileInfo fileInfo = new FileInfo(destFileName);
-                        fileInfos1.nameFile = fileInfo.Name;
-                        fileInfos1.Path = fileInfo.FullName;
-                        fileInfos1.size = fileInfo.Length;
-                        fileInfos1.ex = fileInfo.Extension;
-                        ListFileinfo.Add(fileInfos1);
-                    }
+                    File.Copy(items, destFileName, true);
+                    FileInfo fileInfo = new FileInfo(destFileName);
+                    fileInfos1.nameFile = fileInfo.Name;
+                    fileInfos1.Path = fileInfo.FullName;
+                    fileInfos1.size = fileInfo.Length;
+                    fileInfos1.ex = fileInfo.Extension;
+                    ListFileinfo.Add(fileInfos1);
+                }
 
-                }       
             }
+
             return ListFileinfo;
         }
 
@@ -398,7 +394,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 XtraMessageBox.Show("Xin lỗi file không tồn tại trên server! Xin hãy liên hệ admin về lỗi này. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-          
+
             return ifFileDownoadedchk;
         }
         public void UploadFile(string Bucket, string filePath)

@@ -17,11 +17,12 @@ namespace ThuVien_DienTu_CNXHKH.form
         public frm_TuSachV2()
         {
             InitializeComponent();
-            btnAddBook.Visibility = commom.Commom_static.isAdmin ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
+          
         }
         private database.TV data = new database.TV();
         private async void ShowBook()
         {
+           
             grcTuSach.DataSource = data.tuSaches.Where(p => commom.Commom_static.isAdmin ? true : p.status == true).ToList();
             lupListFile.DataSource = await commom.Function.Instance.getfile(commom.Commom_static.File_PDF);
         }
@@ -34,6 +35,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         private void frm_TuSachV2_Load(object sender, EventArgs e)
         {
             grvTuSach.OptionsBehavior.ReadOnly = !commom.Commom_static.isAdmin;
+            glupLoaiTaiLieu.Properties.DataSource = (from ts in data.tuSaches group ts by new { ts.LoaiTaiLieu } into k select new { k.Key.LoaiTaiLieu } ) .ToList();
         }
 
       
@@ -108,10 +110,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (!string.IsNullOrEmpty(txtLoaiTaiLieu.Text))
+                if (!string.IsNullOrEmpty(lupLoaiTaiLieu.Text))
                 {
                     grcTuSach.DataSource = null;
-                    grcTuSach.DataSource = data.tuSaches.Where(p => (commom.Commom_static.isAdmin ? true : p.status == true) && (p.LoaiTaiLieu.Contains(txtLoaiTaiLieu.Text))).ToList();
+                    grcTuSach.DataSource = data.tuSaches.Where(p => (commom.Commom_static.isAdmin ? true : p.status == true) && (p.LoaiTaiLieu.Contains(lupLoaiTaiLieu.Text))).ToList();
                 }
                 else
                 {

@@ -19,6 +19,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         {
             InitializeComponent();
         }
+        private commom.Function function = new commom.Function();
         private database.TV data = new database.TV();
         private void frm_TraCuu_Load(object sender, EventArgs e)
         {
@@ -37,29 +38,19 @@ namespace ThuVien_DienTu_CNXHKH.form
             List<properties.columns> columnsproperties = new List<properties.columns>();
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = gridControl == grcTraCuuKinhDien ? "Câu trích" : "Thuật ngữ", FieldName_Columns = "ThuatNgu" });
-            if (gridControl == grcTraCuuThuatNgu)
-            {
-                columnsproperties.Add(new properties.columns { Caption_Columns = "Giải ngữ", FieldName_Columns = "MoTaThuatNgu", Visible = commom.Commom_static.isAdmin ? true : gridControl == grcTraCuuThuatNgu ? false : true });
-               
-            }
+            columnsproperties.Add(new properties.columns { Caption_Columns = gridControl == grcTraCuuThuatNgu ? " Mô tả Thuật ngữ" : "", FieldName_Columns = "MoTaThuatNgu", Visible = false });
+
             if (commom.Commom_static.isAdmin)
             {
-                columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
+                columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị", FieldName_Columns = "status", Visible = false });
             }
 
-            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, AutoFilter: false);
-            if (gridControl == grcTraCuuThuatNgu)
-            {
-                Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "MoTaThuatNgu" }, AllowEdit: true, WordWrap:false);
-            }
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties, AutoFilter: true);
 
             if (gridControl == grcTraCuuKinhDien)
             {
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
             }
-
-
-         
 
             {
                 List<properties.Button_edit> button_Edits = new List<properties.Button_edit>();
@@ -72,6 +63,15 @@ namespace ThuVien_DienTu_CNXHKH.form
                     styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search,
                     Action = new Action(() => { TextView(gridView); })
                 });
+                button_Edits.Add(new properties.Button_edit
+                {
+                    buttonIndex = 1,
+                    colname = "ThuatNgu",
+                    toolTip = "Xem thuật ngữ",
+                    NameButton = "btnViewThuatNgu",
+                    styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear,
+                    Action = new Action(() => { DeleteThuatNgu(Convert.ToInt32(grvTraCuuThuatNgu.GetFocusedRowCellValue("id"))  | Convert.ToInt32(grvTraCuuKinhDien.GetFocusedRowCellValue("id"))); })
+                });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
             gridView.Columns["id"].OptionsColumn.ReadOnly = true;
@@ -82,11 +82,34 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         }
 
+        private async void DeleteThuatNgu(int? IDThuatNgu)
+        {
+            if (IDThuatNgu != null)
+            {
+                database.TraCuuThuatNgu traCuu = data.TraCuuThuatNgus.SingleOrDefault(p => p.id == IDThuatNgu);
+                traCuu.status = false;
+                data.SaveChanges();
+
+            }
+            LoadTraCuuThuatNgu();
+            LoadTraCuuKinhDien();
+
+
+        }
+
         private void TextView(GridView gridView)
         {
-            string viewTexts = gridView == grvTraCuuThuatNgu ? gridView.GetFocusedRowCellValue("MoTaThuatNgu").ToString() : gridView.GetFocusedRowCellValue("ThuatNgu").ToString();
-            form.view.frm_ViewDocument viewText = new form.view.frm_ViewDocument(viewTexts);
-            viewText.Show();
+            int? idBai = gridView == grvTraCuuThuatNgu ? (int?)gridView.GetFocusedRowCellValue("id") : null;
+            string viewTexts = gridView == grvTraCuuThuatNgu ? gridView.GetFocusedRowCellValue("MoTaThuatNgu")?.ToString() : gridView.GetFocusedRowCellValue("ThuatNgu").ToString();
+            form.view.frm_ViewDocument viewText = new form.view.frm_ViewDocument(viewTexts, idBai);
+            viewText.ShowDialog();
+            if (viewText.SaveBai)
+            {
+                grvTraCuuThuatNgu.SetRowCellValue(grvTraCuuThuatNgu.FocusedRowHandle, "MoTaThuatNgu", viewText.TextSave);
+                GrvTraCuuThuatNgu_CellValueChanging(null, new DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs(grvTraCuuKinhDien.FocusedRowHandle, new DevExpress.XtraGrid.Columns.GridColumn { FieldName = "MoTaThuatNgu" }, viewText.TextSave));
+            }
+
+
         }
 
         private async void GrvTraCuuThuatNgu_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -99,7 +122,6 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void LoadTraCuuThuatNgu()
         {
-
             grcTraCuuThuatNgu.DataSource = await commom.Function.Instance.Get_TraCuu(0);
         }
         private async void btnThemMoiTraCuuThuatNgu_Click(object sender, EventArgs e)
@@ -117,7 +139,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         private async void saveData(int PhanLoai = 0)
         {
             database.TraCuuThuatNgu traCuu = new database.TraCuuThuatNgu();
-            traCuu.status = false;
+            traCuu.status = true;
             traCuu.PhanLoai = PhanLoai;
             data.TraCuuThuatNgus.Add(traCuu);
             await data.SaveChangesAsync();
@@ -162,25 +184,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             data.SaveChanges();
         }
 
-        private async void textEdit1_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
-        }
-
-        private async void textEdit2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                grcTraCuuKinhDien.DataSource = await commom.Function.Instance.Get_TraCuu(1, textEdit2.Text);
-            }
-        }
-
-        private async void textEdit1_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                grcTraCuuThuatNgu.DataSource = await commom.Function.Instance.Get_TraCuu(0, textEdit1.Text);
-            }
-        }
+       
     }
 }

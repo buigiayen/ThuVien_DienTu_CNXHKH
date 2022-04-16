@@ -25,7 +25,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
 
             }
         }
-        private Function()
+        public Function()
         {
         }
         #endregion
@@ -46,15 +46,15 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 filePath = System.IO.Path.Combine(currentPath, dataFile);
                 if (!System.IO.File.Exists(filePath))
                 {
-                   await commom.Common.GetInstance().DownloadFile(commom.Commom_static.Bucket , dataFile, currentPath);
+                    await commom.Common.GetInstance().DownloadFile(commom.Commom_static.Bucket, dataFile, currentPath);
                 }
             }
             return filePath;
 
         }
-        public async Task<List<TraCuuThuatNgu>> Get_TraCuu(int PhanLoai = 0, string key = "")
-        {
-            return data.TraCuuThuatNgus.Where(p => (commom.Commom_static.isAdmin == true ? true : (p.status == true && p.ThuatNgu.Contains(key))) && p.PhanLoai == PhanLoai).ToList();
+        public async Task<List<TraCuuThuatNgu>> Get_TraCuu(int PhanLoai = 0)
+        { 
+            return data.TraCuuThuatNgus.Where(p => p.status == true  && p.PhanLoai == PhanLoai ).ToList();
         }
         public async Task<List<BaiThi>> Get_Thi(int? idUser = null, int? idbaithi = null)
         {

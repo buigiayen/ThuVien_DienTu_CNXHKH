@@ -29,7 +29,9 @@ namespace ThuVien_DienTu_CNXHKH.form.view
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ViewDocument));
             this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.btnLuuTaiLieu = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // richEditControl1
@@ -41,11 +43,22 @@ namespace ThuVien_DienTu_CNXHKH.form.view
             this.richEditControl1.TabIndex = 0;
             this.richEditControl1.Text = "richEditControl1";
             // 
+            // btnLuuTaiLieu
+            // 
+            this.btnLuuTaiLieu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnLuuTaiLieu.Location = new System.Drawing.Point(26, 12);
+            this.btnLuuTaiLieu.Name = "btnLuuTaiLieu";
+            this.btnLuuTaiLieu.Size = new System.Drawing.Size(97, 23);
+            this.btnLuuTaiLieu.TabIndex = 1;
+            this.btnLuuTaiLieu.Text = "Lưu tài liệu";
+            this.btnLuuTaiLieu.Click += new System.EventHandler(this.btnLuuTaiLieu_Click);
+            // 
             // frm_ViewDocument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1073, 789);
+            this.Controls.Add(this.btnLuuTaiLieu);
             this.Controls.Add(this.richEditControl1);
             this.Name = "frm_ViewDocument";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -57,5 +70,6 @@ namespace ThuVien_DienTu_CNXHKH.form.view
         #endregion
 
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
+        private DevExpress.XtraEditors.SimpleButton btnLuuTaiLieu;
     }
 }

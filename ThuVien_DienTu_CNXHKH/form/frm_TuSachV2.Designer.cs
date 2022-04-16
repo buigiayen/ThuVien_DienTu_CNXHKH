@@ -30,28 +30,29 @@ namespace ThuVien_DienTu_CNXHKH.form
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSachV2));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuSachV2));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.grcTuSach = new DevExpress.XtraGrid.GridControl();
             this.grvTuSach = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.ID = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_ID = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewColumn2 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.layoutViewField_layoutViewColumn2 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewColumn3 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_layoutViewColumn3 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
@@ -82,15 +83,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.glupLoaiTaiLieu = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtTacGia = new DevExpress.XtraEditors.TextEdit();
-            this.txtLoaiTaiLieu = new DevExpress.XtraEditors.TextEdit();
             this.txtTenSach = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lupLoaiTaiLieu = new DevExpress.XtraLayout.LayoutControlItem();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -98,6 +101,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.grcTuSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn4)).BeginInit();
@@ -114,15 +118,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glupLoaiTaiLieu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTacGia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLoaiTaiLieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSach.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lupLoaiTaiLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
@@ -146,7 +152,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.grcTuSach.Name = "grcTuSach";
             this.grcTuSach.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
-            this.lupListFile});
+            this.lupListFile,
+            this.repositoryItemMemoExEdit1,
+            this.repositoryItemMemoEdit1});
             this.grcTuSach.Size = new System.Drawing.Size(831, 526);
             this.grcTuSach.TabIndex = 4;
             this.grcTuSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -166,6 +174,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.gridColumn3,
             this.layoutViewColumn7});
             this.grvTuSach.GridControl = this.grcTuSach;
+            this.grvTuSach.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_ID});
             this.grvTuSach.Name = "grvTuSach";
             this.grvTuSach.OptionsFind.AlwaysVisible = true;
             this.grvTuSach.OptionsFind.FindNullPrompt = "Tìm kiếm nhanh";
@@ -196,32 +206,44 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutViewColumn2
             // 
-            this.layoutViewColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.layoutViewColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.layoutViewColumn2.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
             this.layoutViewColumn2.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn2.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.layoutViewColumn2.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.layoutViewColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.layoutViewColumn2.AppearanceHeader.Options.UseFont = true;
+            this.layoutViewColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.layoutViewColumn2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.layoutViewColumn2.Caption = "Tên sách";
+            this.layoutViewColumn2.ColumnEdit = this.repositoryItemMemoEdit1;
             this.layoutViewColumn2.FieldName = "TenSach";
             this.layoutViewColumn2.LayoutViewField = this.layoutViewField_layoutViewColumn2;
             this.layoutViewColumn2.Name = "layoutViewColumn2";
             // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemMemoEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
             // layoutViewField_layoutViewColumn2
             // 
             this.layoutViewField_layoutViewColumn2.EditorPreferredWidth = 124;
-            this.layoutViewField_layoutViewColumn2.Location = new System.Drawing.Point(0, 24);
+            this.layoutViewField_layoutViewColumn2.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_layoutViewColumn2.Name = "layoutViewField_layoutViewColumn2";
-            this.layoutViewField_layoutViewColumn2.Size = new System.Drawing.Size(202, 24);
+            this.layoutViewField_layoutViewColumn2.Size = new System.Drawing.Size(202, 20);
             this.layoutViewField_layoutViewColumn2.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn3
             // 
-            this.layoutViewColumn3.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.layoutViewColumn3.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutViewColumn3.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn3.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn3.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.layoutViewColumn3.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn3.Caption = "Loại tài liệu";
             this.layoutViewColumn3.FieldName = "LoaiTaiLieu";
@@ -231,18 +253,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             // layoutViewField_layoutViewColumn3
             // 
             this.layoutViewField_layoutViewColumn3.EditorPreferredWidth = 124;
-            this.layoutViewField_layoutViewColumn3.Location = new System.Drawing.Point(0, 48);
+            this.layoutViewField_layoutViewColumn3.Location = new System.Drawing.Point(0, 20);
             this.layoutViewField_layoutViewColumn3.Name = "layoutViewField_layoutViewColumn3";
             this.layoutViewField_layoutViewColumn3.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn3.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn4
             // 
-            this.layoutViewColumn4.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.layoutViewColumn4.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutViewColumn4.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn4.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn4.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn4.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn4.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.layoutViewColumn4.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn4.Caption = "Tác giả";
             this.layoutViewColumn4.FieldName = "TacGia";
@@ -252,18 +274,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             // layoutViewField_layoutViewColumn4
             // 
             this.layoutViewField_layoutViewColumn4.EditorPreferredWidth = 124;
-            this.layoutViewField_layoutViewColumn4.Location = new System.Drawing.Point(0, 72);
+            this.layoutViewField_layoutViewColumn4.Location = new System.Drawing.Point(0, 44);
             this.layoutViewField_layoutViewColumn4.Name = "layoutViewField_layoutViewColumn4";
             this.layoutViewField_layoutViewColumn4.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn4.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn5
             // 
-            this.layoutViewColumn5.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.layoutViewColumn5.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutViewColumn5.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn5.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn5.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn5.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn5.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.layoutViewColumn5.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn5.Caption = "Năm xuất bản";
             this.layoutViewColumn5.FieldName = "NamXuatBan";
@@ -273,18 +295,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             // layoutViewField_layoutViewColumn5
             // 
             this.layoutViewField_layoutViewColumn5.EditorPreferredWidth = 124;
-            this.layoutViewField_layoutViewColumn5.Location = new System.Drawing.Point(0, 96);
+            this.layoutViewField_layoutViewColumn5.Location = new System.Drawing.Point(0, 68);
             this.layoutViewField_layoutViewColumn5.Name = "layoutViewField_layoutViewColumn5";
             this.layoutViewField_layoutViewColumn5.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn5.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn6
             // 
-            this.layoutViewColumn6.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.layoutViewColumn6.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutViewColumn6.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn6.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn6.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn6.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn6.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.layoutViewColumn6.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn6.Caption = "Nhà xuất bản";
             this.layoutViewColumn6.FieldName = "GhiChu";
@@ -294,14 +316,16 @@ namespace ThuVien_DienTu_CNXHKH.form
             // layoutViewField_layoutViewColumn6
             // 
             this.layoutViewField_layoutViewColumn6.EditorPreferredWidth = 124;
-            this.layoutViewField_layoutViewColumn6.Location = new System.Drawing.Point(0, 120);
+            this.layoutViewField_layoutViewColumn6.Location = new System.Drawing.Point(0, 92);
             this.layoutViewField_layoutViewColumn6.Name = "layoutViewField_layoutViewColumn6";
             this.layoutViewField_layoutViewColumn6.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_layoutViewColumn6.TextSize = new System.Drawing.Size(71, 13);
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Hiển thị";
             this.gridColumn3.FieldName = "status";
@@ -311,18 +335,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             // layoutViewField_gridColumn3
             // 
             this.layoutViewField_gridColumn3.EditorPreferredWidth = 124;
-            this.layoutViewField_gridColumn3.Location = new System.Drawing.Point(0, 144);
+            this.layoutViewField_gridColumn3.Location = new System.Drawing.Point(0, 116);
             this.layoutViewField_gridColumn3.Name = "layoutViewField_gridColumn3";
             this.layoutViewField_gridColumn3.Size = new System.Drawing.Size(202, 24);
             this.layoutViewField_gridColumn3.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewColumn7
             // 
-            this.layoutViewColumn7.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.layoutViewColumn7.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutViewColumn7.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn7.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn7.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn7.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn7.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.layoutViewColumn7.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn7.Caption = "Tệp";
             this.layoutViewColumn7.ColumnEdit = this.lupListFile;
@@ -333,12 +357,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             // lupListFile
             // 
             this.lupListFile.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.lupListFile.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.lupListFile.DisplayMember = "FileName";
             this.lupListFile.Name = "lupListFile";
             this.lupListFile.NullText = "[Chọn sách]";
@@ -375,16 +399,21 @@ namespace ThuVien_DienTu_CNXHKH.form
             // layoutViewField_layoutViewColumn7
             // 
             this.layoutViewField_layoutViewColumn7.EditorPreferredWidth = 124;
-            this.layoutViewField_layoutViewColumn7.Location = new System.Drawing.Point(0, 168);
+            this.layoutViewField_layoutViewColumn7.Location = new System.Drawing.Point(0, 140);
             this.layoutViewField_layoutViewColumn7.Name = "layoutViewField_layoutViewColumn7";
             this.layoutViewField_layoutViewColumn7.Size = new System.Drawing.Size(202, 28);
             this.layoutViewField_layoutViewColumn7.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutViewCard1
             // 
+            this.layoutViewCard1.AppearanceGroup.Options.UseTextOptions = true;
+            this.layoutViewCard1.AppearanceGroup.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.layoutViewCard1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutViewCard1.AppearanceItemCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.layoutViewCard1.AppearanceTabPage.PageClient.Options.UseTextOptions = true;
+            this.layoutViewCard1.AppearanceTabPage.PageClient.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_ID,
             this.layoutViewField_layoutViewColumn2,
             this.layoutViewField_layoutViewColumn3,
             this.layoutViewField_layoutViewColumn4,
@@ -515,8 +544,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.glupLoaiTaiLieu);
             this.layoutControl2.Controls.Add(this.txtTacGia);
-            this.layoutControl2.Controls.Add(this.txtLoaiTaiLieu);
             this.layoutControl2.Controls.Add(this.txtTenSach);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
@@ -526,32 +555,44 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // glupLoaiTaiLieu
+            // 
+            this.glupLoaiTaiLieu.Location = new System.Drawing.Point(69, 26);
+            this.glupLoaiTaiLieu.MenuManager = this.barManager1;
+            this.glupLoaiTaiLieu.Name = "glupLoaiTaiLieu";
+            this.glupLoaiTaiLieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glupLoaiTaiLieu.Properties.DisplayMember = "LoaiTaiLieu";
+            this.glupLoaiTaiLieu.Properties.NullText = "Toàn bộ";
+            this.glupLoaiTaiLieu.Properties.PopupView = this.gridLookUpEdit1View;
+            this.glupLoaiTaiLieu.Properties.ValueMember = "LoaiTaiLieu";
+            this.glupLoaiTaiLieu.Size = new System.Drawing.Size(192, 20);
+            this.glupLoaiTaiLieu.StyleController = this.layoutControl2;
+            this.glupLoaiTaiLieu.TabIndex = 7;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // txtTacGia
             // 
-            this.txtTacGia.Location = new System.Drawing.Point(72, 50);
+            this.txtTacGia.Location = new System.Drawing.Point(69, 50);
             this.txtTacGia.MenuManager = this.barManager1;
             this.txtTacGia.Name = "txtTacGia";
-            this.txtTacGia.Size = new System.Drawing.Size(189, 20);
+            this.txtTacGia.Size = new System.Drawing.Size(192, 20);
             this.txtTacGia.StyleController = this.layoutControl2;
             this.txtTacGia.TabIndex = 6;
             this.txtTacGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTacGia_KeyPress);
             // 
-            // txtLoaiTaiLieu
-            // 
-            this.txtLoaiTaiLieu.Location = new System.Drawing.Point(72, 26);
-            this.txtLoaiTaiLieu.MenuManager = this.barManager1;
-            this.txtLoaiTaiLieu.Name = "txtLoaiTaiLieu";
-            this.txtLoaiTaiLieu.Size = new System.Drawing.Size(189, 20);
-            this.txtLoaiTaiLieu.StyleController = this.layoutControl2;
-            this.txtLoaiTaiLieu.TabIndex = 5;
-            this.txtLoaiTaiLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoaiTaiLieu_KeyPress);
-            // 
             // txtTenSach
             // 
-            this.txtTenSach.Location = new System.Drawing.Point(72, 2);
+            this.txtTenSach.Location = new System.Drawing.Point(69, 2);
             this.txtTenSach.MenuManager = this.barManager1;
             this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.Size = new System.Drawing.Size(189, 20);
+            this.txtTenSach.Size = new System.Drawing.Size(192, 20);
             this.txtTenSach.StyleController = this.layoutControl2;
             this.txtTenSach.TabIndex = 4;
             this.txtTenSach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSach_KeyPress);
@@ -563,8 +604,8 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.emptySpaceItem1,
-            this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.lupLoaiTaiLieu});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(263, 501);
@@ -579,7 +620,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(263, 24);
             this.layoutControlItem2.Text = "Tên sách:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(67, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(64, 13);
             // 
             // emptySpaceItem1
             // 
@@ -588,17 +629,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(263, 429);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem3.Control = this.txtLoaiTaiLieu;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(263, 24);
-            this.layoutControlItem3.Text = "Loại tài liệu:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem4
             // 
@@ -609,17 +639,36 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(263, 24);
             this.layoutControlItem4.Text = "Tác giả:";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(67, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(64, 13);
+            // 
+            // lupLoaiTaiLieu
+            // 
+            this.lupLoaiTaiLieu.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lupLoaiTaiLieu.AppearanceItemCaption.Options.UseFont = true;
+            this.lupLoaiTaiLieu.Control = this.glupLoaiTaiLieu;
+            this.lupLoaiTaiLieu.CustomizationFormText = "Loại tài liệu:";
+            this.lupLoaiTaiLieu.Location = new System.Drawing.Point(0, 24);
+            this.lupLoaiTaiLieu.Name = "lupLoaiTaiLieu";
+            this.lupLoaiTaiLieu.Size = new System.Drawing.Size(263, 24);
+            this.lupLoaiTaiLieu.Text = "Loại tài liệu";
+            this.lupLoaiTaiLieu.TextSize = new System.Drawing.Size(64, 13);
             // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Tải sách", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Tải sách", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
+            // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
             // Root
             // 
@@ -660,6 +709,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.grcTuSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTuSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn4)).EndInit();
@@ -676,15 +726,17 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.glupLoaiTaiLieu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTacGia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLoaiTaiLieu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSach.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lupLoaiTaiLieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
@@ -716,12 +768,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraEditors.TextEdit txtTacGia;
-        private DevExpress.XtraEditors.TextEdit txtLoaiTaiLieu;
         private DevExpress.XtraEditors.TextEdit txtTenSach;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraGrid.Views.Layout.LayoutView grvTuSach;
         private DevExpress.XtraGrid.Columns.LayoutViewColumn ID;
@@ -741,5 +791,10 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraGrid.Columns.LayoutViewColumn layoutViewColumn7;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn7;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private DevExpress.XtraEditors.GridLookUpEdit glupLoaiTaiLieu;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlItem lupLoaiTaiLieu;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
     }
 }

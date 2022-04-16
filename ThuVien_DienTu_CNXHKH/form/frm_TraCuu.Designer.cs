@@ -35,7 +35,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -52,7 +51,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.btnLoadTraCuuKinhDien = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemMoiTraCuuKinhDien = new DevExpress.XtraEditors.SimpleButton();
             this.grcTraCuuKinhDien = new DevExpress.XtraGrid.GridControl();
@@ -67,7 +65,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuThuatNgu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuThuatNgu)).BeginInit();
@@ -79,7 +76,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
             this.stackPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -120,7 +116,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // stackPanel1
             // 
-            this.stackPanel1.Controls.Add(this.textEdit1);
             this.stackPanel1.Controls.Add(this.labelControl1);
             this.stackPanel1.Controls.Add(this.btnReloadTraCuuThuatNgu);
             this.stackPanel1.Controls.Add(this.btnThemMoiTraCuuThuatNgu);
@@ -129,16 +124,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.stackPanel1.Name = "stackPanel1";
             this.stackPanel1.Size = new System.Drawing.Size(1124, 28);
             this.stackPanel1.TabIndex = 5;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(3, 4);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.NullText = "Tìm kiếm [Enter]";
-            this.textEdit1.Size = new System.Drawing.Size(278, 20);
-            this.textEdit1.TabIndex = 4;
-            this.textEdit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress_1);
             // 
             // barManager1
             // 
@@ -182,7 +167,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(287, 7);
+            this.labelControl1.Location = new System.Drawing.Point(3, 7);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(0, 13);
             this.labelControl1.TabIndex = 3;
@@ -190,7 +175,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // btnReloadTraCuuThuatNgu
             // 
             this.btnReloadTraCuuThuatNgu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReloadTraCuuThuatNgu.ImageOptions.Image")));
-            this.btnReloadTraCuuThuatNgu.Location = new System.Drawing.Point(293, 2);
+            this.btnReloadTraCuuThuatNgu.Location = new System.Drawing.Point(9, 2);
             this.btnReloadTraCuuThuatNgu.Name = "btnReloadTraCuuThuatNgu";
             this.btnReloadTraCuuThuatNgu.Size = new System.Drawing.Size(129, 23);
             this.btnReloadTraCuuThuatNgu.TabIndex = 0;
@@ -200,7 +185,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // btnThemMoiTraCuuThuatNgu
             // 
             this.btnThemMoiTraCuuThuatNgu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoiTraCuuThuatNgu.ImageOptions.Image")));
-            this.btnThemMoiTraCuuThuatNgu.Location = new System.Drawing.Point(428, 2);
+            this.btnThemMoiTraCuuThuatNgu.Location = new System.Drawing.Point(144, 2);
             this.btnThemMoiTraCuuThuatNgu.Name = "btnThemMoiTraCuuThuatNgu";
             this.btnThemMoiTraCuuThuatNgu.Size = new System.Drawing.Size(102, 23);
             this.btnThemMoiTraCuuThuatNgu.TabIndex = 1;
@@ -274,7 +259,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // stackPanel2
             // 
-            this.stackPanel2.Controls.Add(this.textEdit2);
             this.stackPanel2.Controls.Add(this.btnLoadTraCuuKinhDien);
             this.stackPanel2.Controls.Add(this.btnThemMoiTraCuuKinhDien);
             this.stackPanel2.FireScrollEventOnMouseWheel = true;
@@ -283,20 +267,10 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.stackPanel2.Size = new System.Drawing.Size(1124, 26);
             this.stackPanel2.TabIndex = 6;
             // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(3, 3);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.NullText = "Tìm kiếm [Enter]";
-            this.textEdit2.Size = new System.Drawing.Size(301, 20);
-            this.textEdit2.TabIndex = 3;
-            this.textEdit2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit2_KeyPress);
-            // 
             // btnLoadTraCuuKinhDien
             // 
             this.btnLoadTraCuuKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadTraCuuKinhDien.ImageOptions.Image")));
-            this.btnLoadTraCuuKinhDien.Location = new System.Drawing.Point(310, 1);
+            this.btnLoadTraCuuKinhDien.Location = new System.Drawing.Point(3, 1);
             this.btnLoadTraCuuKinhDien.Name = "btnLoadTraCuuKinhDien";
             this.btnLoadTraCuuKinhDien.Size = new System.Drawing.Size(129, 23);
             this.btnLoadTraCuuKinhDien.TabIndex = 0;
@@ -306,7 +280,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             // btnThemMoiTraCuuKinhDien
             // 
             this.btnThemMoiTraCuuKinhDien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoiTraCuuKinhDien.ImageOptions.Image")));
-            this.btnThemMoiTraCuuKinhDien.Location = new System.Drawing.Point(445, 1);
+            this.btnThemMoiTraCuuKinhDien.Location = new System.Drawing.Point(138, 1);
             this.btnThemMoiTraCuuKinhDien.Name = "btnThemMoiTraCuuKinhDien";
             this.btnThemMoiTraCuuKinhDien.Size = new System.Drawing.Size(102, 23);
             this.btnThemMoiTraCuuKinhDien.TabIndex = 1;
@@ -380,7 +354,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.stackPanel1.ResumeLayout(false);
             this.stackPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuThuatNgu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuThuatNgu)).EndInit();
@@ -392,7 +365,6 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
             this.stackPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcTraCuuKinhDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTraCuuKinhDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -432,7 +404,5 @@ namespace ThuVien_DienTu_CNXHKH.form
         private DevExpress.XtraEditors.SimpleButton btnLoadTraCuuKinhDien;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnReloadTraCuuThuatNgu;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
     }
 }

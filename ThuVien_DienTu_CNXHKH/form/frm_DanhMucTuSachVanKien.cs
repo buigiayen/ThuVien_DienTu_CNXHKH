@@ -34,7 +34,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã bài viết", FieldName_Columns = "id", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Bài viết", FieldName_Columns = "TenBaiViet" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File văn kiện", FieldName_Columns = "ID_File_PDF" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị bài viết", FieldName_Columns = "status" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị bài viết", FieldName_Columns = "status", Visible = false });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
 
             {
@@ -52,6 +52,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 {
                     List<properties.Button_edit> btnDanhSachBaiThi = new List<properties.Button_edit>();
                     btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", NameButton = "btnDanhMucBaiThi", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, toolTip = "Danh sách bài thi", Action = new Action(() => showListbaiThi("id")) });
+                    btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 1, colname = "TenBaiViet", NameButton = "btnDelete", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear, toolTip = "Xóa bài", Action = new Action(() => delelebook()) });
                     Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(btnDanhSachBaiThi);
                 }
             }
@@ -60,6 +61,17 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         }
 
+        private async void delelebook()
+        {
+            if (grvBaiViet.FocusedRowHandle >= 0)
+            {
+                int IDBai = (int)grvBaiViet.GetFocusedRowCellValue("id");
+                database.tbl_BaiViet bv = tV.tbl_BaiViet.Single(p => p.id == IDBai);
+                bv.status = false;
+                tV.SaveChanges();
+                LoadDS();
+            }
+        }
 
         private async void GrvBaiViet_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
@@ -101,15 +113,13 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void LoadDS()
         {
-            grcBaiViet.DataSource = tV.tbl_BaiViet.Where(p => p.isTuSachVanKien == true).ToList();
-            grcBaiViet.DataSource = tV.tbl_BaiViet.Where(p => p.isTuSachVanKien == true).ToList();
-            grcBaiViet.DataSource = tV.tbl_BaiViet.Where(p => p.isTuSachVanKien == true).ToList();
+            grcBaiViet.DataSource = tV.tbl_BaiViet.Where(p => p.isTuSachVanKien == true && p.status == true).ToList();
         }
 
         private async void btnThemMoiBaiViet_Click(object sender, EventArgs e)
         {
             database.tbl_BaiViet baiViet = new database.tbl_BaiViet();
-            baiViet.status = false;
+            baiViet.status = true;
             baiViet.isTuSachVanKien = true;
             baiViet.TenBaiViet = "";
             tV.tbl_BaiViet.Add(baiViet);

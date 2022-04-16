@@ -30,7 +30,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên trang web ", FieldName_Columns = "Mota" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Link", FieldName_Columns = "link", Visible = commom.Commom_static.isAdmin });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị ", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị ", FieldName_Columns = "status", Visible =false });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             {
                 List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit> button_Edits = new List<Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.properties.Button_edit>();

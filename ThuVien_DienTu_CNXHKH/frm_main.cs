@@ -1,5 +1,6 @@
 ﻿
 
+using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -18,7 +20,7 @@ namespace ThuVien_DienTu_CNXHKH
     public partial class frm_main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private static bool IsLogin { get; set; }
-        public frm_main(bool _IsLogin)
+        public frm_main(bool _IsLogin = true)
         {
             InitializeComponent();
             IsLogin = _IsLogin;
@@ -77,20 +79,32 @@ namespace ThuVien_DienTu_CNXHKH
         {
             Moform<form.frm_DanhMuc>(0);
         }
-
-        private void frm_main_Load(object sender, EventArgs e)
+        private async Task CheckApplication()
         {
-            ShowLogin();
-            if (!commom.Commom_static.isAdmin)
+            try
             {
-                ribbonPage2.Visible = false;
+                string versionSoftware = Application.ProductVersion;
+                // Check version
+                var data = await commom.Function.Instance.InfoUnits(commom.Commom_static.APPID);
+                if (!data.FirstOrDefault().Version.Equals(versionSoftware))
+                {
+                    btnNangCapPhanMen.Visibility =  DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+              
             }
-            if (IsLogin)
+            catch (Exception ex)
             {
-                Moform<form.FrmView>(0);
+                XtraMessageBox.Show("Không có kết nối: "+ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnNangCapPhanMen.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
             }
-                    
-         
+
+
+        }
+        private async void frm_main_Load(object sender, EventArgs e)
+        {
+            await CheckApplication();
+            Moform<form.FrmView>(0);
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -182,6 +196,60 @@ namespace ThuVien_DienTu_CNXHKH
         private void skinDropDownButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
           
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string FilePathAbout = AppDomain.CurrentDomain.BaseDirectory + @"\HuongDanSuDungThuVienDientu.txt";
+            if (System.IO.File.Exists(FilePathAbout))
+            {
+                string TextDocument = System.IO.File.ReadAllText(FilePathAbout);
+                ThuVien_DienTu_CNXHKH.form.ViewText frm_ViewDocument = new ThuVien_DienTu_CNXHKH.form.ViewText(TextDocument);
+                frm_ViewDocument.ShowDialog();
+            }
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNangCapPhanMen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UpdateApplication();
+        }
+        private async Task UpdateApplication()
+        {
+            try
+            {
+                string versionSoftware = Application.ProductVersion;
+                // Check version
+                var data = await commom.Function.Instance.InfoUnits(commom.Commom_static.APPID);
+                if (!data.FirstOrDefault().Version.Equals(versionSoftware))
+                {
+                    // Update
+                    System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
+                    processStartInfo.Verb = "runas";
+                    processStartInfo.FileName = commom.Commom_static.APPRUN;
+                    Thread.Sleep(3000);
+                    System.Diagnostics.Process.Start(processStartInfo);
+                    Application.Exit();
+                }
+                else
+                {
+                    //Continue
+                    XtraMessageBox.Show("Không có phiên bản mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

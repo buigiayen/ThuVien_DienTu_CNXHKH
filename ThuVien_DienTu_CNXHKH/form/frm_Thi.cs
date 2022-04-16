@@ -195,7 +195,12 @@ namespace ThuVien_DienTu_CNXHKH.form
             t.Start();
             thoiGianBatDau = DateTime.Now;
             TV dataContext = new TV();
-            var cauHois = dataContext.CauHois.Where(o => o.BaiVietId == idBaiViet).OrderBy(o => o.Stt).ToList();
+            var listCauHoi = dataContext.CauHois.Where(o => o.BaiVietId == idBaiViet).ToList();
+            foreach (var item in listCauHoi)
+            {
+                item.Stt = new Random().Next();
+            }
+            var cauHois = listCauHoi.OrderBy(o => o.Stt);
             listDaTraLois = cauHois.Select(o => new DaTraLoi { CauHoiId = o.Id, CauTraLoiId = null }).ToList();
             gridControlCauHoi.DataSource = cauHois;
         }

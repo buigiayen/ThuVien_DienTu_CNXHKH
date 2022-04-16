@@ -30,10 +30,32 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Dường dẫn", FieldName_Columns = "FilePath" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên tệp", FieldName_Columns = "Ex" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "size", FieldName_Columns = "size" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "status", FieldName_Columns = "status" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "status", FieldName_Columns = "status", Visible = false });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties );
+            Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(new List<properties.Button_edit>()
+            {
+                new properties.Button_edit
+                {
+                    Action = new Action(() => deteleFile(Convert.ToInt32(grvList.GetFocusedRowCellValue("ID")))),
+                    buttonIndex = 0,
+                     colname = "FileName",
+                     NameButton = "DeleteFile",
+                     styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear,
+                     toolTip = "Xóa file"
+                }
+            }) ;
+
             grvList.OptionsBehavior.ReadOnly = true;
         }
+
+        private async void deteleFile(int idFile)
+        {
+            var file = data.Files.Single(p=>p.ID == idFile);
+            file.status = false;
+            data.SaveChanges();
+            LoadData();
+        }
+
         private void frm_File_Load(object sender, EventArgs e)
         {
             Load_GridControl_File();
@@ -41,7 +63,7 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void LoadData()
         {
-            grcList.DataSource = data.Files.ToList();
+            grcList.DataSource = data.Files.Where(p=>p.status == true).ToList();
         }
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -57,14 +79,15 @@ namespace ThuVien_DienTu_CNXHKH.form
                 {
                     if (!string.IsNullOrEmpty(fileInfos.nameFile))
                     {
-                        int fileExit = data.Files.Where(p => p.FileName == fileInfos.nameFile).Count();
-                        if (fileExit > 0)
+                        var fileExit = data.Files.Where(p => p.FileName == fileInfos.nameFile && p.status == true)?.SingleOrDefault();
+                        if (fileExit != null)
                         {
                             DialogResult r = XtraMessageBox.Show("File đã tồn tại bạn muốn thêm mới!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                             if (r == DialogResult.OK)
                             {
-                                fileInfos.nameFile += "_" + DateTime.Now.ToString("ddMMyyyHHmmss");
+                                fileExit.FileName = fileInfos.nameFile + DateTime.Now.ToString();
                                 saveFile(fileInfos);
+                                //data.SaveChanges();
                             }
                         }
                         else
@@ -77,7 +100,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                
             }
             
-            Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(LoadData);
+           LoadData();
         }
         private async void saveFile(Model.FileInfos files)
         {
