@@ -206,13 +206,13 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutViewColumn2
             // 
-            this.layoutViewColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 8.25F);
+            this.layoutViewColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn2.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
             this.layoutViewColumn2.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn2.AppearanceCell.Options.UseForeColor = true;
             this.layoutViewColumn2.AppearanceCell.Options.UseTextOptions = true;
             this.layoutViewColumn2.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.layoutViewColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.layoutViewColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn2.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.layoutViewColumn2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -239,11 +239,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutViewColumn3
             // 
-            this.layoutViewColumn3.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutViewColumn3.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn3.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn3.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn3.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn3.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn3.Caption = "Loại tài liệu";
             this.layoutViewColumn3.FieldName = "LoaiTaiLieu";
@@ -260,11 +260,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutViewColumn4
             // 
-            this.layoutViewColumn4.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutViewColumn4.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn4.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn4.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn4.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn4.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn4.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn4.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn4.Caption = "Tác giả";
             this.layoutViewColumn4.FieldName = "TacGia";
@@ -281,11 +281,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutViewColumn5
             // 
-            this.layoutViewColumn5.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutViewColumn5.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn5.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn5.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn5.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn5.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn5.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn5.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn5.Caption = "Năm xuất bản";
             this.layoutViewColumn5.FieldName = "NamXuatBan";
@@ -302,11 +302,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutViewColumn6
             // 
-            this.layoutViewColumn6.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutViewColumn6.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn6.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn6.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn6.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn6.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn6.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn6.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn6.Caption = "Nhà xuất bản";
             this.layoutViewColumn6.FieldName = "GhiChu";
@@ -323,9 +323,9 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Hiển thị";
             this.gridColumn3.FieldName = "status";
@@ -342,11 +342,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             // layoutViewColumn7
             // 
-            this.layoutViewColumn7.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutViewColumn7.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn7.AppearanceCell.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
             this.layoutViewColumn7.AppearanceCell.Options.UseFont = true;
             this.layoutViewColumn7.AppearanceCell.Options.UseForeColor = true;
-            this.layoutViewColumn7.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutViewColumn7.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.layoutViewColumn7.AppearanceHeader.Options.UseFont = true;
             this.layoutViewColumn7.Caption = "Tệp";
             this.layoutViewColumn7.ColumnEdit = this.lupListFile;

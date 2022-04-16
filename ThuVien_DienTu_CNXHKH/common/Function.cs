@@ -32,7 +32,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
         private TV data = new TV();
         public async Task<List<File>> getfile(string ex)
         {
-            var ListFile = data.Files.Where(p => string.IsNullOrEmpty(ex) ? true : p.Ex.Contains(ex.ToLower())).ToList();
+            var ListFile = data.Files.Where(p => (string.IsNullOrEmpty(ex) ? true : p.Ex.Contains(ex.ToLower())) && p.status == true).ToList();
             return ListFile;
         }
         public async Task<string> getFilePatd(int? idFile)

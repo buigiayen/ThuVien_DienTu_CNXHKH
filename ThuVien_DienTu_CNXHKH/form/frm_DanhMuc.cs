@@ -81,7 +81,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Bài viết", FieldName_Columns = "TenBaiViet" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File powerpoint", FieldName_Columns = "ID_File_PPT" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File Word", FieldName_Columns = "ID_FileWord" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "File âm thanh", FieldName_Columns = "ID_File_Voice" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "File video", FieldName_Columns = "ID_File_Voice" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Nhóm bài", FieldName_Columns = "ID_NhomSach" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị bài viết", FieldName_Columns = "status", Visible = false });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
@@ -120,8 +120,8 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                 List<properties.Button_edit> btnDanhSachBaiThi = new List<properties.Button_edit>();
                 btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 0, colname = "TenBaiViet", NameButton = "btnDanhMucBaiThi", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Search, toolTip = "Danh sách bài thi", Action = new Action(() => showListbaiThi("id")) });
-                btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 1, colname = "TenBaiViet", NameButton = "btnTaiLieuThamKhao", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, toolTip = "Danh sách tham khảo", Action = new Action(() => ShowDSThamKhao("id")) });
-                btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex =  2,colname = "TenBaiViet", NameButton = "btnDeleteBook", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear, Action = new Action(() => { Deletebook(); }) });
+                //btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex = 1, colname = "TenBaiViet", NameButton = "btnTaiLieuThamKhao", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, toolTip = "Danh sách tham khảo", Action = new Action(() => ShowDSThamKhao("id")) });
+                btnDanhSachBaiThi.Add(new properties.Button_edit { buttonIndex =  1,colname = "TenBaiViet", NameButton = "btnDeleteBook", styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear, Action = new Action(() => { Deletebook(); }) });
                 
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(btnDanhSachBaiThi);
 
@@ -141,17 +141,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 LoadDS(1);
             }
         }
-        private void ShowDSThamKhao(string colName)
-        {
-            if (grvBaiViet.FocusedRowHandle >= 0)
-            {
-                int IDBaiViet = (int)grvBaiViet.GetFocusedRowCellValue(colName);
-                frm_TaiLieuThamKhao frm = new frm_TaiLieuThamKhao(IDBaiViet);
-                frm.ShowDialog();
-            }
-
-
-        }
+      
 
 
 

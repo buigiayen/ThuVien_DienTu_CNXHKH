@@ -27,11 +27,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridControl = grcList;
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.GridView = grvList;
             List<properties.columns> columnsproperties = new List<properties.columns>();
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = commom.Commom_static.isAdmin });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Mã", FieldName_Columns = "id", Visible = false});
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên bài", FieldName_Columns = "idBaiViet" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Tên tài liệu", FieldName_Columns = "TenTaiLieu" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File tham khảo", FieldName_Columns = "idFile", Visible = commom.Commom_static.isAdmin });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status", Visible = commom.Commom_static.isAdmin });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "Trạng thái", FieldName_Columns = "status", Visible = Visible });
 
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
             showTenBai();
@@ -49,6 +49,18 @@ namespace ThuVien_DienTu_CNXHKH.form
                         showFile();
                     })
                 });
+                Listbutton.Add(new properties.Button_edit
+                {
+                    buttonIndex = 0,
+                    colname = "TenTaiLieu",
+                    NameButton = "btnXoaTaiLieu",
+                    styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear,
+                    toolTip = "Xóa tài liệu",
+                    Action = new Action(() =>
+                    {
+                        deleteNote();
+                    })
+                });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(Listbutton);
             }
             {
@@ -64,6 +76,18 @@ namespace ThuVien_DienTu_CNXHKH.form
             if (commom.Commom_static.isAdmin)
             {
                 grvList.CellValueChanging += GrvList_CellValueChanging;
+            }
+        }
+
+        private async void deleteNote()
+        {
+            if (grvList.FocusedRowHandle >= 0)
+            {
+                int idTaiLieu = (int)grvList.GetFocusedRowCellValue("id");
+                database.TaiLieuThamKhao taiLieuThamKhao = data.TaiLieuThamKhaos.SingleOrDefault(p => p.id == idTaiLieu);
+                taiLieuThamKhao.status = false;
+                data.SaveChanges();
+                ShowTaiLieu();
             }
         }
 
@@ -100,15 +124,17 @@ namespace ThuVien_DienTu_CNXHKH.form
         private async void btnReload_Click(object sender, EventArgs e)
         {
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(ShowTaiLieu);
+          
         }
         private async void ShowTaiLieu()
         {
-            grcList.DataSource = data.TaiLieuThamKhaos.Where(p => p.idBaiViet == _idBaiViet && commom.Commom_static.isAdmin == true ? true : p.status == true).ToList();
+            grcList.DataSource = data.TaiLieuThamKhaos.Where(p => p.idBaiViet == _idBaiViet &&  p.status == true).ToList();
+            grvList.ExpandAllGroups();
         }
         private async void simpleButton2_Click(object sender, EventArgs e)
         {
             database.TaiLieuThamKhao taiLieuThamKhao = new database.TaiLieuThamKhao();
-            taiLieuThamKhao.status = false;
+            taiLieuThamKhao.status = true;
             taiLieuThamKhao.idBaiViet = _idBaiViet;
             data.TaiLieuThamKhaos.Add(taiLieuThamKhao);
             await data.SaveChangesAsync();

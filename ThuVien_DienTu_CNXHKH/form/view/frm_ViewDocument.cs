@@ -18,14 +18,14 @@ namespace ThuVien_DienTu_CNXHKH.form.view
         public frm_ViewDocument(string TextView, int? IDBai)
         {
             InitializeComponent();
-            richEditControl1.Text = TextView;
+            richEditControl1.HtmlText = TextView;
           
             btnLuuTaiLieu.Visible = IDBai != null;
         }
         database.TV data = new database.TV();
         private void btnLuuTaiLieu_Click(object sender, EventArgs e)
         {
-            TextSave = richEditControl1.Text;
+            TextSave = richEditControl1.HtmlText;
             SaveBai = true;
             this.Close();
         }
