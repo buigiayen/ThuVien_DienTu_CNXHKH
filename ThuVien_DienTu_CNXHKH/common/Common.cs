@@ -36,7 +36,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
         public static string File_PDF = "PDF";
         public static string File_Voice = "Mp4";
         public static string File_MP = "Mp3 Mp4";
-        public static string File_PPT = "PPTX";
+        public static string File_PPT = "PPT";
         public static string APPID { get; set; } = ConfigurationManager.AppSettings["APPID"].ToString();
         public static string URL { get; set; } = ConfigurationManager.AppSettings["URL"].ToString();
         public static string APPRUN { get; set; } = ConfigurationManager.AppSettings["APPrun"].ToString();
@@ -254,7 +254,7 @@ namespace ThuVien_DienTu_CNXHKH.commom
                 Model.FileInfos fileInfos1 = new Model.FileInfos();
                 if (!string.IsNullOrEmpty(items))
                 {
-                    string FileName = new FileInfo(items).Name; 
+                    string FileName = new FileInfo(items).Name;
                     string destFileName = Application.StartupPath + "\\File\\" + FileName;
 
                     File.Copy(items, destFileName, true);
@@ -419,6 +419,11 @@ namespace ThuVien_DienTu_CNXHKH.commom
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        public async Task<DialogResult> XtraMessageBoxQuestion()
+        {
+            DialogResult r = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            return r;
         }
 
 

@@ -42,14 +42,18 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void DeleteGroupbook()
         {
-            if (grvDanhMuc.FocusedRowHandle > 0)
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
             {
-                int IDBai = (int)grvDanhMuc.GetFocusedRowCellValue("IDNhomSach");
-                database.NhomSach nhomSach = tV.NhomSaches.FirstOrDefault(p => p.IDNhomSach == IDBai);
-                nhomSach.status = false;
-                tV.SaveChanges();
-                LoadDS(1);
+                if (grvDanhMuc.FocusedRowHandle > 0)
+                {
+                    int IDBai = (int)grvDanhMuc.GetFocusedRowCellValue("IDNhomSach");
+                    database.NhomSach nhomSach = tV.NhomSaches.FirstOrDefault(p => p.IDNhomSach == IDBai);
+                    nhomSach.status = false;
+                    tV.SaveChanges();
+                    LoadDS(1);
+                }
             }
+              
         }
 
         private void GrvDanhMuc_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -81,7 +85,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             columnsproperties.Add(new properties.columns { Caption_Columns = "Bài viết", FieldName_Columns = "TenBaiViet" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File powerpoint", FieldName_Columns = "ID_File_PPT" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "File Word", FieldName_Columns = "ID_FileWord" });
-            columnsproperties.Add(new properties.columns { Caption_Columns = "File video", FieldName_Columns = "ID_File_Voice" });
+            columnsproperties.Add(new properties.columns { Caption_Columns = "File video", FieldName_Columns = "ID_File_Voice" , Visible = false });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Nhóm bài", FieldName_Columns = "ID_NhomSach" });
             columnsproperties.Add(new properties.columns { Caption_Columns = "Hiển thị bài viết", FieldName_Columns = "status", Visible = false });
             Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.Load_ColumnsView(columnsproperties);
@@ -132,14 +136,18 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
         private async void Deletebook()
         {
-            if (grvBaiViet.FocusedRowHandle > 0)
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
             {
-                int IDBai = (int)grvBaiViet.GetFocusedRowCellValue("id");
-                database.tbl_BaiViet BaiViet = tV.tbl_BaiViet.FirstOrDefault(p => p.id == IDBai);
-                BaiViet.status = false;
-                tV.SaveChanges();
-                LoadDS(1);
+                if (grvBaiViet.FocusedRowHandle > 0)
+                {
+                    int IDBai = (int)grvBaiViet.GetFocusedRowCellValue("id");
+                    database.tbl_BaiViet BaiViet = tV.tbl_BaiViet.FirstOrDefault(p => p.id == IDBai);
+                    BaiViet.status = false;
+                    tV.SaveChanges();
+                    LoadDS(1);
+                }
             }
+               
         }
       
 

@@ -51,14 +51,18 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void Deletegroup()
         {
-            if (grvNhomSachKinhDien.FocusedRowHandle >= 0)
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
             {
-                int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
-                database.SachKinhDien SachKinhDien = data.SachKinhDiens.SingleOrDefault(p => p.ID == _ID);
-                SachKinhDien.status = false;
-                data.SaveChanges();
-            }
-            LoadNhomSach();
+                if (grvNhomSachKinhDien.FocusedRowHandle >= 0)
+                {
+                    int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
+                    database.SachKinhDien SachKinhDien = data.SachKinhDiens.SingleOrDefault(p => p.ID == _ID);
+                    SachKinhDien.status = false;
+                    data.SaveChanges();
+                }
+                LoadNhomSach();
+            }    
+             
         }
 
         private async void LoadGridControl_TuSachKinhDien_Sach()
@@ -97,15 +101,18 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async  void DeleteBookgroup()
         {
-
-            if (grvSachKinhDien.FocusedRowHandle >= 0)
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
             {
-                int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
-                database.TuSachKinhDien TuSachKinhDien = data.TuSachKinhDiens.SingleOrDefault(p => p.ID == _ID);
-                TuSachKinhDien.status = false;
-                data.SaveChanges();
+                if (grvSachKinhDien.FocusedRowHandle >= 0)
+                {
+                    int _ID = (int)grvSachKinhDien.GetFocusedRowCellValue("ID");
+                    database.TuSachKinhDien TuSachKinhDien = data.TuSachKinhDiens.SingleOrDefault(p => p.ID == _ID);
+                    TuSachKinhDien.status = false;
+                    data.SaveChanges();
+                }
+                LoadNhomSach();
             }
-            LoadNhomSach();
+               
         }
 
         private async void GrvSachKinhDien_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

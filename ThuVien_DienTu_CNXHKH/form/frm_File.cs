@@ -50,10 +50,14 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void deteleFile(int idFile)
         {
-            var file = data.Files.Single(p=>p.ID == idFile);
-            file.status = false;
-            data.SaveChanges();
-            LoadData();
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
+            {
+                var file = data.Files.Single(p => p.ID == idFile);
+                file.status = false;
+                data.SaveChanges();
+                LoadData();
+            }    
+             
         }
 
         private void frm_File_Load(object sender, EventArgs e)

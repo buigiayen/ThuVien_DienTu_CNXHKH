@@ -17,13 +17,13 @@ namespace ThuVien_DienTu_CNXHKH.form
         public frm_TuSachV2()
         {
             InitializeComponent();
-          
+
         }
         private database.TV data = new database.TV();
         private async void ShowBook()
         {
-           
-            grcTuSach.DataSource = data.tuSaches.Where(p => commom.Commom_static.isAdmin ? true : p.status == true).ToList();
+
+            grcTuSach.DataSource = data.tuSaches.Where(p => p.status == true).ToList();
             lupListFile.DataSource = await commom.Function.Instance.getfile(commom.Commom_static.File_PDF);
         }
 
@@ -35,14 +35,14 @@ namespace ThuVien_DienTu_CNXHKH.form
         private void frm_TuSachV2_Load(object sender, EventArgs e)
         {
             grvTuSach.OptionsBehavior.ReadOnly = !commom.Commom_static.isAdmin;
-            glupLoaiTaiLieu.Properties.DataSource = (from ts in data.tuSaches group ts by new { ts.LoaiTaiLieu } into k select new { k.Key.LoaiTaiLieu } ) .ToList();
+            glupLoaiTaiLieu.Properties.DataSource = (from ts in data.tuSaches.Where(p=> p.LoaiTaiLieu != null && p.LoaiTaiLieu != "") group ts by new { ts.LoaiTaiLieu } into k select new { k.Key.LoaiTaiLieu }).ToList();
         }
 
-      
 
-        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+
+        private async void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
+          
         }
         private async void Show_task(string nameField)
         {
@@ -83,7 +83,7 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private void btnAddBook_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            data.tuSaches.Add(new database.tuSach { });
+            data.tuSaches.Add(new database.tuSach { status = true });
             data.SaveChanges();
             Cresoft_controlCustomer.windows.Watting.CallProcess.Control.CallProcessbar(ShowBook);
         }
@@ -94,8 +94,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             {
                 if (!string.IsNullOrEmpty(txtTenSach.Text))
                 {
-                    grcTuSach.DataSource = null;
-                    grcTuSach.DataSource = data.tuSaches.Where(p => (commom.Commom_static.isAdmin ? true : p.status == true) && (p.TenSach.Contains(txtTenSach.Text))).ToList();
+                    LoadTaiLieu();
                 }
                 else
                 {
@@ -106,23 +105,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             }
         }
 
-        private void txtLoaiTaiLieu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if (!string.IsNullOrEmpty(lupLoaiTaiLieu.Text))
-                {
-                    grcTuSach.DataSource = null;
-                    grcTuSach.DataSource = data.tuSaches.Where(p => (commom.Commom_static.isAdmin ? true : p.status == true) && (p.LoaiTaiLieu.Contains(lupLoaiTaiLieu.Text))).ToList();
-                }
-                else
-                {
-                    ShowBook();
-                }
-
-
-            }
-        }
+     
 
         private void txtTacGia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -130,8 +113,7 @@ namespace ThuVien_DienTu_CNXHKH.form
             {
                 if (!string.IsNullOrEmpty(txtTacGia.Text))
                 {
-                    grcTuSach.DataSource = null;
-                    grcTuSach.DataSource = data.tuSaches.Where(p => (commom.Commom_static.isAdmin ? true : p.status == true) && (p.TacGia.Contains(txtTacGia.Text))).ToList();
+                    LoadTaiLieu();
                 }
                 else
                 {
@@ -175,6 +157,52 @@ namespace ThuVien_DienTu_CNXHKH.form
 
                 data.SaveChanges();
             }
+        }
+
+
+        private async void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
+            {
+                int iDBook = (int)grvTuSach.GetFocusedRowCellValue("ID");
+                database.tuSach ts = data.tuSaches.Single(p => p.ID == iDBook);
+                ts.status = false;
+                data.SaveChanges();
+                ShowBook();
+            }
+        }
+
+        private void glupLoaiTaiLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(glupLoaiTaiLieu.Text))
+                {
+                    LoadTaiLieu();
+                }
+                else
+                {
+                    ShowBook();
+                }
+
+
+            }
+        }
+
+        private async void LoadTaiLieu()
+        {
+            grcTuSach.DataSource = null;
+            grcTuSach.DataSource = data.tuSaches.Where(p => 
+            (p.status == true) &&
+          
+            p.TacGia == txtTacGia.Text || p.TenSach == txtTenSach.Text  || p.LoaiTaiLieu == glupLoaiTaiLieu.Text ).ToList();
+        }
+
+      
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        {
+            LoadTaiLieu();
         }
     }
 }

@@ -51,7 +51,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 });
                 Listbutton.Add(new properties.Button_edit
                 {
-                    buttonIndex = 0,
+                    buttonIndex = 1,
                     colname = "TenTaiLieu",
                     NameButton = "btnXoaTaiLieu",
                     styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear,
@@ -81,14 +81,18 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void deleteNote()
         {
-            if (grvList.FocusedRowHandle >= 0)
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
             {
-                int idTaiLieu = (int)grvList.GetFocusedRowCellValue("id");
-                database.TaiLieuThamKhao taiLieuThamKhao = data.TaiLieuThamKhaos.SingleOrDefault(p => p.id == idTaiLieu);
-                taiLieuThamKhao.status = false;
-                data.SaveChanges();
-                ShowTaiLieu();
+                if (grvList.FocusedRowHandle >= 0)
+                {
+                    int idTaiLieu = (int)grvList.GetFocusedRowCellValue("id");
+                    database.TaiLieuThamKhao taiLieuThamKhao = data.TaiLieuThamKhaos.SingleOrDefault(p => p.id == idTaiLieu);
+                    taiLieuThamKhao.status = false;
+                    data.SaveChanges();
+                    ShowTaiLieu();
+                }
             }
+           
         }
 
         private async void GrvList_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

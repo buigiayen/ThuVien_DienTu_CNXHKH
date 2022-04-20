@@ -63,14 +63,19 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         private async void delelebook()
         {
-            if (grvBaiViet.FocusedRowHandle >= 0)
+
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
             {
-                int IDBai = (int)grvBaiViet.GetFocusedRowCellValue("id");
-                database.tbl_BaiViet bv = tV.tbl_BaiViet.Single(p => p.id == IDBai);
-                bv.status = false;
-                tV.SaveChanges();
-                LoadDS();
+                if (grvBaiViet.FocusedRowHandle >= 0)
+                {
+                    int IDBai = (int)grvBaiViet.GetFocusedRowCellValue("id");
+                    database.tbl_BaiViet bv = tV.tbl_BaiViet.Single(p => p.id == IDBai);
+                    bv.status = false;
+                    tV.SaveChanges();
+                    LoadDS();
+                }
             }
+              
         }
 
         private async void GrvBaiViet_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

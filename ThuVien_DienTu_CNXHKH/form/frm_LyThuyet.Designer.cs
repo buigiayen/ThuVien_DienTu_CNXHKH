@@ -46,7 +46,6 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.btnTracNghiem = new DevExpress.XtraEditors.SimpleButton();
             this.btnPowerPoint = new DevExpress.XtraEditors.SimpleButton();
-            this.btnShowFileMp3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnTaiLieuThamKhao = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -209,7 +208,6 @@ namespace ThuVien_DienTu_CNXHKH.from
             // 
             this.stackPanel1.Controls.Add(this.btnTracNghiem);
             this.stackPanel1.Controls.Add(this.btnPowerPoint);
-            this.stackPanel1.Controls.Add(this.btnShowFileMp3);
             this.stackPanel1.Controls.Add(this.btnTaiLieuThamKhao);
             this.stackPanel1.Location = new System.Drawing.Point(2, 560);
             this.stackPanel1.Name = "stackPanel1";
@@ -235,20 +233,10 @@ namespace ThuVien_DienTu_CNXHKH.from
             this.btnPowerPoint.Text = "Power point";
             this.btnPowerPoint.Click += new System.EventHandler(this.btnPowerPoint_Click);
             // 
-            // btnShowFileMp3
-            // 
-            this.btnShowFileMp3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFileMp3.ImageOptions.Image")));
-            this.btnShowFileMp3.Location = new System.Drawing.Point(297, 0);
-            this.btnShowFileMp3.Name = "btnShowFileMp3";
-            this.btnShowFileMp3.Size = new System.Drawing.Size(141, 23);
-            this.btnShowFileMp3.TabIndex = 2;
-            this.btnShowFileMp3.Text = "Tài liệu phim ảnh";
-            this.btnShowFileMp3.Click += new System.EventHandler(this.btnShowFileMp3_Click);
-            // 
             // btnTaiLieuThamKhao
             // 
             this.btnTaiLieuThamKhao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiLieuThamKhao.ImageOptions.Image")));
-            this.btnTaiLieuThamKhao.Location = new System.Drawing.Point(444, 0);
+            this.btnTaiLieuThamKhao.Location = new System.Drawing.Point(297, 0);
             this.btnTaiLieuThamKhao.Name = "btnTaiLieuThamKhao";
             this.btnTaiLieuThamKhao.Size = new System.Drawing.Size(141, 23);
             this.btnTaiLieuThamKhao.TabIndex = 3;
@@ -336,7 +324,6 @@ namespace ThuVien_DienTu_CNXHKH.from
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
         private DevExpress.XtraEditors.SimpleButton btnTracNghiem;
         private DevExpress.XtraEditors.SimpleButton btnPowerPoint;
-        private DevExpress.XtraEditors.SimpleButton btnShowFileMp3;
         private DevExpress.XtraEditors.SimpleButton btnTaiLieuThamKhao;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;

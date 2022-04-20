@@ -150,7 +150,7 @@ namespace ThuVien_DienTu_CNXHKH.from
             if (e.FocusedRowHandle >= 0)
             {
                 btnPowerPoint.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_PPT")?.ToString());
-                btnShowFileMp3.Enabled = !string.IsNullOrEmpty(grvNhomLyThuyet.GetFocusedRowCellValue("ID_File_Voice")?.ToString());
+              
             }
         }
     }

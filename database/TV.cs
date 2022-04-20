@@ -9,11 +9,13 @@ namespace database
 {
     public partial class TV : DbContext
     {
+      
         public TV()
-            : base("name=TV")
+            : base(@"Data Source=(LocalDB)\\MSSQLLocalDB;;AttachDbFilename=D:\project\ThuVien_DienTu_CNXHKH\ThuVien_DienTu_CNXHKH\bin\Debug\DATA\qltv.mdf; Integrated Security=True;Connect Timeout=30; User Instance=True")
         {
         }
-   
+      
+
         public virtual DbSet<BaiThi> BaiThis { get; set; }
         public virtual DbSet<CauHoi> CauHois { get; set; }
         public virtual DbSet<CauTraLoi> CauTraLois { get; set; }

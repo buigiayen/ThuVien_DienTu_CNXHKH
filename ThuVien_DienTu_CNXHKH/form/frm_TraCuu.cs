@@ -52,6 +52,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemMemoEdit(new string[] { "ThuatNgu" });
             }
 
+
             {
                 List<properties.Button_edit> button_Edits = new List<properties.Button_edit>();
                 button_Edits.Add(new properties.Button_edit
@@ -70,7 +71,7 @@ namespace ThuVien_DienTu_CNXHKH.form
                     toolTip = "Xem thuật ngữ",
                     NameButton = "btnViewThuatNgu",
                     styleButton = DevExpress.XtraEditors.Controls.ButtonPredefines.Clear,
-                    Action = new Action(() => { DeleteThuatNgu(Convert.ToInt32(grvTraCuuThuatNgu.GetFocusedRowCellValue("id"))  | Convert.ToInt32(grvTraCuuKinhDien.GetFocusedRowCellValue("id"))); })
+                    Action = DeleteThuatNgu
                 });
                 Cresoft_controlCustomer.windows.componet_devexpress.Gricontrol.GridControls.Control.add_ColumnGricontrol_RepositoryItemButtonEdit(button_Edits);
             }
@@ -82,17 +83,30 @@ namespace ThuVien_DienTu_CNXHKH.form
 
         }
 
-        private async void DeleteThuatNgu(int? IDThuatNgu)
+        private async void DeleteThuatNgu()
         {
-            if (IDThuatNgu != null)
+            int? ID = null;
+            if (xtraTabControl1.SelectedTabPageIndex == 0)
             {
-                database.TraCuuThuatNgu traCuu = data.TraCuuThuatNgus.SingleOrDefault(p => p.id == IDThuatNgu);
-                traCuu.status = false;
-                data.SaveChanges();
-
+                ID = Convert.ToInt32(grvTraCuuThuatNgu.GetFocusedRowCellValue("id"));
             }
-            LoadTraCuuThuatNgu();
-            LoadTraCuuKinhDien();
+            else
+            {
+                ID = Convert.ToInt32(grvTraCuuKinhDien.GetFocusedRowCellValue("id"));
+            }
+            if (await commom.Common.GetInstance().XtraMessageBoxQuestion() == DialogResult.OK)
+            {
+                if (ID != null)
+                {
+                    database.TraCuuThuatNgu traCuu = data.TraCuuThuatNgus.SingleOrDefault(p => p.id == ID);
+                    traCuu.status = false;
+                    data.SaveChanges();
+
+                }
+                LoadTraCuuThuatNgu();
+                LoadTraCuuKinhDien();
+            }    
+         
 
 
         }
@@ -185,6 +199,6 @@ namespace ThuVien_DienTu_CNXHKH.form
         }
 
 
-       
+
     }
 }
