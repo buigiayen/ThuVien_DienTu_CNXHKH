@@ -1,21 +1,17 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Data.SQLite;
 
-namespace database
+namespace ThuVien_DienTu_CNXHKH.database
 {
     public partial class TV : DbContext
     {
-      
         public TV()
-            : base(@"Data Source=D:\project\ThuVien_DienTu_CNXHKH\ThuVien_DienTu_CNXHKH\bin\Debug\db.db;")
+            : base(new SQLiteConnection(@"Data Source="+AppDomain.CurrentDomain.BaseDirectory+"db.db;"),true)
         {
         }
-      
 
         public virtual DbSet<BaiThi> BaiThis { get; set; }
         public virtual DbSet<CauHoi> CauHois { get; set; }
@@ -25,6 +21,7 @@ namespace database
         public virtual DbSet<LienKet> LienKets { get; set; }
         public virtual DbSet<NhomSach> NhomSaches { get; set; }
         public virtual DbSet<SachKinhDien> SachKinhDiens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiLieuThamKhao> TaiLieuThamKhaos { get; set; }
         public virtual DbSet<tbl_BaiViet> tbl_BaiViet { get; set; }
         public virtual DbSet<TraCuuThuatNgu> TraCuuThuatNgus { get; set; }
@@ -106,7 +103,6 @@ namespace database
                 .HasMany(e => e.SachKinhDiens)
                 .WithOptional(e => e.TuSachKinhDien)
                 .HasForeignKey(e => e.IDNhomSachKinhDien);
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }
