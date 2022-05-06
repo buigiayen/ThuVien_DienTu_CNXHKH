@@ -51,11 +51,11 @@ namespace ThuVien_DienTu_CNXHKH.form
             // 
             this.grcList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcList.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grcList.Location = new System.Drawing.Point(0, 26);
+            this.grcList.Location = new System.Drawing.Point(0, 24);
             this.grcList.MainView = this.grvList;
             this.grcList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grcList.Name = "grcList";
-            this.grcList.Size = new System.Drawing.Size(1009, 532);
+            this.grcList.Size = new System.Drawing.Size(1009, 536);
             this.grcList.TabIndex = 0;
             this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvList});
@@ -134,34 +134,34 @@ namespace ThuVien_DienTu_CNXHKH.form
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1009, 26);
+            this.barDockControlTop.Size = new System.Drawing.Size(1009, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 558);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1009, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1009, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 532);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 536);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1009, 26);
+            this.barDockControlRight.Location = new System.Drawing.Point(1009, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 532);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 536);
             // 
             // frm_File
             // 
